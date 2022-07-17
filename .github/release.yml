@@ -12,6 +12,9 @@ changelog:
     - title: Updated Pages
       labels:
         - update-page
+    - title: Infrastructure Changes
+      labels:
+        - update-infra
     - title: Other Changes
       labels:
         - "*"
