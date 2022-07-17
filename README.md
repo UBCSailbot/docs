@@ -12,7 +12,7 @@ UBCSailbot software team's documentation.
 
 2. Install dependencies
 
-    ```
+    ```sh
    pip install -r docs/requirements.txt
    ```
 
@@ -29,4 +29,6 @@ UBCSailbot software team's documentation.
 
 ### Command line
 
-1. `mkdocs serve`
+```
+mkdocs serve
+```
