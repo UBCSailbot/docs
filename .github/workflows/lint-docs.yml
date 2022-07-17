@@ -1,0 +1,37 @@
+name: Lint Docs
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # https://github.com/nosborn/github-action-markdown-cli
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Lint markdown pages
+      uses: nosborn/github-action-markdown-cli@v3.0.1
+      with:
+        files: 'docs/* README.md'
+        config_file: '.markdownlint.json'
+
+  # https://github.com/gaurav-nelson/github-action-markdown-link-check
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Check markdown pages for broken links
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        config-file: '.markdown-link-check.json'
+        folder-path: 'docs'
+        file-path: './README.md'

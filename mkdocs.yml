@@ -1,0 +1,84 @@
+# Project information
+site_name: UBCSailbot Software Docs
+site_url: https://UBCSailbot.github.io/docs/
+site_author: UBCSailbot Software Team
+
+# Repository
+repo_name: UBCSailbot/docs
+repo_url: https://github.com/UBCSailbot/docs
+edit_uri: ""
+
+# Configuration
+theme:
+  name: material
+  features:
+    - content.code.annotate
+    - navigation.expand
+    - navigation.indexes
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+  palette:
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" 
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
+
+# Plugins
+plugins:
+  - search
+  - git-revision-date-localized
+
+# Customization
+extra:
+  social:
+    - icon: material/sail-boat
+      link: https://www.ubcsailbot.org/
+    - icon: material/instagram
+      link: https://www.instagram.com/ubcsailbot/
+    - icon: material/github
+      link: https://github.com/UBCSailbot
+    - icon: material/email
+      link: mailto:software@ubcsailbot.org
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - meta
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji 
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+
+# Page tree
+nav:
+  - Home: index.md

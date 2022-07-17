@@ -1,0 +1,29 @@
+name: Deploy Docs
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  # https://squidfunk.github.io/mkdocs-material/publishing-your-site/#with-github-actions
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'  # checkout all commits to get the actual page revision time
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install -r docs/requirements.txt
+
+      - name: Deploy MkDocs application
+        env:
+          GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
+        run: mkdocs gh-deploy --force
