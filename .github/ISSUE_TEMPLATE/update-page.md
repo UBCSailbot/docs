@@ -12,4 +12,4 @@ labels: update-page
 ### Changes
 
 
-### Relevant resources
+### Relevant Resources
