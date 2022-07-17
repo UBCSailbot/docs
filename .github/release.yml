@@ -9,7 +9,7 @@ changelog:
     - title: Updated Pages
       labels:
         - update-page
-    - title: Infrastructure Changes
+    - title: Infrastructure Updates
       labels:
         - infrastructure
     - title: Other Changes
