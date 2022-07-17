@@ -12,4 +12,4 @@ labels: infrastructure
 ### Changes
 
 
-### Relevant resources
+### Relevant Resources

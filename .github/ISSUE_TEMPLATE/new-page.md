@@ -12,4 +12,4 @@ labels: new-page
 ### Contents
 
 
-### Relevant resources
+### Relevant Resources
