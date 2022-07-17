@@ -11,7 +11,7 @@ changelog:
         - update-page
     - title: Infrastructure Changes
       labels:
-        - update-infra
+        - infrastructure
     - title: Other Changes
       labels:
         - "*"
