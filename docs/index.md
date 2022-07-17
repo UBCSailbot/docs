@@ -3,4 +3,4 @@ hide:
   - navigation
 ---
 
-# UBCSailbot Software Docs
+# UBCSailbot Software Team Docs
