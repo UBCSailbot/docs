@@ -12,7 +12,7 @@ UBCSailbot software team's documentation.
 
 2. Install dependencies
 
-    ```
+    ```sh
    pip install -r docs/requirements.txt
    ```
 
