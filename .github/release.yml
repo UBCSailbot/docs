@@ -3,9 +3,6 @@ changelog:
     labels:
       - ignore-for-release
   categories:
-    - title: New Sections
-      labels:
-        - new-section
     - title: New Pages
       labels:
         - new-page
