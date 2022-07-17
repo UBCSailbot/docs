@@ -1,4 +1,18 @@
 {
+    "cSpell.words": [
+        "mkdocs",
+        "Sailbot"
+    ],
+    "cSpell.ignorePaths": [
+        "LICENSE.md",
+        "mkdocs.yml",
+        ".git",
+        ".github",
+        ".vscode"
+    ],
+    "markdownlint.ignore": [
+        "LICENSE.md",
+    ],
     "yaml.schemas": {
         "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
     },
