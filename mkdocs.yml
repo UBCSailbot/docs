@@ -11,6 +11,7 @@ edit_uri: ""
 # Configuration
 theme:
   name: material
+  logo: assets/ubcsailbot-white.png
   features:
     - content.code.annotate
     - navigation.expand
@@ -21,15 +22,11 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)" 
       scheme: default
-      primary: indigo
-      accent: indigo
       toggle:
         icon: material/lightbulb-outline
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)" 
       scheme: slate
-      primary: indigo
-      accent: indigo
       toggle:
         icon: material/lightbulb
         name: Switch to light mode
@@ -51,6 +48,9 @@ extra:
       link: https://github.com/UBCSailbot
     - icon: material/email
       link: mailto:software@ubcsailbot.org
+
+extra_css:
+  - stylesheets/extra.css
 
 # Extensions
 markdown_extensions:
