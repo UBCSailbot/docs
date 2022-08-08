@@ -6,7 +6,10 @@
     "language": "en",
     // words - list of words to be always considered correct
     "words": [
+        "gaurav",
+        "markdownlint",
         "mkdocs",
+        "nosborn",
         "Sailbot"
     ],
     // flagWords - list of words to be always considered incorrect
@@ -18,8 +21,6 @@
     "ignorePaths": [
         "LICENSE.md",
         "mkdocs.yml",
-        ".git",
-        ".github",
-        ".vscode"
+        ".git"
     ]
 }
