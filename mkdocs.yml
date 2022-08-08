@@ -84,3 +84,5 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
+  - Reference:
+    - reference/index.md
