@@ -1,8 +1,5 @@
 {
     "cSpell.enabled": true,
-    "markdownlint.ignore": [
-        "LICENSE.md",
-    ],
     "yaml.schemas": {
         "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
     },
