@@ -17,7 +17,6 @@
     ],
     "allowCompoundWords": true,
     "ignorePaths": [
-        "LICENSE.md",
         "mkdocs.yml",
         ".git"
     ]
