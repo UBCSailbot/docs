@@ -8,7 +8,6 @@ on:
 jobs:
   # https://squidfunk.github.io/mkdocs-material/publishing-your-site/#with-github-actions
   deploy:
-    needs: [markdownlint, markdown-link-check]
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
