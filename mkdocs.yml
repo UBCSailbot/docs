@@ -85,3 +85,7 @@ nav:
   - Home: index.md
   - Reference:
     - reference/index.md
+    - GitHub:
+      - Workflow:
+        - GitHub Workflows: reference/github/workflow/workflow.md
+        - Creating Issues: reference/github/workflow/issues.md
