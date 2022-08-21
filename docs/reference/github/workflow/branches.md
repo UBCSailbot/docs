@@ -146,4 +146,3 @@ with `git commit`.
     If you run into a merge conflict that you cannot resolve on your own, please reach out to a software
     lead to assist you! For more information on resolving merge conflicts, consult the official
     [git documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line).
-
