@@ -89,3 +89,4 @@ nav:
       - Workflow:
         - GitHub Workflows: reference/github/workflow/workflow.md
         - Creating Issues: reference/github/workflow/issues.md
+        - Developing on Branches: reference/github/workflow/branches.md
