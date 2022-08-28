@@ -85,3 +85,5 @@ nav:
   - Home: index.md
   - Reference:
     - reference/index.md
+    - Python:
+      - Getting Started: reference/python/getting-started.md
