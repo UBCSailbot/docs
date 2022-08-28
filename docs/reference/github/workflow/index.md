@@ -1,6 +1,4 @@
-# GitHub Workflows
-
-## UBC Sailbot workflow overview
+# Development Workflow Overview
 
 ``` mermaid
 graph LR
