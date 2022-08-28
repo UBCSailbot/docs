@@ -1,7 +1,7 @@
 # Developing on Branches
 
-We use branching to diverge from the main line of development and work on issues without directly
-modifying the main line. This ensures that our codebase is robust and avoids merge conflicts
+We use branching to work on issues without modifying the main line. This ensures that the main line only
+contains functional code and handles merge conflicts that arise
 when multiple people are developing at the same time. For a quick rundown on branching in git,
 consult the official [git documentation](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
 

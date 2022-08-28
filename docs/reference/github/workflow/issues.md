@@ -1,6 +1,6 @@
 # Creating Issues
 
-GitHub issues lets us track our work on GitHub. When you mention an issue in another issue or pull request,
+GitHub issues lets us plan and track our work on GitHub. When you mention an issue in another issue or pull request,
 the issue's timeline reflects the cross-reference so that we can keep track of related work.
 
 ## Getting started with issue templates
@@ -51,10 +51,9 @@ for further guidance if necessary.
 
 ## Adding issues to a project
 
-We use GitHub projects to keep track of our current issues all in one place within the UBC Sailbot organization.
+We use projects to plan and track the status of our issues and pull requests.
 To add an issue to an existing project, click on the gear icon in the `Projects` section and add it to your desired
-project. You will almost always want to add your issue to the UBC Sailbot software project that is common to all
-repositories in our organization.
+project. You will almost always want to add your issue to the Software organization project.
 
 ![image](../../../assets/images/github/workflow/gh_project.png)
 
@@ -65,8 +64,8 @@ be the case).
 
 ## Adding issues to a milestone
 
-We use GitHub milestones to give the team a clear timeline for what we want to accomplish in a given
-time period. Since our projects span over many years, it is important to work incrementally with small,
+We use milestones to track progress on groups of issues or pull requests that we want to complete by a certain date.
+Since our projects span over many years, it is important to work incrementally with small,
 yet achievable goals. If your issue should belong to a milestone, simply add it to a milestone by clicking
 on the gear icon in the `Milestone` section and add it to your desired milestone.
 
@@ -74,7 +73,7 @@ on the gear icon in the `Milestone` section and add it to your desired milestone
 
 !!! note
 
-    Unlike GitHub projects, GitHub milestones are strictly associated with a repository.
+    Unlike projects, milestones are strictly associated with a repository.
 
 ## Labelling issues
 

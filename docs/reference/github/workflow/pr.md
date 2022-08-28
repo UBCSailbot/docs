@@ -1,14 +1,13 @@
 # Pull Requests
 
 Pull requests are used to facilitate code reviews when merging a branch into the main branch. A pull request
-represents a combination of many commits that together form the overall change that we want to make to the
-main branch.
+is the implementation of an issue or other change that we want to make to the main branch.
 
 !!! note
 
     Pull requests are much like issues where we can do many of the same things. This goes for creating
-    comments in markdown, assigning reviewers, adding labels, add it to a project, or add it to a milestone.
-    Sometimes we skip writing an issue and skip to the pull request when the change is relatively small.
+    comments in markdown, assigning reviewers, adding labels, adding projects, or adding milestones.
+    Sometimes we skip writing an issue when the change is relatively small.
 
 ## Creating a pull request
 
@@ -44,13 +43,15 @@ Observe that the right-hand side banner contains the following:
 | Projects            | Assign a pull request to a project.                                                                |
 | Milestone           | Assign a pull request to a milestone.                                                              |
 
-If you linked the pull request to an issue, you **do not** need to add the pull request to a project or a milestone. At the bare
-minimum, you should assign the reviewers, assignees, and the labels if necessary.
+!!! attention
+
+    If you linked the pull request to an issue, you **should not** add the pull request to a project or a milestone to
+    avoid duplicate cards.
 
 ## Reviewing a pull request
 
-A common activity that you will participate in is reviewing pull requests, and it is an essential part of collaborating
-on projects. You will be notified when you have been requested to review a pull request and should promptly review it as
+A common activity that you will participate in is reviewing pull requests to give your feedback on other's code.
+You will be notified when you have been requested to review a pull request and should promptly review it as
 soon as time permits.
 
 ![image](../../../assets/images/github/workflow/pr_comment_snippet.png)
@@ -58,7 +59,7 @@ soon as time permits.
 In particular, you will most likely be doing the following in a pull request (both as the reviewer and the PR creator):
 
 - **Asking Questions:** Clarify your understanding about something that you are not sure about.
-- **Provding Suggestions:** Give some ideas about how to improve the current implementation and provide feedback to
+- **Providing Suggestions:** Give some ideas about how to improve the current implementation and provide feedback to
 your peers. This is a good opportunity to share your knowledge with others.
 - **Verify Implementations:** Identify potential bugs in the implementation and raise your concerns with the person
 who developed the solution. This will reduce the likelihood of bugs and significantly bring down the number of issues
