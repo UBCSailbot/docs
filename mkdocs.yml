@@ -89,3 +89,4 @@ nav:
     - Python:
       - reference/python/index.md
       - Virtual Environments: reference/python/virtual-environments.md
+      - Conventions: reference/python/conventions.md
