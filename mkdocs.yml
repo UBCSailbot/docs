@@ -91,8 +91,8 @@ nav:
   - Reference:
     - reference/index.md
     - GitHub:
-      - Workflow:
-        - GitHub Workflows: reference/github/workflow/workflow.md
+      - Development Workflow:
+        - reference/github/workflow/index.md
         - Creating Issues: reference/github/workflow/issues.md
         - Developing on Branches: reference/github/workflow/branches.md
         - Pull Requests: reference/github/workflow/pr.md
