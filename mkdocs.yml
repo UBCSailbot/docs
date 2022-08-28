@@ -88,3 +88,4 @@ nav:
     - reference/index.md
     - Python:
       - Getting Started: reference/python/getting-started.md
+      - Virtual Environments: reference/python/virtual-environments.md
