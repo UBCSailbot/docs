@@ -38,8 +38,8 @@ naming convention:
 
 !!! example
 
-    If Jill (GitHub Username: jill99) is going to take on an issue titled "Fix bug on pathfinding software" and the issue number
-    is 39, then the branch named can be named something like `jill99/39-fix-pathfinding-bug`.
+    If Jill (GitHub Username: jill99) is going to take on an issue titled "Fix bug on pathfinding software"
+    and the issue number is 39, then the branch named can be named something like `jill99/39-fix-pathfinding-bug`.
 
 If the branch that you are creating is not tied to an issue, then you **do not** need to put an issue number.
 A descriptive title will suffice.
@@ -120,7 +120,8 @@ Upon inspecting `bar.txt`, we see the following:
 
 Resolving merge conflicts is not always a trivial task, but there are many ways to resolve them which include:
 
-- [Resolving on GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) (recommended)
+- [Resolving on GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github)
+(recommended)
 - [Resolving in Command Line](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line)
 
 !!! tip

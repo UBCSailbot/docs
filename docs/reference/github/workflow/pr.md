@@ -37,13 +37,13 @@ Notice how this is remarkably similar to the page of an issue. To link a pull re
 
 Observe that the right-hand side banner contains the following:
 
-| Field               | Description                                                                                        |
-| :------------------ | :------------------------------------------------------------------------------------------------- |
-| Reviewers           | Assign reviewers to review your pull request. Always try to assign at least one reviewer.          |
-| Assignees           | Assign the people who worked on the issue.                                                         |
-| Labels              | Assign labels to categorize pull requests.                                                         |
-| Projects            | Assign a pull request to a project.                                                                |
-| Milestone           | Assign a pull request to a milestone.                                                              |
+| Field               | Description                                                                                    |
+| :------------------ | :----------------------------------------------------------------------------------------------|
+| Reviewers           | Assign reviewers to review your pull request. Always try to assign at least one reviewer.      |
+| Assignees           | Assign the people who worked on the issue.                                                     |
+| Labels              | Assign labels to categorize pull requests.                                                     |
+| Projects            | Assign a pull request to a project.                                                            |
+| Milestone           | Assign a pull request to a milestone.                                                          |
 
 !!! attention
 

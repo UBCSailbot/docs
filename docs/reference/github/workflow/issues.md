@@ -33,10 +33,10 @@ issue template. Upon opening the issue template, you should see a page like the 
 ![image](../../../assets/images/github/workflow/new_feature_template.png)
 
 At this point, you should give a succinct title and describe the issue in the textbox. You will also see some templated
-sections to fill out. Try to give only the necessary details to make a clear and concise issue. If you are unsure on how to
-construct your issue, take a look at current or past issues and ask the software leads for further guidance if necessary.
+sections to fill out. Try to give only the necessary details to make a clear and concise issue. If you are unsure on how
+to construct your issue, take a look at current or past issues and ask the software leads for further guidance if necessary.
 
-Finally, feel free to [make suggestions](https://github.com/UBCSailbot/.github/issues/templates/edit) on new templates or 
+Finally, feel free to [make suggestions](https://github.com/UBCSailbot/.github/issues/templates/edit) on new templates or
 changing current templates!
 
 !!! tip
