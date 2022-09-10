@@ -1,7 +1,6 @@
 # Creating Issues
 
-GitHub issues lets us plan and track our work on GitHub. When you mention an issue in another issue or pull request,
-the issue's timeline reflects the cross-reference so that we can keep track of related work.
+GitHub issues lets us plan and track our work on GitHub.
 
 ## Getting started with issue templates
 
