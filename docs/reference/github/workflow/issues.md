@@ -32,15 +32,12 @@ issue template. Upon opening the issue template, you should see a page like the 
 
 ![image](../../../assets/images/github/workflow/new_feature_template.png)
 
-At this point, you should give a succinct title and describe the issue in the textbox. For each section, you should
-add the following information:
+At this point, you should give a succinct title and describe the issue in the textbox. You will also see some templated
+sections to fill out. Try to give only the necessary details to make a clear and concise issue. If you are unsure on how to
+construct your issue, take a look at current or past issues and ask the software leads for further guidance if necessary.
 
-- **Purpose**: Why is this issue being created and what problem does it solve?
-- **Description**: How the issue might be resolved and some potential blockers/extra considerations.
-- **Resources**: Any relevant external resources that may help solve the problem.
-
-If you are unsure on how to construct your issue, take a look at current or past issues and ask the software leads
-for further guidance if necessary.
+Finally, feel free to [make suggestions](https://github.com/UBCSailbot/.github/issues/templates/edit) on new templates or 
+changing current templates!
 
 !!! tip
 
@@ -82,6 +79,9 @@ kind of a problem that an issue aims to solve and which issues are more importan
 click on the gear icon in the `Labels` section and add your desired label(s).
 
 ![image](../../../assets/images/github/workflow/gh_labels.png)
+
+The issue templates will already have labels assigned to them, but you should add or remove labels as you see fit
+to make them as relevant as possible.
 
 !!! note
 
