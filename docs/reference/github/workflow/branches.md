@@ -7,45 +7,25 @@ consult the official [git documentation](https://git-scm.com/book/en/v2/Git-Bran
 
 ## Creating a branch
 
-There are three possible methods to create a branch for your next issue:
+When starting a new issue, you will want to create a new branch for it:
 
 !!! caution
 
     When creating branches locally, it uses your **local copy** to create the new branch. Remember to do a `git pull` 
     if you intend on using the latest changes from the remote branch you are creating from.
 
-=== "From Current Branch"
+```bash title="Creating a new branch from main"
+# Switch to main
+git switch main
 
-    This method creates a branch from the current branch that you are on and checks out
-    to that branch automatically.
+# Update your local copy
+git pull
 
-    ``` bash
-    # Create new branch from current branch and checkout to the new branch
-    git checkout -b <branch_name>
-    ```
+# Clone a new branch from main
+git switch -c <branch_name>
+```
 
-=== "From Specific Branch"
-
-    This method creates a branch from a specified branch.
-
-    ``` bash
-    # Create the branch
-    git branch <branch_name> <source_branch_name>
-
-    # Checkout to the new branch
-    git checkout <branch_name>
-    ```
-
-=== "From GitHub GUI"
-
-    ![image](../../../assets/images/github/workflow/branch_from_gui.png)
-    ![image](../../../assets/images/github/workflow/name_branch_gui.png)
-    
-    Under the `Development` section on the issue page, click `Create a branch`. Afterwards, you will see
-    a prompt asking you to name your branch. 
-
-    Once you created your branch, it will be available on the remote repository. To gain access to it
-    on your local machine, do a `git pull` and checkout to that branch.
+**IMPORTANT:** When creating a new branch for an issue, you must create the branch from `main`.
 
 ## Branch naming convention
 
@@ -53,13 +33,16 @@ When working on a new issue, you will want to create a branch to work on it. We 
 naming convention:
 
 ```
-<name>/<issue_number>-<issue_description>
+<github_username>/<issue_number>-<issue_description>
 ```
 
 !!! example
 
-    If Jill is going to take on an issue titled "Fix bug on pathfinding software" and the issue number is 39, then
-    the branch named can be named something like `jill/39-fix-pathfinding-bug`.
+    If Jill (GitHub Username: jill99) is going to take on an issue titled "Fix bug on pathfinding software" and the issue number
+    is 39, then the branch named can be named something like `jill99/39-fix-pathfinding-bug`.
+
+If the branch that you are creating is not tied to an issue, then you **do not** need to put an issue number.
+A descriptive title will suffice.
 
 ## Tracking and committing changes
 
@@ -135,14 +118,11 @@ Upon inspecting `bar.txt`, we see the following:
 
 ![image](../../../assets/images/github/workflow/merge_conflict_file.png)
 
-At this point, we must resolve the conflicts before we commit our changes. The lines between `<<<<<<< HEAD` and
-`=======` are the changes from `branch1`, and the lines between `=======` and `>>>>>>> branch2` are the changes
-from `branch2`. Modify these lines to reflect the changes that you want, then delete `<<<<<<< HEAD`,
-`=======`, and `>>>>>>> branch2`, track the conflicting file(s) with `git add`, and finally commit your changes
-with `git commit`.
+Resolving merge conflicts is not always a trivial task, but there are many ways to resolve them which include:
 
-!!! note
+- [Resolving on GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) (recommended)
+- [Resolving in Command Line](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line)
 
-    If you run into a merge conflict that you cannot resolve on your own, please reach out to a software
-    lead to assist you! For more information on resolving merge conflicts, consult the official
-    [git documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line).
+!!! tip
+
+    If you cannot resolve a merge conflict on your own, reach out to your lead for help!
