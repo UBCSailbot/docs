@@ -1,7 +1,7 @@
 # Pull Requests
 
-Pull requests are used to facilitate code reviews when merging a branch into the main branch. A pull request
-is the implementation of an issue or other change that we want to make to the main branch.
+Pull requests are used to verify code functionality and quality of a development branch before merging into the main branch,
+accomplished through CI and code reviews.
 
 !!! note
 
@@ -22,12 +22,14 @@ will be the issue branch.
 ![image](../../../assets/images/github/workflow/branch_comparison.png)
 
 Once you have decided on your base and compare branches, click on `Create pull request`. You should see
-the page below:
+the page below (looking in the dropdown menu, you can open the pull request as a draft to avoid notifying
+reviewers until you are ready):
 
 ![image](../../../assets/images/github/workflow/pr_example.png)
 
-Notice how this is remarkably similar to the page of an issue. To link a pull request to an issue, simply add `#<ISSUE NUMBER>`
-to the initial comment in the pull request.
+Notice how this is remarkably similar to the page of an issue. To link a pull request to an issue, simply add
+`<KEYWORD> #<ISSUE NUMBER>` to the initial comment in the pull request. A list of valid keywords can be found
+[here](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue).
 
 !!! example
 
@@ -48,6 +50,20 @@ Observe that the right-hand side banner contains the following:
     If you linked the pull request to an issue, you **should not** add the pull request to a project or a milestone to
     avoid duplicate cards.
 
+## Merging into main
+
+Once the pull request and code reviews are complete, it is time to merge the changes in the pull request into the main
+branch! However, this can only be done when the following conditions are met:
+
+1. All CI checks pass (look for a green checkmark beside your latest commit on GitHub).
+2. All reviewers have reviewed the PR and approved the PR.
+3. There are no unresolved comments and suggestions from the reviewers.
+4. There are no merge conflicts with the main branch.
+
+If all of these conditions are met, confirm that the merge is good to go by clicking `Squash and merge`:
+
+![image](../../../assets/images/github/workflow/pr_merge.png)
+
 ## Reviewing a pull request
 
 A common activity that you will participate in is reviewing pull requests to give your feedback on other's code.
@@ -56,7 +72,7 @@ soon as time permits.
 
 ![image](../../../assets/images/github/workflow/pr_comment_snippet.png)
 
-In particular, you will most likely be doing the following in a pull request (both as the reviewer and the PR creator):
+In particular, you will most likely be doing the following in a pull request:
 
 - **Asking Questions:** Clarify your understanding about something that you are not sure about.
 - **Providing Suggestions:** Give some ideas about how to improve the current implementation and provide feedback to
@@ -66,17 +82,3 @@ who developed the solution. This will reduce the likelihood of bugs and signific
 in the future.
 - **Documentation:** Record why certain changes were made, especially if this diverges from the proposed solution
 in the linked issue (if any).
-
-## Merging into main
-
-Once the pull request and code reviews are complete, it is time to merge the changes in the pull request into the main
-branch! However, this can only be done when the following conditions are met:
-
-1. All CI checks pass.
-2. All reviewers have reviewed the PR and approved the PR.
-3. There are no unresolved comments and suggestions from the reviewers.
-4. There are no merge conflicts with the main branch.
-
-If all of these conditions are met, confirm that the merge is good to go by clicking `Squash and merge`:
-
-![image](../../../assets/images/github/workflow/pr_merge.png)
