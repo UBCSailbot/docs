@@ -35,7 +35,8 @@ At this point, you should give a succinct title and describe the issue in the te
 sections to fill out. Try to give only the necessary details to make a clear and concise issue. If you are unsure on how
 to construct your issue, take a look at current or past issues and ask the software leads for further guidance if necessary.
 
-Finally, feel free to make suggestions on new templates or changing current templates!
+Finally, feel free to [make suggestions](https://github.com/UBCSailbot/.github/issues/templates/edit)
+on new templates or changing current templates!
 
 !!! tip
 
