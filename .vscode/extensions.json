@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "davidanson.vscode-markdownlint",
+        "johnpapa.vscode-peacock",
         "ms-python.python",
         "redhat.vscode-yaml",
         "streetsidesoftware.code-spell-checker"
