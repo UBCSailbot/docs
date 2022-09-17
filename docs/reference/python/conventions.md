@@ -1,8 +1,7 @@
 # Conventions
 
 At UBC Sailbot, we follow standards in how we code to maintain a clean and comprehensible codebase.
-This page addresses what conventions we use specifically when programming in Python, and standards
-may vary depending on the tools that you are using (for example, C++).
+This page addresses what conventions we use specifically when programming in Python.
 
 ## Style guide
 
@@ -11,36 +10,13 @@ for style guide enforcement mostly based off [pep8](https://peps.python.org/pep-
 process, we use [autopep8](https://github.com/hhatto/autopep8), which is a tool that resolves most style issues.
 However, there will be some issues that must be resolved by you!
 
+Refer to this [guide](https://realpython.com/python-pep8/) on how to write readable code in python with the
+pep8 style guide.
+
 !!! note
 
     Our CI automatically checks that your code follows the pep8 standard. If it does not, your pull requests will
-    be rejected until those issues are resolved!
-
-### Installation
-
-To install the style guide tools, use the `pip` package manager! If you use a virtual environment, you will have to
-install it there as well.
-
-```bash title="Installing the style guide tools"
-# Install flake8
-pip install flake8
-
-# Install autopep8
-pip install --upgrade autopep8
-```
-
-### Usage
-
-Use the following to utilize the style guide tools to automatically enforce the style guidelines. Remember
-to do this during development before you commit your code!
-
-```bash title="Using the style guide tools"
-# Automatically resolve style issues
-autopep8 --in-place --aggressive --max-line-length 120 --aggressive <PATH TO FILE>
-
-# Get the statistics on what still needs to be resolved
-flake8 --statistics --max-line-length 120 <PATH TO FILE>
-```
+    be blocked from being merged until those issues are resolved!
 
 ## Documentation
 
@@ -66,7 +42,7 @@ We use a vscode extension called [autoDocstring](https://marketplace.visualstudi
 which autogenerates docstrings that we use to document our code. To install this extension, go to the `Extensions` tab in
 vscode and search `autoDocstring` in the marketplace.
 
-To generate docstrings, type `"""` or `'''` at the beginning of the function that you want to document and the template
+To generate docstrings, type `"""` at the beginning of the function that you want to document and the template
 will be generated for you!
 
 !!! note
@@ -86,8 +62,8 @@ def inner_product(v1, v2):
     same dimensions.
 
     Args:
-        v1 (list): The first vector of real numbers.
-        v2 (list): The second vector of real numbers.
+        v1 (List[float]): The first vector of real numbers.
+        v2 (List[float]): The second vector of real numbers.
 
     Returns:
        float : The inner product between v1 and v2
@@ -109,7 +85,7 @@ class Stack:
     elements. The stack is a LIFO datastructure defined by two main operations: Push and Pop.
 
     Attributes:
-        __stack (list): A list containing the elements on the stack.
+        __stack (List[Any]): A list containing the elements on the stack.
     """
 
     def __init__(self):
