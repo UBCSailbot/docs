@@ -18,14 +18,13 @@ between the two:
 
 | Virtualenv                                        | Anaconda                                                 |
 | :------------------------------------------------ | :------------------------------------------------------- |
-| Environment files are modular.                    | Environment files are available globally.                |
-| Must activate environment at the location of the files. | Can activate the environment anywhere.             |
+| Environment files are local.                      | Environment files are available globally.                |
+| Must activate environment by giving the path.     | Can activate the environment without knowing the path.   |
 | Can only use `pip` to install packages.           | Can either use `pip` or built-in `conda` package manager.|
 | Installation is very simple.                      | Installation takes more effort.                          |
-| Can only install python packages.                 | In addition to packages, you can also control the python version and IDE settings.|
-| Using `pip` to install packages usually works and is easy to use.    | Using `conda` package manager is more tedious since commands may vary. |
+| Can only install python packages.                 | In addition to packages, you can download many data science tools.|
 
-For the purposes of UBC Sailbot, we recommend **virtualenv** over Anaconda. However, feel free to appeal to your preferences.
+We recommend **virtualenv** over Anaconda because of its simplicity. However, feel free to appeal to your preferences.
 
 ## Installation
 
@@ -44,19 +43,22 @@ For the purposes of UBC Sailbot, we recommend **virtualenv** over Anaconda. Howe
 
 ## Using virtual environments
 
+The name of a virtual environment is configurable. For the purposes of this site, we will use `env` as the environment
+name unless specified otherwise.
+
 ### Creating a virtual environment
 
 === "Virtualenv"
 
     Since virtualenv creates the environment directory in a specific location, make sure that you
-    are in the location that you want to create it in (you could always move the folder elsewhere later on).
+    are in the located in the project that you want to work on.
 
     ```bash title="Create virtual environment with virtualenv"
     # Go to desired location
     cd <PATH TO DIRECTORY>
 
-    # Create the environment
-    python3 -m venv <ENV NAME>
+    # Create the environment with the name env
+    python3 -m venv env
     ```
 
     Verify that your environment is created by examining your current directory and look for the directory
@@ -68,8 +70,8 @@ For the purposes of UBC Sailbot, we recommend **virtualenv** over Anaconda. Howe
     it.
 
     ``` bash title="Create virtual environment with Anaconda"
-    # Create environment with name and python version
-    conda env create -n <ENV NAME> python=<PYTHON VERSION NUM>
+    # Create environment with name env and python version
+    conda env create -n env python=<PYTHON VERSION NUM>
     ```
 
     If you don't specify a python version, the default is the latest version. Verify that your environment is created
@@ -82,20 +84,20 @@ To use the virtual environment, you must activate it.
 === "Virtualenv"
 
     ```batch title="Activation for Windows"
-    <ENV NAME>\Scripts\activate
+    env\Scripts\activate
     ```
 
     ```bash title="Activation for MacOS or Linux"
-    source <ENV NAME>/bin/activate
+    source env/bin/activate
     ```
 
 === "Anaconda"
 
     ```bash title="Activation for Anaconda"
-    conda activate <ENV NAME>
+    conda activate env
     ```
 
-After activating your virtual environment, you might see `(<ENV NAME>)` on your terminal before or after
+After activating your virtual environment, you might see `(env)` on your terminal before or after
 your current line. Now you are in your virtual environment!
 
 ### Installing dependencies
@@ -114,34 +116,35 @@ errors because they will not be found unless you install those dependencies in t
 
 === "Anaconda"
 
-    Use the built-in `conda` package manager to install python dependencies.
+    === "Option 1: pip"
 
-    ```bash title="Install dependency with conda"
-    conda install -c <CHANNEL> <PACKAGE>
-    ```
+        Use the `pip` package manager to install python dependencies.
 
-    Sometimes, installing a package like this simply won't work because you are not installing
-    from the correct [channel](https://conda.io/projects/conda/en/latest/user-guide/concepts/channels.html).
-    You usually will have to google the command to use in order to install your package correctly because
-    it usually comes from a specific channel that you don't know about. Some common channels to try are:
+        ```bash title="Install dependency with pip"
+        # Install pip using conda
+        conda install pip
 
-    - conda-forge
-    - anaconda
-    - bioconda
-    - r
+        # Install python packages using pip
+        pip install <PACKAGE>
+        ```
 
-    Not specifying a channel directs you to the "default" channel.
+    === "Option 2: conda"
 
-    A foolproof method (usually) is to use the `pip` package manager instead. Some packages are exclusively
-    available via the `pip` package manager, so you may be forced to use it in some instances anyways.
+        Use the built-in `conda` package manager to install python dependencies.
 
-    ```bash title="Install dependency with pip in Anaconda"
-    # First install pip
-    conda install pip
+        ```bash title="Install dependency with conda"
+        conda install -c <CHANNEL> <PACKAGE>
+        ```
 
-    # Install dependency with pip
-    pip install <PACKAGE>
-    ```
+        Sometimes, installing a package like this simply won't work because you are not installing
+        from the correct [channel](https://conda.io/projects/conda/en/latest/user-guide/concepts/channels.html).
+        You usually will have to google the command to use in order to install your package correctly because
+        it usually comes from a specific channel that you don't know about. Some common channels to try are:
+
+        - conda-forge
+        - anaconda
+        - bioconda
+        - r
 
 ### Deactivating the virtual environment
 
@@ -185,23 +188,23 @@ Be sure to follow the instructions below **while your environment is activated**
 
     Anaconda uses configuration files to recreate an environment.
 
-    **Windows**
+    === "Windows"
 
-    Execute the following command to create a file called `environment.yml`:
-    
-    ```batch title="Create config file"
-    conda env export > environment.yml
-    ```
+        Execute the following command to create a file called `environment.yml`:
+        
+        ```batch title="Create config file"
+        conda env export > environment.yml
+        ```
 
-    Then, open the `environment.yml` file and delete the line with `prefix:`.
+        Then, open the `environment.yml` file and delete the line with `prefix:`.
 
-    **MacOS or Linux**
+    === "MacOS or Linux"
 
-    Execute the following command to create a file called `environment.yml`:
+        Execute the following command to create a file called `environment.yml`:
 
-    ```bash title="Create config file"
-    conda env export | grep -v "^prefix: " > environment.yml
-    ```
+        ```bash title="Create config file"
+        conda env export | grep -v "^prefix: " > environment.yml
+        ```
 
 ### Reproducing the environment
 
@@ -230,15 +233,8 @@ Remember to **deactivate the current environment** before making a new environme
 
     ```bash title="Recreate the conda environment"
     # Create the new environment with the dependencies
-    conda env create -f <PATH TO environment.yml>
+    conda env create -f <PATH TO environment.yml> -n <ENV NAME>
     ```
-
-    !!! info
-
-        If you create the new environment without specifying a name, you might get an error saying that
-        the environment already exists because by default, the `environment.yml` will give the name
-        of the environment that it was created from. To avoid this, add `-n <ENV NAME>` to the above
-        command to rename the environment.
 
 ## Official references
 
