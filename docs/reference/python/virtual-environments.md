@@ -83,13 +83,22 @@ To use the virtual environment, you must activate it.
 
 === "Virtualenv"
 
-    ```batch title="Activation for Windows"
-    env\Scripts\activate
-    ```
+    === "Windows"
 
-    ```bash title="Activation for MacOS or Linux"
-    source env/bin/activate
-    ```
+        ```batch title="Activation for Windows"
+        env\Scripts\activate
+        ```
+
+    === "MacOS"
+
+        ```bash title="Activation for MacOS"
+        source env/bin/activate
+        ```
+    === "Linux"
+
+        ```bash title="Activation for Linux"
+        source env/bin/activate
+        ```
 
 === "Anaconda"
 
