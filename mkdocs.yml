@@ -89,13 +89,13 @@ nav:
   - Home: index.md
   - Reference:
     - reference/index.md
-    - Python:
-      - reference/python/index.md
-      - Conventions: reference/python/conventions.md
-      - Virtual Environments: reference/python/virtual-environments.md
     - GitHub:
       - Development Workflow:
         - reference/github/workflow/index.md
         - Creating Issues: reference/github/workflow/issues.md
         - Developing on Branches: reference/github/workflow/branches.md
         - Pull Requests: reference/github/workflow/pr.md
+    - Python:
+      - reference/python/index.md
+      - Conventions: reference/python/conventions.md
+      - Virtual Environments: reference/python/virtual-environments.md
