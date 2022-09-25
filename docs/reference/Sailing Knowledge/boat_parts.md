@@ -30,7 +30,7 @@ It is also helpful to know the names of the following "regions" of the hull:
 
 ## Jib
 
-The **Jib** is the smaller of the two sails, which is located in front of the mast.
+The **Jib** is the sail located near the bow, and is the smaller of the two sails.
 
 - **Jib Sheet**: In general, "sheets" are ropes that pull a sail in to the boat. The jib Sheet pulls in the jib.
 - The **Jib Winch** is a motor-driven device that tightens or pulls in the jib sheet.
