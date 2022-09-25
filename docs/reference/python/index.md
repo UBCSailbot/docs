@@ -1,7 +1,7 @@
 # Getting Started
 
-We use Python 3 to write the majority of our software at UBC Sailbot. Therefore, it is critical that you get familiar
-with the language and be able to use it to get your assigned tasks completed.
+We use Python 3 to write the majority of our software at UBC Sailbot. Pathfinding and Controls mainly use Python 3,
+so it is critical that you are familiar with the language if you are on one of these sub-teams.
 
 ## Python tutorials
 

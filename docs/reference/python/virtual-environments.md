@@ -28,7 +28,7 @@ We recommend **virtualenv** over Anaconda because of its simplicity. However, fe
 
 ## Installation
 
-=== "Virtualenv"
+=== ":material-language-python: Virtualenv"
 
     If you already have python and the pip package manager installed, just execute the following:
 
@@ -36,7 +36,7 @@ We recommend **virtualenv** over Anaconda because of its simplicity. However, fe
     pip install virtualenv
     ```
 
-=== "Anaconda"
+=== ":simple-anaconda: Anaconda"
 
     Go to the official [Anaconda website](https://www.anaconda.com/) and follow the installation instructions 
     for your operating system.
@@ -48,7 +48,7 @@ name unless specified otherwise.
 
 ### Creating a virtual environment
 
-=== "Virtualenv"
+=== ":material-language-python: Virtualenv"
 
     Since virtualenv creates the environment directory in a specific location, make sure that you
     are in the located in the project that you want to work on.
@@ -64,7 +64,7 @@ name unless specified otherwise.
     Verify that your environment is created by examining your current directory and look for the directory
     that matches the name of your virtual environment.
 
-=== "Anaconda"
+=== ":simple-anaconda: Anaconda"
 
     Since the environment will be available globally, there is no need to go to a specific location to create
     it.
@@ -81,26 +81,26 @@ name unless specified otherwise.
 
 To use the virtual environment, you must activate it.
 
-=== "Virtualenv"
+=== ":material-language-python: Virtualenv"
 
-    === "Windows"
+    === ":material-microsoft-windows: Windows"
 
         ```batch title="Activation for Windows"
         env\Scripts\activate
         ```
 
-    === "MacOS"
+    === ":material-apple: MacOS"
 
         ```bash title="Activation for MacOS"
         source env/bin/activate
         ```
-    === "Linux"
+    === ":material-linux: Linux"
 
         ```bash title="Activation for Linux"
         source env/bin/activate
         ```
 
-=== "Anaconda"
+=== ":simple-anaconda: Anaconda"
 
     ```bash title="Activation for Anaconda"
     conda activate env
@@ -115,7 +115,7 @@ Any dependencies that you install while your virtual environment is activated ar
 environment. If you deactivate your environment and try to use those dependencies, you will find that you will get
 errors because they will not be found unless you install those dependencies in the other environment!
 
-=== "Virtualenv"
+=== ":material-language-python: Virtualenv"
 
     Use the `pip` package manager to install python dependencies.
 
@@ -123,7 +123,7 @@ errors because they will not be found unless you install those dependencies in t
     pip install <PACKAGE>
     ```
 
-=== "Anaconda"
+=== ":simple-anaconda: Anaconda"
 
     === "Option 1: pip"
 
@@ -159,13 +159,13 @@ errors because they will not be found unless you install those dependencies in t
 
 When you are finished using your virtual environment, you will need to deactivate it.
 
-=== "Virtualenv"
+=== ":material-language-python: Virtualenv"
 
     ```bash title="Deactivate virtualenv environment"
     deactivate
     ```
 
-=== "Anaconda"
+=== ":simple-anaconda: Anaconda"
 
     ```bash title="Deactivate anaconda environment"
     conda deactivate
@@ -181,7 +181,7 @@ that you worked in. We discuss two topics in this section: exporting your enviro
 In order to reproduce your virtual environment, you need to export some information about your environment.
 Be sure to follow the instructions below **while your environment is activated**.
 
-=== "Virtualenv"
+=== ":material-language-python: Virtualenv"
 
     You will create a `requirements.txt` file, which essentially lists all of your python dependencies in one
     file:
@@ -193,11 +193,11 @@ Be sure to follow the instructions below **while your environment is activated**
     The `pip freeze` command prints all of your pip dependencies, and `> requirements.txt` redirects the output
     to a text file.
 
-=== "Anaconda"
+=== ":simple-anaconda: Anaconda"
 
     Anaconda uses configuration files to recreate an environment.
 
-    === "Windows"
+    === ":material-microsoft-windows: Windows"
 
         Execute the following command to create a file called `environment.yml`:
         
@@ -207,7 +207,15 @@ Be sure to follow the instructions below **while your environment is activated**
 
         Then, open the `environment.yml` file and delete the line with `prefix:`.
 
-    === "MacOS or Linux"
+    === ":material-apple: MacOS"
+
+        Execute the following command to create a file called `environment.yml`:
+
+        ```bash title="Create config file"
+        conda env export | grep -v "^prefix: " > environment.yml
+        ```
+    
+    === ":material-linux: Linux"
 
         Execute the following command to create a file called `environment.yml`:
 
@@ -221,7 +229,7 @@ You can reproduce your virtual environment when given the information about it. 
 to extract the information, and now we will use that information to recreate the virtual environment.
 Remember to **deactivate the current environment** before making a new environment.
 
-=== "Virtualenv"
+=== ":material-language-python: Virtualenv"
 
     We use the `requirements.txt` file that we generated earlier to recreate the environment.
 
@@ -236,7 +244,7 @@ Remember to **deactivate the current environment** before making a new environme
     pip install -r <PATH TO requirements.txt file>
     ```
 
-=== "Anaconda"
+=== ":simple-anaconda: Anaconda"
 
     We use the `environment.yml` file that we generated earlier to recreate the environment.
 
