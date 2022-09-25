@@ -27,12 +27,12 @@
     ],
     "compounds": [
         {
-            "name": "Launch Application Chrome",
+            "name": "Launch Application in Chrome",
             "configurations": ["Run Application", "Launch Chrome"],
             "stopAll": true
         },
         {
-            "name": "Launch Application Edge",
+            "name": "Launch Application in Edge",
             "configurations": ["Run Application", "Launch Edge"],
             "stopAll": true
         }
