@@ -96,6 +96,8 @@ nav:
         - Developing on Branches: reference/github/workflow/branches.md
         - Pull Requests: reference/github/workflow/pr.md
     - Sailing Knowledge:
+      - reference/Sailing Knowledge/index.md
       - Parts of a Sailboat: reference/Sailing Knowledge/boat_parts.md
-      - Points of Sail: reference/Sailing Knowledge/points_of_sail.md
       - Types of Turn: reference/Sailing Knowledge/turning.md
+      - Points of Sail: reference/Sailing Knowledge/points_of_sail.md
+      - Miscellaneous: reference/Sailing Knowledge/miscellaneous.md
