@@ -1,4 +1,4 @@
-# Sailing Knowledge Section Overview
+# sailing Section Overview
 
 In order to write high-quality software for autonomous sailboats, it is extremely helpful to have some
 understanding of sailing. This section introduces important parts of a sailboat, explains the 4 types of turns,

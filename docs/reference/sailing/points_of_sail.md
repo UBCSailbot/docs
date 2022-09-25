@@ -7,7 +7,7 @@ The discussion below coveres the most important points of sail for software memb
 Notice how for _higher_ points of sail (points of sail closer to straight into the wind), the sail is pulled tightly
 in to the boat. If the boat is on a _lower_ point of sail, the sails should be let further out of the boat.
 
-![image](../../../assets\images\Sailing Knowledge\points_of_sail.jpg)
+![image](../../assets/images/sailing/points_of_sail.jpg)
 
 ## Irons
 

@@ -8,7 +8,7 @@ The diagrams in this section show outlines of the hull of a boat and its main sa
 As is common in these types of diagrams, assume that the wind is blowing down from the top of the screen unless
 there is an arrow that indicates otherwise.
 
-![image](../../../assets\images\Sailing Knowledge\types_of_turn.jpg)
+![image](../../assets/images/sailing/types_of_turn.jpg)
 
 ## Heading Up
 
@@ -20,7 +20,7 @@ straight into the wind.
 
 Unlike some of the other turns listed here, heading up can be a large turn or a small course adjustment of just a few degrees.
 
-![image](../../../assets\images\Sailing Knowledge\head_up.jpg)
+![image](../../assets/images/sailing/head_up.jpg)
 
 ## Bearing Off
 
@@ -31,7 +31,7 @@ When the boat makes any turn as follows, it is called _**Bearing Off**_:
 
 Like heading up, bearing off can be a small course adjustment.
 
-![image](../../../assets\images\Sailing Knowledge\bear_off.jpg)
+![image](../../assets/images/sailing/bear_off.jpg)
 
 ## Tacking
 
@@ -46,7 +46,7 @@ While the boat points nearly straight into the wind, the sails don't generate an
 This means that a tack must be a large (at least ~90°) turn all at once, so that the boat's momentum carries it through
 the range of angles where it does not get propulsion.
 
-![image](../../../assets\images\Sailing Knowledge\tack.jpg)
+![image](../../assets/images/sailing/tack.jpg)
 
 ## Gybing
 
@@ -64,14 +64,14 @@ The sail propells the boat throughout a gybe, so it is possible to conduct the t
 However, because the sail can be on either side, the sails can switch sides in an uncontrolled way as the boat moves in
 the waves. For this reason, Raye avoids sailing on angles close to straight downwind, and gybes by doing a quick ~60° turn.
 
-![image](../../../assets\images\Sailing Knowledge\gybe.jpg)
+![image](../../assets/images/sailing/gybe.jpg)
 
 ## Combinations of Turns
 
 Of course, it is possible to do two or more of these types of turns in one continuous motion.
 What two types of turns does the boat do in the image below?
 
-![image](../../../assets\images\Sailing Knowledge\bear_off_then_gybe.jpg)
+![image](../../assets/images/sailing/bear_off_then_gybe.jpg)
 
 Answer: In the turn shown by the first arrow, the sail stays on the port side of the boat while it steers to point further
 downwind. This means that the first part of the maneuver is **bearing off**. In the next part of the maneuver, the sail

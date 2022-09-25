@@ -3,7 +3,7 @@
 This page names some important parts of a sailboat, and explains what the part is for.
 Read the descriptions of the parts below, and refer to the image to see where the part fits in.
 
-![image](../../../assets\images\Sailing Knowledge\parts_of_boat.jpg)
+![image](../../assets/images/sailing/parts_of_boat.jpg)
 
 ## Hull
 
@@ -26,7 +26,7 @@ It is also helpful to know the names of the following "regions" of the hull:
 - _**Port**_: The side of the boat which is on the **left**, for someone standing on the boat facing the bow.
     - To remember which is which between starboard and port, remember that "port" and "left" both have 4 letters.
 
-![image](../../../assets\images\Sailing Knowledge\regions_of_hull.jpg)
+![image](../../assets/images/sailing/regions_of_hull.jpg)
 
 ## Jib
 
