@@ -7,10 +7,12 @@
     // words - list of words to be always considered correct
     "words": [
         "completionist",
+        "conda",
         "gaurav",
         "mkdocs",
         "Raye",
-        "srcnew"
+        "srcnew",
+        "virtualenv"
     ],
     // flagWords - list of words to be always considered incorrect
     // This is useful for offensive words and common spelling errors.
