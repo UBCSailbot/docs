@@ -1,10 +1,8 @@
 # Robot Operating System
 
-<!-- TODO: Convert citations to proper footnotes -->
-
-Robot Operating System (ROS) is a set of software libraries and tools for building robot applications [1].
+Robot Operating System (ROS) is a set of software libraries and tools for building robot applications [^1].
 It provides functionality for hardware abstraction, device drivers, communication between processes over
-multiple machines, tools for testing and visualization, and much more [2].
+multiple machines, tools for testing and visualization, and much more [^2].
 
 We uses ROS because it is open-source, language-agnostic, and built with cross-collaboration in mind.
 It enables our subteams to work independently on well-defined components of our software system,
@@ -74,7 +72,7 @@ We encourage all software members to read the following documentation on key ROS
 There are two major versions of ROS, aptly named ROS 1 and ROS 2. Our previous project, Raye,
 uses ROS 1 because it was the only version available during her design process. Our new project will
 use ROS 2, a complete re-design of the framework that tackles the shortcomings of ROS 1 to bring it up
-to industry needs and standards [3]. If you are curious about the changes made in ROS 2 compared to 1,
+to industry needs and standards [^3]. If you are curious about the changes made in ROS 2 compared to 1,
 [this article](http://design.ros2.org/articles/changes.html) is a worthwhile read.
 
 ROS 2 includes the ROS 1 Bridge, a collection of packages that can be installed alongside ROS 1 to help migrate code
@@ -86,8 +84,6 @@ We encourage all software members work through the [ROS 1 Bridge README](https:/
 For PATH members, the [Migrating launch files from ROS 1 to ROS 2 page](https://docs.ros.org/en/eloquent/Tutorials/Launch-files-migration-guide.html)
 will be a helpful reference when we do so.
 
-## Citations
-
-- [1] <https://docs.ros.org/en/humble/index.html>
-- [2] <https://www.toptal.com/robotics/introduction-to-robot-operating-system>
-- [3] <https://ubuntu.com/robotics/what-is-ros>
+[^1]: <https://docs.ros.org/en/humble/index.html>
+[^2]: <https://www.toptal.com/robotics/introduction-to-robot-operating-system>
+[^3]: <https://ubuntu.com/robotics/what-is-ros>
