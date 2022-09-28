@@ -12,7 +12,7 @@ without having to worry about the hardware it runs on or the implementation of o
 to get started using ROS. From it we have hand-picked the resources that are most relevant to our current and expected
 future usage of ROS assuming that you use [our preconfigured workspace](https://github.com/UBCSailbot/sailbot_workspace).
 To run our software on your device without our workspace, you would have to [install ROS](https://docs.ros.org/en/eloquent/Installation.html)
-and the dependencies that are in [our Docker images](https://github.com/UBCSailbot/sailbot_workspace/tree/support_tutorials/.devcontainer).
+and the dependencies that are in [our Docker images](https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer).
 
 ## Workspace Configuration
 
