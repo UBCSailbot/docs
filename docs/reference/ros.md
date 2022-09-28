@@ -11,7 +11,8 @@ without having to worry about the hardware it runs on or the implementation of o
 [The official ROS 2 documentation](https://docs.ros.org/en/eloquent/index.html) contains everything you need
 to get started using ROS. From it we have hand-picked the resources that are most relevant to our current and expected
 future usage of ROS assuming that you use [our preconfigured workspace](https://github.com/UBCSailbot/sailbot_workspace).
-Installing and setting up ROS without our workspace is outside the scope of this site.
+To run our software on your device without our workspace, you would have to [install ROS](https://docs.ros.org/en/eloquent/Installation.html)
+and the dependencies that are in [our Docker images](https://github.com/UBCSailbot/sailbot_workspace/tree/support_tutorials/.devcontainer).
 
 ## Workspace Configuration
 
@@ -30,7 +31,7 @@ for them altogether.
 | -------- | ----------------- |
 | Install a package | All packages used in the tutorials are already installed |
 | Clone a sample repo (ros_tutorials) | ros_tutorials is already cloned |
-| Resolve dependencies | Run the "setup" VS Code task |
+| Resolve dependencies | Run the "install dependencies" VS Code task |
 | Build the workspace | Run the "Build" VS Code task, AKA ++ctrl+shift+b++ |
 | Source the overlay | Run the `srcnew` terminal command |
 | Create a package with a node | Run the "new ament_(python\|cmake) package with a node" VS Code task |
