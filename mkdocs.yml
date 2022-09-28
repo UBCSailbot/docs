@@ -99,3 +99,4 @@ nav:
       - reference/python/index.md
       - Conventions: reference/python/conventions.md
       - Virtual Environments: reference/python/virtual-environments.md
+    - Robot Operating System: reference/ros.md
