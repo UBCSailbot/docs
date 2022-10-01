@@ -1,18 +1,19 @@
 # Robot Operating System
 
-Robot Operating System (ROS) is a set of software libraries and tools for building robot applications [^1].
+Robot Operating System (ROS) is a set of software libraries and tools for building robot applications.[^1]
 It provides functionality for hardware abstraction, device drivers, communication between processes over
-multiple machines, tools for testing and visualization, and much more [^2].
+multiple machines, tools for testing and visualization, and much more.[^2]
 
-We uses ROS because it is open-source, language-agnostic, and built with cross-collaboration in mind.
-It enables our subteams to work independently on well-defined components of our software system,
+We use ROS because it is open-source, language-agnostic, and built with cross-collaboration in mind.
+It enables our subteams to work independently on well-defined components of our software system
 without having to worry about the hardware it runs on or the implementation of other components.
 
 [The official ROS 2 documentation](https://docs.ros.org/en/eloquent/index.html) contains everything you need
 to get started using ROS. From it we have hand-picked the resources that are most relevant to our current and expected
 future usage of ROS assuming that you use [our preconfigured workspace](https://github.com/UBCSailbot/sailbot_workspace).
 To run our software on your device without our workspace, you would have to [install ROS](https://docs.ros.org/en/eloquent/Installation.html)
-and the dependencies that are in [our Docker images](https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer).
+and the dependencies that are in [our Docker images](https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer)
+yourself.
 
 ## Workspace Configuration
 
@@ -29,8 +30,8 @@ for them altogether.
 
 | Tutorial | sailbot_workspace |
 | -------- | ----------------- |
-| Install a package | All packages used in the tutorials are already installed |
-| Clone a sample repo (ros_tutorials) | ros_tutorials is already cloned |
+| Install a package | All packages used in the tutorials are already installed (step 2 above) |
+| Clone a sample repo (ros_tutorials) | ros_tutorials is already cloned (step 3 above) |
 | Resolve dependencies | Run the "install dependencies" VS Code task |
 | Build the workspace | Run the "Build" VS Code task, AKA ++ctrl+shift+b++ |
 | Source the overlay | Run the `srcnew` terminal command |
@@ -73,13 +74,12 @@ We encourage all software members to read the following documentation on key ROS
 There are two major versions of ROS, aptly named ROS 1 and ROS 2. Our previous project, Raye,
 uses ROS 1 because it was the only version available during her design process. Our new project will
 use ROS 2, a complete re-design of the framework that tackles the shortcomings of ROS 1 to bring it up
-to industry needs and standards [^3]. If you are curious about the changes made in ROS 2 compared to 1,
+to industry needs and standards.[^3] If you are curious about the changes made in ROS 2 compared to 1,
 [this article](http://design.ros2.org/articles/changes.html) is a worthwhile read.
 
 ROS 2 includes the ROS 1 Bridge, a collection of packages that can be installed alongside ROS 1 to help migrate code
-from ROS 1 to ROS 2. As we will be reusing parts of Raye's codebase, it is important to have some understanding of
-these packages. Until we are completely done with Raye, our preconfigured workspace will have ROS 1, ROS 1 Bridge, and
-ROS 2 installed.
+from ROS 1 to ROS 2. As we will be reusing parts of Raye's codebase, it is essential to know how to use these packages.
+Until we are completely done with Raye, our preconfigured workspace will have ROS 1, ROS 1 Bridge, and ROS 2 installed.
 
 We encourage all software members work through the [ROS 1 Bridge README](https://github.com/ros2/ros1_bridge/blob/master/README.md).
 For PATH members, the [Migrating launch files from ROS 1 to ROS 2 page](https://docs.ros.org/en/eloquent/Tutorials/Launch-files-migration-guide.html)
