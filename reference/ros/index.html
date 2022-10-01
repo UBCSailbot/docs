@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://UBCSailbot.github.io/docs/reference/ros/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.4">
     
     
       
@@ -21,7 +21,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.80dcb947.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -696,17 +696,18 @@
 
 
 <h1 id="robot-operating-system">Robot Operating System<a class="headerlink" href="#robot-operating-system" title="Permanent link">&para;</a></h1>
-<p>Robot Operating System (ROS) is a set of software libraries and tools for building robot applications <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.
+<p>Robot Operating System (ROS) is a set of software libraries and tools for building robot applications.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>
 It provides functionality for hardware abstraction, device drivers, communication between processes over
-multiple machines, tools for testing and visualization, and much more <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
-<p>We uses ROS because it is open-source, language-agnostic, and built with cross-collaboration in mind.
-It enables our subteams to work independently on well-defined components of our software system,
+multiple machines, tools for testing and visualization, and much more.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<p>We use ROS because it is open-source, language-agnostic, and built with cross-collaboration in mind.
+It enables our subteams to work independently on well-defined components of our software system
 without having to worry about the hardware it runs on or the implementation of other components.</p>
 <p><a href="https://docs.ros.org/en/eloquent/index.html">The official ROS 2 documentation</a> contains everything you need
 to get started using ROS. From it we have hand-picked the resources that are most relevant to our current and expected
 future usage of ROS assuming that you use <a href="https://github.com/UBCSailbot/sailbot_workspace">our preconfigured workspace</a>.
 To run our software on your device without our workspace, you would have to <a href="https://docs.ros.org/en/eloquent/Installation.html">install ROS</a>
-and the dependencies that are in <a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer">our Docker images</a>.</p>
+and the dependencies that are in <a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer">our Docker images</a>
+yourself.</p>
 <h2 id="workspace-configuration">Workspace Configuration<a class="headerlink" href="#workspace-configuration" title="Permanent link">&para;</a></h2>
 <p>To get our workspace configuration running on your computer:</p>
 <ol>
@@ -728,11 +729,11 @@ for them altogether.</p>
 <tbody>
 <tr>
 <td>Install a package</td>
-<td>All packages used in the tutorials are already installed</td>
+<td>All packages used in the tutorials are already installed (step 2 above)</td>
 </tr>
 <tr>
 <td>Clone a sample repo (ros_tutorials)</td>
-<td>ros_tutorials is already cloned</td>
+<td>ros_tutorials is already cloned (step 3 above)</td>
 </tr>
 <tr>
 <td>Resolve dependencies</td>
@@ -785,12 +786,11 @@ while CTRL and PATH members should do the Python version.</p>
 <p>There are two major versions of ROS, aptly named ROS 1 and ROS 2. Our previous project, Raye,
 uses ROS 1 because it was the only version available during her design process. Our new project will
 use ROS 2, a complete re-design of the framework that tackles the shortcomings of ROS 1 to bring it up
-to industry needs and standards <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. If you are curious about the changes made in ROS 2 compared to 1,
+to industry needs and standards.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> If you are curious about the changes made in ROS 2 compared to 1,
 <a href="http://design.ros2.org/articles/changes.html">this article</a> is a worthwhile read.</p>
 <p>ROS 2 includes the ROS 1 Bridge, a collection of packages that can be installed alongside ROS 1 to help migrate code
-from ROS 1 to ROS 2. As we will be reusing parts of Raye's codebase, it is important to have some understanding of
-these packages. Until we are completely done with Raye, our preconfigured workspace will have ROS 1, ROS 1 Bridge, and
-ROS 2 installed.</p>
+from ROS 1 to ROS 2. As we will be reusing parts of Raye's codebase, it is essential to know how to use these packages.
+Until we are completely done with Raye, our preconfigured workspace will have ROS 1, ROS 1 Bridge, and ROS 2 installed.</p>
 <p>We encourage all software members work through the <a href="https://github.com/ros2/ros1_bridge/blob/master/README.md">ROS 1 Bridge README</a>.
 For PATH members, the <a href="https://docs.ros.org/en/eloquent/Tutorials/Launch-files-migration-guide.html">Migrating launch files from ROS 1 to ROS 2 page</a>
 will be a helpful reference when we do so.</p>
@@ -814,7 +814,7 @@ will be a helpful reference when we do so.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 28, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2022</span>
       
     
   </small>
@@ -924,7 +924,7 @@ will be a helpful reference when we do so.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.tabs.link", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      <script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
       
     
   </body>
