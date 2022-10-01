@@ -99,6 +99,7 @@ nav:
       - reference/python/index.md
       - Conventions: reference/python/conventions.md
       - Virtual Environments: reference/python/virtual-environments.md
+    - Robot Operating System: reference/ros.md
     - Sailing Knowledge:
       - reference/sailing/index.md
       - Parts of a Sailboat: reference/sailing/boat_parts.md
