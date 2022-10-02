@@ -12,9 +12,9 @@ there is an arrow that indicates otherwise.
 
 ## Heading Up
 
-When the boat makes any turn as follows, it is called _**Heading Up**_:
+When the boat makes any turn as follows, it is called ***Heading Up***:
 
-- At the end of the turn, the boat is pointing _higher_. To point higher means to point on an angle closer towards
+- At the end of the turn, the boat is pointing *higher*. To point higher means to point on an angle closer towards
 straight into the wind.
 - Throughout the turn, the sails stay on the same side of the boat. In other words, the sails do **not** cross between
 the starboard and port sides.
@@ -28,9 +28,9 @@ The image below shows a boat heading up. Notice how the sail stays on the starbo
 
 ## Bearing Off
 
-When the boat makes any turn as follows, it is called _**Bearing Off**_:
+When the boat makes any turn as follows, it is called ***Bearing Off***:
 
-- At the end of the turn, the boat is pointing _lower_. This means it is pointing further downwind than it was previously.
+- At the end of the turn, the boat is pointing *lower*. This means it is pointing further downwind than it was previously.
 - Throughout the turn, the sails stays on the same side of the boat (port or starboard).
 
 Like heading up, bearing off can be a small course adjustment.
@@ -39,11 +39,11 @@ Like heading up, bearing off can be a small course adjustment.
 
 ## Tacking
 
-When the boat makes any turn as follows, it is called a _**Tack**_ or _**Tacking**_:
+When the boat makes any turn as follows, it is called a ***Tack*** or ***Tacking***:
 
 - The sails change sides.
-- Through the turn, the wind hits the **bow** of the boat before the stern. You can also say that the bow is _upwind_ or
-_windward_ of the stern.
+- Through the turn, the wind hits the **bow** of the boat before the stern. You can also say that the bow is *upwind* or
+*windward* of the stern.
 
 Notice how at some point throughout this turn, the boat will be pointing straight into the wind.
 While the boat points nearly straight into the wind, the sails don't generate any forward propulsion.
@@ -54,11 +54,11 @@ the range of angles where it does not get propulsion.
 
 ## Gybing
 
-When the boat makes any turn as follows, it is called a _**Gybe**_ or _**Gybing**_:
+When the boat makes any turn as follows, it is called a ***Gybe*** or ***Gybing***.
 
 - The sails change sides.
 - Through the turn, the wind hits the **stern** of the boat before the bow. You can also say that the bow of the boat is
-_downwind_ or _leeward_ of the stern.
+*downwind* or *leeward* of the stern.
 
 When sailing on most angles relative to the wind, the sail is always blown to the downwind side of the boat.
 However, sailing nearly straight downwind, both sides of the boat are equally "downwind" relative to eachother.
@@ -68,6 +68,8 @@ The sail propells the boat throughout a gybe, so it is possible to conduct the t
 However, because the sail can be on either side, the sails can switch sides in an uncontrolled way as the boat moves in
 the waves. For this reason, Raye avoids sailing on angles close to straight downwind, and gybes by doing a quick ~60°
 turn.
+
+Note that "gybe" is the spelling used in Canadian and British english, whereas in American english it is spelled "**Jibe**"
 
 ![image](../../assets/images/sailing/gybe.jpg)
 
@@ -81,3 +83,10 @@ What two types of turns does the boat do in the image below?
 Answer: In the turn shown by the first arrow, the sail stays on the port side of the boat while it steers to point further
 downwind. This means that the first part of the maneuver is **bearing off**. In the next part of the maneuver, the sail
 changes sides and the stern of the boat is upwind of the bow. This part of the maneuver is a **gybe**.
+
+## Keywords on this Page
+
+- Heading Up
+- Bearing Off
+- Tack
+- Gybe (aka Jibe)
