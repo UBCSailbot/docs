@@ -16,7 +16,7 @@ UBCSailbot software team's documentation.
    pip install -r docs/requirements.txt
    ```
 
-    - Can do this in a [Python virtual environment](https://ubcsailbot.github.io/docs/reference/python/virtual-environments/)
+    - Can do this in a [Python virtual environment](./docs/reference/python/virtual-environments.md)
 
 ## Run
 
