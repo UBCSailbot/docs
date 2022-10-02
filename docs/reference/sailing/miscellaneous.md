@@ -79,7 +79,7 @@ and is coming from a true bearing of $\arctan{(\frac{3}{4})} = 36.9°$.
 
 ## Tack
 
-In the [Types of Turn](./turning.md)
+In the [Types of Turn](./turning.md#tacking)
 page, we discussed how a ***Tack*** is a type of turn. Weirdly, the word "tack" actually has two
 more distinct meanings in sailing. The word "Tack" can refer to:
 
