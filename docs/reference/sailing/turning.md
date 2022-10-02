@@ -16,9 +16,13 @@ When the boat makes any turn as follows, it is called _**Heading Up**_:
 
 - At the end of the turn, the boat is pointing _higher_. To point higher means to point on an angle closer towards
 straight into the wind.
-- Throughout the turn, the sails stay on the same side of the boat (port or starboard).
+- Throughout the turn, the sails stay on the same side of the boat. In other words, the sails do **not** cross between
+the starboard and port sides.
 
-Unlike some of the other turns listed here, heading up can be a large turn or a small course adjustment of just a few degrees.
+Unlike some of the other turns listed here, heading up can be a large turn or a small course adjustment of just a few
+degrees.
+
+The image below shows a boat heading up. Notice how the sail stays on the starboard side of the boat.
 
 ![image](../../assets/images/sailing/head_up.jpg)
 
@@ -62,7 +66,8 @@ This means that the sail can be on either side of the boat.
 
 The sail propells the boat throughout a gybe, so it is possible to conduct the turn more gradually than a tack.
 However, because the sail can be on either side, the sails can switch sides in an uncontrolled way as the boat moves in
-the waves. For this reason, Raye avoids sailing on angles close to straight downwind, and gybes by doing a quick ~60° turn.
+the waves. For this reason, Raye avoids sailing on angles close to straight downwind, and gybes by doing a quick ~60°
+turn.
 
 ![image](../../assets/images/sailing/gybe.jpg)
 

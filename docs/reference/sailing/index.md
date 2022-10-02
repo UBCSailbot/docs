@@ -1,8 +1,8 @@
-# sailing Section Overview
+# Sailing Knowledge Section Overview
 
-In order to write high-quality software for autonomous sailboats, it is extremely helpful to have some
+In order to make high-quality contributions to Sailbot's Software teams, it is extremely helpful to have some
 understanding of sailing. This section introduces important parts of a sailboat, explains the 4 types of turns,
-and discusses upwind and downwind sailing.
+discusses upwind and downwind sailing, and covers some other helpful knowledge.
 
 In this section, terms which are _**Bolded and Italicized**_ are the most important terms to know.
 Terms that are only _Italicized_ are other helpful sailing terms.

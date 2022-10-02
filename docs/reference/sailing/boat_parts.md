@@ -19,12 +19,14 @@ angle sideways. Controls sends commands to the rudder to steer the boat.
 It is also helpful to know the names of the following "regions" of the hull:
 
 - _**Bow**_: The front of the boat.
-    - _Fore_ means "towards the bow".
 - _**Stern**_: The back of the boat.
-    - _Aft_ means "towards the stern".
+    - _Aft_ means "backwards towards the stern".
 - _**Starboard**_: The side of the boat which is on the **right**, for someone standing on the boat facing the bow.
 - _**Port**_: The side of the boat which is on the **left**, for someone standing on the boat facing the bow.
     - To remember which is which between starboard and port, remember that "port" and "left" both have 4 letters.
+
+The image below shows a birds-eye view of the outline of a hull of a sailboat,
+where the "regions" of the hull are labeled.
 
 ![image](../../assets/images/sailing/regions_of_hull.jpg)
 
