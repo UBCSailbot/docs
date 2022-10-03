@@ -89,6 +89,9 @@ nav:
   - Home: index.md
   - Reference:
     - reference/index.md
+    - C++:
+      - reference/cpp/index.md
+      - Tools: reference/cpp/tools.md
     - GitHub:
       - Development Workflow:
         - reference/github/workflow/index.md
