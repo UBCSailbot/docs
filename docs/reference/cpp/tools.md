@@ -13,6 +13,69 @@ are great for understanding the basics.
 [GoogleTest](https://github.com/google/googletest) is the C++ unit testing framework we will be using.
 The [GoogleTest Primer](https://google.github.io/googletest/primer.html) is a good place to start.
 
+!!! example
+
+    === "Cached Fibonacci Program"
+
+        ```C++ title="cached_fib.h"
+        #include <vector>
+        class CachedFib {
+        public:
+            void CachedFib(int n);
+            int  getFib(int n);
+        private:
+            std::vector<int> cache;
+        }
+        ```
+
+        ```C++ title="cached_fib.cpp"
+        #include <iostream>
+        #include <vector>
+        #include "cached_fib.h"
+
+        void CachedFib::CachedFib(int n) {
+            cache.push_back(0);
+            cache.push_back(1);
+            for (int i = 2; i < n; i++) {
+                cache.push_back(cache[i - 1] + cache[i - 2]);
+            }
+        }
+
+        int CachedFib::getFib(int n) {
+            if (cache.size() < n) {
+                for (int i = cache.size(); i < n; i++) {
+                    cache.push_back(cache[i-1] + cache[i-2]);
+                }
+            }
+            std::cout << cache[n - 1] << std::endl;
+        }
+        ```
+
+    === "Test Cached Fibonacci Program"
+
+        ```C++ title="test_cached_fib.cpp"
+
+        #include "cached_fib.h"
+        #include "gtest/gtest.h"
+
+        CachedFib::testFib;
+
+        class TestFib : public ::testing::Test {
+        protected:
+            void Setup override {
+                // Every time a test is started, testFib is reinitialized with a constructor parameter of 5
+                testFib = CachedFib(5);
+            }
+        }
+
+        TEST_F(TestFib, TestBasic) {
+            ASSERT_EQ(getFib(5), 3) << "5th fibonacci number must be 3!";
+        }
+
+        // more tests
+
+        ```
+
 <!-- ## Google Mock Not sure if we're going to use this yet -->
 
 ## Google Protocol Buffer
