@@ -6,7 +6,7 @@ site_author: UBCSailbot Software Team
 # Repository
 repo_name: UBCSailbot/docs
 repo_url: https://github.com/UBCSailbot/docs
-edit_uri: ""
+edit_uri: "edit/main/docs/"
 
 # Configuration
 theme:
