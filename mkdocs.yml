@@ -6,7 +6,7 @@ site_author: UBCSailbot Software Team
 # Repository
 repo_name: UBCSailbot/docs
 repo_url: https://github.com/UBCSailbot/docs
-edit_uri: ""
+edit_uri: "edit/main/docs/"
 
 # Configuration
 theme:
@@ -96,12 +96,14 @@ nav:
       - Tools: reference/cpp/tools.md
     - GitHub:
       - Development Workflow:
-        - reference/github/workflow/index.md
+        - Overview:
+          - reference/github/workflow/index.md
         - Creating Issues: reference/github/workflow/issues.md
         - Developing on Branches: reference/github/workflow/branches.md
         - Pull Requests: reference/github/workflow/pr.md
     - Python:
-      - reference/python/index.md
+      - Getting Started:
+        - reference/python/index.md
       - Conventions: reference/python/conventions.md
       - Virtual Environments: reference/python/virtual-environments.md
     - Robot Operating System: reference/ros.md

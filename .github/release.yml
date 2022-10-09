@@ -2,6 +2,9 @@ changelog:
   exclude:
     labels:
       - ignore-for-release
+    authors:
+      - dependabot
+      - imgbot
   categories:
     - title: New Pages
       labels:
