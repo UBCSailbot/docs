@@ -10,14 +10,14 @@
         <meta name="author" content="UBCSailbot Software Team">
       
       
-        <link rel="canonical" href="https://UBCSailbot.github.io/docs/reference/python/conventions/">
+        <link rel="canonical" href="https://UBCSailbot.github.io/docs/reference/cpp/tools/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
-        <title>Conventions - UBCSailbot Software Team Docs</title>
+        <title>Tools - UBCSailbot Software Team Docs</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#conventions" class="md-skip">
+        <a href="#tools" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Conventions
+              Tools
             
           </span>
         </div>
@@ -339,12 +339,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -392,7 +394,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../cpp/">Getting Started</a>
+          <a href="../">Getting Started</a>
           
         </div>
       
@@ -418,7 +420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/differences/" class="md-nav__link">
+      <a href="../differences/" class="md-nav__link">
         Differences
       </a>
     </li>
@@ -430,11 +432,114 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../cpp/tools/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Tools
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cmake" class="md-nav__link">
+    CMake
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gdb" class="md-nav__link">
+    GDB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#googletest" class="md-nav__link">
+    GoogleTest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-protocol-buffer" class="md-nav__link">
+    Google Protocol Buffer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clang" class="md-nav__link">
+    Clang
+  </a>
+  
+    <nav class="md-nav" aria-label="Clang">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clangd" class="md-nav__link">
+    Clangd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clang-tidy" class="md-nav__link">
+    Clang-Tidy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clang-format" class="md-nav__link">
+    Clang Format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llvm-cov" class="md-nav__link">
+    llvm-cov
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -616,14 +721,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
       
       
       
@@ -671,7 +774,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">Getting Started</a>
+          <a href="../../python/">Getting Started</a>
           
         </div>
       
@@ -695,79 +798,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Conventions
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../python/conventions/" class="md-nav__link">
         Conventions
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#style-guide" class="md-nav__link">
-    Style guide
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    Documentation
-  </a>
-  
-    <nav class="md-nav" aria-label="Documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#generating-docstrings" class="md-nav__link">
-    Generating docstrings
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-on-documentation" class="md-nav__link">
-    Example on documentation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -779,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../virtual-environments/" class="md-nav__link">
+      <a href="../../python/virtual-environments/" class="md-nav__link">
         Virtual Environments
       </a>
     </li>
@@ -841,36 +876,71 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#style-guide" class="md-nav__link">
-    Style guide
+  <a href="#cmake" class="md-nav__link">
+    CMake
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    Documentation
+  <a href="#gdb" class="md-nav__link">
+    GDB
   </a>
   
-    <nav class="md-nav" aria-label="Documentation">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#googletest" class="md-nav__link">
+    GoogleTest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-protocol-buffer" class="md-nav__link">
+    Google Protocol Buffer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clang" class="md-nav__link">
+    Clang
+  </a>
+  
+    <nav class="md-nav" aria-label="Clang">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#generating-docstrings" class="md-nav__link">
-    Generating docstrings
+  <a href="#clangd" class="md-nav__link">
+    Clangd
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-on-documentation" class="md-nav__link">
-    Example on documentation
+  <a href="#clang-tidy" class="md-nav__link">
+    Clang-Tidy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clang-format" class="md-nav__link">
+    Clang Format
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llvm-cov" class="md-nav__link">
+    llvm-cov
+  </a>
   
 </li>
       
@@ -888,148 +958,121 @@
                 
                   
 
-  <a href="https://github.com/UBCSailbot/docs/edit/main/docs/reference/python/conventions.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/UBCSailbot/docs/edit/main/docs/reference/cpp/tools.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="conventions">Conventions<a class="headerlink" href="#conventions" title="Permanent link">&para;</a></h1>
-<p>At UBC Sailbot, we follow standards in how we code to maintain a clean and comprehensible codebase.
-This page addresses what conventions we use specifically when programming in Python.</p>
-<h2 id="style-guide">Style guide<a class="headerlink" href="#style-guide" title="Permanent link">&para;</a></h2>
-<p>To ensure that the codebase stays clean, we use <a href="https://flake8.pycqa.org/en/5.0.4/#">flake8</a>, which is a tool
-for style guide enforcement mostly based off <a href="https://peps.python.org/pep-0008/">pep8</a>. To automate most of this
-process, we use <a href="https://github.com/hhatto/autopep8">autopep8</a>, which is a tool that resolves most style issues.
-However, there will be some issues that must be resolved by you!</p>
-<p>Refer to this <a href="https://realpython.com/python-pep8/">guide</a> on how to write readable code in python with the
-pep8 style guide.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Our CI automatically checks that your code follows the pep8 standard. If it does not, your pull requests will
-be blocked from being merged until those issues are resolved!</p>
-</div>
-<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
-<p>Code is written once and read a thousand times, so it is important to provide good documentation for current
-and future members of the software team. The major things that we document in our code are:</p>
-<ol>
-<li><strong>Classes and Objects:</strong><ul>
-<li>What does it represent? What is it used for?</li>
-<li>What are its member variables? What are they used for?</li>
-</ul>
-</li>
-<li><strong>Functions:</strong><ul>
-<li>What are the inputs and outputs?</li>
-<li>What is the overall behavior and purpose of the function?</li>
-</ul>
-</li>
-<li><strong>Code:</strong><ul>
-<li>Is a line of code obscure and/or not clear? Add an inline comment to clear things up.</li>
-<li>Break down a large process.</li>
-</ul>
-</li>
-</ol>
-<p>Ideally, the third point should be avoided as much as possible since we would want our code to be
-self explanatory. It should be done only when absolutely necessary.</p>
-<h3 id="generating-docstrings">Generating docstrings<a class="headerlink" href="#generating-docstrings" title="Permanent link">&para;</a></h3>
-<p>We use a vscode extension called <a href="https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring">autoDocstring</a>
-which autogenerates docstrings that we use to document our code. To install this extension, go to the <code>Extensions</code> tab in
-vscode and search <code>autoDocstring</code> in the marketplace.</p>
-<p>To generate docstrings, type <code>"""</code> at the beginning of the function that you want to document and the template
-will be generated for you!</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The autoDocstring extension only works for functions. It does not work for classes and objects, so documenting these
-will have to be done manually. Be sure to follow the same format used by functions.</p>
-</div>
-<h3 id="example-on-documentation">Example on documentation<a class="headerlink" href="#example-on-documentation" title="Permanent link">&para;</a></h3>
-<p>It's hard to imagine what good documentation looks like. We provide a few examples below of documenting code using the
-autoDocstring extension.</p>
-<div class="highlight"><span class="filename">Documentation example on a function</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">inner_product</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">    Computes the inner product between two 1D real vectors. Input vectors should have the</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">    same dimensions.</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="sd">    Args:</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="sd">        v1 (List[float]): The first vector of real numbers.</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="sd">        v2 (List[float]): The second vector of real numbers.</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="sd">    Returns:</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="sd">       float : The inner product between v1 and v2</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="k">assert</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">v2</span><span class="p">)),</span> <span class="s2">&quot;Input lists must have same length&quot;</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="c1"># Iterate through elementwise pairs</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="n">summation</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="k">for</span> <span class="n">e1</span><span class="p">,</span> <span class="n">e2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="n">summation</span> <span class="o">+=</span> <span class="p">(</span><span class="n">e1</span> <span class="o">*</span> <span class="n">e2</span><span class="p">)</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">summation</span><span class="p">)</span>
+<h1 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h1>
+<p>A lot goes into making a well structured C++ project, much more than any one team should have to do.</p>
+<h2 id="cmake">CMake<a class="headerlink" href="#cmake" title="Permanent link">&para;</a></h2>
+<p>CMake is a powerfull build automation tool that makes compiling code for large projects with a lot of interoperating
+files a lot easier. Steps 1-3 of the <a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">official tutorial</a>
+are great for understanding the basics.</p>
+<h2 id="gdb">GDB<a class="headerlink" href="#gdb" title="Permanent link">&para;</a></h2>
+<p>The <a href="https://www.sourceware.org/gdb/">GNU Project Debugger</a> is the most commonly debugger for the C language family.
+VSCode also has a degree of integration with GDB that allows an easy to use GUI. This <a href="https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf">GDB cheat sheet</a>
+has all the GDB comands you will need to know. Be aware the VSCode has GUI buttons for some of these commands that are
+easier to use.</p>
+<!-- TODO Add examples with screenshots -->
+
+<h2 id="googletest">GoogleTest<a class="headerlink" href="#googletest" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/google/googletest">GoogleTest</a> is the C++ unit testing framework we will be using.
+The <a href="https://google.github.io/googletest/primer.html">GoogleTest Primer</a> is a good place to start.</p>
+<details class="example">
+<summary>Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Cached Fibonacci Program</label><label for="__tabbed_1_2">Test Cached Fibonacci Program</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">cached_fib.h</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">CachedFib</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">CachedFib</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="nf">getFib</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">cache</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><span class="filename">Documentation example with a stack</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span> <span class="nc">Stack</span><span class="p">:</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="sd">    This class represents a stack, which is an abstract data type that serves as a collection of</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="sd">    elements. The stack is a LIFO datastructure defined by two main operations: Push and Pop.</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="sd">    Attributes:</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="sd">        __stack (List[Any]): A list containing the elements on the stack.</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="sd">        Initializes the Stack object.</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__stack</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="sd">        Pushes an element to the top of the stack.</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="sd">        Args:</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="sd">            element (Any): The element to be pushed on to the stack.</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="sd">        Removes the element at the top of the stack and returns it. If the stack is empty,</span>
-<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="sd">        then None is returned.</span>
-<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
-<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="sd">        Returns:</span>
-<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="sd">            Any, NoneType: The element at the top of the stack.</span>
-<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
-<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>            <span class="k">return</span> <span class="kc">None</span>
-<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
-<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="sd">        Determines whether the stack is empty or not.</span>
-<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>
-<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="sd">        Returns:</span>
-<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="sd">            bool: Returns True if the stack is empty, and False otherwise.</span>
-<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>        <span class="n">empty</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__stack</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>        <span class="k">return</span> <span class="n">empty</span>
-<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
-<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="sd">        Gets the number of elements on the stack.</span>
-<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
-<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="sd">        Returns:</span>
-<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="sd">            int: The number of elements on the stack.</span>
-<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>        <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__stack</span><span class="p">)</span>
-<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>        <span class="k">return</span> <span class="n">length</span>
+<div class="highlight"><span class="filename">cached_fib.cpp</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cached_fib.h&quot;</span><span class="cp"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">CachedFib::CachedFib</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">cache</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="n">cache</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="n">cache</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">cache</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cache</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">]);</span><span class="w"></span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="kt">int</span><span class="w"> </span><span class="nf">CachedFib::getFib</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cache</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cache</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">            </span><span class="n">cache</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">cache</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cache</span><span class="p">[</span><span class="n">i</span><span class="mi">-2</span><span class="p">]);</span><span class="w"></span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cache</span><span class="p">[</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">test_cached_fib.cpp</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cached_fib.h&quot;</span><span class="cp"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;gtest/gtest.h&quot;</span><span class="cp"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">CachedFib</span><span class="o">::</span><span class="n">testFib</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">TestFib</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Test</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">protected</span><span class="o">:</span><span class="w"></span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">Setup</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="c1">// Every time a test is started, testFib is reinitialized with a constructor parameter of 5</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="n">testFib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CachedFib</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="n">TEST_F</span><span class="p">(</span><span class="n">TestFib</span><span class="p">,</span><span class="w"> </span><span class="n">TestBasic</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="n">ASSERT_EQ</span><span class="p">(</span><span class="n">getFib</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;5th fibonacci number must be 3!&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="c1">// more tests</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<!-- ## Google Mock Not sure if we're going to use this yet -->
+
+<h2 id="google-protocol-buffer">Google Protocol Buffer<a class="headerlink" href="#google-protocol-buffer" title="Permanent link">&para;</a></h2>
+<p><a href="https://developers.google.com/protocol-buffers">Google Protocol Buffer</a> (Protobuf) is a portable data serialization
+method. We use it over other methods like JSON and XML because it produces smaller binaries, an important consideration
+when sending data across an ocean. Unfortunately, there does not seem to be a easy to follow tutorial for using them,
+but here are the <a href="https://developers.google.com/protocol-buffers/docs/cpptutorial">C++ basics</a>. The page is quite dense
+and can be hard to follow, so do not worry if you do not understand it.</p>
+<h2 id="clang">Clang<a class="headerlink" href="#clang" title="Permanent link">&para;</a></h2>
+<p>In its most basic form, <a href="https://clang.llvm.org/">Clang</a> is a compiler for the C language family. Clang has multiple
+benefits like easier portability compared to, for example, GCC. Clang is actually "half" the compiler, the other half
+being LLVM. Without going into unnecessary detail, Clang compiles C++ code to a generic language before LLVM compiles
+it to machine specific language.</p>
+<h3 id="clangd">Clangd<a class="headerlink" href="#clangd" title="Permanent link">&para;</a></h3>
+<p><a href="https://clangd.llvm.org/">Clangd</a> is the Clang language server. It provides a much more powerful intellisense than the
+default one used in VSCode's C/C++ extension.</p>
+<h3 id="clang-tidy">Clang-Tidy<a class="headerlink" href="#clang-tidy" title="Permanent link">&para;</a></h3>
+<p><a href="https://clang.llvm.org/extra/clang-tidy/">Clang-Tidy</a> is a linting tool, who's main purpose is to catch potential
+programming errors caused by bad programming style/practices using just static analysis.</p>
+<h3 id="clang-format">Clang Format<a class="headerlink" href="#clang-format" title="Permanent link">&para;</a></h3>
+<p>An autoformatting tool that makes enforcing style guidelines much easier. When se tup, it corrects formatting as soon
+as you hit save.</p>
+<h2 id="llvm-cov">llvm-cov<a class="headerlink" href="#llvm-cov" title="Permanent link">&para;</a></h2>
+<p>We will use <a href="https://llvm.org/docs/CommandGuide/llvm-cov.html">llvm-cov</a> to evaluate our test coverage. When used with
+<a href="https://www.systutorials.com/docs/linux/man/1-genhtml/">genhtml</a>, we can generate HTML reports that that show our line,
+function, and branch coverage line-by-line.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 25, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 9, 2022</span>
       
     
   </small>
@@ -1061,7 +1104,7 @@ autoDocstring extension.</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting Started" rel="prev">
+        <a href="../differences/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Differences" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1070,20 +1113,20 @@ autoDocstring extension.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Getting Started
+              Differences
             </div>
           </div>
         </a>
       
       
         
-        <a href="../virtual-environments/" class="md-footer__link md-footer__link--next" aria-label="Next: Virtual Environments" rel="next">
+        <a href="../../github/workflow/" class="md-footer__link md-footer__link--next" aria-label="Next: Development Workflow Overview" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Virtual Environments
+              Development Workflow Overview
             </div>
           </div>
           <div class="md-footer__button md-icon">
