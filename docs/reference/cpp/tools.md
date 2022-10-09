@@ -8,12 +8,21 @@ CMake is a powerfull build automation tool that makes compiling code for large p
 files a lot easier. Steps 1-3 of the [official tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
 are great for understanding the basics.
 
+## GDB
+
+The [GNU Project Debugger](https://www.sourceware.org/gdb/) is the most commonly debugger for the C language family.
+VSCode also has a degree of integration with GDB that allows an easy to use GUI. This [GDB cheat sheet](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf)
+has all the GDB comands you will need to know. Be aware the VSCode has GUI buttons for some of these commands that are
+easier to use.
+
+<!-- TODO Add examples with screenshots -->
+
 ## GoogleTest
 
 [GoogleTest](https://github.com/google/googletest) is the C++ unit testing framework we will be using.
 The [GoogleTest Primer](https://google.github.io/googletest/primer.html) is a good place to start.
 
-!!! example
+??? example
 
     === "Cached Fibonacci Program"
 
