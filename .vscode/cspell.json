@@ -6,12 +6,21 @@
     "language": "en",
     // words - list of words to be always considered correct
     "words": [
+        "Clangd",
         "completionist",
         "conda",
+        "cout",
+        "endl",
         "gaurav",
+        "gtest",
+        "ighxy",
+        "iostream",
         "mkdocs",
+        "Protobuf",
         "Raye",
         "srcnew",
+        "struct",
+        "Structs",
         "virtualenv"
     ],
     // flagWords - list of words to be always considered incorrect

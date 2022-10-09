@@ -89,6 +89,11 @@ nav:
   - Home: index.md
   - Reference:
     - reference/index.md
+    - C++:
+      - Getting Started: 
+        - reference/cpp/index.md
+      - Differences: reference/cpp/differences.md
+      - Tools: reference/cpp/tools.md
     - GitHub:
       - Development Workflow:
         - Overview:
