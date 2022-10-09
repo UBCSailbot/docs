@@ -65,7 +65,7 @@ This means that boat wind always blows straight onto the bow of the boat, and th
 the speed of the boat.
 - ***Apparent Wind*** is the vector sum of the True Wind and the Boat Wind. This is the wind that you would measure while
 standing on a moving boat more generally, even if there is non-zero wind. The apparent wind is also what our wind
-sensors measure, and what our sails feel. In Sailbot code, Apparent Wind may be referred to as ***Measured Wind***
+sensors measure, and what our sails feel. In Sailbot code, Apparent Wind may be referred to as ***Measured Wind***.
 
 In the example below, suppose the wind is blowing from the North at 4 m/s, and suppose the boat is moving **towards**
 the East at 3 m/s.
@@ -88,7 +88,7 @@ more distinct meanings in sailing. The word "Tack" can refer to:
 the tack is the opposite side to the sail. This means that boats change tack when the sail switches sides.
     - In the diagram below,
     the 3 boats on the left of the diagram are on Starboard Tack, and the 3 boats on the right side are on Port Tack.
-    - The tack of a boat in *Irons* is undefined
+    - The tack of a boat in *Irons* is undefined.
     - The boat in the diagram on a run is on Port Tack. If the boat continued straight but the sail switched sides into
     the position shown by the **dashed** line, the boat would be on Starboard Tack.
 
