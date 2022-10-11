@@ -101,6 +101,7 @@ nav:
         - Creating Issues: reference/github/workflow/issues.md
         - Developing on Branches: reference/github/workflow/branches.md
         - Pull Requests: reference/github/workflow/pr.md
+    - Markdown: reference/markdown/markdown.md
     - Python:
       - Getting Started:
         - reference/python/index.md
