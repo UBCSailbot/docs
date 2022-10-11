@@ -13,7 +13,7 @@ UBCSailbot software team's documentation.
 2. Install dependencies
 
     ```
-   pip install -r docs/requirements.txt
+   pip install -Ur docs/requirements.txt
    ```
 
     - Can do this in a [Python virtual environment](https://ubcsailbot.github.io/docs/reference/python/virtual-environments/)
@@ -31,4 +31,15 @@ UBCSailbot software team's documentation.
 
 ```
 mkdocs serve
+```
+
+## Update Dependencies
+
+This site is built using the latest versions of dependencies in [`docs/requirements.txt`](./docs/requirements.txt)
+at the time of the most recent commit to the main branch.
+To see exactly how the site will look before pushing or merging into the main branch,
+ensure your local dependencies are up to date with
+
+```
+pip install -Ur docs/requirements.txt --upgrade-strategy eager
 ```
