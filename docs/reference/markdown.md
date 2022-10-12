@@ -1,45 +1,43 @@
 # Markdown
 
 Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.[^1]
-You can do anything with markdown from creating websites to PDF documents all in a clean format that is easy to
-specify. [Many of your favorite services use Markdown](https://www.markdownguide.org/tools/), so it would be useful
-to pick it up to create comprehensive documentation and/or messages.
+You can do anything with Markdown, from creating websites to PDF documents, all in a clean format that is easy to
+learn. [Many of your favorite services use Markdown](https://www.markdownguide.org/tools/), so it would be useful
+to pick it up to write technical documentation.
 
-Markdown is not standardized across platforms. Many services that support Markdown typically have their
-own "flavour" of Markdown. Be sure to do your research on the types of features that are available for the service that
-you are using Markdown with to avoid unexpected surprises with your text.
+Markdown is not standardized across services. Many services that support Markdown have their
+own "flavour" of Markdown. Be sure to know the Markdown features of the service
+you are using so that your Markdown renders properly.
 
 ## Getting Started
 
 We recommend [markdownguide.org](https://www.markdownguide.org/) to be your first point of reference if you are learning
 Markdown for the first time. It covers topics like what Markdown is, its syntax, advanced tips, and the different
-services that support Markdown. Remember to adjust to the different Markdown flavours depending on the service that you
-are using!
+services that support Markdown. Flavours of Markdown specific to a service build on top of these basics.
 
 ## Sailbot and Markdown
 
-Where do we use Markdown on Sailbot? We use it for two technologies: GitHub and Material for MkDocs. The next few
-sections describe our usecases for each of these technologies.
+We write Markdown for GitHub and Material for MkDocs. The following sections
+detail how Markdown is used in these services.
 
 ### GitHub
 
-We use Markdown in GitHub when use its collaboration features. This includes the following:
+We use Markdown in GitHub for technical documentation and collaboration. This includes:
 
-- README files
+- `README.md` files
 - Issues
 - Pull Requests
-- Much more
 
-Almost anywhere in GitHub where you can write text, you can format it with Markdown. GitHub also allows you to preview
+Almost all places where text is written in GitHub support Markdown. GitHub also allows you to preview
 your Markdown before you submit any comments.
 
 === "Before Rendering"
 
-    ![image](../../assets/images/markdown/issue_md_text.png)
+    ![image](../assets/images/markdown/issue_md_text.png)
 
 === "After Rendering"
 
-    ![image](../../assets/images/markdown/issue_md_rendered.png)
+    ![image](../assets/images/markdown/issue_md_rendered.png)
 
 The image above shows an example of a "write" and a "preview" tab for writing a comment on an issue. It might look
 different depending on where you are writing, but there usually exists a preview option!
@@ -48,26 +46,23 @@ different depending on where you are writing, but there usually exists a preview
 
     GitHub uses its own "flavour" of Markdown. Certain features, like using HTML, are excluded for security reasons.
     Visit the [official GitHub Markdown guide](https://docs.github.com/en/get-started/writing-on-github) for more
-    information on the kinds of features available.
+    information on the available features.
 
 ### Material for MkDocs
 
-We use Markdown with Material for MkDocs to create this website! Everything that you see here has been rendered with
-Markdown. This allows us to create this site without any frontend experience (although, we could spice up this site
-even further with HTML/CSS)!
+We use Markdown in Material for MkDocs to create this website! Since it is written in Markdown, no frontend
+experience is required to contribute to our docs.
 
-Material for MkDocs supports most of the common Markdown syntax. However, it also adds on to its flavour of Markdown
-by adding many of its own customized features. Feel free to look at the
-[source code](https://github.com/UBCSailbot/docs/tree/main/docs) for this site for how our pages were generated using
-Material-flavoured Markdown.
+Material for MkDocs supports powerful features purpose-built to take technical documentation to the next level.
+Feel free to browse this site to see how we use these features, exploring their syntax in the
+[source code](https://github.com/UBCSailbot/docs/tree/main/docs). Since GitHub renders Markdown files automatically
+you will need to click the "Raw" button to view their contents.
 
 !!! note "Material-Flavoured Markdown"
 
-    Material for MkDocs' flavour of Markdown extends upon vanilla Markdown, adding features that can be used
-    to take your technical documentation to the next level. Refer the the 
-    [official Material for MkDocs reference page](https://squidfunk.github.io/mkdocs-material/reference/) for the kinds 
-    of features available and how to render them with Markdown. 
-    
-    By the way, this admonition is a customized feature as part of this flavour of Markdown :wink:
+    Material for MkDocs' flavour of Markdown extends upon vanilla Markdown, adding features such as admonitions 
+    (like this note) and content tabs. Refer to the
+    [official Material for MkDocs reference page](https://squidfunk.github.io/mkdocs-material/reference/) for more
+    information on the available features.
 
 [^1]: <https://www.markdownguide.org/getting-started/>
