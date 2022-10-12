@@ -57,7 +57,7 @@ Markdown. This allows us to create this site without any frontend experience (al
 even further with HTML/CSS)!
 
 Material for MkDocs supports most of the common Markdown syntax. However, it also adds on to its flavour of Markdown
-by adding many of its own customized features. Feel free to look at the 
+by adding many of its own customized features. Feel free to look at the
 [source code](https://github.com/UBCSailbot/docs/tree/main/docs) for this site for how our pages were generated using
 Material-flavoured Markdown.
 
