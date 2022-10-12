@@ -15,7 +15,6 @@ theme:
   features:
     - content.code.annotate
     - content.tabs.link
-    - navigation.expand
     - navigation.indexes
     - navigation.instant
     - navigation.tabs
