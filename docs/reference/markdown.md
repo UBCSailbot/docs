@@ -79,4 +79,19 @@ Other resources exist to render Markdown like browser extensions that render Mar
 that contain source code to render your Markdown. If you feel inclined to use these kinds of tools, then feel free
 to browse around for the solution that suits your needs.
 
+## Markdown Linting
+
+We use linting to enforce a style guide on the Markdown that we write for this website. In particular, we use two tools:
+
+1. The [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) extension is
+used to specify the style guide for our Markdown as defined in our
+[`.markdownlint.json`](https://github.com/UBCSailbot/docs/blob/main/.markdownlint.json) file for this website.
+
+2. We periodically check for broken links in our Markdown as specified by the
+[`.markdown-link-check.json`](https://github.com/UBCSailbot/docs/blob/main/.markdown-link-check.json) file for this
+website.
+
+The Markdown style guide is integrated into the VS Code environment, so you can detect any problems before committing
+your changes while ensuring clean and comprehensive Markdown.
+
 [^1]: <https://www.markdownguide.org/getting-started/>
