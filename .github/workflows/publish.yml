@@ -1,4 +1,4 @@
-name: Deploy Docs
+name: Publish
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   # https://squidfunk.github.io/mkdocs-material/publishing-your-site/#with-github-actions
-  deploy:
+  Publish:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r docs/requirements.txt
 
-      - name: Deploy MkDocs application
+      - name: Publish MkDocs application
         env:
           GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
         run: mkdocs gh-deploy --force
