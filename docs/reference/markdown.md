@@ -67,31 +67,28 @@ you will need to click the "Raw" button to view their contents.
 
 ## Rendering Markdown Locally
 
-You have a few choices to render Markdown. Be advised that if you are using an extended version of Markdown, you will
+You have a few choices to render Markdown on your computer.
+Be advised that if you are using an extended version of Markdown, you will
 need to consult the documentation from the service provider to render their flavour of Markdown properly. The following
 resources are good for rendering vanilla Markdown:
 
-- [Markdown Live Preview](https://markdownlivepreview.com/): An online rendering tool.
 - [VS Code](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview): Markdown rendering is supported
 out of the box.
+- [Markdown Live Preview](https://markdownlivepreview.com/): An online rendering tool.
 
 Other resources exist to render Markdown like browser extensions that render Markdown as HTML and GitHub repositories
-that contain source code to render your Markdown. If you feel inclined to use these kinds of tools, then feel free
+that contain source code to render your Markdown. Feel free
 to browse around for the solution that suits your needs.
 
-## Markdown Linting
+## Linting
 
-We use linting to enforce a style guide on the Markdown that we write for this website. In particular, we use two tools:
+We lint our Markdown files to reduce errors and increase readability. In particular, we use two tools:
 
-1. The [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) extension is
-used to specify the style guide for our Markdown as defined in our
-[`.markdownlint.json`](https://github.com/UBCSailbot/docs/blob/main/.markdownlint.json) file for this website.
+1. [markdownlint](https://github.com/DavidAnson/markdownlint) is
+used to enforce a style guide. Its configuration file for this repository is [`.markdownlint.json`](https://github.com/UBCSailbot/docs/blob/main/.markdownlint.json).
+If you use VS Code, there is a [markdownlint extension](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint).
 
-2. We periodically check for broken links in our Markdown as specified by the
-[`.markdown-link-check.json`](https://github.com/UBCSailbot/docs/blob/main/.markdown-link-check.json) file for this
-website.
-
-The Markdown style guide is integrated into the VS Code environment, so you can detect any problems before committing
-your changes while ensuring clean and comprehensive Markdown.
+2. [markdown-link-check](https://github.com/tcort/markdown-link-check) is
+used to check for broken links. Its configuration file for this repository is [`.markdown-link-check.json`](https://github.com/UBCSailbot/docs/blob/main/.markdown-link-check.json).
 
 [^1]: <https://www.markdownguide.org/getting-started/>
