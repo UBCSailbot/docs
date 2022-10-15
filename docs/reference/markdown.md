@@ -65,4 +65,18 @@ you will need to click the "Raw" button to view their contents.
     [official Material for MkDocs reference page](https://squidfunk.github.io/mkdocs-material/reference/) for more
     information on the available features.
 
+## Rendering Markdown Locally
+
+You have a few choices to render Markdown. Be advised that if you are using an extended version of Markdown, you will
+need to consult the documentation from the service provider to render their flavour of Markdown properly. The following
+resources are good for rendering vanilla Markdown:
+
+- [Markdown Live Preview](https://markdownlivepreview.com/): An online rendering tool.
+- [VS Code](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview): Markdown rendering is supported
+out of the box.
+
+Other resources exist to render Markdown like browser extensions that render Markdown as HTML and GitHub repositories
+that contain source code to render your Markdown. If you feel inclined to use these kinds of tools, then feel free
+to browse around for the solution that suits your needs.
+
 [^1]: <https://www.markdownguide.org/getting-started/>
