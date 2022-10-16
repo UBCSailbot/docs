@@ -70,4 +70,29 @@
          <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://UBCSailbot.github.io/docs/reference/sailing/</loc>
+         <lastmod>2022-10-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://UBCSailbot.github.io/docs/reference/sailing/boat_parts/</loc>
+         <lastmod>2022-10-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://UBCSailbot.github.io/docs/reference/sailing/miscellaneous/</loc>
+         <lastmod>2022-10-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://UBCSailbot.github.io/docs/reference/sailing/points_of_sail/</loc>
+         <lastmod>2022-10-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://UBCSailbot.github.io/docs/reference/sailing/turning/</loc>
+         <lastmod>2022-10-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
