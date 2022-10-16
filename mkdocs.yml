@@ -54,6 +54,11 @@ extra:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
 # Extensions
 markdown_extensions:
   - abbr
@@ -61,6 +66,8 @@ markdown_extensions:
   - attr_list
   - footnotes
   - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji 
@@ -109,3 +116,10 @@ nav:
       - Conventions: reference/python/conventions.md
       - Virtual Environments: reference/python/virtual-environments.md
     - Robot Operating System: reference/ros.md
+    - Sailing Knowledge:
+      - Overview:
+        - reference/sailing/index.md
+      - Parts of a Sailboat: reference/sailing/boat_parts.md
+      - Types of Turn: reference/sailing/turning.md
+      - Points of Sail: reference/sailing/points_of_sail.md
+      - Miscellaneous: reference/sailing/miscellaneous.md
