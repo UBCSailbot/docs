@@ -83,10 +83,10 @@ resources are good for rendering Markdown:
     - Create a draft issue on GitHub and preview the markdown to see how it renders.
 
 === ":logo: Material for MkDocs"
-    - [UBC Sailbot Docs](https://github.com/UBCSailbot/docs): Follow the instructions in the README to host the website
-    locally if you are working on the docs site.
-    - [Material for MkDocs Documentation](https://squidfunk.github.io/mkdocs-material/getting-started/): If you ever
-    decide to make your own documentation site, refer to the "Getting Started" guide on their official website.
+    - UBC Sailbot Docs: To preview your changes when working on this site,
+    refer to the [run instructions in the `README.md`](https://github.com/UBCSailbot/docs#run).
+    - Material for MkDocs sites in general: If you ever decide to write your own documentation using Material for MkDocs,
+    refer to the [official "Getting Started" guide](https://squidfunk.github.io/mkdocs-material/getting-started/).
 
 Other resources exist to render Markdown like browser extensions that render Markdown as HTML and GitHub repositories
 that contain source code to render your Markdown. Feel free
