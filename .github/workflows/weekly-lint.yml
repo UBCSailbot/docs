@@ -1,4 +1,4 @@
-name: Scheduled Tasks
+name: Weekly Lint
 
 on:
   schedule:

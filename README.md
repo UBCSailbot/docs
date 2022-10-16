@@ -1,4 +1,6 @@
-# docs
+# Docs
+
+[![Lint](https://github.com/UBCSailbot/docs/actions/workflows/lint.yml/badge.svg)](https://github.com/UBCSailbot/docs/actions/workflows/lint.yml)
 
 UBCSailbot software team's documentation.
 
@@ -27,7 +29,7 @@ UBCSailbot software team's documentation.
     - "debug Run Application" runs `mkdocs serve`
     - "debug Launch Application" runs `mkdocs serve` and opens the application in a new Microsoft Edge window
 
-### Command line
+### Command Line
 
 ```
 mkdocs serve
