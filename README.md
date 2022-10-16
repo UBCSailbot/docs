@@ -1,5 +1,6 @@
 # Docs
 
+[![Publish](https://github.com/UBCSailbot/docs/actions/workflows/publish.yml/badge.svg)](https://github.com/UBCSailbot/docs/actions/workflows/publish.yml)
 [![Lint](https://github.com/UBCSailbot/docs/actions/workflows/lint.yml/badge.svg)](https://github.com/UBCSailbot/docs/actions/workflows/lint.yml)
 
 UBCSailbot software team's documentation.
