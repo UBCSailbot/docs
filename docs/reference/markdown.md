@@ -65,16 +65,28 @@ you will need to click the "Raw" button to view their contents.
     [official Material for MkDocs reference page](https://squidfunk.github.io/mkdocs-material/reference/) for more
     information on the available features.
 
-## Rendering Markdown Locally
+## Rendering Markdown
 
 You have a few choices to render Markdown on your computer.
 Be advised that if you are using an extended version of Markdown, you will
 need to consult the documentation from the service provider to render their flavour of Markdown properly. The following
-resources are good for rendering vanilla Markdown:
+resources are good for rendering Markdown:
 
-- [VS Code](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview): Markdown rendering is supported
-out of the box.
-- [Markdown Live Preview](https://markdownlivepreview.com/): An online rendering tool.
+=== ":simple-markdown: Vanilla"
+    - [VS Code](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview): Markdown rendering is supported
+    out of the box.
+    - [Markdown Live Preview](https://markdownlivepreview.com/): An online rendering tool.
+
+=== ":simple-github: Github"
+    - [Markdown Preview GitHub Styling](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles):
+    VS Code extension that renders GitHub-flavoured markdown.
+    - Create a draft issue on GitHub and preview the markdown to see how it renders.
+
+=== ":logo: Material for MkDocs"
+    - [UBC Sailbot Docs](https://github.com/UBCSailbot/docs): Follow the instructions in the README to host the website
+    locally if you are working on the docs site.
+    - [Material for MkDocs Documentation](https://squidfunk.github.io/mkdocs-material/getting-started/): If you ever
+    decide to make your own documentation site, refer to the "Getting Started" guide on their official website.
 
 Other resources exist to render Markdown like browser extensions that render Markdown as HTML and GitHub repositories
 that contain source code to render your Markdown. Feel free
