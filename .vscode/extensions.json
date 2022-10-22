@@ -1,8 +1,9 @@
 {
     "recommendations": [
+        "bierner.markdown-preview-github-styles",
         "christian-kohler.path-intellisense",
         "davidanson.vscode-markdownlint",
-        "johnpapa.vscode-peacock",
+        "eamodio.gitlens",
         "ms-python.python",
         "redhat.vscode-yaml",
         "streetsidesoftware.code-spell-checker"
