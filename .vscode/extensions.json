@@ -2,7 +2,8 @@
     "recommendations": [
         "christian-kohler.path-intellisense",
         "davidanson.vscode-markdownlint",
-        "johnpapa.vscode-peacock",
+        "bierner.markdown-preview-github-styles",
+        "eamodio.gitlens",
         "ms-python.python",
         "redhat.vscode-yaml",
         "streetsidesoftware.code-spell-checker"
