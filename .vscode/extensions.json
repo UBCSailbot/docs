@@ -1,8 +1,8 @@
 {
     "recommendations": [
+        "bierner.markdown-preview-github-styles",
         "christian-kohler.path-intellisense",
         "davidanson.vscode-markdownlint",
-        "bierner.markdown-preview-github-styles",
         "eamodio.gitlens",
         "ms-python.python",
         "redhat.vscode-yaml",
