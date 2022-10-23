@@ -7,3 +7,6 @@
 [data-md-color-scheme="slate"] {
   --md-hue: 200; 
 }
+
+.md-nav__link > a { color: #338ae0; }
+.md-nav__link:hover { color: #338ae0; }
