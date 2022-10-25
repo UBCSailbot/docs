@@ -1,8 +1,21 @@
 # Types of Turns
 
-In sailing, there are 4 distinct types of turns. Read the descriptions below, and observe how they fit into the diagram.
+In sailing, there are 4 distinct types of turns. Read the descriptions below, and observe how they fit into the diagrams.
 
 Note that any of these types of turn can be done in either the clockwise or counter-clockwise directions.
+
+## Classifying Types Of Turns Summary
+
+``` mermaid
+graph LR
+    B[Classify a Turn] --> C{Sail change sides?};
+    C --> |Yes| E{Upwind End of Boat?};
+    C --> |No| D{Pointing higher or lower?};
+    D --> |Higher| F[Heading Up];
+    D --> |Lower| G[Bearing Off];
+    E --> |Bow| H[Tack];
+    E --> |Stern| I[Gybe];
+```
 
 The diagrams in this section show outlines of the hull of a boat and its main sail going through turns.
 As is common in these types of diagrams, assume that the wind is blowing down from the top of the screen unless

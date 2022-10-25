@@ -2,6 +2,21 @@
 
 This section covers some other useful information.
 
+## Wind Direction Convention
+
+Generally speaking, there are two ways to use an angle to describe the wind direction.
+
+1. The angle tells you which way the wind is **blowing towards**. For example, 0° means the wind is blowing from North
+to South.
+2. The angle tells you which way the wind is **coming from**. For example, 0° means the wind is blowing from South to North.
+
+In sailing, we normally talk about "where the wind is **coming from**". Somehow this ends up being more intuitive when
+talking about maneuvers or sail angle adjustments.
+
+However, when describing the wind as a vector, it can make more sense for the vector to represent the actual
+speed and direction the air is flowing. Make sure to document which convention you are using in your work when
+its applicable, and don't be afraid to ask someone to clarify which convention they are using in their work.
+
 ## Navigation Terms
 
 ### Heading
