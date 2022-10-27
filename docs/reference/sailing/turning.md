@@ -8,9 +8,9 @@ Note that any of these types of turn can be done in either the clockwise or coun
 
 ``` mermaid
 graph LR
-    B[Classify a Turn] --> C{Sail change sides?};
-    C --> |Yes| E{Upwind End of Boat?};
-    C --> |No| D{Pointing higher or lower?};
+    B[Classify a Turn] --> C{Does the sail change<br/>sides during the turn?};
+    C --> |Yes| E{Which end of<br/>the boat is upwind<br/>during the turn?};
+    C --> |No| D{Does the<br/>boat point higher<br/>or lower at the end<br/>of the turn?};
     D --> |Higher| F[Heading Up];
     D --> |Lower| G[Bearing Off];
     E --> |Bow| H[Tack];
