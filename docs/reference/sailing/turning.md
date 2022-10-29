@@ -1,8 +1,26 @@
 # Types of Turns
 
-In sailing, there are 4 distinct types of turns. Read the descriptions below, and observe how they fit into the diagram.
+In sailing, there are 4 distinct types of turns. Read the descriptions below, and observe how they fit into the diagrams.
 
 Note that any of these types of turn can be done in either the clockwise or counter-clockwise directions.
+
+## Classifying Types Of Turns Summary
+
+The following flowchart summarizes how to distinguish between different types of turns. Note:
+
+- to point ***higher*** means to steer your boat to point in a direction closer to straight into the wind
+- to point ***lower*** means to steer your boat to point in a direction closer towards to straight downwind
+
+``` mermaid
+graph LR
+    B[Classify a Turn] --> C{Does the sail change<br/>sides during the turn?};
+    C --> |Yes| E{Which end of<br/>the boat is upwind<br/>during the turn?};
+    C --> |No| D{Does the<br/>boat point higher<br/>or lower at the end<br/>of the turn?};
+    D --> |Higher| F[Heading Up];
+    D --> |Lower| G[Bearing Off];
+    E --> |Bow| H[Tack];
+    E --> |Stern| I[Gybe];
+```
 
 The diagrams in this section show outlines of the hull of a boat and its main sail going through turns.
 As is common in these types of diagrams, assume that the wind is blowing down from the top of the screen unless
@@ -14,8 +32,7 @@ there is an arrow that indicates otherwise.
 
 When the boat makes any turn as follows, it is called ***Heading Up***:
 
-- At the end of the turn, the boat is pointing *higher*. To point higher means to point on an angle closer towards
-straight into the wind.
+- At the end of the turn, the boat is pointing *higher*.
 - Throughout the turn, the sails stay on the same side of the boat. In other words, the sails do **not** cross between
 the starboard and port sides.
 
@@ -30,7 +47,7 @@ The image below shows a boat heading up. Notice how the sail stays on the starbo
 
 When the boat makes any turn as follows, it is called ***Bearing Off***:
 
-- At the end of the turn, the boat is pointing *lower*. This means it is pointing further downwind than it was previously.
+- At the end of the turn, the boat is pointing *lower*.
 - Throughout the turn, the sails stays on the same side of the boat (port or starboard).
 
 Like heading up, bearing off can be a small course adjustment.
@@ -86,6 +103,8 @@ changes sides and the stern of the boat is upwind of the bow. This part of the m
 
 ## Keywords on this Page
 
+- Higher (in relation to pointing)
+- Lower (in relation to pointing)
 - Heading Up
 - Bearing Off
 - Tack
