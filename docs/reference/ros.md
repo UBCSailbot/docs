@@ -21,7 +21,7 @@ To get our workspace configuration running on your computer:
 
 1. Set it up by following the [setup instructions](https://github.com/UBCSailbot/sailbot_workspace#setup)
 2. Uncomment the ROS 2 tutorials section in [`.devcontainer/Dockerfile`](https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/Dockerfile),
-   then run the "Remote-Containers: Rebuild Container" VS Code command, to install the tutorials' dependencies
+   then run the "Dev Containers: Rebuild Container" VS Code command, to install the tutorials' dependencies
 3. Uncomment the ROS 2 tutorials section in [`src/new_project.repos`](https://github.com/UBCSailbot/sailbot_workspace/blob/main/src/new_project.repos),
    then run the "setup" VS Code task, to clone the repositories used in the tutorials
 
