@@ -17,7 +17,7 @@
     
     
       
-        <title>Types of Turn - UBCSailbot Software Team Docs</title>
+        <title>Types of Turns - UBCSailbot Software Team Docs</title>
       
     
     
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Types of Turn
+              Types of Turns
             
           </span>
         </div>
@@ -869,12 +869,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Types of Turn
+          Types of Turns
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Types of Turn
+        Types of Turns
       </a>
       
         
@@ -891,6 +891,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classifying-types-of-turns-summary" class="md-nav__link">
+    Classifying Types Of Turns Summary
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#heading-up" class="md-nav__link">
@@ -1011,6 +1018,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#classifying-types-of-turns-summary" class="md-nav__link">
+    Classifying Types Of Turns Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#heading-up" class="md-nav__link">
     Heading Up
   </a>
@@ -1073,8 +1087,22 @@
 
 
 <h1 id="types-of-turns">Types of Turns<a class="headerlink" href="#types-of-turns" title="Permanent link">&para;</a></h1>
-<p>In sailing, there are 4 distinct types of turns. Read the descriptions below, and observe how they fit into the diagram.</p>
+<p>In sailing, there are 4 distinct types of turns. Read the descriptions below, and observe how they fit into the diagrams.</p>
 <p>Note that any of these types of turn can be done in either the clockwise or counter-clockwise directions.</p>
+<h2 id="classifying-types-of-turns-summary">Classifying Types Of Turns Summary<a class="headerlink" href="#classifying-types-of-turns-summary" title="Permanent link">&para;</a></h2>
+<p>The following flowchart summarizes how to distinguish between different types of turns. Note:</p>
+<ul>
+<li>to point <strong><em>higher</em></strong> means to steer your boat to point in a direction closer to straight into the wind</li>
+<li>to point <strong><em>lower</em></strong> means to steer your boat to point in a direction closer towards to straight downwind</li>
+</ul>
+<pre class="mermaid"><code>graph LR
+    B[Classify a Turn] --&gt; C{Does the sail change&lt;br/&gt;sides during the turn?};
+    C --&gt; |Yes| E{Which end of&lt;br/&gt;the boat is upwind&lt;br/&gt;during the turn?};
+    C --&gt; |No| D{Does the&lt;br/&gt;boat point higher&lt;br/&gt;or lower at the end&lt;br/&gt;of the turn?};
+    D --&gt; |Higher| F[Heading Up];
+    D --&gt; |Lower| G[Bearing Off];
+    E --&gt; |Bow| H[Tack];
+    E --&gt; |Stern| I[Gybe];</code></pre>
 <p>The diagrams in this section show outlines of the hull of a boat and its main sail going through turns.
 As is common in these types of diagrams, assume that the wind is blowing down from the top of the screen unless
 there is an arrow that indicates otherwise.</p>
@@ -1082,8 +1110,7 @@ there is an arrow that indicates otherwise.</p>
 <h2 id="heading-up">Heading Up<a class="headerlink" href="#heading-up" title="Permanent link">&para;</a></h2>
 <p>When the boat makes any turn as follows, it is called <strong><em>Heading Up</em></strong>:</p>
 <ul>
-<li>At the end of the turn, the boat is pointing <em>higher</em>. To point higher means to point on an angle closer towards
-straight into the wind.</li>
+<li>At the end of the turn, the boat is pointing <em>higher</em>.</li>
 <li>Throughout the turn, the sails stay on the same side of the boat. In other words, the sails do <strong>not</strong> cross between
 the starboard and port sides.</li>
 </ul>
@@ -1094,7 +1121,7 @@ degrees.</p>
 <h2 id="bearing-off">Bearing Off<a class="headerlink" href="#bearing-off" title="Permanent link">&para;</a></h2>
 <p>When the boat makes any turn as follows, it is called <strong><em>Bearing Off</em></strong>:</p>
 <ul>
-<li>At the end of the turn, the boat is pointing <em>lower</em>. This means it is pointing further downwind than it was previously.</li>
+<li>At the end of the turn, the boat is pointing <em>lower</em>.</li>
 <li>Throughout the turn, the sails stays on the same side of the boat (port or starboard).</li>
 </ul>
 <p>Like heading up, bearing off can be a small course adjustment.</p>
@@ -1136,6 +1163,8 @@ downwind. This means that the first part of the maneuver is <strong>bearing off<
 changes sides and the stern of the boat is upwind of the bow. This part of the maneuver is a <strong>gybe</strong>.</p>
 <h2 id="keywords-on-this-page">Keywords on this Page<a class="headerlink" href="#keywords-on-this-page" title="Permanent link">&para;</a></h2>
 <ul>
+<li>Higher (in relation to pointing)</li>
+<li>Lower (in relation to pointing)</li>
 <li>Heading Up</li>
 <li>Bearing Off</li>
 <li>Tack</li>
@@ -1147,7 +1176,7 @@ changes sides and the stern of the boat is upwind of the bow. This part of the m
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 16, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 29, 2022</span>
       
     
   </small>
