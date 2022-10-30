@@ -104,7 +104,7 @@ def print_check_message(filename, check_passed, check_number, error_message):
 def main():
     root = './docs/'
     markdown_files = get_markdown_files(root)
-    bad_link_matcher = re.compile(r"(?<!!)\[.*\]\(\s*https?:\/\/[^\(\)]+\)(?!\{\s*:?\s*target\s*=\s*(?:\s*_blank\s*|\s*\"\s*_blank\s*\"\s*)\})")
+    bad_link_matcher = re.compile(r"(?<!!)\[.*?\]\(\s*https?:\/\/[^\(\)]+\)(?!\{\s*:?\s*target\s*=\s*(?:\s*_blank\s*|\s*\"\s*_blank\s*\"\s*)\})")
     passed = lint_markdown_files(markdown_files, bad_link_matcher)
     return passed
 
