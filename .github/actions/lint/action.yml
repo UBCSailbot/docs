@@ -1,12 +1,7 @@
 name: 'Lint New Tab Links'
 description: 'Check links to external sites redirect to a new tab'
 runs:
-  using: composite
+  using: "composite"
   steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v2
-      with:
-        python-version: "3.10"
-      run: |
-        python3 lint_links.py
+    - run: python3 lint_links.py
+      shell: bash

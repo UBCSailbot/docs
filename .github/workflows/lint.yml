@@ -36,5 +36,11 @@ jobs:
         folder-path: 'docs'
         file-path: './README.md'
 
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.10"
+
     - name: Check links to external sites redirect to a new tab
       uses: ./.github/actions/lint/
