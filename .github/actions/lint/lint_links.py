@@ -7,19 +7,19 @@ PASSED_MSG = '[PASSED]'
 FAILED_MSG = '[FAILED]'
 
 ## HELPER FUNCTIONS
-def get_markdown_files(root):
+def get_markdown_files(root_dir):
     """
     Recursively searches for markdown files (.md) starting at a specified root directory.
 
     Args:
-        root (str): The root directory to start the search at.
+        root_dir (str): The root directory to start the search at.
 
     Returns:
         List[str]: A list of markdown file paths relative to the root directory.
     """
     markdown_files = []
     markdown_matcher = re.compile(r".+\.md")
-    for root, dirs, files in os.walk(root):
+    for root, dirs, files in os.walk(root_dir):
         markdown_file_basenames = filter(lambda f: markdown_matcher.match(f) is not None, files)
         markdown_files_with_full_path = map(lambda f: os.path.join(root, f), markdown_file_basenames)
         markdown_files += list(markdown_files_with_full_path)
