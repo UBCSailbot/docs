@@ -94,8 +94,7 @@ def print_check_message(filename, check_passed, check_number, error_message):
         error_message (str): An error message (empty if the check passed).
     """
     status = PASSED_MSG if check_passed else FAILED_MSG
-    outfile = sys.stdout if check_passed else sys.stderr
-    print(f"Check {check_number}: {status} {filename}\n" + error_message, file=outfile)
+    print(f"Check {check_number}: {status} {filename}\n" + error_message)
 
 
 ## MAIN LOGIC
