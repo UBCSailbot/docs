@@ -8,6 +8,8 @@ FAILED_MSG = '[FAILED]'
 ERROR_MSG1 = 'External links should redirect to a new tab. Change the link to '
 ERROR_MSG2 = "{target=_blank}"
 
+annotations = []
+
 ## HELPER FUNCTIONS
 def get_markdown_files(root_dir):
     """
@@ -78,8 +80,7 @@ def check_markdown_file(filename, matcher):
             if match is not None:
                 passed = False
                 error_message_buffer += f"\tLine {line_number+1}: {match[0]}\n"
-
-                print(f"::error file={filename},line={line_number+1}::{ERROR_MSG1 + match[0] + ERROR_MSG2}", file=sys.stderr)
+                annotations.append(f"::error file={filename},line={line_number+1}::{ERROR_MSG1 + match[0] + ERROR_MSG2}")
     
     return passed, error_message_buffer
 
@@ -110,4 +111,5 @@ def main():
 if __name__ == '__main__':
     passed = main()
     if not passed:
+        print("\n".join(annotations), file=sys.stderr)
         sys.exit(1)
