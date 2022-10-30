@@ -98,8 +98,7 @@ def print_check_message(filename, check_passed, check_number, error_message):
 
 ## MAIN LOGIC
 def main():
-    os.chdir('docs/')
-    root = '.'
+    root = './docs/'
     markdown_files = get_markdown_files(root)
     bad_link_matcher = re.compile(r"(?<!!)\[.*\]\(\s*https?:\/\/[^\(\)]+\)(?!\{\s*:?\s*target\s*=\s*(?:\s*_blank\s*|\s*\"\s*_blank\s*\"\s*)\})")
     passed = lint_markdown_files(markdown_files, bad_link_matcher)
