@@ -34,3 +34,6 @@ jobs:
         config-file: '.markdown-link-check.json'
         folder-path: 'docs'
         file-path: './README.md'
+
+    - name: Check links to external sites redirect to a new tab
+      uses: ./.github/actions/lint/
