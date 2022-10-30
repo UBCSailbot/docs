@@ -77,7 +77,8 @@ def check_markdown_file(filename, matcher):
                 passed = False
                 error_message_buffer += f"\tLine {line_number+1}: {match[0]}\n"
 
-                print(f"::error file={filename},line={line_number+1}::{match[0]}")
+                # Print for GitHub annotations
+                print(f"::error file={filename},line={line_number+1}::{match[0]}", file=sys.stderr)
     
     return passed, error_message_buffer
 
@@ -94,8 +95,8 @@ def print_check_message(filename, check_passed, check_number, error_message):
         error_message (str): An error message (empty if the check passed).
     """
     status = PASSED_MSG if check_passed else FAILED_MSG
-    print(f"Check {check_number}: {status} {filename}")
-    print(error_message)
+    outfile = sys.stdout if check_passed else sys.stderr
+    print(f"Check {check_number}: {status} {filename}\n" + error_message, file=outfile)
 
 
 ## MAIN LOGIC
