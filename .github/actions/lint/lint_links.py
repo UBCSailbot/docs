@@ -76,6 +76,8 @@ def check_markdown_file(filename, matcher):
             if match is not None:
                 passed = False
                 error_message_buffer += f"\tLine {line_number+1}: {match[0]}\n"
+
+                print(f"::error file={filename},line={line_number+1}::{match[0]}", file=sys.stderr)
     
     return passed, error_message_buffer
 
