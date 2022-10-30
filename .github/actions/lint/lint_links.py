@@ -5,6 +5,8 @@ import re
 ## CONSTANTS
 PASSED_MSG = '[PASSED]'
 FAILED_MSG = '[FAILED]'
+ERROR_MSG1 = 'External links should redirect to a new tab. Change the link to '
+ERROR_MSG2 = "{target=_blank}"
 
 ## HELPER FUNCTIONS
 def get_markdown_files(root_dir):
@@ -77,7 +79,7 @@ def check_markdown_file(filename, matcher):
                 passed = False
                 error_message_buffer += f"\tLine {line_number+1}: {match[0]}\n"
 
-                print(f"::error file={filename},line={line_number+1}::{match[0]}", file=sys.stderr)
+                print(f"::error file={filename},line={line_number+1}::{ERROR_MSG1 + match[0] + ERROR_MSG2}", file=sys.stderr)
     
     return passed, error_message_buffer
 
