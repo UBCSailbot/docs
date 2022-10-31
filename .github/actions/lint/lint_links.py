@@ -3,6 +3,7 @@ import sys
 import re
 
 ## CONSTANTS
+REGEX_PATTERN = r"(?<!!)\[.*?\]\(\s*https?:\/\/[^\(\)]+\)(?!\{\s*:?\s*target\s*=\s*(?:\s*_blank\s*|\s*\"\s*_blank\s*\"\s*)\})"
 PASSED_MSG = '[PASSED]'
 FAILED_MSG = '[FAILED]'
 ERROR_MSG1 = 'External links should redirect to a new tab. Change the link to '
@@ -30,14 +31,14 @@ def get_markdown_files(root_dir):
     return markdown_files
 
 
-def lint_markdown_files(files, matcher):
+def lint_markdown_files(files, pattern):
     """
     Lints all specified markdown files and checks for any links to outside the Sailbot Docs website 
     that do not redirect to a new tab. If any such links exists, the linting process fails.
 
     Args:
         files (List[str]): A list of markdown file paths relative to some root directory.
-        matcher (re.Pattern): A compiled regular expression object used to perform the linting.
+        pattern (str): A raw string containing the regular expression pattern to be used for linting.
 
     Returns:
         bool: Returns True if the linting process succeeds for all markdown files and False otherwise.
@@ -47,7 +48,7 @@ def lint_markdown_files(files, matcher):
     num_checks = len(files)
 
     for n, file in enumerate(files):
-        check_passed, error_message = check_markdown_file(file, matcher)
+        check_passed, error_message = check_markdown_file(file, pattern)
         passed = (passed and check_passed)
         num_passed += int(check_passed)
         print_check_message(file, check_passed, n+1, error_message)
@@ -57,13 +58,13 @@ def lint_markdown_files(files, matcher):
     return passed
 
 
-def check_markdown_file(filename, matcher):
+def check_markdown_file(filename, pattern):
     """
     Lints a specified markdown file.
 
     Args:
         filename (str): The path to the markdown file relative to some root directory.
-        matcher (re.Pattern): A compiled regular expression object used to perform the linting.
+        pattern (str): A raw string containing the regular expression pattern to be used for linting.
 
     Returns:
         tuple[bool, str]: Returns a tuple containing two variables:
@@ -75,12 +76,13 @@ def check_markdown_file(filename, matcher):
 
     with open(filename) as file:
         for line_number, line_text in enumerate(file.readlines()):
-            match = matcher.match(line_text)
+            match = re.findall(pattern, line_text, flags=re.M)
 
-            if match is not None:
+            if match:
                 passed = False
-                error_message_buffer += f"\tLine {line_number+1}: {match[0]}\n"
-                annotations.append(f"::error file={filename},line={line_number+1}::{ERROR_MSG1 + match[0] + ERROR_MSG2}")
+                for link in match:
+                    error_message_buffer += f"\tLine {line_number+1}: {link}\n"
+                    annotations.append(f"::error file={filename},line={line_number+1}::{ERROR_MSG1 + link + ERROR_MSG2}")
     
     return passed, error_message_buffer
 
@@ -104,8 +106,7 @@ def print_check_message(filename, check_passed, check_number, error_message):
 def main():
     root = './docs/'
     markdown_files = get_markdown_files(root)
-    bad_link_matcher = re.compile(r"(?<!!)\[.*?\]\(\s*https?:\/\/[^\(\)]+\)(?!\{\s*:?\s*target\s*=\s*(?:\s*_blank\s*|\s*\"\s*_blank\s*\"\s*)\})")
-    passed = lint_markdown_files(markdown_files, bad_link_matcher)
+    passed = lint_markdown_files(markdown_files, REGEX_PATTERN)
     return passed
 
 if __name__ == '__main__':
