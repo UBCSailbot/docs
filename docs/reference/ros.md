@@ -5,7 +5,7 @@ It provides functionality for hardware abstraction, device drivers, communicatio
 multiple machines, tools for testing and visualization, and much more.[^2]
 
 We use ROS because it is open-source, language-agnostic, and built with cross-collaboration in mind.
-It enables our subteams to work independently on well-defined components of our software system
+It enables our sub-teams to work independently on well-defined components of our software system
 without having to worry about the hardware it runs on or the implementation of other components.
 
 [The official ROS 2 documentation](https://docs.ros.org/en/eloquent/index.html) contains everything you need
