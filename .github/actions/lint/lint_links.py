@@ -1,15 +1,33 @@
+## IMPORTS
 import os
 import sys
 import re
 
+
 ## CONSTANTS
 REGEX_PATTERN = r"(?<!!)\[.*?\]\(\s*https?:\/\/[^\(\)]+\)(?!\{\s*:?\s*target\s*=\s*(?:\s*_blank\s*|\s*\"\s*_blank\s*\"\s*)\})"
-PASSED_MSG = '[PASSED]'
-FAILED_MSG = '[FAILED]'
-ERROR_MSG1 = 'External links should redirect to a new tab. Change the link to '
+ROOT = "./docs/"
+PASSED_MSG = "[PASSED]"
+FAILED_MSG = "[FAILED]"
+ERROR_MSG1 = "External links should redirect to a new tab. Change the link to "
 ERROR_MSG2 = "{target=_blank}"
 
+# Annotation strings for GitHub error annotations
 annotations = []
+
+
+## MAIN LOGIC
+def main():
+
+    # Perform the linting process
+    markdown_files = get_markdown_files(ROOT)
+    passed = lint_markdown_files(markdown_files, REGEX_PATTERN)
+    
+    # If linting fails, print any annotations to stderr for GitHub and exit with status code 1
+    if not passed:
+        print("\n".join(annotations), file=sys.stderr)
+        sys.exit(1)
+
 
 ## HELPER FUNCTIONS
 def get_markdown_files(root_dir):
@@ -73,17 +91,15 @@ def check_markdown_file(filename, pattern):
     """
     passed = True
     error_message_buffer = ""
-
+    
     with open(filename) as file:
         for line_number, line_text in enumerate(file.readlines()):
             match = re.findall(pattern, line_text, flags=re.M)
-
             if match:
                 passed = False
                 for link in match:
                     error_message_buffer += f"\tLine {line_number+1}: {link}\n"
                     annotations.append(f"::error file={filename},line={line_number+1}::{ERROR_MSG1 + link + ERROR_MSG2}")
-    
     return passed, error_message_buffer
 
 
@@ -102,15 +118,6 @@ def print_check_message(filename, check_passed, check_number, error_message):
     print(f"Check {check_number}: {status} {filename}\n" + error_message)
 
 
-## MAIN LOGIC
-def main():
-    root = './docs/'
-    markdown_files = get_markdown_files(root)
-    passed = lint_markdown_files(markdown_files, REGEX_PATTERN)
-    return passed
-
 if __name__ == '__main__':
-    passed = main()
-    if not passed:
-        print("\n".join(annotations), file=sys.stderr)
-        sys.exit(1)
+    main()
+    
