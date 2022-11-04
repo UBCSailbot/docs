@@ -123,3 +123,6 @@ nav:
       - Types of Turns: reference/sailing/turning.md
       - Points of Sail: reference/sailing/points_of_sail.md
       - Miscellaneous: reference/sailing/miscellaneous.md
+  - Sailbot Workspace:
+    - workspace/index.md
+    - Setup: workspace/setup.md
