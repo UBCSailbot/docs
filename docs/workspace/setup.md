@@ -9,28 +9,39 @@ This workspace can be set up on most operating systems, but it performs the best
 Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu).
 
 1. Install prerequisites
-    - For Windows, [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)
-        - Run these commands in an *administrator* PowerShell window
 
-            ```
-            wsl --install --distribution Ubuntu
-            wsl --set-default Ubuntu
-            wsl --set-version Ubuntu 2
-            ```
+    === ":material-microsoft-windows: Windows"
 
-    - [Docker](https://docs.docker.com/get-started/overview/)
-        - [Install Docker](https://docs.docker.com/engine/install/)
-            - For Windows or MacOS, install Docker Desktop
-                - For Windows, use the WSL 2 backend for Docker Desktop
-            - For Linux, install Docker Engine
-        - For Linux
+        - Install [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)
+            - Run these commands in an *administrator* PowerShell window
+
+                ```
+                wsl --install --distribution Ubuntu
+                wsl --set-default Ubuntu
+                wsl --set-version Ubuntu 2
+                ```
+
+        - [Docker](https://docs.docker.com/get-started/overview/)
+            - [Install Docker Desktop](https://docs.docker.com/engine/install/)
+            - Use the WSL 2 backend for Docker Desktop
+
+    === ":material-apple: MacOS"
+
+        - [Docker](https://docs.docker.com/get-started/overview/)
+            - [Install Docker Desktop](https://docs.docker.com/engine/install/)
+
+    === ":material-linux: Linux"
+
+        - [Docker](https://docs.docker.com/get-started/overview/)
+            - [Install Docker Engine](https://docs.docker.com/engine/install/)
             - [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
             - [Configure Docker to start on boot](https://docs.docker.com/engine/install/linux-postinstall/#configure-docker-to-start-on-boot)
+
     - [VS Code](https://code.visualstudio.com/)
         - [Install VS Code](https://code.visualstudio.com/download)
         - [Install VS Code Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
 
-2. For Windows, MacOS and Arch Linux, additional configuration to run GUI applications
+2. For Windows and MacOS, additional configuration to run GUI applications
 
     === ":material-microsoft-windows: Windows 11"
 
@@ -57,22 +68,23 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu).
             - Add `export MAC_DOCKER_LOCALHOST="docker.for.mac.host.internal"` and `export DISPLAY=:0` to `~/.zshrc`
             - If VS Code is open, restart it
 
-    === ":material-linux: Arch Linux"
+    ??? note "Arch Linux"
 
-        - Run These Two Commands Locally to setup X11 fowarding 
+        - Run These Commands Locally to setup X11 fowarding 
             - Install xhost using `sudo pacman -S xorg-xhost`
             - `export DISPLAY=0.0`
             - `xhost +local:docker`
         - Dev-Containers only works on the right flavor of Vscode, make sure you are using the official Microsoft distribution
-            - The one from Pacman doesnt work with microsoft plugins
+            - The one from Pacman doesn't work with microsoft plugins
         - After the image is running on your machine, follow standard procedures
-        ??? bug "Debugging"
 
-            To run Ros1, run these commands as the system has trouble resolving the local hostname  
-                ```
-                export ROS_HOSTNAME=localhost
-                export ROS_MASTER_URI=http://localhost:11311
-                ```
+    ??? bug "Linux Debugging"
+
+        To run Ros1, run these commands as the system has trouble resolving the local hostname  
+            ```
+            export ROS_HOSTNAME=localhost
+            export ROS_MASTER_URI=http://localhost:11311
+            ```
 
 3. Clone the Sailbot Workspace repository
 
