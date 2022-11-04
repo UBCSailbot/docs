@@ -110,6 +110,7 @@ nav:
         - reference/cpp/index.md
       - Differences: reference/cpp/differences.md
       - Tools: reference/cpp/tools.md
+      - NET Workspace Structure: reference/cpp/net_workspace.md
     - GitHub:
       - Development Workflow:
         - Overview:

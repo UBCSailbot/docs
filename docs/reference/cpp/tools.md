@@ -2,6 +2,12 @@
 
 A lot goes into making a well structured C++ project, much more than any one team should have to do.
 
+## Boost
+
+[Boost](https://www.boost.org/) is a collection of C++ libraries and can be thought of as an expanded standard library.
+It also backports some more recent C++ libraries like `std::span` (C++ 20 only) to older versions like C++14, which we
+use (we would use `boost::span`).
+
 ## CMake
 
 CMake is a powerfull build automation tool that makes compiling code for large projects with a lot of interoperating
@@ -118,6 +124,110 @@ programming errors caused by bad programming style/practices using just static a
 
 An autoformatting tool that makes enforcing style guidelines much easier. When se tup, it corrects formatting as soon
 as you hit save.
+
+## GDB
+
+The [GNU Project Debugger](https://www.sourceware.org/gdb/) is the most commonly debugger for the C language family.
+VSCode also has a degree of integration with GDB that allows an easy to use GUI. This [GDB cheat sheet](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf)
+has all the GDB comands you will need to know. Be aware the VSCode has GUI buttons for some of these commands that are
+easier to use.
+
+<!-- TODO Add examples with screenshots -->
+
+## GoogleTest
+
+[GoogleTest](https://github.com/google/googletest) is the C++ unit testing framework we will be using.
+The [GoogleTest Primer](https://google.github.io/googletest/primer.html) is a good place to start.
+
+??? example
+
+    === "Cached Fibonacci Program"
+
+        ```C++ title="cached_fib.h"
+        #pragma once
+
+        #include <string>
+        #include <vector>
+
+        constexpr auto CachedFibTopic = "cached_fib";
+
+        class CachedFib
+        {
+        private:
+            std::vector<int> cache;
+
+        public:
+            explicit CachedFib(std::size_t);
+            int getFib(std::size_t);
+        };
+        ```
+
+        ```C++ title="cached_fib.cpp"
+        #include "cached_fib.h"
+
+        #include <iostream>
+        #include <vector>
+
+        CachedFib::CachedFib(const std::size_t n)
+        {
+            this->cache.push_back(0);
+            this->cache.push_back(1);
+            for (std::size_t i = 2; i < n; i++) {
+                this->cache.push_back(cache[i - 1] + this->cache[i - 2]);
+            }
+        }
+
+        int CachedFib::getFib(const std::size_t n)
+        {
+            if (this->cache.size() < n) {
+                for (std::size_t i = cache.size(); i < n; i++) {
+                    this->cache.push_back(cache[i - 1] + this->cache[i - 2]);
+                }
+            }
+            std::cout << this->cache[n - 1] << std::endl;
+            return this->cache[n - 1];
+        }
+        ```
+
+    === "Test Cached Fibonacci Program"
+
+        ```C++ title="test_cached_fib.cpp"
+
+        #include "cached_fib.h"
+        #include "gtest/gtest.h"
+
+        constexpr int defaultSize = 5;
+
+        static CachedFib testFib = CachedFib(defaultSize);
+
+        class TestFib : public ::testing::Test
+        {
+        protected:
+            TestFib()
+            {
+                // Every time a test is started, testFib is reinitialized with a constructor parameter of 5
+                testFib = CachedFib(defaultSize);
+            }
+
+            ~TestFib() override
+            {
+                // Clean up after a test
+            }
+        };
+
+        TEST_F(TestFib, TestBasic) { ASSERT_EQ(testFib.getFib(5), 3) << "5th fibonacci number must be 3!"; }
+
+        // more tests
+
+        ```
+
+## Google Protocol Buffer
+
+[Google Protocol Buffer](https://developers.google.com/protocol-buffers) (Protobuf) is a portable data serialization
+method. We use it over other methods like JSON and XML because it produces smaller binaries, an important consideration
+when sending data across an ocean. Unfortunately, there does not seem to be a easy to follow tutorial for using them,
+but here are the [C++ basics](https://developers.google.com/protocol-buffers/docs/cpptutorial). The page is quite dense
+and can be hard to follow, so do not worry if you do not understand it.
 
 ## llvm-cov
 

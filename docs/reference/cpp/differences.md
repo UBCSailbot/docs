@@ -4,6 +4,11 @@ For most use cases, you can think of C++ as a superset of C. While this is not t
 you are able to write standard C code for a C++ program without issues. However, doing so ignores a lot of the benefits
 and reasons to use C++.
 
+!!! note
+    Function definitions and declarations shown on this page will often look like `type function_name(void);`. This is
+    standard in C to denote no parameters. In C++, it is considered better practice to use `type function_name();`
+    without the void. There is some nuance to this which you can read about [here](https://softwareengineering.stackexchange.com/questions/286490/what-is-the-difference-between-function-and-functionvoid).
+
 ## Classes and Structs
 
 In C structs can only contain member variables, but in C++ structs are basically classes but with a default member
@@ -13,7 +18,8 @@ visibility of public instead of private.
     The following code blocks are equivalent.
 
     ```C++
-    struct foo {
+    struct foo
+    {
     private:
         int x;
         void helper(void);
@@ -23,7 +29,8 @@ visibility of public instead of private.
     ```
 
     ```C++
-    class foo {
+    class foo
+    {
     private:
         int x;
         void helper(void);
@@ -63,7 +70,8 @@ Though be aware that namespaces are not necessary everywhere. See the following 
         #include "A.h"
         #include "B.h"
 
-        int main(void) {
+        int main(void)
+        {
             int a = bar();
             ...
         }
@@ -73,14 +81,16 @@ Though be aware that namespaces are not necessary everywhere. See the following 
     === "C++"
 
         ```C++ title="A.h"
-        namespace a {
+        namespace a
+        {
         float x;
         int bar(void);
         }
         ```
 
         ```C++ title="B.h"
-        namespace b {
+        namespace b
+        {
         float x;
         int bar(void);
         }
@@ -90,7 +100,8 @@ Though be aware that namespaces are not necessary everywhere. See the following 
         #include "A.h"
         #include "B.h"
 
-        int main(void) {
+        int main(void)
+        {
             int a = a::bar();
             int b = b::bar();
             float xa = a::x;
@@ -107,7 +118,8 @@ Though be aware that namespaces are not necessary everywhere. See the following 
     using namespace std;
     namespace io = std::filesystem;
 
-    int main(int argc, char* argv[]) {
+    int main(int argc, char* argv[])
+    {
         bool isDirectory = io::is_directory(argv[1]);  // Equivalent to std::filesystem::is_directory(argv[1])
         cout << isDirectory << endl;
         return 0;
@@ -124,11 +136,13 @@ Though be aware that namespaces are not necessary everywhere. See the following 
     === "OK"
 
         ```C++
-            class string {
+            class string
+            {
                 // Insert implementation here
             }
 
-            int main(void) {
+            int main(void)
+            {
                 string ourString = "Our own string implementation";
                 std::string stdString = "Standard Library string implementation";
                 ...
@@ -141,7 +155,8 @@ Though be aware that namespaces are not necessary everywhere. See the following 
             using namespace std;
 
             // ERROR - multiple definitions of type string
-            class string {
+            class string
+            {
 
             }
         ```
@@ -154,6 +169,8 @@ Though be aware that namespaces are not necessary everywhere. See the following 
 
 ## Constant Expressions
 
+TL;DR use constant expressions over macros whenever possible.
+
 In C, if we want to declare a constant or a function/expression that we want to be evaluated at compile time, we need
 to use `#define` statements. One of the problems with `#define` statements is that they perform a simple copy paste
 wherever they're used. For example:
@@ -164,7 +181,8 @@ wherever they're used. For example:
     #define PI 3.14F
     #define AREA_OF_CIRCLE(radius) ((PI) * (radius) * (radius))
 
-    int main(void) {
+    int main(void)
+    {
         float area = AREA_OF_CIRCLE(2.5F);
         ...
     }
@@ -173,7 +191,8 @@ wherever they're used. For example:
 === "After Precompile"
 
     ```C++
-    int main(void) {
+    int main(void)
+    {
         float area = ((3.14F) * (2.5F) * (2.5F));
         ...
     }
@@ -192,7 +211,8 @@ In C++, the use of constant expressions are preferred.
 
 ```C++
 constexpr float pi = 3.14F;
-constexpr float area_of_circle(float radius) {
+constexpr float area_of_circle(float radius)
+{
     return pi * radius * radius;
 }
 ```
@@ -201,12 +221,14 @@ Constant expressions do *not* get copy pasted, and are instead placed in program
 or function. They also respect namespaces and function scopes, meaning the following code compiles.
 
 ```C++ title="Constant Expression Scoping"
-void foo(void) {
+void foo(void)
+{
     constexpr float rand = 123.456;
     ...
 }
 
-void bar (void) {
+void bar (void)
+{
     constexpr float rand = 789.123;
     ...
 }
@@ -236,13 +258,15 @@ costs.
         ```C
         #include "stdio.h"
 
-        void print_contents(int *arr, int size) {
+        void print_contents(int *arr, int size)
+        {
             for (int i = 0; i < size; i++) {
                 printf("%d\n", *arr);
             }
         }
 
-        int main(void) {
+        int main(void)
+        {
             int arr[5] = {0, 1, 2, 3, 4};
             foo(arr, 5);
             return 0;
@@ -260,13 +284,15 @@ costs.
         #include <array>
         #include <span>
 
-        void print_contents(std::span<int> container) {
+        void print_contents(std::span<int> container)
+        {
             for (const auto &e : container) {
                 std::cout << e << std::endl;
             }
         }
 
-        int main(void) {
+        int main(void)
+        {
             std::array<int, 5> arr = {0, 1, 2, 3, 4};
             foo(arr);
             return 0;
