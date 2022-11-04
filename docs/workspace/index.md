@@ -1,1 +1,1 @@
-# UBCSailbot Workspace
+# UBCSailbot Software Workspace
