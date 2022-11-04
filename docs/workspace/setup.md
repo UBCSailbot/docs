@@ -144,21 +144,24 @@ ROS2-approved formatters are included in the IDE.
 
 ### Tasks
 
-There are many pre-defined tasks, see [our workspace file](.devcontainer/config/sailbot_workspace.code-workspace) for a
-complete listing. Bring up the task menu by typing "Tasks: Run Task" in the command pallete, or creating a keyboard
+There are many pre-defined tasks, see
+[our workspace file](https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/config/sailbot_workspace.code-workspace)
+for a complete listing. Bring up the task menu by typing "Tasks: Run Task" in the command pallete, or creating a keyboard
 shortcut for `workbench.action.tasks.runTask`.
 
 ### Debugging ([WIP](https://github.com/UBCSailbot/sailbot_workspace/issues/6))
 
-This repository has debug configurations for Python files and Cpp programs.
-See [our workspace file](.devcontainer/config/sailbot_workspace.code-workspace) for configuration details.
+This repository has debug configurations for Python files and Cpp programs. See
+[our workspace file](https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/config/sailbot_workspace.code-workspace)
+for configuration details.
 Bring up the debug configurations menu by typing "debug " in the command pallete without the ">" prefix, or select one
 from the Run and Debug view.
 
 ### Continuous Integration
 
 This repository also has continuous integration that lints and tests our code.
-See [`.github/workflows/`](.github/workflows/) for the configuration files.
+See [`.github/workflows/`](https://github.com/UBCSailbot/sailbot_workspace/tree/main/.github/workflows)
+for the configuration files.
 
 ### Configured Terminal Commands and Aliases
 
