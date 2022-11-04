@@ -33,13 +33,13 @@ When working on a new issue, you will want to create a branch to work on it. We 
 naming convention:
 
 ```
-<github_username>/<issue_number>-<issue_description>
+user/<github_username>/<issue_number>-<issue_description>
 ```
 
 !!! example
 
     If Jill (GitHub Username: jill99) is going to take on an issue titled "Fix bug on pathfinding software"
-    and the issue number is 39, then the branch named can be named something like `jill99/39-fix-pathfinding-bug`.
+    and the issue number is 39, then the branch named can be named something like `user/jill99/39-fix-pathfinding-bug`.
 
 If the branch that you are creating is not tied to an issue, then you **do not** need to put an issue number.
 A descriptive title will suffice.
