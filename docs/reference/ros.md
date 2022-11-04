@@ -8,21 +8,21 @@ We use ROS because it is open-source, language-agnostic, and built with cross-co
 It enables our subteams to work independently on well-defined components of our software system
 without having to worry about the hardware it runs on or the implementation of other components.
 
-[The official ROS 2 documentation](https://docs.ros.org/en/eloquent/index.html) contains everything you need
+[The official ROS 2 documentation](https://docs.ros.org/en/eloquent/index.html){target=_blank} contains everything you need
 to get started using ROS. From it we have hand-picked the resources that are most relevant to our current and expected
-future usage of ROS assuming that you use [our preconfigured workspace](https://github.com/UBCSailbot/sailbot_workspace).
-To run our software on your device without our workspace, you would have to [install ROS](https://docs.ros.org/en/eloquent/Installation.html)
-and the dependencies that are in [our Docker images](https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer)
+future usage of ROS assuming that you use [our preconfigured workspace](https://github.com/UBCSailbot/sailbot_workspace){target=_blank}.
+To run our software on your device without our workspace, you would have to [install ROS](https://docs.ros.org/en/eloquent/Installation.html){target=_blank}
+and the dependencies that are in [our Docker images](https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer){target=_blank}
 yourself.
 
 ## Workspace Configuration
 
 To get our workspace configuration running on your computer:
 
-1. Set it up by following the [setup instructions](https://github.com/UBCSailbot/sailbot_workspace#setup)
-2. Uncomment the ROS 2 tutorials section in [`.devcontainer/Dockerfile`](https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/Dockerfile),
+1. Set it up by following the [setup instructions](https://github.com/UBCSailbot/sailbot_workspace#setup){target=_blank}
+2. Uncomment the ROS 2 tutorials section in [`.devcontainer/Dockerfile`](https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/Dockerfile){target=_blank},
    then run the "Dev Containers: Rebuild Container" VS Code command, to install the tutorials' dependencies
-3. Uncomment the ROS 2 tutorials section in [`src/new_project.repos`](https://github.com/UBCSailbot/sailbot_workspace/blob/main/src/new_project.repos),
+3. Uncomment the ROS 2 tutorials section in [`src/new_project.repos`](https://github.com/UBCSailbot/sailbot_workspace/blob/main/src/new_project.repos){target=_blank},
    then run the "setup" VS Code task, to clone the repositories used in the tutorials
 
 Our workspace configuration contains easier methods of accomplishing some of the tutorial steps, or eliminates the need
@@ -43,7 +43,7 @@ We encourage all software members to work through the tutorials listed below in 
 For tutorials that have both C++ and Python versions, NET members should do the C++ version
 while CTRL and PATH members should do the Python version.
 
-[CLI Tools](https://docs.ros.org/en/eloquent/Tutorials.html#beginner-cli-tools)
+[CLI Tools](https://docs.ros.org/en/eloquent/Tutorials.html#beginner-cli-tools){target=_blank}
 
 - Introducing turtlesim and rqt
 - Understanding ROS 2 nodes
@@ -54,7 +54,7 @@ while CTRL and PATH members should do the Python version.
 - Using rqt_console
 - Recording and playing back data
 
-[Client Libraries](https://docs.ros.org/en/eloquent/Tutorials.html#beginner-client-libraries)
+[Client Libraries](https://docs.ros.org/en/eloquent/Tutorials.html#beginner-client-libraries){target=_blank}
 
 - Creating a workspace
 - Creating your first ROS 2 package
@@ -67,7 +67,7 @@ while CTRL and PATH members should do the Python version.
 
 We encourage all software members to read the following documentation on key ROS concepts:
 
-- [About logging and logger configuration](https://docs.ros.org/en/eloquent/Concepts/Logging.html)
+- [About logging and logger configuration](https://docs.ros.org/en/eloquent/Concepts/Logging.html){target=_blank}
 
 ## ROS 1 Bridge
 
@@ -75,14 +75,14 @@ There are two major versions of ROS, aptly named ROS 1 and ROS 2. Our previous p
 uses ROS 1 because it was the only version available during her design process. Our new project will
 use ROS 2, a complete re-design of the framework that tackles the shortcomings of ROS 1 to bring it up
 to industry needs and standards.[^3] If you are curious about the changes made in ROS 2 compared to 1,
-[this article](http://design.ros2.org/articles/changes.html) is a worthwhile read.
+[this article](http://design.ros2.org/articles/changes.html){target=_blank} is a worthwhile read.
 
 ROS 2 includes the ROS 1 Bridge, a collection of packages that can be installed alongside ROS 1 to help migrate code
 from ROS 1 to ROS 2. As we will be reusing parts of Raye's codebase, it is essential to know how to use these packages.
 Until we are completely done with Raye, our preconfigured workspace will have ROS 1, ROS 1 Bridge, and ROS 2 installed.
 
-We encourage all software members work through the [ROS 1 Bridge README](https://github.com/ros2/ros1_bridge/blob/master/README.md).
-For PATH members, the [Migrating launch files from ROS 1 to ROS 2 page](https://docs.ros.org/en/eloquent/Tutorials/Launch-files-migration-guide.html)
+We encourage all software members work through the [ROS 1 Bridge README](https://github.com/ros2/ros1_bridge/blob/master/README.md){target=_blank}.
+For PATH members, the [Migrating launch files from ROS 1 to ROS 2 page](https://docs.ros.org/en/eloquent/Tutorials/Launch-files-migration-guide.html){target=_blank}
 will be a helpful reference when we do so.
 
 [^1]: <https://docs.ros.org/en/humble/index.html>

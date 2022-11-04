@@ -12,8 +12,8 @@ dependencies in a configuration file.
 
 - **Housekeeping:** Virtual environments allow you to keep your global workspace tidy.
 
-There are two main methods of creating virtual environments: [virtualenv](https://pypi.org/project/virtualenv/)
-and [Anaconda](https://www.anaconda.com/). Each have their own benefits and drawbacks. Here are some differences
+There are two main methods of creating virtual environments: [virtualenv](https://pypi.org/project/virtualenv/){target=_blank}
+and [Anaconda](https://www.anaconda.com/){target=_blank}. Each have their own benefits and drawbacks. Here are some differences
 between the two:
 
 | Virtualenv                                        | Anaconda                                                 |
@@ -38,8 +38,8 @@ We recommend **virtualenv** over Anaconda because of its simplicity. However, fe
 
 === ":simple-anaconda: Anaconda"
 
-    Go to the official [Anaconda website](https://www.anaconda.com/) and follow the installation instructions 
-    for your operating system.
+    Go to the official [Anaconda website](https://www.anaconda.com/){target=_blank} and follow the installation
+    instructions for your operating system.
 
 ## Using virtual environments
 
@@ -146,7 +146,7 @@ errors because they will not be found unless you install those dependencies in t
         ```
 
         Sometimes, installing a package like this simply won't work because you are not installing
-        from the correct [channel](https://conda.io/projects/conda/en/latest/user-guide/concepts/channels.html).
+        from the correct [channel](https://conda.io/projects/conda/en/latest/user-guide/concepts/channels.html){target=_blank}.
         You usually will have to google the command to use in order to install your package correctly because
         it usually comes from a specific channel that you don't know about. Some common channels to try are:
 
@@ -259,5 +259,5 @@ In this section, we summarized what virtual environments are, why they are used,
 cover all of the functions of virtual environments, but feel free to consult the official references to learn
 about virtual environments more in depth.
 
-- [Virtualenv Reference](https://docs.python.org/3/library/venv.html#module-venv)
-- [Anaconda Reference](https://conda.io/projects/conda/en/latest/user-guide/concepts/environments.html#)
+- [Virtualenv Reference](https://docs.python.org/3/library/venv.html#module-venv){target=_blank}
+- [Anaconda Reference](https://conda.io/projects/conda/en/latest/user-guide/concepts/environments.html#){target=_blank}
