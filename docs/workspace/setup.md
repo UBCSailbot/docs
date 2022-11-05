@@ -43,7 +43,7 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu).
 
 2. For Windows and MacOS, additional configuration to run GUI applications
 
-    === ":material-microsoft-windows: Windows 11"
+    === ":simple-windows11: Windows 11"
 
         GUI applications work without additional configuration,
         *but if you upgraded from Windows 10 make sure to update the WSL kernel:* `wsl --update`
