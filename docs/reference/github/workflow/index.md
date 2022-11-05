@@ -25,9 +25,9 @@ you know git. If you are unfamiliar with git, here are a few resources to help y
 
 | Resource                                               | Description                                            |
 | :----------------------------------------------------- | :----------------------------------------------------- |
-| [Beginners Tutorial](https://youtu.be/HVsySz-h9r4)     | A 30 minute video on git for beginners. Good if you want to learn git quickly and nail all the fundamentals.    |
-| [Pro Git book](https://git-scm.com/book/en/v2)         | A textbook on using git. Good if you are a completionist and want to deep dive into how git works (and if you have some time on your hands).    |
-| [Common Git Commands](https://patrick-5546.github.io/notes/reference/git/git_commands/) | A condensed summary of some common git commands. Good to refer to once you are familiar with the fundamentals of git. |
+| [Beginners Tutorial](https://youtu.be/HVsySz-h9r4){target=_blank}     | A 30 minute video on git for beginners. Good if you want to learn git quickly and nail all the fundamentals.    |
+| [Pro Git book](https://git-scm.com/book/en/v2){target=_blank}         | A textbook on using git. Good if you are a completionist and want to deep dive into how git works (and if you have some time on your hands).    |
+| [Common Git Commands](https://patrick-5546.github.io/notes/reference/git/git_commands/){target=_blank} | A condensed summary of some common git commands. Good to refer to once you are familiar with the fundamentals of git. |
 
 ## Remote server: GitHub
 
