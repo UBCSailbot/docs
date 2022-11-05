@@ -24,8 +24,8 @@ syntax and the mechanisms of the language.
 
 | Resource               | Description                                                                                 |
 | :--------------------- | :------------------------------------------------------------------------------------------ |
-| [w3schools Tutorial](https://www.w3schools.com/cpp/default.asp) | A structured tutorial that goes through basic concepts in C++. It's good to do up to the section on Classes. |
-| [YouTube Tutorial](https://youtu.be/vLnPwxZdW4Y) | If you prefer video tutorial, then this is a comprehensive 4 hour video covering similar concepts to the one above. It is 4 hours long though. |
-| [Dynamic Memory Overview](https://www.tutorialspoint.com/cplusplus/cpp_dynamic_memory.htm) | A page going over how dynamic memory works in C++. |
+| [w3schools Tutorial](https://www.w3schools.com/cpp/default.asp){target=_blank} | A structured tutorial that goes through basic concepts in C++. It's good to do up to the section on Classes. |
+| [YouTube Tutorial](https://youtu.be/vLnPwxZdW4Y){target=_blank} | If you prefer video tutorial, then this is a comprehensive 4 hour video covering similar concepts to the one above. It is 4 hours long though. |
+| [Dynamic Memory Overview](https://www.tutorialspoint.com/cplusplus/cpp_dynamic_memory.htm){target=_blank} | A page going over how dynamic memory works in C++. |
 
 Feel free to add other resources other than the ones listed above if you find any that you like!

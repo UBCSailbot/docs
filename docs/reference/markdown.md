@@ -2,8 +2,8 @@
 
 Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.[^1]
 You can do anything with Markdown, from creating websites to PDF documents, all in a clean format that is easy to
-learn. [Many of your favorite services use Markdown](https://www.markdownguide.org/tools/), so it would be useful
-to pick it up to write technical documentation.
+learn. [Many of your favorite services use Markdown](https://www.markdownguide.org/tools/){target=_blank}, so it would
+be useful to pick it up to write technical documentation.
 
 Markdown is not standardized across services. Many services that support Markdown have their
 own "flavour" of Markdown. Be sure to know the Markdown features of the service
@@ -11,9 +11,9 @@ you are using so that your Markdown renders properly.
 
 ## Getting Started
 
-We recommend [markdownguide.org](https://www.markdownguide.org/) to be your first point of reference if you are learning
-Markdown for the first time. It covers topics like what Markdown is, its syntax, advanced tips, and the different
-services that support Markdown. Flavours of Markdown specific to a service build on top of these basics.
+We recommend [markdownguide.org](https://www.markdownguide.org/){target=_blank} to be your first point of reference if\
+you are learning Markdown for the first time. It covers topics like what Markdown is, its syntax, advanced tips, and the
+different services that support Markdown. Flavours of Markdown specific to a service build on top of these basics.
 
 ## Sailbot and Markdown
 
@@ -45,8 +45,8 @@ different depending on where you are writing, but there usually exists a preview
 !!! note "GitHub-Flavoured Markdown"
 
     GitHub uses its own "flavour" of Markdown. Certain features, like using HTML, are excluded for security reasons.
-    Visit the [official GitHub Markdown guide](https://docs.github.com/en/get-started/writing-on-github) for more
-    information on the available features.
+    Visit the [official GitHub Markdown guide](https://docs.github.com/en/get-started/writing-on-github){target=_blank}
+    for more information on the available features.
 
 ### Material for MkDocs
 
@@ -55,15 +55,15 @@ experience is required to contribute to our docs.
 
 Material for MkDocs supports powerful features purpose-built to take technical documentation to the next level.
 Feel free to browse this site to see how we use these features, exploring their syntax in the
-[source code](https://github.com/UBCSailbot/docs/tree/main/docs). Since GitHub renders Markdown files automatically
+[source code](https://github.com/UBCSailbot/docs/tree/main/docs){target=_blank}. Since GitHub renders Markdown files automatically
 you will need to click the "Raw" button to view their contents.
 
 !!! note "Material-Flavoured Markdown"
 
     Material for MkDocs' flavour of Markdown extends upon vanilla Markdown, adding features such as admonitions 
     (like this note) and content tabs. Refer to the
-    [official Material for MkDocs reference page](https://squidfunk.github.io/mkdocs-material/reference/) for more
-    information on the available features.
+    [official Material for MkDocs reference page](https://squidfunk.github.io/mkdocs-material/reference/){target=_blank}
+    for more information on the available features.
 
 ## Rendering Markdown
 
@@ -73,20 +73,21 @@ need to consult the documentation from the service provider to render their flav
 resources are good for rendering Markdown:
 
 === ":simple-markdown: Vanilla"
-    - [VS Code](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview): Markdown rendering is supported
+    - [VS Code](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview){target=_blank}: Markdown
+    rendering is supported
     out of the box.
-    - [Markdown Live Preview](https://markdownlivepreview.com/): An online rendering tool.
+    - [Markdown Live Preview](https://markdownlivepreview.com/){target=_blank}: An online rendering tool.
 
 === ":simple-github: Github"
-    - [Markdown Preview GitHub Styling](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles):
+    - [Markdown Preview GitHub Styling](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles){target=_blank}:
     VS Code extension that renders GitHub-flavoured markdown.
     - Create a draft issue on GitHub and preview the markdown to see how it renders.
 
 === ":logo: Material for MkDocs"
     - UBC Sailbot Docs: To preview your changes when working on this site,
-    refer to the [run instructions in the `README.md`](https://github.com/UBCSailbot/docs#run).
+    refer to the [run instructions in the `README.md`](https://github.com/UBCSailbot/docs#run){target=_blank}.
     - Material for MkDocs sites in general: If you ever decide to write your own documentation using Material for MkDocs,
-    refer to the [official "Getting Started" guide](https://squidfunk.github.io/mkdocs-material/getting-started/).
+    refer to the [official "Getting Started" guide](https://squidfunk.github.io/mkdocs-material/getting-started/){target=_blank}.
 
 Other resources exist to render Markdown like browser extensions that render Markdown as HTML and GitHub repositories
 that contain source code to render your Markdown. Feel free
@@ -96,11 +97,11 @@ to browse around for the solution that suits your needs.
 
 We lint our Markdown files to reduce errors and increase readability. In particular, we use two tools:
 
-1. [markdownlint](https://github.com/DavidAnson/markdownlint) is
-used to enforce a style guide. Its configuration file for this repository is [`.markdownlint.json`](https://github.com/UBCSailbot/docs/blob/main/.markdownlint.json).
-If you use VS Code, there is a [markdownlint extension](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint).
+1. [markdownlint](https://github.com/DavidAnson/markdownlint){target=_blank} is
+used to enforce a style guide. Its configuration file for this repository is [`.markdownlint.json`](https://github.com/UBCSailbot/docs/blob/main/.markdownlint.json){target=_blank}.
+If you use VS Code, there is a [markdownlint extension](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint){target=_blank}.
 
-2. [markdown-link-check](https://github.com/tcort/markdown-link-check) is
-used to check for broken links. Its configuration file for this repository is [`.markdown-link-check.json`](https://github.com/UBCSailbot/docs/blob/main/.markdown-link-check.json).
+2. [markdown-link-check](https://github.com/tcort/markdown-link-check){target=_blank} is
+used to check for broken links. Its configuration file for this repository is [`.markdown-link-check.json`](https://github.com/UBCSailbot/docs/blob/main/.markdown-link-check.json){target=_blank}.
 
 [^1]: <https://www.markdownguide.org/getting-started/>

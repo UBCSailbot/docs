@@ -181,12 +181,12 @@ wherever they're used. For example:
     ```
 
 !!! note
-    `AREA_OF_CIRCLE` is a macro with arguments. If you are confused by it, [this resource](https://www.cs.yale.edu/homes/aspnes/pinewiki/C(2f)Macros.html)
+    `AREA_OF_CIRCLE` is a macro with arguments. If you are confused by it, [this resource](https://www.cs.yale.edu/homes/aspnes/pinewiki/C(2f)Macros.html){target=_blank}
     has a detailed explanation on how they work.
 
-Because of this copy-pasting, you need to be very careful with syntax, sometimes necessitating an ugly [`do {} while(0)`
-wrapper](https://stackoverflow.com/questions/1067226/c-multi-line-macro-do-while0-vs-scope-block). Moreover, symbols
-declared with `#define` are always globally visible, ignoring namespaces!
+Because of this copy-pasting, you need to be very careful with syntax, sometimes necessitating an ugly
+[`do {} while(0)` wrapper](https://stackoverflow.com/questions/1067226/c-multi-line-macro-do-while0-vs-scope-block){target=_blank}.
+Moreover, symbols declared with `#define` are always globally visible, ignoring namespaces!
 
 In C++, the use of constant expressions are preferred.
 
@@ -216,14 +216,14 @@ void bar (void) {
 
 Lambdas are primarily useful when you need to register a callback function one time and don't feel it's necessary to
 write out a full function. They are in no way required though, so do not worry about learning them. However, it's
-necessary to know that they exist such that you don't get confused when reading code. For more information, [go here](https://learn.microsoft.com/en-us/cpp/cpp/lambda-expressions-in-cpp?view=msvc-170)
+necessary to know that they exist such that you don't get confused when reading code. For more information, [go here](https://learn.microsoft.com/en-us/cpp/cpp/lambda-expressions-in-cpp?view=msvc-170){target=_blank}
 for Microsoft's explanation.
 
 ## Misc
 
 ### Arrays
 
-Using the [C++ implementation of arrays](https://en.cppreference.com/w/cpp/container/array#:~:text=std%3A%3Aarray%20is%\20a%20container%20that%20encapsulates%20fixed%20size,C-style%20array%2C%20it%20doesn%27t%20decay%20to%20T%2A%20automatically.)
+Using the [C++ implementation of arrays](https://en.cppreference.com/w/cpp/container/array#:~:text=std%3A%3Aarray%20is%\20a%20container%20that%20encapsulates%20fixed%20size,C-style%20array%2C%20it%20doesn%27t%20decay%20to%20T%2A%20automatically.){target=_blank}
 is preferred over C arrays. It is simply easier and safer to work with than a standard C array without any performance
 costs.
 

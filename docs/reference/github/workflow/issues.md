@@ -23,7 +23,7 @@ introduced to give us a quick and structured way to writing issues.
 !!! note
 
     GitHub issues are written using GitHub-flavoured markdown. To add a little spice to your issues, refer
-    to the official [GitHub documentation](https://docs.github.com/en/get-started/writing-on-github) 
+    to the official [GitHub documentation](https://docs.github.com/en/get-started/writing-on-github){target=_blank} 
     for some quick tips and tricks on how to write awesome markdown!
 
 Click on the `Get started` button to open the issue template. For this example, let's go with the `New Feature`
@@ -35,7 +35,7 @@ At this point, you should give a succinct title and describe the issue in the te
 sections to fill out. Try to give only the necessary details to make a clear and concise issue. If you are unsure on how
 to construct your issue, take a look at current or past issues and ask the software leads for further guidance if necessary.
 
-Finally, feel free to [make suggestions](https://github.com/UBCSailbot/.github/issues/templates/edit)
+Finally, feel free to [make suggestions](https://github.com/UBCSailbot/.github/issues/templates/edit){target=_blank}
 on new templates or changing current templates!
 
 !!! tip

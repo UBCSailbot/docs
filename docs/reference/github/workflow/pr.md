@@ -29,7 +29,7 @@ reviewers until you are ready):
 
 Notice how this is remarkably similar to the page of an issue. To link a pull request to an issue, simply add
 `<KEYWORD> #<ISSUE NUMBER>` to the initial comment in the pull request. A list of valid keywords can be found
-[here](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue).
+[here](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue){target=_blank}.
 
 !!! example
 
