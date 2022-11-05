@@ -95,6 +95,12 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
+  - Current Project:
+    - current/index.md
+    - sailbot_workspace:
+      - Overview: current/sailbot_workspace/overview.md
+      - Setup: current/sailbot_workspace/setup.md
+      - Run: current/sailbot_workspace/run.md
   - Reference:
     - reference/index.md
     - C++:
@@ -123,6 +129,3 @@ nav:
       - Types of Turns: reference/sailing/turning.md
       - Points of Sail: reference/sailing/points_of_sail.md
       - Miscellaneous: reference/sailing/miscellaneous.md
-  - Sailbot Workspace:
-    - workspace/index.md
-    - Setup: workspace/setup.md

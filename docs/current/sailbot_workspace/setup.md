@@ -1,9 +1,4 @@
-This page will get you set up to develop UBCSailbot's software on VS Code. It is based on athackst's
-[vscode_ros2_workspace](https://github.com/athackst/vscode_ros2_workspace){target=_blank}.
-See their [write-up](https://www.allisonthackston.com/articles/vscode_docker_ros2.html){target=_blank} for a more
-in-depth look on how this workspace functions.
-
-## Getting started
+## Setup Instructions
 
 This workspace can be set up on most operating systems, but it performs the best and requires the least setup on
 Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){target=_blank}.
@@ -133,58 +128,3 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){
 6. Open the workspace file `.devcontainer/config/sailbot_workspace.code-workspace` and click "Open Workspace"
 
 7. Import the ROS packages and install their dependencies by running the "setup" task
-
-## Run
-
-1. For Windows 10 and MacOS, if you want to run something with a GUI
-    - For Windows 10, open the XLaunch configuration file
-    - For MacOS, start XQuartz
-
-2. Source the relevant overlay in the terminal
-    - ROS 2: `srcnew`
-    - ROS 1: `srcraye`
-
-3. Build (this step might not be necessary if there are no changes made to C++ or custom msg nodes)
-    - ROS 2: run the "Build" VS Code task, which has the keyboard shortcut `CTRL+SHIFT+B`
-    - ROS 1: `roscd` then `catkin_make`
-
-4. Run the ROS program
-    - ROS 2: `ros2 run ...` or `ros2 launch ...`
-    - ROS 1: `rosrun ...` or `roslaunch ...`
-
-## Features
-
-### Style
-
-ROS2-approved formatters are included in the IDE.  
-
-- **C++** uncrustify; config from `ament_uncrustify`
-- **Python** autopep8; vscode settings consistent with the [style guide](https://index.ros.org/doc/ros2/Contributing/Code-Style-Language-Versions/){target=_blank}
-
-### Tasks
-
-There are many pre-defined tasks, see
-[our workspace file](https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/config/sailbot_workspace.code-workspace){target=_blank}
-for a complete listing. Bring up the task menu by typing "Tasks: Run Task" in the command pallete, or creating a keyboard
-shortcut for `workbench.action.tasks.runTask`.
-
-### Debugging ([WIP](https://github.com/UBCSailbot/sailbot_workspace/issues/6){target=_blank})
-
-This repository has debug configurations for Python files and Cpp programs. See
-[our workspace file](https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/config/sailbot_workspace.code-workspace){target=_blank}
-for configuration details.
-Bring up the debug configurations menu by typing "debug " in the command pallete without the ">" prefix, or select one
-from the Run and Debug view.
-
-### Continuous Integration
-
-This repository also has continuous integration that lints and tests our code.
-See [`.github/workflows/`](https://github.com/UBCSailbot/sailbot_workspace/tree/main/.github/workflows){target=_blank}
-for the configuration files.
-
-### Configured Terminal Commands and Aliases
-
-| ROS 2 Command | ROS 1 Command | Function |
-| ------------- | ------------- | -------- |
-| `srcnew` | `srcraye` | Source ROS workspace overlay |
-| `colcon_cd` | `roscd` | Navigate to ROS workspace |
