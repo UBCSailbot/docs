@@ -22,7 +22,7 @@ def main():
     # Perform the linting process
     markdown_files = get_markdown_files(ROOT)
     passed = lint_markdown_files(markdown_files, REGEX_PATTERN)
-    
+
     # If linting fails, print any annotations to stderr for GitHub and exit with status code 1
     if not passed:
         print("\n".join(annotations), file=sys.stderr)
@@ -91,7 +91,7 @@ def check_markdown_file(filename, pattern):
     """
     passed = True
     error_message_buffer = ""
-    
+
     with open(filename) as file:
         for line_number, line_text in enumerate(file.readlines()):
             match = re.findall(pattern, line_text, flags=re.M)
@@ -120,4 +120,3 @@ def print_check_message(filename, check_passed, check_number, error_message):
 
 if __name__ == '__main__':
     main()
-    
