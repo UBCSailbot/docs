@@ -10,7 +10,7 @@ UBCSailbot software team's documentation.
 1. Clone repository
 
     ```
-    git clone https://github.com/patrick-5546/notes.git
+    git clone https://github.com/UBCSailbot/docs.git
     ```
 
 2. Install dependencies
