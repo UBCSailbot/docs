@@ -3,7 +3,7 @@
 We use branching to work on issues without modifying the main line. This ensures that the main line only
 contains functional code and handles merge conflicts that arise
 when multiple people are developing at the same time. For a quick rundown on branching in git,
-consult the official [git documentation](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
+consult the official [git documentation](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell){target=_blank}.
 
 ## Creating a branch
 
@@ -120,9 +120,9 @@ Upon inspecting `bar.txt`, we see the following:
 
 Resolving merge conflicts is not always a trivial task, but there are many ways to resolve them which include:
 
-- [Resolving on GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github)
+- [Resolving on GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github){target=_blank}
 (recommended)
-- [Resolving in Command Line](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line)
+- [Resolving in Command Line](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line){target=_blank}
 
 !!! tip
 

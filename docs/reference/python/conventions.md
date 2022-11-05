@@ -5,12 +5,12 @@ This page addresses what conventions we use specifically when programming in Pyt
 
 ## Style guide
 
-To ensure that the codebase stays clean, we use [flake8](https://flake8.pycqa.org/en/5.0.4/#), which is a tool
-for style guide enforcement mostly based off [pep8](https://peps.python.org/pep-0008/). To automate most of this
-process, we use [autopep8](https://github.com/hhatto/autopep8), which is a tool that resolves most style issues.
-However, there will be some issues that must be resolved by you!
+To ensure that the codebase stays clean, we use [flake8](https://flake8.pycqa.org/en/5.0.4/#){target=_blank}, which is a
+tool for style guide enforcement mostly based off [pep8](https://peps.python.org/pep-0008/){target=_blank}. To automate
+most of this process, we use [autopep8](https://github.com/hhatto/autopep8){target=_blank}, which is a tool that resolves
+most style issues. However, there will be some issues that must be resolved by you!
 
-Refer to this [guide](https://realpython.com/python-pep8/) on how to write readable code in python with the
+Refer to this [guide](https://realpython.com/python-pep8/){target=_blank} on how to write readable code in python with the
 pep8 style guide.
 
 !!! note
@@ -38,7 +38,7 @@ self explanatory. It should be done only when absolutely necessary.
 
 ### Generating docstrings
 
-We use a vscode extension called [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
+We use a vscode extension called [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring){target=_blank}
 which autogenerates docstrings that we use to document our code. To install this extension, go to the `Extensions` tab in
 vscode and search `autoDocstring` in the marketplace.
 
