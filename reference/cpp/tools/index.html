@@ -1130,18 +1130,19 @@
 <p>A lot goes into making a well structured C++ project, much more than any one team should have to do.</p>
 <h2 id="cmake">CMake<a class="headerlink" href="#cmake" title="Permanent link">&para;</a></h2>
 <p>CMake is a powerfull build automation tool that makes compiling code for large projects with a lot of interoperating
-files a lot easier. Steps 1-3 of the <a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">official tutorial</a>
+files a lot easier. Steps 1-3 of the <a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html" target="_blank">official tutorial</a>
 are great for understanding the basics.</p>
 <h2 id="gdb">GDB<a class="headerlink" href="#gdb" title="Permanent link">&para;</a></h2>
-<p>The <a href="https://www.sourceware.org/gdb/">GNU Project Debugger</a> is the most commonly debugger for the C language family.
-VSCode also has a degree of integration with GDB that allows an easy to use GUI. This <a href="https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf">GDB cheat sheet</a>
+<p>The <a href="https://www.sourceware.org/gdb/" target="_blank">GNU Project Debugger</a> is the most commonly debugger for the C
+language family.
+VSCode also has a degree of integration with GDB that allows an easy to use GUI. This <a href="https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf" target="_blank">GDB cheat sheet</a>
 has all the GDB comands you will need to know. Be aware the VSCode has GUI buttons for some of these commands that are
 easier to use.</p>
 <!-- TODO Add examples with screenshots -->
 
 <h2 id="googletest">GoogleTest<a class="headerlink" href="#googletest" title="Permanent link">&para;</a></h2>
-<p><a href="https://github.com/google/googletest">GoogleTest</a> is the C++ unit testing framework we will be using.
-The <a href="https://google.github.io/googletest/primer.html">GoogleTest Primer</a> is a good place to start.</p>
+<p><a href="https://github.com/google/googletest" target="_blank">GoogleTest</a> is the C++ unit testing framework we will be using.
+The <a href="https://google.github.io/googletest/primer.html" target="_blank">GoogleTest Primer</a> is a good place to start.</p>
 <details class="example">
 <summary>Example</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Cached Fibonacci Program</label><label for="__tabbed_1_2">Test Cached Fibonacci Program</label></div>
@@ -1205,36 +1206,38 @@ The <a href="https://google.github.io/googletest/primer.html">GoogleTest Primer<
 <!-- ## Google Mock Not sure if we're going to use this yet -->
 
 <h2 id="google-protocol-buffer">Google Protocol Buffer<a class="headerlink" href="#google-protocol-buffer" title="Permanent link">&para;</a></h2>
-<p><a href="https://developers.google.com/protocol-buffers">Google Protocol Buffer</a> (Protobuf) is a portable data serialization
+<p><a href="https://developers.google.com/protocol-buffers" target="_blank">Google Protocol Buffer</a> (Protobuf) is a portable data serialization
 method. We use it over other methods like JSON and XML because it produces smaller binaries, an important consideration
 when sending data across an ocean. Unfortunately, there does not seem to be a easy to follow tutorial for using them,
-but here are the <a href="https://developers.google.com/protocol-buffers/docs/cpptutorial">C++ basics</a>. The page is quite dense
-and can be hard to follow, so do not worry if you do not understand it.</p>
+but here are the <a href="https://developers.google.com/protocol-buffers/docs/cpptutorial" target="_blank">C++ basics</a>. The page
+is quite dense and can be hard to follow, so do not worry if you do not understand it.</p>
 <h2 id="clang">Clang<a class="headerlink" href="#clang" title="Permanent link">&para;</a></h2>
-<p>In its most basic form, <a href="https://clang.llvm.org/">Clang</a> is a compiler for the C language family. Clang has multiple
+<p>In its most basic form, <a href="https://clang.llvm.org/" target="_blank">Clang</a> is a compiler for the C language family.
+Clang has multiple
 benefits like easier portability compared to, for example, GCC. Clang is actually "half" the compiler, the other half
 being LLVM. Without going into unnecessary detail, Clang compiles C++ code to a generic language before LLVM compiles
 it to machine specific language.</p>
 <h3 id="clangd">Clangd<a class="headerlink" href="#clangd" title="Permanent link">&para;</a></h3>
-<p><a href="https://clangd.llvm.org/">Clangd</a> is the Clang language server. It provides a much more powerful intellisense than the
-default one used in VSCode's C/C++ extension.</p>
+<p><a href="https://clangd.llvm.org/" target="_blank">Clangd</a> is the Clang language server. It provides a much more powerful
+intellisense than the default one used in VSCode's C/C++ extension.</p>
 <h3 id="clang-tidy">Clang-Tidy<a class="headerlink" href="#clang-tidy" title="Permanent link">&para;</a></h3>
-<p><a href="https://clang.llvm.org/extra/clang-tidy/">Clang-Tidy</a> is a linting tool, who's main purpose is to catch potential
+<p><a href="https://clang.llvm.org/extra/clang-tidy/" target="_blank">Clang-Tidy</a> is a linting tool, who's main purpose is to catch potential
 programming errors caused by bad programming style/practices using just static analysis.</p>
 <h3 id="clang-format">Clang Format<a class="headerlink" href="#clang-format" title="Permanent link">&para;</a></h3>
 <p>An autoformatting tool that makes enforcing style guidelines much easier. When se tup, it corrects formatting as soon
 as you hit save.</p>
 <h2 id="llvm-cov">llvm-cov<a class="headerlink" href="#llvm-cov" title="Permanent link">&para;</a></h2>
-<p>We will use <a href="https://llvm.org/docs/CommandGuide/llvm-cov.html">llvm-cov</a> to evaluate our test coverage. When used with
-<a href="https://www.systutorials.com/docs/linux/man/1-genhtml/">genhtml</a>, we can generate HTML reports that that show our line,
-function, and branch coverage line-by-line.</p>
+<p>We will use <a href="https://llvm.org/docs/CommandGuide/llvm-cov.html" target="_blank">llvm-cov</a> to evaluate our test coverage.
+When used with
+<a href="https://www.systutorials.com/docs/linux/man/1-genhtml/" target="_blank">genhtml</a>, we can generate HTML reports that that
+show our line, function, and branch coverage line-by-line.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 4, 2022</span>
       
     
   </small>

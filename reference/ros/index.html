@@ -1049,19 +1049,19 @@ multiple machines, tools for testing and visualization, and much more.<sup id="f
 <p>We use ROS because it is open-source, language-agnostic, and built with cross-collaboration in mind.
 It enables our sub-teams to work independently on well-defined components of our software system
 without having to worry about the hardware it runs on or the implementation of other components.</p>
-<p><a href="https://docs.ros.org/en/eloquent/index.html">The official ROS 2 documentation</a> contains everything you need
+<p><a href="https://docs.ros.org/en/eloquent/index.html" target="_blank">The official ROS 2 documentation</a> contains everything you need
 to get started using ROS. From it we have hand-picked the resources that are most relevant to our current and expected
-future usage of ROS assuming that you use <a href="https://github.com/UBCSailbot/sailbot_workspace">our preconfigured workspace</a>.
-To run our software on your device without our workspace, you would have to <a href="https://docs.ros.org/en/eloquent/Installation.html">install ROS</a>
-and the dependencies that are in <a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer">our Docker images</a>
+future usage of ROS assuming that you use <a href="https://github.com/UBCSailbot/sailbot_workspace" target="_blank">our preconfigured workspace</a>.
+To run our software on your device without our workspace, you would have to <a href="https://docs.ros.org/en/eloquent/Installation.html" target="_blank">install ROS</a>
+and the dependencies that are in <a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer" target="_blank">our Docker images</a>
 yourself.</p>
 <h2 id="workspace-configuration">Workspace Configuration<a class="headerlink" href="#workspace-configuration" title="Permanent link">&para;</a></h2>
 <p>To get our workspace configuration running on your computer:</p>
 <ol>
-<li>Set it up by following the <a href="https://github.com/UBCSailbot/sailbot_workspace#setup">setup instructions</a></li>
-<li>Uncomment the ROS 2 tutorials section in <a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/Dockerfile"><code>.devcontainer/Dockerfile</code></a>,
+<li>Set it up by following the <a href="https://github.com/UBCSailbot/sailbot_workspace#setup" target="_blank">setup instructions</a></li>
+<li>Uncomment the ROS 2 tutorials section in <a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/Dockerfile" target="_blank"><code>.devcontainer/Dockerfile</code></a>,
    then run the "Dev Containers: Rebuild Container" VS Code command, to install the tutorials' dependencies</li>
-<li>Uncomment the ROS 2 tutorials section in <a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/src/new_project.repos"><code>src/new_project.repos</code></a>,
+<li>Uncomment the ROS 2 tutorials section in <a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/src/new_project.repos" target="_blank"><code>src/new_project.repos</code></a>,
    then run the "setup" VS Code task, to clone the repositories used in the tutorials</li>
 </ol>
 <p>Our workspace configuration contains easier methods of accomplishing some of the tutorial steps, or eliminates the need
@@ -1104,7 +1104,7 @@ for them altogether.</p>
 <p>We encourage all software members to work through the tutorials listed below in order.
 For tutorials that have both C++ and Python versions, NET members should do the C++ version
 while CTRL and PATH members should do the Python version.</p>
-<p><a href="https://docs.ros.org/en/eloquent/Tutorials.html#beginner-cli-tools">CLI Tools</a></p>
+<p><a href="https://docs.ros.org/en/eloquent/Tutorials.html#beginner-cli-tools" target="_blank">CLI Tools</a></p>
 <ul>
 <li>Introducing turtlesim and rqt</li>
 <li>Understanding ROS 2 nodes</li>
@@ -1115,7 +1115,7 @@ while CTRL and PATH members should do the Python version.</p>
 <li>Using rqt_console</li>
 <li>Recording and playing back data</li>
 </ul>
-<p><a href="https://docs.ros.org/en/eloquent/Tutorials.html#beginner-client-libraries">Client Libraries</a></p>
+<p><a href="https://docs.ros.org/en/eloquent/Tutorials.html#beginner-client-libraries" target="_blank">Client Libraries</a></p>
 <ul>
 <li>Creating a workspace</li>
 <li>Creating your first ROS 2 package</li>
@@ -1127,19 +1127,19 @@ while CTRL and PATH members should do the Python version.</p>
 <h2 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h2>
 <p>We encourage all software members to read the following documentation on key ROS concepts:</p>
 <ul>
-<li><a href="https://docs.ros.org/en/eloquent/Concepts/Logging.html">About logging and logger configuration</a></li>
+<li><a href="https://docs.ros.org/en/eloquent/Concepts/Logging.html" target="_blank">About logging and logger configuration</a></li>
 </ul>
 <h2 id="ros-1-bridge">ROS 1 Bridge<a class="headerlink" href="#ros-1-bridge" title="Permanent link">&para;</a></h2>
 <p>There are two major versions of ROS, aptly named ROS 1 and ROS 2. Our previous project, Raye,
 uses ROS 1 because it was the only version available during her design process. Our new project will
 use ROS 2, a complete re-design of the framework that tackles the shortcomings of ROS 1 to bring it up
 to industry needs and standards.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> If you are curious about the changes made in ROS 2 compared to 1,
-<a href="http://design.ros2.org/articles/changes.html">this article</a> is a worthwhile read.</p>
+<a href="http://design.ros2.org/articles/changes.html" target="_blank">this article</a> is a worthwhile read.</p>
 <p>ROS 2 includes the ROS 1 Bridge, a collection of packages that can be installed alongside ROS 1 to help migrate code
 from ROS 1 to ROS 2. As we will be reusing parts of Raye's codebase, it is essential to know how to use these packages.
 Until we are completely done with Raye, our preconfigured workspace will have ROS 1, ROS 1 Bridge, and ROS 2 installed.</p>
-<p>We encourage all software members work through the <a href="https://github.com/ros2/ros1_bridge/blob/master/README.md">ROS 1 Bridge README</a>.
-For PATH members, the <a href="https://docs.ros.org/en/eloquent/Tutorials/Launch-files-migration-guide.html">Migrating launch files from ROS 1 to ROS 2 page</a>
+<p>We encourage all software members work through the <a href="https://github.com/ros2/ros1_bridge/blob/master/README.md" target="_blank">ROS 1 Bridge README</a>.
+For PATH members, the <a href="https://docs.ros.org/en/eloquent/Tutorials/Launch-files-migration-guide.html" target="_blank">Migrating launch files from ROS 1 to ROS 2 page</a>
 will be a helpful reference when we do so.</p>
 <div class="footnote">
 <hr />
@@ -1161,7 +1161,7 @@ will be a helpful reference when we do so.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 3, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 4, 2022</span>
       
     
   </small>
