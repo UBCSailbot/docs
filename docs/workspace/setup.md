@@ -1,18 +1,18 @@
 This page will get you set up to develop UBCSailbot's software on VS Code. It is based on athackst's
-[vscode_ros2_workspace](https://github.com/athackst/vscode_ros2_workspace).
-See their [write-up](https://www.allisonthackston.com/articles/vscode_docker_ros2.html) for a more in-depth look on how
-this workspace functions.
+[vscode_ros2_workspace](https://github.com/athackst/vscode_ros2_workspace){target=_blank}.
+See their [write-up](https://www.allisonthackston.com/articles/vscode_docker_ros2.html){target=_blank} for a more
+in-depth look on how this workspace functions.
 
 ## Getting started
 
 This workspace can be set up on most operating systems, but it performs the best and requires the least setup on
-Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu).
+Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){target=_blank}.
 
 1. Install prerequisites
 
     === ":material-microsoft-windows: Windows"
 
-        - Install [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)
+        - Install [WSL](https://learn.microsoft.com/en-us/windows/wsl/about){target=_blank}
             - Run these commands in an *administrator* PowerShell window
 
                 ```
@@ -21,25 +21,25 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu).
                 wsl --set-version Ubuntu 2
                 ```
 
-        - [Docker](https://docs.docker.com/get-started/overview/)
-            - [Install Docker Desktop](https://docs.docker.com/engine/install/)
+        - [Docker](https://docs.docker.com/get-started/overview/){target=_blank}
+            - [Install Docker Desktop](https://docs.docker.com/engine/install/){target=_blank}
             - Use the WSL 2 backend for Docker Desktop
 
     === ":material-apple: MacOS"
 
-        - [Docker](https://docs.docker.com/get-started/overview/)
-            - [Install Docker Desktop](https://docs.docker.com/engine/install/)
+        - [Docker](https://docs.docker.com/get-started/overview/){target=_blank}
+            - [Install Docker Desktop](https://docs.docker.com/engine/install/){target=_blank}
 
     === ":material-linux: Linux"
 
-        - [Docker](https://docs.docker.com/get-started/overview/)
-            - [Install Docker Engine](https://docs.docker.com/engine/install/)
-            - [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
-            - [Configure Docker to start on boot](https://docs.docker.com/engine/install/linux-postinstall/#configure-docker-to-start-on-boot)
+        - [Docker](https://docs.docker.com/get-started/overview/){target=_blank}
+            - [Install Docker Engine](https://docs.docker.com/engine/install/){target=_blank}
+            - [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank}
+            - [Configure Docker to start on boot](https://docs.docker.com/engine/install/linux-postinstall/#configure-docker-to-start-on-boot){target=_blank}
 
-    - [VS Code](https://code.visualstudio.com/)
-        - [Install VS Code](https://code.visualstudio.com/download)
-        - [Install VS Code Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
+    - [VS Code](https://code.visualstudio.com/){target=_blank}
+        - [Install VS Code](https://code.visualstudio.com/download){target=_blank}
+        - [Install VS Code Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack){target=_blank}
 
 2. For Windows and MacOS, additional configuration to run GUI applications
 
@@ -51,7 +51,7 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu).
 
     === ":material-microsoft-windows: Windows 10"
 
-        Follow [this guide](https://techcommunity.microsoft.com/t5/windows-dev-appconsult/running-wsl-gui-apps-on-windows-10/ba-p/1493242)
+        Follow [this guide](https://techcommunity.microsoft.com/t5/windows-dev-appconsult/running-wsl-gui-apps-on-windows-10/ba-p/1493242){target=_blank}
         up to, but not including setting the `DISPLAY` variable. Then, add the following to your `~/.bashrc` of the WSL
         filesystem:
 
@@ -64,8 +64,8 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu).
     === ":material-apple: MacOS"
 
         ### XQuartz Configuration
-        Follow [this guide](https://gist.github.com/sorny/969fe55d85c9b0035b0109a31cbcb088) to setup XQuartz. Then,
-        follow these additional XQuartz configuration steps:
+        Follow [this guide](https://gist.github.com/sorny/969fe55d85c9b0035b0109a31cbcb088){target=_blank} to setup 
+        XQuartz. Then, follow these additional XQuartz configuration steps:
 
         ```bash
         # Copy contents to ~/.xinitrc
@@ -159,19 +159,19 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu).
 ROS2-approved formatters are included in the IDE.  
 
 - **C++** uncrustify; config from `ament_uncrustify`
-- **Python** autopep8; vscode settings consistent with the [style guide](https://index.ros.org/doc/ros2/Contributing/Code-Style-Language-Versions/)
+- **Python** autopep8; vscode settings consistent with the [style guide](https://index.ros.org/doc/ros2/Contributing/Code-Style-Language-Versions/){target=_blank}
 
 ### Tasks
 
 There are many pre-defined tasks, see
-[our workspace file](https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/config/sailbot_workspace.code-workspace)
+[our workspace file](https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/config/sailbot_workspace.code-workspace){target=_blank}
 for a complete listing. Bring up the task menu by typing "Tasks: Run Task" in the command pallete, or creating a keyboard
 shortcut for `workbench.action.tasks.runTask`.
 
-### Debugging ([WIP](https://github.com/UBCSailbot/sailbot_workspace/issues/6))
+### Debugging ([WIP](https://github.com/UBCSailbot/sailbot_workspace/issues/6){target=_blank})
 
 This repository has debug configurations for Python files and Cpp programs. See
-[our workspace file](https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/config/sailbot_workspace.code-workspace)
+[our workspace file](https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/config/sailbot_workspace.code-workspace){target=_blank}
 for configuration details.
 Bring up the debug configurations menu by typing "debug " in the command pallete without the ">" prefix, or select one
 from the Run and Debug view.
@@ -179,7 +179,7 @@ from the Run and Debug view.
 ### Continuous Integration
 
 This repository also has continuous integration that lints and tests our code.
-See [`.github/workflows/`](https://github.com/UBCSailbot/sailbot_workspace/tree/main/.github/workflows)
+See [`.github/workflows/`](https://github.com/UBCSailbot/sailbot_workspace/tree/main/.github/workflows){target=_blank}
 for the configuration files.
 
 ### Configured Terminal Commands and Aliases
