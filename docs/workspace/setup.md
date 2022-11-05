@@ -51,22 +51,41 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu).
 
     === ":material-microsoft-windows: Windows 10"
 
-        - Follow [this guide](https://techcommunity.microsoft.com/t5/windows-dev-appconsult/running-wsl-gui-apps-on-windows-10/ba-p/1493242)
-            up to setting the `DISPLAY` variable, exclusive
-        - Add ``export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"`` to `~/.bashrc`
-            of the WSL file system
-        - If VS Code is open, restart it
+        Follow [this guide](https://techcommunity.microsoft.com/t5/windows-dev-appconsult/running-wsl-gui-apps-on-windows-10/ba-p/1493242)
+        up to, but not including setting the `DISPLAY` variable. Then, add the following to your `~/.bashrc` of the WSL
+        filesystem:
+
+        ```bash
+        export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
+        ```
+
+        If VS Code is open, then restart it.
 
     === ":material-apple: MacOS"
 
-        - Follow [this guide](https://gist.github.com/sorny/969fe55d85c9b0035b0109a31cbcb088) to setup XQuartz
-        - Additional XQuartz configuration
-            - `cp /opt/X11/etc/X11/xinit/xinitrc ~/.xinitrc`
-            - Add `xhost +localhost` to `~/.xinitrc` after its first line
-            - If XQuartz is open, restart it
-        - Zsh configuration
-            - Add `export MAC_DOCKER_LOCALHOST="docker.for.mac.host.internal"` and `export DISPLAY=:0` to `~/.zshrc`
-            - If VS Code is open, restart it
+        ### XQuartz Configuration
+        Follow [this guide](https://gist.github.com/sorny/969fe55d85c9b0035b0109a31cbcb088) to setup XQuartz. Then,
+        follow these additional XQuartz configuration steps:
+
+        ```bash
+        # Copy contents to ~/.xinitrc
+        cp /opt/X11/etc/X11/xinit/xinitrc ~/.xinitrc
+
+        # Append "xhost +localhost" to .xinitrc
+        echo "xhost +localhost" >> ~/.xinitrc
+        ```
+
+        If XQuartz is open, then restart it.
+
+        ### Zsh Configuration
+
+        Execute these commands in your terminal:
+
+        ```bash
+        echo 'export MAC_DOCKER_LOCALHOST="docker.for.mac.host.internal"' >> ~/.zshrc
+        echo 'export DISPLAY=:0' >> ~/.zshrc
+        ```
+        If VS Code is open, then restart it.
 
     ??? note "Arch Linux"
 
@@ -100,7 +119,7 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu).
     code sailbot_workspace
     ```
 
-5. Open it in a container
+5. Open it in a container:
     1. Make sure that Docker is running
     2. When you open it for the first time, you should see a little popup that asks you if you would like to open it in
        a container. Say yes!
@@ -139,8 +158,8 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu).
 
 ROS2-approved formatters are included in the IDE.  
 
-- **c++** uncrustify; config from `ament_uncrustify`
-- **python** autopep8; vscode settings consistent with the [style guide](https://index.ros.org/doc/ros2/Contributing/Code-Style-Language-Versions/)
+- **C++** uncrustify; config from `ament_uncrustify`
+- **Python** autopep8; vscode settings consistent with the [style guide](https://index.ros.org/doc/ros2/Contributing/Code-Style-Language-Versions/)
 
 ### Tasks
 
