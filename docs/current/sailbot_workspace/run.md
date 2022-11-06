@@ -1,17 +1,47 @@
 # Run Instructions
 
-1. For Windows 10 and MacOS, if you want to run something with a GUI
-    - For Windows 10, open the XLaunch configuration file
-    - For MacOS, start XQuartz
+## Source the ROS workspace overlay
 
-2. Source the relevant overlay in the terminal
-    - ROS 2: `srcnew`
-    - ROS 1: `srcraye`
+=== "ROS 2"
 
-3. Build (this step might not be necessary if there are no changes made to C++ or custom msg nodes)
-    - ROS 2: run the "Build" VS Code task, which has the keyboard shortcut `CTRL+SHIFT+B`
-    - ROS 1: `roscd` then `catkin_make`
+    ```
+    srcnew
+    ```
 
-4. Run the ROS program
-    - ROS 2: `ros2 run ...` or `ros2 launch ...`
-    - ROS 1: `rosrun ...` or `roslaunch ...`
+=== "ROS 1"
+
+    ```
+    srcraye
+    ```
+
+## Build
+
+!!! note ""
+
+    This step is not necessary if no modifications to C++ code or custom msgs were made.
+
+=== "ROS 2"
+
+    Run the "Build" VS Code task, which has the keyboard shortcut ++ctrl+shift+b++.
+
+=== "ROS 1"
+
+    ```
+    roscd
+    catkin_make
+    ```
+
+## Run the ROS program
+
+!!! tip "Running GUI applications"
+
+    For the operating systems that need additional software to run GUI applications like Windows 10 and MacOS,
+    ensure that they are running beforehand.
+
+=== "ROS 2"
+
+    `ros2 launch ...` or `ros2 run ...`
+
+=== "ROS 1"
+
+    `roslaunch ...` or `rosrun ...`
