@@ -160,3 +160,10 @@ code sailbot_workspace
 ## Run the VS Code task named "setup"
 
 This imports the ROS packages and install their dependencies.
+
+## Updating sailbot_workspace
+
+When changes to the Dev container are made (any file in `.devcontainer/`), it needs to be rebuilt.
+This may happen when you pull the latest commits from a branch or switch branches.
+
+1. Run the "Dev Containers: Rebuild Container" command in the VS Code command pallete
