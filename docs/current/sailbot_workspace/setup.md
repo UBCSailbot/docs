@@ -136,7 +136,7 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){
 
 !!! notes "Note for Windows"
 
-    Run the command below in the Ubuntu terminal.
+    Run the command below in the Ubuntu terminal to clone sailbot_workspace in the WSL filesystem.
 
 ```sh
 git clone https://github.com/UBCSailbot/sailbot_workspace.git
