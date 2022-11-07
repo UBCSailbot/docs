@@ -5,6 +5,8 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){
 
 ## Install and configure prerequisites
 
+### Docker
+
 === ":material-microsoft-windows: Windows"
 
     - [Docker](https://docs.docker.com/get-started/overview/){target=_blank}
@@ -38,6 +40,8 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){
         1. [Install Docker Engine](https://docs.docker.com/engine/install/){target=_blank}
         2. [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank}
         3. [Configure Docker to start on boot](https://docs.docker.com/engine/install/linux-postinstall/#configure-docker-to-start-on-boot){target=_blank}
+
+### VS Code
 
 - [VS Code](https://code.visualstudio.com/){target=_blank}
     1. [Install VS Code](https://code.visualstudio.com/download){target=_blank}
@@ -166,4 +170,4 @@ This imports the ROS packages and install their dependencies.
 When changes to the Dev container are made (any file in `.devcontainer/`), it needs to be rebuilt.
 This may happen when you pull the latest commits from a branch or switch branches.
 
-1. Run the "Dev Containers: Rebuild Container" command in the VS Code command pallete
+1. Run the "Dev Containers: Rebuild Container" command in the VS Code command palette

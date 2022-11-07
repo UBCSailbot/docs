@@ -21,6 +21,7 @@
         "srcnew",
         "struct",
         "Structs",
+        "uncrustify",
         "virtualenv"
     ],
     // flagWords - list of words to be always considered incorrect
