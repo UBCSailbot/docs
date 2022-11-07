@@ -6,6 +6,26 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://UBCSailbot.github.io/docs/current/</loc>
+         <lastmod>2022-11-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://UBCSailbot.github.io/docs/current/sailbot_workspace/overview/</loc>
+         <lastmod>2022-11-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://UBCSailbot.github.io/docs/current/sailbot_workspace/run/</loc>
+         <lastmod>2022-11-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://UBCSailbot.github.io/docs/current/sailbot_workspace/setup/</loc>
+         <lastmod>2022-11-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://UBCSailbot.github.io/docs/reference/</loc>
          <lastmod>2022-11-07</lastmod>
          <changefreq>daily</changefreq>
