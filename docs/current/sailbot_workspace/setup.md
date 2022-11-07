@@ -9,11 +9,10 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){
 
 === ":material-microsoft-windows: Windows"
 
-    - [Docker](https://docs.docker.com/get-started/overview/){target=_blank}
-        1. [Install Docker Desktop](https://docs.docker.com/desktop/install/windows-install/){target=_blank}
+    1. [Install Docker Desktop](https://docs.docker.com/desktop/install/windows-install/){target=_blank}
     with the WSL 2 backend
 
-    - [WSL](https://learn.microsoft.com/en-us/windows/wsl/about){target=_blank}
+    2. Configure [WSL](https://learn.microsoft.com/en-us/windows/wsl/about){target=_blank}
         1. Run the commands below in an **administrator** PowerShell window
 
             ```powershell
@@ -31,15 +30,13 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){
 
 === ":material-apple: MacOS"
 
-    - [Docker](https://docs.docker.com/get-started/overview/){target=_blank}
-        1. [Install Docker Desktop](https://docs.docker.com/engine/install/){target=_blank}
+    1. [Install Docker Desktop](https://docs.docker.com/engine/install/){target=_blank}
 
 === ":material-linux: Linux"
 
-    - [Docker](https://docs.docker.com/get-started/overview/){target=_blank}
-        1. [Install Docker Engine](https://docs.docker.com/engine/install/){target=_blank}
-        2. [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank}
-        3. [Configure Docker to start on boot](https://docs.docker.com/engine/install/linux-postinstall/#configure-docker-to-start-on-boot){target=_blank}
+    1. [Install Docker Engine](https://docs.docker.com/engine/install/){target=_blank}
+    2. [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank}
+    3. [Configure Docker to start on boot](https://docs.docker.com/engine/install/linux-postinstall/#configure-docker-to-start-on-boot){target=_blank}
 
 ### VS Code
 
@@ -137,13 +134,13 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){
 
 ## Clone sailbot_workspace
 
+!!! notes "Note for Windows"
+
+    Run the command below in the Ubuntu terminal.
+
 ```sh
 git clone https://github.com/UBCSailbot/sailbot_workspace.git
 ```
-
-!!! notes "Note for Windows"
-
-    Run the command above in the Ubuntu terminal.
 
 ## Open sailbot_workspace in VS Code
 
