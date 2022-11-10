@@ -46,6 +46,8 @@ extra:
       link: https://www.ubcsailbot.org/
     - icon: material/instagram
       link: https://www.instagram.com/ubcsailbot/
+    - icon: material/linkedin
+      link: https://www.linkedin.com/company/ubc-sailbot/
     - icon: material/github
       link: https://github.com/UBCSailbot
     - icon: material/email
