@@ -36,6 +36,90 @@ and future members of the software team. The major things that we document in ou
 Ideally, the third point should be avoided as much as possible since we would want our code to be
 self explanatory. It should be done only when absolutely necessary.
 
+### Type hinting and static type checking
+
+Since Python is a dynamically typed language, we need to make use of the [`typing`](https://docs.python.org/3/library/typing.html){target=_blank}
+and [`mypy`](https://mypy.readthedocs.io/en/stable/index.html){target=_blank} modules if we want to do
+any type checking in our functions and classes. Type checking is beneficial for documentation and maintaining a clean
+software architecture. There is some syntax to get familiar in order to use type checking. We recommend the following
+resources:
+
+- [mypy Typing Cheatsheet](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html){target=_blank}
+- [PEP 483: The Theory of Type Hints (A Simplified Guide)](https://peps.python.org/pep-0483/){target=_blank}
+- [PEP 484: Type Hints (Fully Comprehensive Guide)](https://peps.python.org/pep-0484/){target=_blank}
+
+You can check for type mismatches in the command line by running `mypy myfile.py`. Below are a few examples of
+using type hinting:
+
+??? example "Return the sum of a sequence"
+
+    ```python
+    from typing import Sequence, Union
+    Number = Union[int, float]
+
+    def sumseq(seq : Sequence[Number]) -> Number:
+        return sum(seq)
+    ```
+
+??? example "Function with optional parameters and default values"
+
+    ```python
+    from typing import Optional
+
+    def printArgs(a : str, b : str="World", c : Optional[str]=None) -> None:
+        print(f"Value of a: {a}")
+        print(f"Value of b: {b}")
+        if c is not None:
+            print(f"Value of c: {c}")
+    ```
+
+??? example "Function with custom class"
+
+    ```python
+    class MyClass:
+        def __init__(self) -> None:
+            pass
+
+    def foo(a : MyClass) -> None:
+        print(a)
+    ```
+
+??? example "Forward referencing a class"
+
+    === "With `__future__`"
+
+        ```python
+        from __future__ import annotations
+
+        def foo(a : MyClass) -> None:
+            print(a)
+
+        class MyClass:
+            def __init__(self) -> None:
+                pass
+        ```
+
+    === "Without `__future__`"
+
+        ```python
+        def foo(a : 'MyClass') -> None:
+            print(a)
+
+        class MyClass:
+            def __init__(self) -> None:
+                pass
+        ```
+
+??? example "Function that never returns"
+
+    ```python
+    from typing import NoReturn
+
+    def bar() -> NoReturn:
+        while True:
+            print("Hello World!")
+    ```
+
 ### Generating docstrings
 
 We use a vscode extension called [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring){target=_blank}
