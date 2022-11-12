@@ -43,7 +43,7 @@ which autogenerates docstrings that we use to document our code. To install this
 vscode and search `autoDocstring` in the marketplace.
 
 To generate docstrings, type `"""` at the beginning of the function that you want to document and the template
-will be generated for you!
+will be generated for you! If you use type hinting, this extention will autofill some of the documentation for you!
 
 !!! note
 
@@ -55,84 +55,90 @@ will be generated for you!
 It's hard to imagine what good documentation looks like. We provide a few examples below of documenting code using the
 autoDocstring extension.
 
-```python title="Documentation example on a function"
-def inner_product(v1, v2):
-    """
-    Computes the inner product between two 1D real vectors. Input vectors should have the
-    same dimensions.
+??? example "Documentation example on a function"
 
-    Args:
-        v1 (List[float]): The first vector of real numbers.
-        v2 (List[float]): The second vector of real numbers.
-
-    Returns:
-       float : The inner product between v1 and v2
-    """
-    assert (len(v1) == len(v2)), "Input lists must have same length"
-
-    # Iterate through elementwise pairs
-    summation = 0
-    for e1, e2 in zip(v1, v2):
-        summation += (e1 * e2)
-    return float(summation)
-```
-
-```python title="Documentation example with a stack"
-class Stack:
-
-    """
-    This class represents a stack, which is an abstract data type that serves as a collection of
-    elements. The stack is a LIFO datastructure defined by two main operations: Push and Pop.
-
-    Attributes:
-        __stack (List[Any]): A list containing the elements on the stack.
-    """
-
-    def __init__(self):
+    ```python
+    from typing import List
+    def inner_product(v1 : List[float], v2 : List[float]) -> float:
         """
-        Initializes the Stack object.
-        """
-        self.__stack = []
-
-    def push(self, element):
-        """
-        Pushes an element to the top of the stack.
+        Computes the inner product between two 1D real vectors. Input vectors should have the
+        same dimensions.
 
         Args:
-            element (Any): The element to be pushed on to the stack.
-        """
-        self.__stack.append(element)
-
-    def pop(self):
-        """
-        Removes the element at the top of the stack and returns it. If the stack is empty,
-        then None is returned.
+            v1 (List[float]): The first vector of real numbers.
+            v2 (List[float]): The second vector of real numbers.
 
         Returns:
-            Any, NoneType: The element at the top of the stack.
+        float : The inner product between v1 and v2
         """
-        if self.is_empty():
-            return None
-        else:
-            return self.__stack.pop()
+        assert (len(v1) == len(v2)), "Input lists must have same length"
 
-    def is_empty(self):
-        """
-        Determines whether the stack is empty or not.
+        # Iterate through elementwise pairs
+        summation = 0
+        for e1, e2 in zip(v1, v2):
+            summation += (e1 * e2)
+        return float(summation)
+    ```
 
-        Returns:
-            bool: Returns True if the stack is empty, and False otherwise.
-        """
-        empty = (len(self.__stack) == 0)
-        return empty
+??? example "Documentation example with a stack"
 
-    def __len__(self):
-        """
-        Gets the number of elements on the stack.
+    ```python
+    from typing import Any
+    class Stack:
 
-        Returns:
-            int: The number of elements on the stack.
         """
-        length = len(self.__stack)
-        return length
-```
+        This class represents a stack, which is an abstract data type that serves as a collection of
+        elements. The stack is a LIFO datastructure defined by two main operations: Push and Pop.
+
+        Attributes:
+            __stack (List[Any]): A list containing the elements on the stack.
+        """
+
+        def __init__(self):
+            """
+            Initializes the Stack object.
+            """
+            self.__stack = []
+
+        def push(self, element : Any) -> Any:
+            """
+            Pushes an element to the top of the stack.
+
+            Args:
+                element (Any): The element to be pushed on to the stack.
+            """
+            self.__stack.append(element)
+
+        def pop(self) -> Any:
+            """
+            Removes the element at the top of the stack and returns it. If the stack is empty,
+            then None is returned.
+
+            Returns:
+                Any, NoneType: The element at the top of the stack.
+            """
+            if self.is_empty():
+                return None
+            else:
+                return self.__stack.pop()
+
+        def is_empty(self) -> bool:
+            """
+            Determines whether the stack is empty or not.
+
+            Returns:
+                bool: Returns True if the stack is empty, and False otherwise.
+            """
+            empty = (len(self.__stack) == 0)
+            return empty
+
+        def __len__(self) -> int:
+            """
+            Gets the number of elements on the stack.
+
+            Returns:
+                int: The number of elements on the stack.
+            """
+            length = len(self.__stack)
+            return length
+    ```
