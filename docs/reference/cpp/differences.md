@@ -7,7 +7,7 @@ and reasons to use C++.
 !!! note
     Function definitions and declarations shown on this page will often look like `type function_name(void);`. This is
     standard in C to denote no parameters. In C++, it is considered better practice to use `type function_name();`
-    without the void. There is some nuance to this which you can read about [here](https://softwareengineering.stackexchange.com/questions/286490/what-is-the-difference-between-function-and-functionvoid).
+    without the void. There is some nuance to this which you can read about [here](https://softwareengineering.stackexchange.com/questions/286490/what-is-the-difference-between-function-and-functionvoid){target=_blank}.
 
 ## Classes and Structs
 

@@ -103,6 +103,7 @@ nav:
       - Overview: current/sailbot_workspace/overview.md
       - Setup: current/sailbot_workspace/setup.md
       - Run: current/sailbot_workspace/run.md
+      - NET Workspace Structure: current/sailbot_workspace/net_workspace.md
   - Reference:
     - reference/index.md
     - C++:
@@ -110,7 +111,6 @@ nav:
         - reference/cpp/index.md
       - Differences: reference/cpp/differences.md
       - Tools: reference/cpp/tools.md
-      - NET Workspace Structure: reference/cpp/net_workspace.md
     - GitHub:
       - Development Workflow:
         - Overview:

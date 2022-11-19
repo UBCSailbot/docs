@@ -7,6 +7,13 @@ The Network Systems directory is similar to the following (READMEs and CMakeList
 ```
 network_systems
 |   package.xml
+|
+└───.github
+|   |   ...
+|
+└───launch
+|   |   ...
+|
 └───lib
 |   └───protofiles
 |       |   message.proto
@@ -34,6 +41,10 @@ network_systems
 At the root of the directory is a `package.xml`. This file tells ROS2 that the network_systems package exists. It is
 what allows us to run, for example: `ros2 run network_systems example`.
 
+`.github/` contains Github specific files like workflows for continuous integration.
+
+`launch/` contains ROS launch files.
+
 ## lib
 
 The lib is where we will place static libraries that we want to be accessible to all programs. This means they do not
@@ -55,7 +66,7 @@ To add a new module, create a folder and add it to `projects/CMakeLists.txt`. In
 (optional), `src/`, and `test/` folder, as well as a `CMakeLists.txt` which will need to be filled out accordingly.
 
 ??? example
-    This is the `CMakeLists.txt` for an example module where the source files are for Cached Fibonacci program.
+    This is the `CMakeLists.txt` for an example module where the source files are for a Cached Fibonacci program.
 
     ```cmake
     set(module example)
