@@ -36,12 +36,13 @@ and future members of the software team. The major things that we document in ou
 Ideally, the third point should be avoided as much as possible since we would want our code to be
 self explanatory. It should be done only when absolutely necessary.
 
-### Type hinting and static type checking
+### Type hinting
 
 Since Python is a dynamically typed language, we need to make use of the [`typing`](https://docs.python.org/3/library/typing.html){target=_blank}
 and [`mypy`](https://mypy.readthedocs.io/en/stable/index.html){target=_blank} modules if we want to do
 any type checking in our functions and classes. Type checking is beneficial for documentation and maintaining a clean
-software architecture. There is some syntax to get familiar in order to use type checking. We recommend the following
+software architecture while catching errors through static type checking using mypy, which is a static type checker.
+There is some syntax to get familiar in order to use type checking. We recommend the following
 resources:
 
 - [mypy Typing Cheatsheet](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html){target=_blank}
@@ -55,7 +56,10 @@ using type hinting:
 
     ```python
     from typing import Sequence, Union
+
+
     Number = Union[int, float]
+
 
     def sumseq(seq : Sequence[Number]) -> Number:
         return sum(seq)
@@ -65,6 +69,7 @@ using type hinting:
 
     ```python
     from typing import Optional
+
 
     def printArgs(a : str, b : str="World", c : Optional[str]=None) -> None:
         print(f"Value of a: {a}")
@@ -80,6 +85,7 @@ using type hinting:
         def __init__(self) -> None:
             pass
 
+
     def foo(a : MyClass) -> None:
         print(a)
     ```
@@ -91,8 +97,10 @@ using type hinting:
         ```python
         from __future__ import annotations
 
+
         def foo(a : MyClass) -> None:
             print(a)
+
 
         class MyClass:
             def __init__(self) -> None:
@@ -105,6 +113,7 @@ using type hinting:
         def foo(a : 'MyClass') -> None:
             print(a)
 
+
         class MyClass:
             def __init__(self) -> None:
                 pass
@@ -114,6 +123,7 @@ using type hinting:
 
     ```python
     from typing import NoReturn
+
 
     def bar() -> NoReturn:
         while True:
