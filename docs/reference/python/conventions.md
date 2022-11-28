@@ -134,7 +134,8 @@ which autogenerates docstrings that we use to document our code. To install this
 vscode and search `autoDocstring` in the marketplace.
 
 To generate docstrings, type `"""` at the beginning of the function that you want to document and the template
-will be generated for you! If you use type hinting, this extention will autofill some of the documentation for you!
+will be generated for you! If you use [type hinting](#type-hinting), this extention will autofill some of the
+documentation for you!
 
 !!! note
 
