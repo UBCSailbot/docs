@@ -60,7 +60,7 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){
 
         1. Follow [this guide](https://techcommunity.microsoft.com/t5/windows-dev-appconsult/running-wsl-gui-apps-on-windows-10/ba-p/1493242){target=_blank}
         up to, but not including setting the `DISPLAY` variable
-        2. Zsh configuration
+        2. Bash configuration
             1. Run the command below in your Ubuntu terminal
 
                 ```bash
