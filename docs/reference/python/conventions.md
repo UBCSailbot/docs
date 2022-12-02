@@ -42,6 +42,24 @@ Since Python is a dynamically typed language, we need to make use of the [`typin
 and [`mypy`](https://mypy.readthedocs.io/en/stable/index.html){target=_blank} modules if we want to do
 any type checking in our functions and classes. Type checking is beneficial for documentation and maintaining a clean
 software architecture while catching errors through static type checking using mypy, which is a static type checker.
+
+Although type hinting can be beneficial, there are also some takeaways which include:[^1]
+
+- **Takes more time and effort.** You will likely need to spend time learning how to use the `typing` module and `mypy`,
+and there will also be more time spent debugging type mismatches.
+- **Works best in newer Python versions.** You will likely have a better experience with type checking with Python 3.6
+or higher than older versions.
+- **There is a start-up time penalty.** Importing the `typing` module may cause noticeable delays for small scripts that
+are meant to be ran quickly.
+
+If you want to determine whether to use type hinting or not, these are some good rules of thumb:[^1]
+
+- Type hints do not add much to shorter scripts, and especially if they do not play a major role in a larger codebase.
+- Type hints are beneficial for others if you plan on making your project open source, and especially if published on
+[PyPI](https://realpython.com/pypi-publish-python-package/){target=_blank}.
+- Type hints are useful in larger projects because it can help you keep track of the types in complex workflows. This
+becomes even more apparent when you are collaborating with others on the same project.
+
 There is some syntax to get familiar in order to use type checking. We recommend the following
 resources:
 
@@ -236,3 +254,5 @@ autoDocstring extension.
             length = len(self.__stack)
             return length
     ```
+
+[^1]: <https://realpython.com/lessons/pros-and-cons-type-hints/>
