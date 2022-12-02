@@ -18,30 +18,11 @@ pep8 style guide.
     Our CI automatically checks that your code follows the pep8 standard. If it does not, your pull requests will
     be blocked from being merged until those issues are resolved!
 
-## Documentation
-
-Code is written once and read a thousand times, so it is important to provide good documentation for current
-and future members of the software team. The major things that we document in our code are:
-
-1. **Classes and Objects:**
-    - What does it represent? What is it used for?
-    - What are its member variables? What are they used for?
-2. **Functions:**
-    - What are the inputs and outputs?
-    - What is the overall behavior and purpose of the function?
-3. **Code:**
-    - Is a line of code obscure and/or not clear? Add an inline comment to clear things up.
-    - Break down a large process.
-
-Ideally, the third point should be avoided as much as possible since we would want our code to be
-self explanatory. It should be done only when absolutely necessary.
-
 ### Type hinting
 
-Since Python is a dynamically typed language, we need to make use of the [`typing`](https://docs.python.org/3/library/typing.html){target=_blank}
-and [`mypy`](https://mypy.readthedocs.io/en/stable/index.html){target=_blank} modules if we want to do
-any type checking in our functions and classes. Type checking is beneficial for documentation and maintaining a clean
-software architecture while catching errors through static type checking using mypy, which is a static type checker.
+Even though Python is a dynamically typed language, newer versions support type hinting. Type hinting catches
+errors, documents code, improves IDEs and linters, and helps build and maintain a clean software architecture.[^1]
+Expanding on how it catches errors, a static type checker such as [`mypy`](https://mypy.readthedocs.io/en/stable/index.html){target=_blank}
 
 Although type hinting can be beneficial, there are also some takeaways which include:[^1]
 
@@ -60,15 +41,13 @@ If you want to determine whether to use type hinting or not, these are some good
 - Type hints are useful in larger projects because it can help you keep track of the types in complex workflows. This
 becomes even more apparent when you are collaborating with others on the same project.
 
-There is some syntax to get familiar in order to use type checking. We recommend the following
-resources:
+There is some syntax to get familiar in order to use type checking. We recommend the following resources:
 
 - [mypy Typing Cheatsheet](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html){target=_blank}
 - [PEP 483: The Theory of Type Hints (A Simplified Guide)](https://peps.python.org/pep-0483/){target=_blank}
 - [PEP 484: Type Hints (Fully Comprehensive Guide)](https://peps.python.org/pep-0484/){target=_blank}
 
-You can check for type mismatches in the command line by running `mypy myfile.py`. Below are a few examples of
-using type hinting:
+Below are a few examples of using type hinting:
 
 ??? example "Return the sum of a sequence"
 
@@ -148,6 +127,24 @@ using type hinting:
             print("Hello World!")
     ```
 
+## Documentation
+
+Code is written once and read a thousand times, so it is important to provide good documentation for current
+and future members of the software team. The major things that we document in our code are:
+
+1. **Classes and Objects:**
+    - What does it represent? What is it used for?
+    - What are its member variables? What are they used for?
+2. **Functions:**
+    - What are the inputs and outputs?
+    - What is the overall behavior and purpose of the function?
+3. **Code:**
+    - Is a line of code obscure and/or not clear? Add an inline comment to clear things up.
+    - Break down a large process.
+
+Ideally, the third point should be avoided as much as possible since we would want our code to be
+self explanatory. It should be done only when absolutely necessary.
+
 ### Generating docstrings
 
 We use a vscode extension called [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring){target=_blank}
@@ -155,7 +152,8 @@ which autogenerates docstrings that we use to document our code. To install this
 vscode and search `autoDocstring` in the marketplace.
 
 To generate docstrings, type `"""` at the beginning of the function that you want to document and the template
-will be generated for you! If you use type hinting, this extention will autofill some of the documentation for you!
+will be generated for you! If you use [type hinting](#type-hinting), this extention will autofill some of the
+documentation for you!
 
 !!! note
 
