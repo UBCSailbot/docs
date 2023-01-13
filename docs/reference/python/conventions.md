@@ -22,7 +22,8 @@ pep8 style guide.
 
 Even though Python is a dynamically typed language, newer versions support type hinting. Type hinting catches
 errors, documents code, improves IDEs and linters, and helps build and maintain a clean software architecture.[^1]
-Expanding on how it catches errors, a static type checker such as [`mypy`](https://mypy.readthedocs.io/en/stable/index.html){target=_blank}.
+Expanding on how it catches errors, a static type checker such as [`mypy`](https://mypy.readthedocs.io/en/stable/index.html){target=_blank}
+can be used.
 
 There are [pros and cons](https://realpython.com/lessons/pros-and-cons-type-hints/){target=_blank} to using type
 hinting, make sure that you are aware of them before deciding to utilize them in your codebase.
