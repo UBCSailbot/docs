@@ -3,11 +3,12 @@ import os
 import sys
 import re
 import json
+import yaml
 
 ## CONSTANTS
 REGEX_PATTERN = r"(?<!!)\[.*?\]\(\s*https?:\/\/[^\(\)]+\)(?!\{\s*:?\s*target\s*=\s*(?:\s*_blank\s*|\s*\"\s*_blank\s*\"\s*)\})"
 ROOT = "./docs/"
-CONFIG_DIR = "./.config.json"
+LINT_DIR = "./.github/workflows/lint.yml"
 PASSED_MSG = "[PASSED]"
 FAILED_MSG = "[FAILED]"
 ERROR_MSG1 = "External links should redirect to a new tab. Change the link to "
@@ -21,11 +22,14 @@ annotations = []
 def main():
 
     # Perform the linting process
-    ignore_files = []
-    if (check_config()):
-        ignore_files = get_ignore_files()
+    ignore_files: list[str] = []
+    ignore_patterns: list[str] = []
+    config_dir: str = get_config_dir()
+    if (config_dir and os.path.exists(config_dir)):
+        ignore_files = get_ignore_files(config_dir)
+        ignore_patterns = get_ignore_patterns(config_dir)
     markdown_files = get_markdown_files(ROOT, ignore_files)
-    passed = lint_markdown_files(markdown_files, REGEX_PATTERN)
+    passed = lint_markdown_files(markdown_files, REGEX_PATTERN, ignore_patterns)
 
     # If linting fails, print any annotations to stderr for GitHub and exit with status code 1
     if not passed:
@@ -34,35 +38,50 @@ def main():
 
 
 ## HELPER FUNCTIONS
-def check_config():
+def get_config_dir() -> str:
     """
-    Verifies wether a configuration file exists in the root directory.
+    Obtain the absolute path for the configuration file from lint.yml.
 
     Returns:
-        bool: True if a config file exists and false otherwise.
+        str: The absolute path for the config file or an empty string if none is specified.
     """
+    with open(LINT_DIR, 'r') as file:
+        link_redirection_linter = yaml.safe_load(file)
+    path: str = link_redirection_linter['jobs']['markdown-link-redirection-check']['steps'][3]['with']['config-file']
+    file.close()
+    return path
 
-    for file in os.listdir('./'):
-        if file == ".config.json":
-            return True
-    return False
 
-
-def get_ignore_files():
+def get_ignore_files(dir: str) -> list[str]:
     """
-    Obtain a list of files to ignore specified in the config file located in the root directory
+    Obtain a list of files to ignore specified in the config file located in the specified directory
 
     Returns:
-        List[str]: A list of markdown file paths to ignore specified in the config file.
+        List[str]: A list of markdown file paths to ignore when performing linting.
     """
-
     ignore_files = []
-    f = open(CONFIG_DIR)
+    f = open(dir)
     data = json.load(f)
     for row in data['ignoreFiles']:
         ignore_files.append(row['file'])
     f.close()
     return ignore_files
+
+
+def get_ignore_patterns(dir: str) -> list[str]:
+    """
+    Obtain a list of patterns to ignore specified in the config file located in the specified directory.
+
+    Returns:
+        List[str]: A list of hyperlink patterns to ignore when performing linting.
+    """
+    ignore_patterns = []
+    f = open(dir)
+    data = json.load(f)
+    for row in data['ignorePatterns']:
+        ignore_patterns.append(row['pattern'])
+    f.close()
+    return ignore_patterns
 
 
 def get_markdown_files(root_dir, ignore_files):
@@ -71,6 +90,7 @@ def get_markdown_files(root_dir, ignore_files):
 
     Args:
         root_dir (str): The root directory to start the search at.
+        ignore_files list[str]: A list of markdown file paths to ignore.
 
     Returns:
         List[str]: A list of markdown file paths relative to the root directory.
@@ -85,7 +105,7 @@ def get_markdown_files(root_dir, ignore_files):
     return markdown_files
 
 
-def lint_markdown_files(files, pattern):
+def lint_markdown_files(files, pattern, ignore_patterns: list[str]):
     """
     Lints all specified markdown files and checks for any links to outside the Sailbot Docs website 
     that do not redirect to a new tab. If any such links exists, the linting process fails.
@@ -93,6 +113,7 @@ def lint_markdown_files(files, pattern):
     Args:
         files (List[str]): A list of markdown file paths relative to some root directory.
         pattern (str): A raw string containing the regular expression pattern to be used for linting.
+        ignore_patterns list[str]: A list of regex patterns to ignore.
 
     Returns:
         bool: Returns True if the linting process succeeds for all markdown files and False otherwise.
@@ -102,7 +123,7 @@ def lint_markdown_files(files, pattern):
     num_checks = len(files)
 
     for n, file in enumerate(files):
-        check_passed, error_message = check_markdown_file(file, pattern)
+        check_passed, error_message = check_markdown_file(file, pattern, ignore_patterns)
         passed = (passed and check_passed)
         num_passed += int(check_passed)
         print_check_message(file, check_passed, n+1, error_message)
@@ -112,13 +133,14 @@ def lint_markdown_files(files, pattern):
     return passed
 
 
-def check_markdown_file(filename, pattern):
+def check_markdown_file(filename, pattern, ignore_patterns: list[str]):
     """
     Lints a specified markdown file.
 
     Args:
         filename (str): The path to the markdown file relative to some root directory.
         pattern (str): A raw string containing the regular expression pattern to be used for linting.
+        ignore_patterns list[str]: A list of regex patterns to ignore.
 
     Returns:
         tuple[bool, str]: Returns a tuple containing two variables:
@@ -131,6 +153,9 @@ def check_markdown_file(filename, pattern):
     with open(filename) as file:
         for line_number, line_text in enumerate(file.readlines()):
             match = re.findall(pattern, line_text, flags=re.M)
+            for ignore_pattern in ignore_patterns:
+                expression = re.compile(ignore_pattern)
+                match = list(filter(lambda s: expression.match(s), match))
             if match:
                 passed = False
                 for link in match:
