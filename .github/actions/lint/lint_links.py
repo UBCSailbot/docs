@@ -153,9 +153,11 @@ def check_markdown_file(filename, pattern, ignore_patterns: list[str]):
     with open(filename) as file:
         for line_number, line_text in enumerate(file.readlines()):
             match = re.findall(pattern, line_text, flags=re.M)
+            ignore_links: list[str] = []
             for ignore_pattern in ignore_patterns:
                 expression = re.compile(ignore_pattern)
-                match = list(filter(lambda s: expression.match(s), match))
+                ignore_links += list(filter(lambda l: not expression.match(l), match))
+            match = list(filter(lambda l: l not in ignore_links, match))
             if match:
                 passed = False
                 for link in match:
