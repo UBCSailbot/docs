@@ -49,5 +49,5 @@ jobs:
 
       - name: Check links to external sites redirect to a new tab
         uses: ./.github/actions/lint/
-
-     
+        with:
+          config-file: ''
