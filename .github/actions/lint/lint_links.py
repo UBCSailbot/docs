@@ -2,11 +2,12 @@
 import os
 import sys
 import re
-
+import json
 
 ## CONSTANTS
 REGEX_PATTERN = r"(?<!!)\[.*?\]\(\s*https?:\/\/[^\(\)]+\)(?!\{\s*:?\s*target\s*=\s*(?:\s*_blank\s*|\s*\"\s*_blank\s*\"\s*)\})"
 ROOT = "./docs/"
+CONFIG_DIR = "./.config.json"
 PASSED_MSG = "[PASSED]"
 FAILED_MSG = "[FAILED]"
 ERROR_MSG1 = "External links should redirect to a new tab. Change the link to "
@@ -20,7 +21,10 @@ annotations = []
 def main():
 
     # Perform the linting process
-    markdown_files = get_markdown_files(ROOT)
+    ignore_files = []
+    if (check_config()):
+        ignore_files = get_ignore_files()
+    markdown_files = get_markdown_files(ROOT, ignore_files)
     passed = lint_markdown_files(markdown_files, REGEX_PATTERN)
 
     # If linting fails, print any annotations to stderr for GitHub and exit with status code 1
@@ -30,7 +34,38 @@ def main():
 
 
 ## HELPER FUNCTIONS
-def get_markdown_files(root_dir):
+def check_config():
+    """
+    Verifies wether a configuration file exists in the root directory.
+
+    Returns:
+        bool: True if a config file exists and false otherwise.
+    """
+
+    for file in os.listdir('./'):
+        if file == ".config.json":
+            return True
+    return False
+
+
+def get_ignore_files():
+    """
+    Obtain a list of files to ignore specified in the config file located in the root directory
+
+    Returns:
+        List[str]: A list of markdown file paths to ignore specified in the config file.
+    """
+
+    ignore_files = []
+    f = open(CONFIG_DIR)
+    data = json.load(f)
+    for row in data['ignoreFiles']:
+        ignore_files.append(row['file'])
+    f.close()
+    return ignore_files
+
+
+def get_markdown_files(root_dir, ignore_files):
     """
     Recursively searches for markdown files (.md) starting at a specified root directory.
 
@@ -45,7 +80,8 @@ def get_markdown_files(root_dir):
     for root, dirs, files in os.walk(root_dir):
         markdown_file_basenames = filter(lambda f: markdown_matcher.match(f) is not None, files)
         markdown_files_with_full_path = map(lambda f: os.path.join(root, f), markdown_file_basenames)
-        markdown_files += list(markdown_files_with_full_path)
+        markdown_files_to_keep = filter(lambda f: f not in ignore_files, markdown_files_with_full_path)
+        markdown_files += list(markdown_files_to_keep)
     return markdown_files
 
 
