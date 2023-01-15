@@ -25,9 +25,9 @@ def main():
 
     # Perform the linting process
     ignore_patterns = []
-    config_dir = get_config_dir()
-    if (os.path.exists(config_dir)):
-        ignore_patterns = get_ignore_patterns(config_dir)
+    config_path = get_config_path()
+    if (os.path.exists(config_path)):
+        ignore_patterns = get_ignore_patterns(config_path)
     ignore_files = get_ignore_files()
     markdown_files = get_markdown_files(ROOT, ignore_files)
     passed = lint_markdown_files(markdown_files, REGEX_PATTERN, ignore_patterns)
@@ -39,7 +39,7 @@ def main():
 
 
 ## HELPER FUNCTIONS
-def get_config_dir():
+def get_config_path():
     """
     Obtain the absolute path for the configuration file from lint.yml.
 
@@ -68,19 +68,19 @@ def get_ignore_files():
     f.close()
 
     directory = ""
-    ignore_files_paths = []
     if files[0] and not files[0].startswith("./"):
         directory = "./" + files[0]
     else:
         directory = files[0]
 
+    ignore_files_paths = []
     all_file_paths = glob.glob(directory, recursive=True)
     for file_name in files[1:]:
         ignore_files_paths += list(filter(lambda path: path.endswith(file_name), all_file_paths))
     return ignore_files_paths
 
 
-def get_ignore_patterns(dir):
+def get_ignore_patterns(path):
     """
     Obtain a list of patterns to ignore specified in the config file whose path is specified in lint.yml.
 
@@ -88,7 +88,7 @@ def get_ignore_patterns(dir):
         List[str]: A list of regex patterns to ignore when performing linting.
     """
     ignore_patterns = []
-    f = open(dir)
+    f = open(path)
     data = json.load(f)
     for row in data["ignorePatterns"]:
         ignore_patterns.append(row["pattern"])
