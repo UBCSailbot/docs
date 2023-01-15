@@ -73,8 +73,10 @@ def get_ignore_files():
         directory = "./" + files[0]
     else:
         directory = files[0]
-    for file in files:
-        ignore_files_paths += list(filter(lambda path: path.endswith(file), glob.glob(directory, recursive=True)))
+
+    all_file_paths = glob.glob(directory, recursive=True)
+    for file_name in files[1:]:
+        ignore_files_paths += list(filter(lambda path: path.endswith(file_name), all_file_paths))
     return ignore_files_paths
 
 
