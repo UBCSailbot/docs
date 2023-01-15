@@ -112,7 +112,6 @@ def get_markdown_files(root_dir, ignore_files):
         markdown_files_with_full_path = map(lambda f: os.path.join(root, f), markdown_file_basenames)
         markdown_files_to_keep = filter(lambda f: f not in ignore_files, markdown_files_with_full_path)
         markdown_files += list(markdown_files_to_keep)
-    print(markdown_files)
     return markdown_files
 
 
