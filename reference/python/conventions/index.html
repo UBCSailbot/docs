@@ -1259,7 +1259,7 @@ will have to be done manually. Be sure to follow the same format used by functio
 <p>It's hard to imagine what good documentation looks like. We provide a few examples below of documenting code using the
 autoDocstring extension.</p>
 <div class="highlight"><span class="filename">Documentation example on a function</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">inner_product</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">    Computes the inner product between two 1D real vectors. Input vectors should have the</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">    same dimensions.</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
@@ -1280,7 +1280,7 @@ autoDocstring extension.</p>
 </code></pre></div>
 <div class="highlight"><span class="filename">Documentation example with a stack</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span> <span class="nc">Stack</span><span class="p">:</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="sd">    This class represents a stack, which is an abstract data type that serves as a collection of</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="sd">    elements. The stack is a LIFO datastructure defined by two main operations: Push and Pop.</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
@@ -1289,13 +1289,13 @@ autoDocstring extension.</p>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="sd">        Initializes the Stack object.</span>
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="sd">        &quot;&quot;&quot;</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__stack</span> <span class="o">=</span> <span class="p">[]</span>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
 <a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="sd">        Pushes an element to the top of the stack.</span>
 <a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
 <a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="sd">        Args:</span>
@@ -1304,7 +1304,7 @@ autoDocstring extension.</p>
 <a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 <a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
 <a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="sd">        Removes the element at the top of the stack and returns it. If the stack is empty,</span>
 <a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="sd">        then None is returned.</span>
 <a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
@@ -1317,7 +1317,7 @@ autoDocstring extension.</p>
 <a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
 <a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
 <a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="sd">        Determines whether the stack is empty or not.</span>
 <a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>
 <a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="sd">        Returns:</span>
@@ -1327,7 +1327,7 @@ autoDocstring extension.</p>
 <a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>        <span class="k">return</span> <span class="n">empty</span>
 <a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
 <a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="sd">        Gets the number of elements on the stack.</span>
 <a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
 <a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="sd">        Returns:</span>

@@ -1374,8 +1374,8 @@ up to, but not including setting the <code>DISPLAY</code> variable</li>
 <ol>
 <li>
 <p>Run the command below in your Ubuntu terminal</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">echo</span> <span class="s2">&quot;export DISPLAY=\&quot;`grep nameserver /etc/resolv.conf | sed &#39;s/nameserver //&#39;`:0\&quot;&quot;</span> &gt;&gt; ~/.bashrc
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">echo</span> <span class="s1">&#39;export WIN10_DOCKER_DISPLAY_END=&quot;${DISPLAY:1}&quot;&#39;</span> &gt;&gt; ~/.bashrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export DISPLAY=\&quot;`grep nameserver /etc/resolv.conf | sed &#39;s/nameserver //&#39;`:0\&quot;&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export WIN10_DOCKER_DISPLAY_END=&quot;${DISPLAY:1}&quot;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 </code></pre></div>
 </li>
 </ol>
@@ -1397,7 +1397,7 @@ up to, but not including setting the <code>DISPLAY</code> variable</li>
 XQuartz</li>
 <li>
 <p>Copy the default xinitrc to your home directory</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cp /opt/X11/etc/X11/xinit/xinitrc ~/.xinitrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cp<span class="w"> </span>/opt/X11/etc/X11/xinit/xinitrc<span class="w"> </span>~/.xinitrc
 </code></pre></div>
 </li>
 <li>
@@ -1411,8 +1411,8 @@ XQuartz</li>
 <ol>
 <li>
 <p>Run the commands below in your MacOS terminal</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">echo</span> <span class="s1">&#39;export MAC_DOCKER_LOCALHOST=&quot;docker.for.mac.host.internal&quot;&#39;</span> &gt;&gt; ~/.zshrc
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">echo</span> <span class="s1">&#39;export DISPLAY=:0&#39;</span> &gt;&gt; ~/.zshrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export MAC_DOCKER_LOCALHOST=&quot;docker.for.mac.host.internal&quot;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export DISPLAY=:0&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
 </code></pre></div>
 </li>
 <li>
@@ -1438,13 +1438,13 @@ XQuartz</li>
 <ol>
 <li>
 <p>Install xhost</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo pacman -S xorg-xhost
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>xorg-xhost
 </code></pre></div>
 </li>
 <li>
 <p>Run the commands below in your Linux terminal</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">echo</span> <span class="s1">&#39;export DISPLAY=0.0&#39;</span> &gt;&gt; ~/.bashrc
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>cp /etc/X11/xinit/xinitrc ~/.xinitrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export DISPLAY=0.0&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>cp<span class="w"> </span>/etc/X11/xinit/xinitrc<span class="w"> </span>~/.xinitrc
 </code></pre></div>
 </li>
 <li>
@@ -1459,8 +1459,8 @@ XQuartz</li>
 <details class="bug">
 <summary>ROS 1 not working</summary>
 <p>The system has trouble resolving the local hostname; run the commands below in your VS Code terminal</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">echo</span> <span class="s1">&#39;export ROS_HOSTNAME=localhost&#39;</span> &gt;&gt; ~/.bashrc
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">echo</span> <span class="s1">&#39;export ROS_MASTER_URI=http://localhost:11311&#39;</span> &gt;&gt; ~/.bashrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export ROS_HOSTNAME=localhost&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export ROS_MASTER_URI=http://localhost:11311&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 </code></pre></div>
 </details>
 </div>
@@ -1474,10 +1474,10 @@ XQuartz</li>
 <p class="admonition-title">Note for Windows</p>
 <p>Run the command below in the Ubuntu terminal to clone sailbot_workspace in the WSL filesystem.</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git clone https://github.com/UBCSailbot/sailbot_workspace.git
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/UBCSailbot/sailbot_workspace.git
 </code></pre></div>
 <h2 id="open-sailbot_workspace-in-vs-code">Open sailbot_workspace in VS Code<a class="headerlink" href="#open-sailbot_workspace-in-vs-code" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>code sailbot_workspace
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>code<span class="w"> </span>sailbot_workspace
 </code></pre></div>
 <h2 id="open-sailbot_workspace-in-a-dev-container">Open sailbot_workspace in a Dev Container<a class="headerlink" href="#open-sailbot_workspace-in-a-dev-container" title="Permanent link">&para;</a></h2>
 <ol>
