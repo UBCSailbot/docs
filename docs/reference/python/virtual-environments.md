@@ -74,8 +74,8 @@ name unless specified otherwise.
     conda env create -n env python=<PYTHON VERSION NUM>
     ```
 
-    If you don't specify a python version, the default is the version you used when you downloaded and installed Anaconda. Verify that your environment is created
-    by executing `conda env list`.
+    If you don't specify a python version, the default is the version you used when you downloaded and installed Anaconda.
+    Verify that your environment is created by executing `conda env list`.
 
 ### Activating the virtual environment
 
