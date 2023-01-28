@@ -35,13 +35,7 @@ theme:
 
 # Plugins
 plugins:
-  - social:
-       cards: true
-       cards_dir: assets/images/social
-       cards_font: Roboto
-       cards_color:
-         fill: black
-         text: white
+  - social
   - search
   - git-revision-date-localized:
       timezone: America/Vancouver
