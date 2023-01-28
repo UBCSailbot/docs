@@ -10,7 +10,7 @@
             "strings": "off"
         },
         "editor.rulers": [120],
-        "editor.renderWhitespace": "all",
+        "editor.renderWhitespace": "trailing",
         "cSpell.fixSpellingWithRenameProvider": true,
         "cSpell.advanced.feature.useReferenceProviderWithRename": true,
         "cSpell.advanced.feature.useReferenceProviderRemove": "/^#+\\s/"
