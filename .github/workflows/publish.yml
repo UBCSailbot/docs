@@ -27,7 +27,7 @@ jobs:
           path: .cache
 
       - name: Install OS Dependencies
-        run: apt-get install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
+        run: sudo apt-get install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
 
       - name: Upgrade pip and Install Python dependencies
         run: |
