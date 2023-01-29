@@ -38,7 +38,10 @@ plugins:
   - git-revision-date-localized:
       timezone: America/Vancouver
   - search
-  - social
+  - social:
+    cards_color:
+      fill: "#2F97EC"
+      text: "#FFFFFF"
 
 # Customization
 extra:
