@@ -39,9 +39,9 @@ plugins:
       timezone: America/Vancouver
   - search
   - social:
-    cards_color:
-      fill: "#2F97EC"
-      text: "#FFFFFF"
+      cards_color:
+        fill: "#2F97EC"
+        text: "#FFFFFF"
 
 # Customization
 extra:
