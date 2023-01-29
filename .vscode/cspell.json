@@ -16,6 +16,7 @@
         "ighxy",
         "iostream",
         "mkdocs",
+        "mypy",
         "Protobuf",
         "Raye",
         "srcnew",
