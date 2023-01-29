@@ -18,6 +18,7 @@ UBCSailbot software team's documentation.
 3. Install Python dependencies
 
     ```
+   pip install --upgrade pip
    pip install -Ur docs/requirements.txt
    ```
 
