@@ -117,7 +117,14 @@ errors because they will not be found unless you install those dependencies in t
 
 === ":material-language-python: Virtualenv"
 
-    Use the `pip` package manager to install python dependencies.
+    Use the `pip` package manager to install python dependencies. Before installing any Python dependencies, it is good
+    practice to upgrade `pip`:
+
+    ```bash title="Upgrade pip"
+    pip install --upgrade pip
+    ```
+
+    Now, install any Python dependencies `pip`:
 
     ```bash title="Install dependency with pip"
     pip install <PACKAGE>
