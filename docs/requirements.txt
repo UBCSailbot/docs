@@ -1,2 +1,5 @@
+cairosvg
+Markdown<3.4
 mkdocs-git-revision-date-localized-plugin==1.*
 mkdocs-material==9.*
+pillow

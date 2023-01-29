@@ -35,10 +35,10 @@ theme:
 
 # Plugins
 plugins:
-  - social
-  - search
   - git-revision-date-localized:
       timezone: America/Vancouver
+  - search
+  - social
 
 # Customization
 extra:

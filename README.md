@@ -13,7 +13,9 @@ UBCSailbot software team's documentation.
     git clone https://github.com/UBCSailbot/docs.git
     ```
 
-2. Install dependencies
+2. Manually install [social plugin OS dependencies](https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/#dependencies)
+
+3. Install Python dependencies
 
     ```
    pip install -Ur docs/requirements.txt
