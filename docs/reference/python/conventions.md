@@ -1,7 +1,8 @@
 # Conventions
 
 At UBC Sailbot, we follow standards in how we code to maintain a clean and comprehensible codebase.
-This page addresses what conventions we use specifically when programming in Python.
+This page addresses what conventions we use specifically when programming in Python and the tools to help us maintain
+these conventions.
 
 ## Style guide
 
@@ -151,7 +152,7 @@ documentation for you!
 It's hard to imagine what good documentation looks like. We provide a few examples below of documenting code using the
 autoDocstring extension.
 
-??? example "Documentation example on a function"
+???+ example "Documentation example on a function"
 
     ```python
     from typing import List

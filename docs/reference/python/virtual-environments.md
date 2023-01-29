@@ -19,7 +19,7 @@ between the two:
 | Virtualenv                                        | Anaconda                                                 |
 | :------------------------------------------------ | :------------------------------------------------------- |
 | Environment files are local.                      | Environment files are available globally.                |
-| Must activate environment by giving the path.     | Can activate the environment without knowing the path.   |
+| Must activate environment by giving the path.     | Can activate the environment without knowing the path, but only the name. |
 | Can only use `pip` to install packages.           | Can either use `pip` or built-in `conda` package manager.|
 | Installation is very simple.                      | Installation takes more effort.                          |
 | Can only install python packages.                 | In addition to packages, you can download many data science tools.|
