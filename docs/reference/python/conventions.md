@@ -5,6 +5,8 @@ This page addresses what conventions we use specifically when programming in Pyt
 
 ## Style guide
 
+### Linting
+
 To ensure that the codebase stays clean, we use [flake8](https://flake8.pycqa.org/en/5.0.4/#){target=_blank}, which is a
 tool for style guide enforcement mostly based off [pep8](https://peps.python.org/pep-0008/){target=_blank}. To automate
 most of this process, we use [autopep8](https://github.com/hhatto/autopep8){target=_blank}, which is a tool that resolves
@@ -25,9 +27,6 @@ errors, documents code, improves IDEs and linters, and helps build and maintain 
 Expanding on how it catches errors, a static type checker such as [`mypy`](https://mypy.readthedocs.io/en/stable/index.html){target=_blank}
 can be used.
 
-There are [pros and cons](https://realpython.com/lessons/pros-and-cons-type-hints/){target=_blank} to using type
-hinting, make sure that you are aware of them before deciding to utilize them in your codebase.
-
 There is some syntax to get familiar in order to use type checking. We recommend the following resources:
 
 - [mypy Typing Cheatsheet](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html){target=_blank}
@@ -36,7 +35,7 @@ There is some syntax to get familiar in order to use type checking. We recommend
 
 Below are a few examples of using type hinting:
 
-??? example "Return the sum of a sequence"
+???+ example "Return the sum of a sequence"
 
     ```python
     from typing import Sequence, Union
@@ -49,7 +48,7 @@ Below are a few examples of using type hinting:
         return sum(seq)
     ```
 
-??? example "Function with optional parameters and default values"
+???+ example "Function with optional parameters and default values"
 
     ```python
     from typing import Optional
