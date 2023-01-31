@@ -150,7 +150,8 @@ documentation for you!
 ### Example on documentation
 
 It's hard to imagine what good documentation looks like. We provide a few examples below of documenting code using the
-autoDocstring extension. The extension uses [Google style docstrings](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings) by default.
+autoDocstring extension. The extension uses [Google style docstrings](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings){target=_blank}
+by default.
 
 ???+ example "Documentation example on a function"
 
@@ -239,7 +240,7 @@ autoDocstring extension. The extension uses [Google style docstrings](https://go
             length = len(self.__stack)
             return length
     ```
-    
-For more examples, see [Example Google Style Python Docstrings](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).
+
+For more examples, see [Example Google Style Python Docstrings](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html){target=_blank}.
 
 [^1]: <https://realpython.com/lessons/pros-and-cons-type-hints/>
