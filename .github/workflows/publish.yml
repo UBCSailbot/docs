@@ -16,7 +16,7 @@ jobs:
           fetch-depth: '0'  # checkout all commits to get the actual page revision time
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.x
 
