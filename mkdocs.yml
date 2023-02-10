@@ -13,31 +13,39 @@ theme:
   name: material
   logo: assets/ubcsailbot-white.png
   features:
+    - content.action.edit
+    - content.action.view
     - content.code.annotate
+    - content.code.copy
     - content.tabs.link
+    - navigation.footer
     - navigation.indexes
     - navigation.instant
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.top
-  icon:
-    edit: material/file-edit-outline
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
   palette:
     - media: "(prefers-color-scheme: light)" 
       scheme: default
       toggle:
-        icon: material/lightbulb-outline
+        icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)" 
       scheme: slate
       toggle:
-        icon: material/lightbulb
+        icon: material/brightness-4
         name: Switch to light mode
 
 # Plugins
 plugins:
   - git-revision-date-localized:
       timezone: America/Vancouver
-  - search
+  - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - social:
       cards_color:
         fill: "#2F97EC"
@@ -67,16 +75,25 @@ extra_javascript:
 
 # Extensions
 markdown_extensions:
+  # Python Markdown
   - abbr
   - admonition
   - attr_list
+  - def_list
   - footnotes
   - md_in_html
+  - toc:
+      permalink: true
+
+  # Python Markdown Extensions
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji 
+      emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
       options:
         custom_icons:
@@ -85,6 +102,8 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
   - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
@@ -92,11 +111,10 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  - toc:
-      permalink: true
+  - pymdownx.tilde
 
 # Page tree
 nav:
