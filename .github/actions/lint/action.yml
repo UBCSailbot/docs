@@ -3,7 +3,7 @@ description: 'Check links to external sites redirect to a new tab'
 runs:
   using: "composite"
   steps:
-    - run: pip install PyYAML
-      shell: bash
-    - run: python3 $GITHUB_ACTION_PATH/lint_links.py
+    - run: |
+        pip install PyYAML
+        python3 $GITHUB_ACTION_PATH/lint_links.py
       shell: bash
