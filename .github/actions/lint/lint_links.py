@@ -3,11 +3,11 @@ import os
 import sys
 import re
 import json
+import argparse
 
 ## CONSTANTS
 REGEX_PATTERN = r"(?<!!)\[.*?\]\(\s*https?:\/\/[^\(\)]+\)(?!\{\s*:?\s*target\s*=\s*(?:\s*_blank\s*|\s*\"\s*_blank\s*\"\s*)\})"
 LINK_REGEX = r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
-ROOT = os.environ.get("ROOT", "./")
 PASSED_MSG = "[PASSED]"
 FAILED_MSG = "[FAILED]"
 ERROR_MSG1 = "External links should redirect to a new tab. Change the link to "
@@ -19,13 +19,19 @@ annotations = []
 
 ## MAIN LOGIC
 def main():
+    # Parsing arguments for the root directory and config file
+    parser = argparse.ArgumentParser()
+    parser.add_argument('ROOT', nargs='?', default='./', type=str)
+    parser.add_argument('CONFIG_FILE', nargs='?', default='', type=str)
+    args = parser.parse_args()
+
+    root = args.ROOT
+    config_file = args.CONFIG_FILE
 
     # Perform the linting process
-    ignore_patterns = []
-    config_file = os.environ.get("CONFIG_FILE")
     ignore_patterns = get_ignore_patterns(config_file)
-    ignore_files = get_ignore_files()
-    markdown_files = get_markdown_files(ROOT, ignore_files)
+    ignore_files = get_ignore_files(root, config_file)
+    markdown_files = get_markdown_files(root, ignore_files)
     passed = lint_markdown_files(markdown_files, REGEX_PATTERN, ignore_patterns)
 
     # If linting fails, print any annotations to stderr for GitHub and exit with status code 1
@@ -46,7 +52,7 @@ def get_ignore_patterns(config_file):
         List[str]: A list of regex patterns to ignore when performing linting.
     """
     ignore_patterns = []
-    if config_file and os.path.isfile(config_file):
+    if os.path.isfile(config_file):
         with open(config_file) as f:
             data = json.load(f)
             for row in data["ignorePatterns"]:
@@ -54,20 +60,27 @@ def get_ignore_patterns(config_file):
     return ignore_patterns
 
 
-def get_ignore_files():
+def get_ignore_files(root_dir, config_file):
     """
     Obtain a list of files to ignore specified in the environment variable.
+
+    Args:
+        root_dir (str): The root directory to start the search at.
+        config_file (str): The path of the config file relative to the root.
 
     Returns:
         List[str]: A list of markdown file paths (relative to the root) to ignore when performing linting.
     """
-    files = os.environ.get("IGNORE_FILES", "").split(" ")
-    ignore_files_paths = []
-    for file_name in files:
-        file_path = os.path.join(ROOT, file_name)
-        if os.path.isfile(file_path):
-            ignore_files_paths.append(file_path)
-    return ignore_files_paths
+    ignore_files = []
+    if os.path.isfile(config_file):
+        with open(config_file) as f:
+            data = json.load(f)
+            for row in data["ignoreFiles"]:
+                file_name = row["file"]
+                file_path = os.path.join(root_dir, file_name)
+                if os.path.isfile(file_path):
+                    ignore_files.append(file_path)
+    return ignore_files
 
 
 def get_markdown_files(root_dir, ignore_files):
