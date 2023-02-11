@@ -30,7 +30,7 @@ def main():
 
     # Perform the linting process
     ignore_patterns = get_ignore_patterns(config_file)
-    ignore_files = get_ignore_files(root, config_file)
+    ignore_files = get_ignore_files(config_file)
     markdown_files = get_markdown_files(root, ignore_files)
     passed = lint_markdown_files(markdown_files, REGEX_PATTERN, ignore_patterns)
 
@@ -55,17 +55,15 @@ def get_ignore_patterns(config_file):
     if os.path.isfile(config_file):
         with open(config_file) as f:
             data = json.load(f)
-            for row in data["ignorePatterns"]:
-                ignore_patterns.append(row["pattern"])
+            ignore_patterns = [row["pattern"] for row in data.get("ignorePatterns", [])]
     return ignore_patterns
 
 
-def get_ignore_files(root_dir, config_file):
+def get_ignore_files(config_file):
     """
     Obtain a list of files to ignore specified in the environment variable.
 
     Args:
-        root_dir (str): The root directory to start the search at.
         config_file (str): The path of the config file relative to the root.
 
     Returns:
@@ -75,11 +73,7 @@ def get_ignore_files(root_dir, config_file):
     if os.path.isfile(config_file):
         with open(config_file) as f:
             data = json.load(f)
-            for row in data["ignoreFiles"]:
-                file_name = row["file"]
-                file_path = os.path.join(root_dir, file_name)
-                if os.path.isfile(file_path):
-                    ignore_files.append(file_path)
+            ignore_files = [row["file"] for row in data.get("ignoreFiles", [])]
     return ignore_files
 
 
