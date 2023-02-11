@@ -19,7 +19,7 @@ between the two:
 | Virtualenv                                        | Anaconda                                                 |
 | :------------------------------------------------ | :------------------------------------------------------- |
 | Environment files are local.                      | Environment files are available globally.                |
-| Must activate environment by giving the path.     | Can activate the environment without knowing the path.   |
+| Must activate environment by giving the path.     | Can activate the environment without knowing the path, but only the name. |
 | Can only use `pip` to install packages.           | Can either use `pip` or built-in `conda` package manager.|
 | Installation is very simple.                      | Installation takes more effort.                          |
 | Can only install python packages.                 | In addition to packages, you can download many data science tools.|
@@ -74,8 +74,8 @@ name unless specified otherwise.
     conda env create -n env python=<PYTHON VERSION NUM>
     ```
 
-    If you don't specify a python version, the default is the latest version. Verify that your environment is created
-    by executing `conda env list`.
+    If you don't specify a python version, the default is the version you used when you downloaded and installed Anaconda.
+    Verify that your environment is created by executing `conda env list`.
 
 ### Activating the virtual environment
 
@@ -117,7 +117,14 @@ errors because they will not be found unless you install those dependencies in t
 
 === ":material-language-python: Virtualenv"
 
-    Use the `pip` package manager to install python dependencies.
+    Use the `pip` package manager to install python dependencies. Before installing any Python dependencies, it is good
+    practice to upgrade `pip`:
+
+    ```bash title="Upgrade pip"
+    pip install --upgrade pip
+    ```
+
+    Now, install any Python dependencies `pip`:
 
     ```bash title="Install dependency with pip"
     pip install <PACKAGE>
