@@ -49,6 +49,10 @@ jobs:
 
       - name: Check links to external sites redirect to a new tab
         uses: ./.github/actions/lint/
+        env:
+          ROOT: './docs/'
+          CONFIG_FILE: ${{ inputs.config-file }}
+          IGNORE_FILES: ${{ inputs.ignore-files }}
         with:
-          config-file: ''
-          files: ''
+          config-file: 'path/to/config/file.json'
+          ignore-files: 'file1 file2 ...'

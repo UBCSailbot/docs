@@ -3,14 +3,11 @@ import os
 import sys
 import re
 import json
-import yaml
-import glob
 
 ## CONSTANTS
 REGEX_PATTERN = r"(?<!!)\[.*?\]\(\s*https?:\/\/[^\(\)]+\)(?!\{\s*:?\s*target\s*=\s*(?:\s*_blank\s*|\s*\"\s*_blank\s*\"\s*)\})"
 LINK_REGEX = r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
-ROOT = "./docs/"
-LINT_DIR = "./.github/workflows/lint.yml"
+ROOT = os.environ.get("ROOT", "./")
 PASSED_MSG = "[PASSED]"
 FAILED_MSG = "[FAILED]"
 ERROR_MSG1 = "External links should redirect to a new tab. Change the link to "
@@ -25,9 +22,8 @@ def main():
 
     # Perform the linting process
     ignore_patterns = []
-    config_path = get_config_path()
-    if (os.path.exists(config_path)):
-        ignore_patterns = get_ignore_patterns(config_path)
+    config_file = os.environ.get("CONFIG_FILE")
+    ignore_patterns = get_ignore_patterns(config_file)
     ignore_files = get_ignore_files()
     markdown_files = get_markdown_files(ROOT, ignore_files)
     passed = lint_markdown_files(markdown_files, REGEX_PATTERN, ignore_patterns)
@@ -39,61 +35,39 @@ def main():
 
 
 ## HELPER FUNCTIONS
-def get_config_path():
-    """
-    Obtain the absolute path for the configuration file from lint.yml.
-
-    Returns:
-        str: The path for the config file relative to the root or an empty string if none is specified.
-    """
-    with open(LINT_DIR, "r") as file:
-        link_redirection_linter = yaml.safe_load(file)
-    path = link_redirection_linter["jobs"]["markdown-link-redirection-check"]["steps"][3]["with"]["config-file"]
-    file.close()
-    if path and not path.startswith("./"):
-        path = "./" + path
-    return path
-
-
-def get_ignore_files():
-    """
-    Obtain a list of files to ignore specified in lint.yml under 'files'.
-
-    Returns:
-        List[str]: A list of markdown file paths (relative to the root) to ignore when performing linting.
-    """
-    with open(LINT_DIR, "r") as f:
-        link_redirection_linter = yaml.safe_load(f)
-    files = link_redirection_linter["jobs"]["markdown-link-redirection-check"]["steps"][3]["with"]["files"].split(" ")
-    f.close()
-
-    directory = ""
-    if files[0] and not files[0].startswith("./"):
-        directory = "./" + files[0]
-    else:
-        directory = files[0]
-
-    ignore_files_paths = []
-    all_file_paths = glob.glob(directory, recursive=True)
-    for file_name in files[1:]:
-        ignore_files_paths += list(filter(lambda path: path.endswith(file_name), all_file_paths))
-    return ignore_files_paths
-
-
-def get_ignore_patterns(path):
+def get_ignore_patterns(config_file):
     """
     Obtain a list of patterns to ignore specified in the config file whose path is specified in lint.yml.
+
+    Args:
+        config_file (str): The path of the config file relative to the root.
 
     Returns:
         List[str]: A list of regex patterns to ignore when performing linting.
     """
     ignore_patterns = []
-    f = open(path)
-    data = json.load(f)
-    for row in data["ignorePatterns"]:
-        ignore_patterns.append(row["pattern"])
-    f.close()
+    if config_file and os.path.isfile(config_file):
+        with open(config_file) as f:
+            data = json.load(f)
+            for row in data["ignorePatterns"]:
+                ignore_patterns.append(row["pattern"])
     return ignore_patterns
+
+
+def get_ignore_files():
+    """
+    Obtain a list of files to ignore specified in the environment variable.
+
+    Returns:
+        List[str]: A list of markdown file paths (relative to the root) to ignore when performing linting.
+    """
+    files = os.environ.get("IGNORE_FILES", "").split(" ")
+    ignore_files_paths = []
+    for file_name in files:
+        file_path = os.path.join(ROOT, file_name)
+        if os.path.isfile(file_path):
+            ignore_files_paths.append(file_path)
+    return ignore_files_paths
 
 
 def get_markdown_files(root_dir, ignore_files):
@@ -119,7 +93,7 @@ def get_markdown_files(root_dir, ignore_files):
 
 def lint_markdown_files(files, pattern, ignore_patterns):
     """
-    Lints all specified markdown files and checks for any links to outside the Sailbot Docs website 
+    Lints all specified markdown files and checks for any links to outside the Sailbot Docs website
     that do not redirect to a new tab. If any such links exists, the linting process fails.
 
     Args:
