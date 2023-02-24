@@ -125,7 +125,6 @@ nav:
       - Setup: current/sailbot_workspace/setup.md
       - Run: current/sailbot_workspace/run.md
   - Reference:
-    - Overview: reference/index.md
     - C++:
       - Getting Started: reference/cpp/index.md
       - Differences: reference/cpp/differences.md
