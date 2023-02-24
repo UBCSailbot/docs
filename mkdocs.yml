@@ -19,7 +19,6 @@ theme:
     - content.code.copy
     - content.tabs.link
     - navigation.footer
-    - navigation.indexes
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
@@ -120,35 +119,31 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Current Project:
-    - current/index.md
+    - Overview: current/index.md
     - Sailbot Workspace:
       - Overview: current/sailbot_workspace/overview.md
       - Setup: current/sailbot_workspace/setup.md
       - Run: current/sailbot_workspace/run.md
   - Reference:
-    - reference/index.md
+    - Overview: reference/index.md
     - C++:
-      - Getting Started: 
-        - reference/cpp/index.md
+      - Getting Started: reference/cpp/index.md
       - Differences: reference/cpp/differences.md
       - Tools: reference/cpp/tools.md
     - GitHub:
       - Development Workflow:
-        - Overview:
-          - reference/github/workflow/index.md
+        - Overview: reference/github/workflow/index.md
         - Creating Issues: reference/github/workflow/issues.md
         - Developing on Branches: reference/github/workflow/branches.md
         - Pull Requests: reference/github/workflow/pr.md
     - Markdown: reference/markdown.md
     - Python:
-      - Getting Started:
-        - reference/python/index.md
+      - Getting Started: reference/python/index.md
       - Conventions: reference/python/conventions.md
       - Virtual Environments: reference/python/virtual-environments.md
     - Robot Operating System: reference/ros.md
     - Sailing Knowledge:
-      - Overview:
-        - reference/sailing/index.md
+      - Overview: reference/sailing/index.md
       - Parts of a Sailboat: reference/sailing/boat_parts.md
       - Types of Turns: reference/sailing/turning.md
       - Points of Sail: reference/sailing/points_of_sail.md
