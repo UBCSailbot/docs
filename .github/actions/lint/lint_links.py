@@ -12,6 +12,9 @@ PASSED_MSG = "[PASSED]"
 FAILED_MSG = "[FAILED]"
 ERROR_MSG1 = "External links should redirect to a new tab. Change the link to "
 ERROR_MSG2 = "{target=_blank}"
+ROOT_DEFAULT = "./"
+CONFIG_DEFAULT = ""
+
 
 # Annotation strings for GitHub error annotations
 annotations = []
@@ -20,8 +23,8 @@ annotations = []
 ## MAIN LOGIC
 def main():
     args = parseInputArguments()
-    root = args.root
-    config_file = args.config
+    root = args.root if args.root else ROOT_DEFAULT
+    config_file = args.config if args.config else CONFIG_DEFAULT
 
     # Perform the linting process
     ignore_patterns = get_ignore_patterns(config_file)
@@ -44,8 +47,8 @@ def parseInputArguments():
         ArgumentParser: An argument parser object used for accessing command line arguments.
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('-r', '--root', default='./', type=str, help='Path to root directory where linting begins')
-    parser.add_argument('-c', '--config', default='', type=str, help='Path to a JSON configuration file specifying ignore files and patterns')
+    parser.add_argument('-r', '--root', default=ROOT_DEFAULT, nargs='?', type=str, help='Path to root directory where linting begins')
+    parser.add_argument('-c', '--config', default=CONFIG_DEFAULT, nargs='?', type=str, help='Path to a JSON configuration file specifying ignore files and patterns')
     args = parser.parse_args()
     return args
 
