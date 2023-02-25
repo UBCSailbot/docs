@@ -3,7 +3,7 @@
 This workspace can be run on Windows, Linux, or macOS, but is the easiest to set up and performs the best on
 [Ubuntu](https://ubuntu.com/){target=_blank} and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){target=_blank}.
 
-## Install and configure prerequisites
+## 1. Set up prerequisites
 
 ### Docker
 
@@ -19,8 +19,7 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
 
 === ":material-microsoft-windows: Windows"
 
-    1. Install prerequisites, [WSL](https://learn.microsoft.com/en-us/windows/wsl/){target=_blank} and [Ubuntu](https://ubuntu.com/){target=_blank}:
-
+    1. Set up prerequisites, [WSL](https://learn.microsoft.com/en-us/windows/wsl/){target=_blank} and [Ubuntu](https://ubuntu.com/){target=_blank}:
         1. In PowerShell, run `wsl --install Ubuntu`
 
             ??? warning "Already installed WSL or Ubuntu?"
@@ -44,7 +43,7 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
                     1. [Create a non-root user with sudo privileges](https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-ubuntu-20-04){target=_blank}
                     2. Change the default Ubuntu user to this newly-created user: run `ubuntu config --default-user <username>`
                     in PowerShell, replacing `<username>` with the name of the newly-created user
-                    3. Run `whoami` after closing and reopening Ubuntu to verify that it returns your Ubuntu username
+                    3. Run `whoami` after closing and reopening Ubuntu, verifying that it returns your Ubuntu username
 
     2. [Install Docker Desktop](https://docs.docker.com/desktop/install/windows-install/){target=_blank}
     with the WSL 2 backend
@@ -77,100 +76,66 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
 
 1. [Install VS Code](https://code.visualstudio.com/docs/setup/setup-overview){target=_blank}
 
-    ??? note "Installing VS Code for Arch Linux"
+    ??? note "VS Code for Arch Linux"
 
         If you are running Arch Linux, ensure that you install VS Code from the official Microsoft distribution;
         the one from Pacman doesn't work with Microsoft plugins.
 
 2. Install the [Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack){target=_blank}
 
-## Additional configuration to run GUI applications
+## 2. Set up X11 Forwarding
 
-=== ":material-microsoft-windows: Windows"
+!!! note
 
-    === ":simple-windows11: Windows 11"
+    If X11 forwarding isn't required, you can skip this step.
 
-        GUI applications work without additional configuration,
-        **but if you upgraded from Windows 10 make sure to update the WSL kernel:** `wsl --update`
-        in an **administrator** PowerShell window
+1. Ensure that the versions of VS Code and its Dev Containers extension support X11 forwarding:
+    1. VS Code version >= 1.75
+    2. Dev Containers version >= 0.275.1
+2. Verify that `echo $DISPLAY` returns something like `:0`
 
-    === ":material-microsoft-windows: Windows 10"
+    ??? warning "`echo $DISPLAY` doesn't return anything"
 
-        1. Follow [this guide](https://techcommunity.microsoft.com/t5/windows-dev-appconsult/running-wsl-gui-apps-on-windows-10/ba-p/1493242){target=_blank}
-        up to, but not including setting the `DISPLAY` variable
-        2. Bash configuration
-            1. Run the command below in your Ubuntu terminal
+        If `echo $DISPLAY` doesn't return anything, set it to `:0` on shell initialization:
 
-                ```bash
-                echo "export DISPLAY=\"`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0\"" >> ~/.bashrc
-                echo 'export WIN10_DOCKER_DISPLAY_END="${DISPLAY:1}"' >> ~/.bashrc
-                ```
+        1. Find out what shell you are using with `echo $SHELL`
+            1. Most Linux distributions use Bash by default, whose rc file path is `~/.bashrc`
+            2. macOS uses Zsh by default, whose rc file path is: `~/.zshrc`
+        2. Run `echo 'export DISPLAY=:0' >> <rc file path>`, replacing `<rc file path>`
+           with the path to your shell's rc file
+        3. Run `echo $DISPLAY` after closing and reopening your terminal, verifying it returns something like `:0`
 
-        3. If VS Code is open, then restart it
+3. Install a X11 server
 
-=== ":material-apple: macOS"
+    === ":material-microsoft-windows: Windows"
 
-    1. XQuartz configuration
+        WSL includes a X11 server.
 
-        1. Follow [this guide](https://gist.github.com/sorny/969fe55d85c9b0035b0109a31cbcb088){target=_blank} to setup 
-        XQuartz
-        2. Copy the default xinitrc to your home directory
+    === ":material-apple: macOS"
 
-            ```zsh
-            cp /opt/X11/etc/X11/xinit/xinitrc ~/.xinitrc
-            ```
-
+        1. Set up XQuartz following [this guide](https://gist.github.com/sorny/969fe55d85c9b0035b0109a31cbcb088){target=_blank}
+        2. Copy the default xinitrc to your home directory: `cp /opt/X11/etc/X11/xinit/xinitrc ~/.xinitrc`
         3. Add `xhost +localhost` to `~/.xinitrc` after its first line
-        4. If XQuartz is open, then restart it
 
-    2. Zsh configuration
+    === ":material-linux: Linux"
 
-        1. Run the commands below in your macOS terminal
+        === ":material-linux: General"
 
-            ```zsh
-            echo 'export MAC_DOCKER_LOCALHOST="docker.for.mac.host.internal"' >> ~/.zshrc
-            echo 'export DISPLAY=:0' >> ~/.zshrc
-            ```
+            > Last updated February 2023
 
-        2. If VS Code is open, then restart it
-
-=== ":material-linux: Linux"
-
-    === ":material-ubuntu: Ubuntu and its derivatives"
-
-        GUI applications should work without additional configuration.
-
-    === ":material-linux: Other"
+            Almost all Linux distributions include a X11 server, Xorg. This may change in the future as Wayland matures.
 
         === ":material-arch: Arch Linux"
 
-            1. Set up X11 forwarding
+            1. Install xhost: `sudo pacman -S xorg-xhost`
+            2. Copy the default xinitrc to your home directory: `cp /etc/X11/xinit/xinitrc ~/.xinitrc`
+            3. Add `xhost +local:docker` to `~/.xinitrc` after its first line
 
-                1. Install xhost
+4. Verify that X11 forwarding is working:
+    1. Install `x11-apps`
+    2. Verifying that `xcalc` opens a calculator
 
-                    ```bash
-                    sudo pacman -S xorg-xhost
-                    ```
-
-                2. Run the commands below in your Linux terminal
-
-                    ```bash
-                    echo 'export DISPLAY=0.0' >> ~/.bashrc
-                    cp /etc/X11/xinit/xinitrc ~/.xinitrc
-                    ```
-
-                3. Add `xhost +local:docker` to `~/.xinitrc` after its first line
-
-        ??? bug "ROS 1 not working"
-
-            The system has trouble resolving the local hostname; run the commands below in your VS Code terminal
-
-            ```bash
-            echo 'export ROS_HOSTNAME=localhost' >> ~/.bashrc
-            echo 'export ROS_MASTER_URI=http://localhost:11311' >> ~/.bashrc
-            ```
-
-## Clone sailbot_workspace
+## 3. Clone sailbot_workspace
 
 !!! notes "Note for Windows"
 
@@ -180,29 +145,40 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
 git clone https://github.com/UBCSailbot/sailbot_workspace.git
 ```
 
-## Open sailbot_workspace in VS Code
+## 4. Open sailbot_workspace in VS Code
 
 ```sh
 code sailbot_workspace
 ```
 
-## Open sailbot_workspace in a Dev Container
+## 5. Open sailbot_workspace in a Dev Container
 
 1. Make sure that Docker is running
 2. Run the "Dev Containers: Reopen in Container" command in the VS Code command pallete
 
-## Open the sailbot_workspace VS Code workspace
+## 6. Open the sailbot_workspace VS Code workspace
 
 1. Open the file `.devcontainer/config/sailbot_workspace.code-workspace` in VS Code
 2. Click "Open Workspace"
 
-## Run the VS Code task named "setup"
+## 7. Run the VS Code task named "setup"
 
 This imports the ROS packages and install their dependencies.
 
-## Updating sailbot_workspace
+## 8. Updating sailbot_workspace
 
 When changes to the Dev container are made (any file in `.devcontainer/`), it needs to be rebuilt.
 This may happen when you pull the latest commits from a branch or switch branches.
 
 1. Run the "Dev Containers: Rebuild Container" command in the VS Code command palette
+
+## Raye
+
+??? bug "ROS 1 not working"
+
+    The system has trouble resolving the local hostname; run the commands below in your VS Code terminal
+
+    ```bash
+    echo 'export ROS_HOSTNAME=localhost' >> ~/.bashrc
+    echo 'export ROS_MASTER_URI=http://localhost:11311' >> ~/.bashrc
+    ```
