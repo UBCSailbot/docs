@@ -70,11 +70,19 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
 
 ### VS Code
 
-- [VS Code](https://code.visualstudio.com/){target=_blank}
-    1. [Install VS Code](https://code.visualstudio.com/download){target=_blank}
-        - For Arch Linux, make sure install the official Microsoft distribution;
-        the one from Pacman doesn't work with Microsoft plugins
-    2. [Install VS Code Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack){target=_blank}
+!!! info "VS Code"
+
+    [Visual Studio Code](https://code.visualstudio.com/){target=_blank} is a powerful code editor for
+    Windows, Linux, and macOS.
+
+1. [Install VS Code](https://code.visualstudio.com/docs/setup/setup-overview){target=_blank}
+
+    ??? note "Installing VS Code for Arch Linux"
+
+        If you are running Arch Linux, ensure that you install VS Code from the official Microsoft distribution;
+        the one from Pacman doesn't work with Microsoft plugins.
+
+2. Install the [Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack){target=_blank}
 
 ## Additional configuration to run GUI applications
 
