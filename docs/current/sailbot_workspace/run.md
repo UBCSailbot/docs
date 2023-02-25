@@ -35,7 +35,7 @@
 
 !!! tip "Running GUI applications"
 
-    For the operating systems that need additional software to run GUI applications like Windows 10 and MacOS,
+    For the operating systems that need additional software to run GUI applications like Windows 10 and macOS,
     ensure that they are running beforehand.
 
 === "ROS 2"

@@ -1,40 +1,70 @@
 # Setup Instructions
 
-This workspace can be set up on most operating systems, but it performs the best and requires the least setup on
-Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){target=_blank}.
+This workspace can be run on Windows, Linux, or macOS, but is the easiest to set up and performs the best on
+[Ubuntu](https://ubuntu.com/){target=_blank} and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){target=_blank}.
 
 ## Install and configure prerequisites
 
 ### Docker
 
+!!! info "Docker Desktop vs Docker Engine"
+
+    Docker Engine is what's commonly known as [Docker](https://www.docker.com/){target=_blank},
+    a platform that uses OS-level virtualization to deliver software in packages called containers.[^1]
+    Docker Engine can only be installed on Linux. Docker Desktop stores containers and images in a VM[^2],
+    allowing it to be installed on Windows and macOS in addition to Linux.
+
+    [^1]: [Wikipedia Docker page](https://en.wikipedia.org/wiki/Docker_(software)){target=_blank}
+    [^2]: [What is the difference between Docker Desktop for Linux and Docker Engine](https://docs.docker.com/desktop/faqs/linuxfaqs/#what-is-the-difference-between-docker-desktop-for-linux-and-docker-engine){target=_blank}
+
 === ":material-microsoft-windows: Windows"
 
-    1. [Install Docker Desktop](https://docs.docker.com/desktop/install/windows-install/){target=_blank}
+    1. Install prerequisites, [WSL](https://learn.microsoft.com/en-us/windows/wsl/){target=_blank} and [Ubuntu](https://ubuntu.com/){target=_blank}:
+
+        1. In PowerShell, run `wsl --install Ubuntu`
+
+            ??? warning "Already installed WSL or Ubuntu?"
+
+                If WSL or Ubuntu is already installed, ensure that they are up-to-date:
+
+                1. Update WSL by running `wsl --update` in PowerShell
+                2. Ensure that Ubuntu is WSL 2, not 1:
+                    1. Check the WSL versions of Linux distributions with `wsl -l -v`
+                    2. If Ubuntu's `VERSION` is 1, upgrade it to WSL 2 with `wsl --set-version Ubuntu 2`
+
+        2. Open Ubuntu to set up or verify its configuration:
+            1. If you are opening Ubuntu for the first time, a setup process will run;
+            follow the prompts to finish setting it up
+            2. Run `whoami` to verify that it returns your Ubuntu username
+
+                ??? bug "`whoami` returns `root`"
+
+                    If `whoami` returns `root`:
+
+                    1. [Create a non-root user with sudo privileges](https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-ubuntu-20-04){target=_blank}
+                    2. Change the default Ubuntu user to this newly-created user: run `ubuntu config --default-user <username>`
+                    in PowerShell, replacing `<username>` with the name of the newly-created user
+                    3. Run `whoami` after closing and reopening Ubuntu to verify that it returns your Ubuntu username
+
+    2. [Install Docker Desktop](https://docs.docker.com/desktop/install/windows-install/){target=_blank}
     with the WSL 2 backend
 
-    2. Configure [WSL](https://learn.microsoft.com/en-us/windows/wsl/about){target=_blank}
-        1. Run the commands below in an **administrator** PowerShell window
+=== ":material-apple: macOS"
 
-            ```powershell
-            wsl --install --distribution Ubuntu
-            wsl --set-default Ubuntu
-            wsl --set-version Ubuntu 2
-            ```
-
-        2. Run `whoami` in the Ubuntu terminal; if it outputs `root`, create a non-root user with sudo privileges
-        and give it full permissions to Docker
-            1. [Create a non-root user with sudo privileges](https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-ubuntu-20-04){target=_blank}
-            2. Change the default Ubuntu user to the one you just created by entering the following command in Powershell:
-            `ubuntu config --default-user <username>`, where `<username>` is the name of the user
-            3. [Add the user to the Docker group](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank}
-
-=== ":material-apple: MacOS"
-
-    1. [Install Docker Desktop](https://docs.docker.com/engine/install/){target=_blank}
+    1. [Install Docker Desktop](https://docs.docker.com/desktop/install/mac-install/){target=_blank} for the CPU
+       your computer has
 
 === ":material-linux: Linux"
 
     1. [Install Docker Engine](https://docs.docker.com/engine/install/){target=_blank}
+
+        ??? warning "Docker Desktop for Linux"
+
+            > Last updated February 2023
+
+            Sailbot Workspace (more specifically its use of VS Code Dev Containers) isn't compatible with Docker Desktop
+            for Linux. If you have Docker Desktop installed, uninstall it and install Docker Engine instead.
+
     2. [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank}
     3. [Configure Docker to start on boot](https://docs.docker.com/engine/install/linux-postinstall/#configure-docker-to-start-on-boot){target=_blank}
 
@@ -70,7 +100,7 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){
 
         3. If VS Code is open, then restart it
 
-=== ":material-apple: MacOS"
+=== ":material-apple: macOS"
 
     1. XQuartz configuration
 
@@ -87,7 +117,7 @@ Ubuntu and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){
 
     2. Zsh configuration
 
-        1. Run the commands below in your MacOS terminal
+        1. Run the commands below in your macOS terminal
 
             ```zsh
             echo 'export MAC_DOCKER_LOCALHOST="docker.for.mac.host.internal"' >> ~/.zshrc
