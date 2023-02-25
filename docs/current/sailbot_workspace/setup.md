@@ -1,4 +1,4 @@
-# Setup Instructions
+# Sailbot Workspace Setup Instructions
 
 This workspace can be run on Windows, Linux, or macOS, but is the easiest to set up and performs the best on
 [Ubuntu](https://ubuntu.com/){target=_blank} and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){target=_blank}.
@@ -7,7 +7,7 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
 
 ### Docker
 
-!!! info "Docker Desktop vs Docker Engine"
+??? info "Docker Desktop vs Docker Engine"
 
     Docker Engine is what's commonly known as [Docker](https://www.docker.com/){target=_blank},
     a platform that uses OS-level virtualization to deliver software in packages called containers.[^1]
@@ -20,6 +20,7 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
 === ":material-microsoft-windows: Windows"
 
     1. Set up prerequisites, [WSL](https://learn.microsoft.com/en-us/windows/wsl/){target=_blank} and [Ubuntu](https://ubuntu.com/){target=_blank}:
+
         1. In PowerShell, run `wsl --install Ubuntu`
 
             ??? warning "Already installed WSL or Ubuntu?"
@@ -50,8 +51,7 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
 
 === ":material-apple: macOS"
 
-    1. [Install Docker Desktop](https://docs.docker.com/desktop/install/mac-install/){target=_blank} for the CPU
-       your computer has
+    [Install Docker Desktop](https://docs.docker.com/desktop/install/mac-install/){target=_blank} for your computer's CPU.
 
 === ":material-linux: Linux"
 
@@ -69,7 +69,7 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
 
 ### VS Code
 
-!!! info "VS Code"
+??? info "What is VS Code?"
 
     [Visual Studio Code](https://code.visualstudio.com/){target=_blank} is a powerful code editor for
     Windows, Linux, and macOS.
@@ -85,9 +85,13 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
 
 ## 2. Set up X11 Forwarding
 
-!!! note
+??? info "What is X11 forwarding?"
 
-    If X11 forwarding isn't required, you can skip this step.
+    X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications.
+
+!!! note "Skip this step if..."
+
+    X11 forwarding isn't needed.
 
 1. Ensure that the versions of VS Code and its Dev Containers extension support X11 forwarding:
     1. VS Code version >= 1.75
@@ -131,54 +135,62 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
             2. Copy the default xinitrc to your home directory: `cp /etc/X11/xinit/xinitrc ~/.xinitrc`
             3. Add `xhost +local:docker` to `~/.xinitrc` after its first line
 
-4. Verify that X11 forwarding is working:
+4. Verify that X11 forwarding works:
     1. Install `x11-apps`
-    2. Verifying that `xcalc` opens a calculator
 
-## 3. Clone sailbot_workspace
+        === ":material-microsoft-windows: Windows"
 
-!!! notes "Note for Windows"
+            In Ubuntu, `sudo apt install x11-apps`.
 
-    Run the command below in the Ubuntu terminal to clone sailbot_workspace in the WSL filesystem.
+        === ":material-apple: macOS"
+
+            XQuartz includes `x11-apps`. Ensure that XQuartz is running.
+
+        === ":material-linux: Linux"
+
+            Install `x11-apps` using your desired package manager.
+
+    2. Verify that running `xcalc` opens a calculator, and that you can use the calculator
+
+## 3. Clone Sailbot Workspace
 
 ```sh
 git clone https://github.com/UBCSailbot/sailbot_workspace.git
 ```
 
-## 4. Open sailbot_workspace in VS Code
+??? tip "Where to clone on Windows"
 
-```sh
-code sailbot_workspace
-```
+    Windows has a native file system as well as file systems for each WSL distribution.
+    For the fastest performance speed,[^3] clone Sailbot Workspace in the WSL file system.
+    We recommend cloning it somewhere in your Ubuntu user's home directory, which is what Ubuntu opens to by default.
 
-## 5. Open sailbot_workspace in a Dev Container
+    [^3]: [File storage and performance across file systems](https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems){target=_blank}
 
-1. Make sure that Docker is running
-2. Run the "Dev Containers: Reopen in Container" command in the VS Code command pallete
+## 4. Open Sailbot Workspace in VS Code
 
-## 6. Open the sailbot_workspace VS Code workspace
+1. Install `code` command in `PATH`
+
+    === ":material-microsoft-windows: Windows"
+
+        The `code` command is installed by default.
+
+    === ":material-apple: macOS"
+
+        See [launching from the command line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line){target=_blank}.
+
+    === ":material-linux: Linux"
+
+        The `code` command is installed by default.
+
+2. Run `code sailbot_workspace`
+
+## 5. Open Sailbot Workspace in a Dev Container
+
+1. Ensure that Docker is running
+2. Run the `Dev Containers: Reopen in Container` command in the
+   [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
+
+## 6. Open the VS Code workspace file
 
 1. Open the file `.devcontainer/config/sailbot_workspace.code-workspace` in VS Code
-2. Click "Open Workspace"
-
-## 7. Run the VS Code task named "setup"
-
-This imports the ROS packages and install their dependencies.
-
-## 8. Updating sailbot_workspace
-
-When changes to the Dev container are made (any file in `.devcontainer/`), it needs to be rebuilt.
-This may happen when you pull the latest commits from a branch or switch branches.
-
-1. Run the "Dev Containers: Rebuild Container" command in the VS Code command palette
-
-## Raye
-
-??? bug "ROS 1 not working"
-
-    The system has trouble resolving the local hostname; run the commands below in your VS Code terminal
-
-    ```bash
-    echo 'export ROS_HOSTNAME=localhost' >> ~/.bashrc
-    echo 'export ROS_MASTER_URI=http://localhost:11311' >> ~/.bashrc
-    ```
+2. Click `Open Workspace`
