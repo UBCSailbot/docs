@@ -19,14 +19,9 @@ annotations = []
 
 ## MAIN LOGIC
 def main():
-    # Parsing arguments for the root directory and config file
-    parser = argparse.ArgumentParser()
-    parser.add_argument('ROOT', nargs='?', default='./', type=str)
-    parser.add_argument('CONFIG_FILE', nargs='?', default='', type=str)
-    args = parser.parse_args()
-
-    root = args.ROOT
-    config_file = args.CONFIG_FILE
+    args = parseInputArguments()
+    root = args.root
+    config_file = args.config
 
     # Perform the linting process
     ignore_patterns = get_ignore_patterns(config_file)
@@ -41,6 +36,20 @@ def main():
 
 
 ## HELPER FUNCTIONS
+def parseInputArguments():
+    """
+    Parsing arguments for the root directory and config file.
+
+    Returns:
+        ArgumentParser: An argument parser object used for accessing command line arguments.
+    """
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-r', '--root', default='./', type=str, help='Path to root directory where linting begins')
+    parser.add_argument('-c', '--config', default='', type=str, help='Path to a JSON configuration file specifying ignore files and patterns')
+    args = parser.parse_args()
+    return args
+
+
 def get_ignore_patterns(config_file):
     """
     Obtain a list of patterns to ignore specified in the config file whose path is specified in lint.yml.
@@ -145,17 +154,57 @@ def check_markdown_file(filename, pattern, ignore_patterns):
 
     with open(filename) as file:
         for line_number, line_text in enumerate(file.readlines()):
-            match = re.findall(pattern, line_text, flags=re.M)
-            ignore_links = []
-            for ignore_pattern in ignore_patterns:
-                expression = re.compile(ignore_pattern)
-                ignore_links += list(filter(lambda l: expression.match(re.search(LINK_REGEX, l).group()[:-1]), match))
-            match = list(filter(lambda l: l not in ignore_links, match))
-            if match:
-                passed = False
-                for link in match:
-                    error_message_buffer += f"\tLine {line_number+1}: {link}\n"
-                    annotations.append(f"::error file={filename},line={line_number+1}::{ERROR_MSG1 + link + ERROR_MSG2}")
+            match = non_redirecting_hyperlinks(line_text, pattern, ignore_patterns)
+            passed, buffer = prepare_error_messages(match, filename, line_number, passed)
+            error_message_buffer += buffer
+    return passed, error_message_buffer
+
+
+def non_redirecting_hyperlinks(line_text, pattern, ignore_patterns):
+    """
+    Helper function that finds all hyperlinks missing a redirection attribute on a given line.
+
+    Args:
+        line_text (str): A line from a markdown file being linted.
+        pattern (str): A raw string containing the regular expression pattern to be used for linting.
+        ignore_patterns (List[str]): A list of regex patterns to ignore.
+
+    Returns:
+        List[str]: A list of hyperlinks missing a redirection attribute
+    """
+    match = re.findall(pattern, line_text, flags=re.M)
+    ignore_links = []
+    for ignore_pattern in ignore_patterns:
+        expression = re.compile(ignore_pattern)
+        ignore_links += list(filter(lambda l: expression.match(re.search(LINK_REGEX, l).group()[:-1]), match))
+    match = list(filter(lambda l: l not in ignore_links, match))
+    return match
+
+
+def prepare_error_messages(match, filename, line_number, passed):
+    """
+    Helper function that generates error messages for hyperlinks without redirection attributes and modifies the passed bool if necessary.
+
+    Args:
+        match (list[str]): A list of strings representing the matched links.
+        filename (str): The name of the file being checked for errors.
+        line_number (int): The line number where the error occurred.
+        passed (bool): A bool specifying if previous links have passed or not.
+
+    Returns:
+        tuple[bool, str]: Returns a tuple containing two variables:
+            1. The previous passed bool if there are no failed hyperlinks and false if there are.
+            2. A string containing the generated error message buffer.
+    """
+    error_message_buffer = ""
+
+    if not match:
+        return passed, error_message_buffer
+
+    passed = False
+    for link in match:
+        error_message_buffer += f"\tLine {line_number+1}: {link}\n"
+        annotations.append(f"::error file={filename},line={line_number+1}::{ERROR_MSG1 + link + ERROR_MSG2}")
     return passed, error_message_buffer
 
 
