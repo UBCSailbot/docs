@@ -125,6 +125,7 @@ nav:
       - Overview: current/sailbot_workspace/overview.md
       - Setup: current/sailbot_workspace/setup.md
       - Run: current/sailbot_workspace/run.md
+      - Docker Images: current/sailbot_workspace/docker_images.md
   - Reference:
     - C++:
       - Getting Started: reference/cpp/start.md
