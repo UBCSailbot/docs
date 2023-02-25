@@ -57,6 +57,19 @@ Run a ROS launch file or package-specific executable with `ros2 launch ...` or `
 
 ## Raye Run Instructions
 
+Raye's software can be run in the `raye` branch:
+
+1. Switch to the `raye` branch: `git switch raye`
+2. Rebuild the Dev Container: run the `Dev Containers: Rebuild Container` command in the
+   [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
+
+!!! warning "`raye` branch disclaimers`"
+
+    1. Since the `raye` branch (and Raye's codebase in general) is not in active development,
+       it may not be 100% functional or contain all the features in `main`
+    2. `raye` is more memory intensive than `main` because the parent image of its Dev Container is much larger;
+       this may lead to worse performance
+
 ### Build Raye's ROS packages
 
 To build Raye's ROS packages, run the following commands:
