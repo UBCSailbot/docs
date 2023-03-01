@@ -11,8 +11,9 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
 run applications.[^2] We use it to separate our applications from our infrastructure[^2] so that we can update and
 version control our infrastructure for every use case (software members, CI, deployment) in one place: this repository.
 
-[Docker Engine](https://docs.docker.com/engine/) is a software used to run Docker. However, it can only be installed on Linux.
-[Docker Desktop](https://docs.docker.com/desktop/) is a software used to run Docker in a VM,[^3]
+[Docker Engine](https://docs.docker.com/engine/){target=_blank} is a software used to run Docker.
+However, it can only be installed on Linux.
+[Docker Desktop](https://docs.docker.com/desktop/){target=_blank} is a software used to run Docker in a VM,[^3]
 allowing it to be installed on Windows and macOS in addition to Linux.
 
 [^1]: [Wikipedia Docker page](https://en.wikipedia.org/wiki/Docker_(software)){target=_blank}
