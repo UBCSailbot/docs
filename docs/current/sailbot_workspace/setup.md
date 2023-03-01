@@ -72,7 +72,7 @@ use all the features of Sailbot Workspace.
 1. [Install VS Code](https://code.visualstudio.com/docs/setup/setup-overview){target=_blank}
 2. Install the [Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack){target=_blank}
 
-## 2. Set up X11 Forwarding
+## 2. Set up X11 forwarding
 
 X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications. You can skip this step if
 you aren't running any GUI applications.

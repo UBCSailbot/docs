@@ -122,7 +122,7 @@ Then you can run launch files or package-specific executables in that workspace 
 
     `roslaunch ...` or `rosrun ...`, respectively.
 
-### Raye Known Issues
+### Raye's known issues
 
 !!! bug "Run commands for Raye packages are very slow"
 
