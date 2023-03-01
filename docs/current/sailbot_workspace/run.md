@@ -2,73 +2,47 @@
 
 ## 1. Rebuild the Dev Container
 
-!!! note "Skip this step if..."
+You can skip this step if none of the files in `.devcontainer/` were modified since the Dev Container was last built.
 
-    none of the files in `.devcontainer/` were modified since the Dev Container was last built.
+These file may be modified if you:
 
-    These file may be modified if you:
+1. `git pull`
+2. Switch branches
+3. Update a file in `.devcontainer/` yourself
 
-    1. `git pull`
-    2. Switch branches
-    3. Update a file in `.devcontainer/` yourself
+VS Code may prompt you to rebuild the Dev Container when these files are modified, but it doesn't do so 100% of the time.
 
-    VS Code may prompt you to rebuild the Dev Container when these files are modified,
-    but it doesn't do so 100% of the time.
-
-Run the `Dev Containers: Rebuild Container` command in the
-[VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}.
+1. Run the `Dev Containers: Rebuild Container` command in the
+   [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
 
 ## 2. Run the `setup` VS Code task
 
-??? info "What does the `setup` task do?"
+The `setup` task imports the ROS packages and install their dependencies. You can skip this step if you ran this
+task before and haven't changed ROS package dependencies since.
 
-    The `setup` task imports the ROS packages and install their dependencies.
+1. Run the `Tasks: Run Task` command in the
+   [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
+2. Select `setup` from the dropdown menu
 
-!!! note "Skip this step if..."
+    ??? bug "Can't see the `setup` task"
 
-    you have run this task before and haven't changed ROS package dependencies since.
-
-To select a task to run, run the `Tasks: Run Task` command in the
-[VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}.
-
-??? bug "Can't see the `setup` task"
-
-    If you can't see the `setup` task, close and reopen VS Code before rerunning the `Tasks: Run Task` command.
+        If you can't see the `setup` task, close and reopen VS Code before rerunning the `Tasks: Run Task` command.
+        This may occur when Sailbot Workspace is opened for the first time.
 
 ## 3. Build the ROS packages
 
-!!! note "Skip this step if..."
+You can skip this step if no modifications were made to C++ code, custom msgs, or compiled resources.
 
-    no modifications were made to C++ code, custom msgs, or compiled resources.
-
-Run the `Build` VS Code task, which has the shortcut ++ctrl+shift+b++
-
-??? info "`Build` task shortcut on macOS"
-
-    The `Build` task shortcut on macOS is ++cmd+shift+b++.
+1. Run the `Build` VS Code task: ++ctrl+shift+b++
+    - On macOS the shortcut is ++cmd+shift+b++
 
 ## 4. Run the ROS program
+
+Run a ROS launch file or package-specific executable with `ros2 launch ...` or `ros2 run ...`, respectively.
 
 ??? tip "Running GUI applications on macOS"
 
     If you want to run GUI applications on macOS, ensure that XQuartz is running.
-
-Run a ROS launch file or package-specific executable with `ros2 launch ...` or `ros2 run ...`, respectively.
-
-## Raye Run Instructions
-
-Raye's software can be run in the `raye` branch:
-
-1. Switch to the `raye` branch: `git switch raye`
-2. Rebuild the Dev Container: run the `Dev Containers: Rebuild Container` command in the
-   [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
-
-!!! warning "`raye` branch disclaimers`"
-
-    1. Since the `raye` branch (and Raye's codebase in general) is not in active development,
-       it may not be 100% functional or contain all the features in `main`
-    2. `raye` is more memory intensive than `main` because the parent image of its Dev Container is much larger;
-       this may lead to worse performance
 
 ### Build Raye's ROS packages
 

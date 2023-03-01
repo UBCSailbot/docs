@@ -7,15 +7,17 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
 
 ### Docker
 
-??? info "Docker Desktop vs Docker Engine"
+[Docker](https://www.docker.com/){target=_blank} is a platform that uses OS-level virtualization[^1] to develop, ship, and
+run applications.[^2] We use it to separate our applications from our infrastructure[^2] so that we can update and
+version control our infrastructure for every use case (software members, CI, deployment) in one place: this repository.
 
-    Docker Engine is what's commonly known as [Docker](https://www.docker.com/){target=_blank},
-    a platform that uses OS-level virtualization to deliver software in packages called containers.[^1]
-    Docker Engine can only be installed on Linux. Docker Desktop stores containers and images in a VM[^2],
-    allowing it to be installed on Windows and macOS in addition to Linux.
+[Docker Engine](https://docs.docker.com/engine/) is a software used to run Docker. However, it can only be installed on Linux.
+[Docker Desktop](https://docs.docker.com/desktop/) is a software used to run Docker in a VM,[^3]
+allowing it to be installed on Windows and macOS in addition to Linux.
 
-    [^1]: [Wikipedia Docker page](https://en.wikipedia.org/wiki/Docker_(software)){target=_blank}
-    [^2]: [What is the difference between Docker Desktop for Linux and Docker Engine](https://docs.docker.com/desktop/faqs/linuxfaqs/#what-is-the-difference-between-docker-desktop-for-linux-and-docker-engine){target=_blank}
+[^1]: [Wikipedia Docker page](https://en.wikipedia.org/wiki/Docker_(software)){target=_blank}
+[^2]: [Get Docker](https://docs.docker.com/get-docker/){target=_blank}
+[^3]: [What is the difference between Docker Desktop for Linux and Docker Engine](https://docs.docker.com/desktop/faqs/linuxfaqs/#what-is-the-difference-between-docker-desktop-for-linux-and-docker-engine){target=_blank}
 
 === ":material-microsoft-windows: Windows"
 
@@ -56,42 +58,24 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
 === ":material-linux: Linux"
 
     1. [Install Docker Engine](https://docs.docker.com/engine/install/){target=_blank}
-
-        ??? warning "Docker Desktop for Linux"
-
-            > Last updated February 2023
-
-            Sailbot Workspace (more specifically its use of VS Code Dev Containers) isn't compatible with Docker Desktop
-            for Linux. If you have Docker Desktop installed, uninstall it and install Docker Engine instead.
-
+        - As of February 2023, Sailbot Workspace (more specifically its use of VS Code Dev Containers) isn't compatible
+          with Docker Desktop for Linux; if you have Docker Desktop installed, uninstall it and install Docker Engine instead.
     2. [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank}
     3. [Configure Docker to start on boot](https://docs.docker.com/engine/install/linux-postinstall/#configure-docker-to-start-on-boot){target=_blank}
 
 ### VS Code
 
-??? info "What is VS Code?"
-
-    [Visual Studio Code](https://code.visualstudio.com/){target=_blank} is a powerful code editor for
-    Windows, Linux, and macOS.
+[Visual Studio Code](https://code.visualstudio.com/){target=_blank} is a powerful and customizable code editor for
+Windows, Linux, and macOS. We strongly recommend that you use this editor to develop our software so that you can
+use all the features of Sailbot Workspace.
 
 1. [Install VS Code](https://code.visualstudio.com/docs/setup/setup-overview){target=_blank}
-
-    ??? note "VS Code for Arch Linux"
-
-        If you are running Arch Linux, ensure that you install VS Code from the official Microsoft distribution;
-        the one from Pacman doesn't work with Microsoft plugins.
-
 2. Install the [Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack){target=_blank}
 
 ## 2. Set up X11 Forwarding
 
-??? info "What is X11 forwarding?"
-
-    X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications.
-
-!!! note "Skip this step if..."
-
-    X11 forwarding isn't needed.
+X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications. You can skip this step if
+you aren't running any GUI applications.
 
 1. Ensure that the versions of VS Code and its Dev Containers extension support X11 forwarding:
     1. VS Code version >= 1.75
@@ -125,9 +109,8 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
 
         === ":material-linux: General"
 
-            > Last updated February 2023
-
-            Almost all Linux distributions include a X11 server, Xorg. This may change in the future as Wayland matures.
+            As of February 2023, almost all Linux distributions include a X11 server, Xorg.
+            This may change in the future as Wayland matures.
 
         === ":material-arch: Arch Linux"
 
@@ -150,7 +133,7 @@ This workspace can be run on Windows, Linux, or macOS, but is the easiest to set
 
             Install `x11-apps` using your desired package manager.
 
-    2. Verify that running `xcalc` opens a calculator, and that you can use the calculator
+    2. Verify that running `xcalc` opens a calculator and that you can use it
 
 ## 3. Clone Sailbot Workspace
 
@@ -161,10 +144,10 @@ git clone https://github.com/UBCSailbot/sailbot_workspace.git
 ??? tip "Where to clone on Windows"
 
     Windows has a native file system as well as file systems for each WSL distribution.
-    For the fastest performance speed,[^3] clone Sailbot Workspace in the WSL file system.
+    For the fastest performance speed,[^4] clone Sailbot Workspace in the WSL file system.
     We recommend cloning it somewhere in your Ubuntu user's home directory, which is what Ubuntu opens to by default.
 
-    [^3]: [File storage and performance across file systems](https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems){target=_blank}
+    [^4]: [File storage and performance across file systems](https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems){target=_blank}
 
 ## 4. Open Sailbot Workspace in VS Code
 
