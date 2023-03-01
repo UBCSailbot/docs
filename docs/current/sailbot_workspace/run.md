@@ -44,6 +44,48 @@ Run a ROS launch file or package-specific executable with `ros2 launch ...` or `
 
     If you want to run GUI applications on macOS, ensure that XQuartz is running.
 
+## Troubleshooting
+
+If you are having some trouble running Raye's software, here are some things you can try:
+
+ROS:
+
+- Run the `clean` VS Code task to clean your build
+- Run the `purge` VS Code task to delete all generated files in the workspace
+
+Dev Container:
+
+- Run the `Dev Containers: Rebuild Container` command in the
+  [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
+  to rebuild the Dev Container
+
+VS Code:
+
+- Close and reopen the VS Code
+- Update VS Code and its extensions
+
+Docker:
+
+- Run `docker system prune` to remove all unused containers, networks, images (both dangling and unreferenced)
+    - Add `--all` to additionally remove unused images
+    - Add `--volumes` to additionally remove volumes
+    - Run `docker rmi -f $(docker images -aq)` to remove all images
+
+## Run Raye's Software
+
+Raye was our previous project. Her software can be run in the `raye` branch:
+
+1. Switch to the `raye` branch: `git switch raye`
+2. Rebuild the Dev Container: run the `Dev Containers: Rebuild Container` command in the
+   [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
+
+!!! warning "`raye` branch disclaimers"
+
+    1. Since `raye` (and Raye's codebase in general) is not in active development, it may not be 100% functional
+       or contain all the features in `main`
+    2. `raye` is more memory intensive than `main` because the parent image of its Dev Container is much larger;
+       this may lead to worse performance
+
 ### Build Raye's ROS packages
 
 To build Raye's ROS packages, run the following commands:
