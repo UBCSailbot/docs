@@ -59,6 +59,9 @@ NET members should do the C++ version while CTRL and PATH members should do the 
     - Writing a simple service and client (C++ or Python)
     - Using parameters in a class (C++ or Python)
     - Using `ros2doctor` to identify issues
+- Intermediate
+    - Launch
+    - Testing
 - Demos
     - Logging
 
