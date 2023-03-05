@@ -2,117 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://UBCSailbot.github.io/docs/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://UBCSailbot.github.io/docs/current/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <loc>https://UBCSailbot.github.io/docs/current/overview/</loc>
+         <lastmod>2023-03-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://UBCSailbot.github.io/docs/current/sailbot_workspace/deployment/</loc>
+         <lastmod>2023-03-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://UBCSailbot.github.io/docs/current/sailbot_workspace/docker_images/</loc>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/current/sailbot_workspace/overview/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/current/sailbot_workspace/run/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/current/sailbot_workspace/setup/</loc>
-         <lastmod>2023-02-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://UBCSailbot.github.io/docs/reference/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/reference/markdown/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/reference/ros/</loc>
-         <lastmod>2023-02-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://UBCSailbot.github.io/docs/reference/cpp/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/reference/cpp/differences/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://UBCSailbot.github.io/docs/reference/cpp/start/</loc>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/reference/cpp/tools/</loc>
-         <lastmod>2023-02-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://UBCSailbot.github.io/docs/reference/github/workflow/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/reference/github/workflow/branches/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/reference/github/workflow/issues/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://UBCSailbot.github.io/docs/reference/github/workflow/overview/</loc>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/reference/github/workflow/pr/</loc>
-         <lastmod>2023-02-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://UBCSailbot.github.io/docs/reference/python/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/reference/python/conventions/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://UBCSailbot.github.io/docs/reference/python/start/</loc>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/reference/python/virtual-environments/</loc>
-         <lastmod>2023-02-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://UBCSailbot.github.io/docs/reference/sailing/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/reference/sailing/boat_parts/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/reference/sailing/miscellaneous/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://UBCSailbot.github.io/docs/reference/sailing/overview/</loc>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/reference/sailing/points_of_sail/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/reference/sailing/turning/</loc>
-         <lastmod>2023-02-12</lastmod>
+         <lastmod>2023-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
