@@ -8,10 +8,10 @@ We use ROS because it is open-source, language-agnostic, and built with cross-co
 It enables our sub-teams to work independently on well-defined components of our software system
 without having to worry about the hardware it runs on or the implementation of other components.
 
-[The official ROS 2 documentation](https://docs.ros.org/en/eloquent/index.html){target=_blank} contains everything you need
+[The official ROS 2 documentation](https://docs.ros.org/en/humble/index.html){target=_blank} contains everything you need
 to get started using ROS. From it we have hand-picked the resources that are most relevant to our current and expected
 future usage of ROS assuming that you use [our preconfigured workspace](https://github.com/UBCSailbot/sailbot_workspace){target=_blank}.
-To run our software on your device without our workspace, you would have to [install ROS](https://docs.ros.org/en/eloquent/Installation.html){target=_blank}
+To run our software on your device without our workspace, you would have to [install ROS](https://docs.ros.org/en/humble/Installation.html){target=_blank}
 and the dependencies that are in [our Docker images](https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer){target=_blank}
 yourself.
 
@@ -28,46 +28,50 @@ To get our workspace configuration running on your computer:
 Our workspace configuration contains easier methods of accomplishing some of the tutorial steps, or eliminates the need
 for them altogether.
 
-| Tutorial | sailbot_workspace |
-| -------- | ----------------- |
-| Install a package | All packages used in the tutorials are already installed (step 2 above) |
-| Clone a sample repo (ros_tutorials) | ros_tutorials is already cloned (step 3 above) |
-| Resolve dependencies | Run the "install dependencies" VS Code task |
-| Build the workspace | Run the "Build" VS Code task, AKA ++ctrl+shift+b++ |
-| Source the overlay | Run the `srcnew` terminal command |
-| Create a package with a node | Run the "new ament_(python\|cmake) package with a node" VS Code task |
+| Tutorial step                       | Sailbot Workspace configuration                                         |
+| ----------------------------------- | ----------------------------------------------------------------------- |
+| Install a package                   | All packages used in the tutorials are already installed (step 2 above) |
+| Clone a sample repo (ros_tutorials) | ros_tutorials is already cloned (step 3 above)                          |
+| Resolve dependencies                | Run the "install dependencies" VS Code task                             |
+| Build the workspace                 | Run the "Build" VS Code task, AKA ++ctrl+shift+b++                      |
+| Source the overlay                  | Run the `srcnew` terminal command                                       |
+| Create a package with a node        | Run the "new ament_(python\|cmake) package with a node" VS Code task    |
 
 ## Tutorials
 
-We encourage all software members to work through the tutorials listed below in order.
-For tutorials that have both C++ and Python versions, NET members should do the C++ version
-while CTRL and PATH members should do the Python version.
+We encourage all software members to work through the [ROS tutorials](https://docs.ros.org/en/humble/Tutorials.html){target=_blank}
+that are listed below in order. For tutorials that have both C++ and Python versions,
+NET members should do the C++ version while CTRL and PATH members should do the Python version.
 
-[CLI Tools](https://docs.ros.org/en/eloquent/Tutorials.html#beginner-cli-tools){target=_blank}
-
-- Introducing turtlesim and rqt
-- Understanding ROS 2 nodes
-- Understanding ROS 2 topics
-- Understanding ROS 2 services
-- Understanding ROS 2 parameters
-- Understanding ROS 2 actions
-- Using rqt_console
-- Recording and playing back data
-
-[Client Libraries](https://docs.ros.org/en/eloquent/Tutorials.html#beginner-client-libraries){target=_blank}
-
-- Creating a workspace
-- Creating your first ROS 2 package
-- Writing a simple publisher and subscriber (C++ or Python)
-- Writing a simple service and client (C++ or Python)
-- Using parameters in a class (C++ or Python)
-- Getting started with ros2doctor
+- Beginner: CLI tools
+    - Introducing `turtlesim` and `rqt`
+    - Understanding nodes
+    - Understanding topics
+    - Understanding services
+    - Understanding parameters
+    - Understanding actions
+    - Using `rqt_console` to view logs
+    - Recording and playing back data
+- Beginner: Client libraries
+    - Creating a workspace
+    - Creating a package
+    - Writing a simple publisher and subscriber (C++ or Python)
+    - Writing a simple service and client (C++ or Python)
+    - Using parameters in a class (C++ or Python)
+    - Using `ros2doctor` to identify issues
+- Intermediate
+    - Launch
+    - Testing
+- Demos
+    - Logging
 
 ## Concepts
 
-We encourage all software members to read the following documentation on key ROS concepts:
+We encourage all software members to read the following documentation on key [ROS concepts](https://docs.ros.org/en/humble/Concepts.html){target=_blank}:
 
-- [About logging and logger configuration](https://docs.ros.org/en/eloquent/Concepts/Logging.html){target=_blank}
+- About logging and logger configuration
+- About ROS 2 interfaces
+- About parameters in ROS 2
 
 ## ROS 1 Bridge
 
@@ -82,7 +86,7 @@ from ROS 1 to ROS 2. As we will be reusing parts of Raye's codebase, it is essen
 Until we are completely done with Raye, our preconfigured workspace will have ROS 1, ROS 1 Bridge, and ROS 2 installed.
 
 We encourage all software members work through the [ROS 1 Bridge README](https://github.com/ros2/ros1_bridge/blob/master/README.md){target=_blank}.
-For PATH members, the [Migrating launch files from ROS 1 to ROS 2 page](https://docs.ros.org/en/eloquent/Tutorials/Launch-files-migration-guide.html){target=_blank}
+For PATH members, the [Migrating launch files from ROS 1 to ROS 2 page](https://docs.ros.org/en/humble/Tutorials/Launch-files-migration-guide.html){target=_blank}
 will be a helpful reference when we do so.
 
 [^1]: <https://docs.ros.org/en/humble/index.html>
