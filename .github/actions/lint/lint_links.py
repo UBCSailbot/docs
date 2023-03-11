@@ -67,7 +67,7 @@ def get_ignore_patterns(config_file):
     if os.path.isfile(config_file):
         with open(config_file) as f:
             data = json.load(f)
-            ignore_patterns = [row["pattern"] for row in data.get("ignorePatterns", [])]
+            ignore_patterns = [row["pattern"] for row in data.get("ignorePatterns", []) if "pattern" in row]
     return ignore_patterns
 
 
@@ -85,7 +85,7 @@ def get_ignore_files(config_file):
     if os.path.isfile(config_file):
         with open(config_file) as f:
             data = json.load(f)
-            ignore_files = [row["file"] for row in data.get("ignoreFiles", [])]
+            ignore_files = [row["file"] for row in data.get("ignoreFiles", []) if "file" in row]
     return ignore_files
 
 
