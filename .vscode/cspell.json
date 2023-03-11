@@ -17,13 +17,23 @@
         "iostream",
         "mkdocs",
         "mypy",
+        "OMPL",
         "Protobuf",
         "Raye",
+        "roscd",
+        "roslaunch",
+        "rosrun",
         "srcnew",
+        "srcraye",
         "struct",
         "Structs",
         "uncrustify",
-        "virtualenv"
+        "virtualenv",
+        "xcalc",
+        "xhost",
+        "xinit",
+        "xinitrc",
+        "xorg"
     ],
     // flagWords - list of words to be always considered incorrect
     // This is useful for offensive words and common spelling errors.

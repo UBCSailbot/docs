@@ -89,9 +89,9 @@ To use the virtual environment, you must activate it.
         env\Scripts\activate
         ```
 
-    === ":material-apple: MacOS"
+    === ":material-apple: macOS"
 
-        ```bash title="Activation for MacOS"
+        ```bash title="Activation for macOS"
         source env/bin/activate
         ```
     === ":material-linux: Linux"
@@ -214,7 +214,7 @@ Be sure to follow the instructions below **while your environment is activated**
 
         Then, open the `environment.yml` file and delete the line with `prefix:`.
 
-    === ":material-apple: MacOS"
+    === ":material-apple: macOS"
 
         Execute the following command to create a file called `environment.yml`:
 
