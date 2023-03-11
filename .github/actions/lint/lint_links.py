@@ -41,10 +41,10 @@ def main():
 ## HELPER FUNCTIONS
 def parseInputArguments():
     """
-    Parsing arguments for the root directory and config file.
+    Parses command line arguments for the root directory and configuration file.
 
     Returns:
-        ArgumentParser: An argument parser object used for accessing command line arguments.
+        Namespace: A namespace object used for accessing command line arguments.
     """
     parser = argparse.ArgumentParser()
     parser.add_argument('-r', '--root', default=ROOT_DEFAULT, nargs='?', type=str, help='Path to root directory where linting begins')
@@ -55,37 +55,43 @@ def parseInputArguments():
 
 def get_ignore_patterns(config_file):
     """
-    Obtain a list of patterns to ignore specified in the config file whose path is specified in lint.yml.
+    Obtain a list of patterns to ignore specified in the configuration file whose path is specified as a command line argument.
 
     Args:
-        config_file (str): The path of the config file relative to the root.
+        config_file (str): The path of the configuration file relative to the root.
 
     Returns:
         List[str]: A list of regex patterns to ignore when performing linting.
     """
+    if not os.path.isfile(config_file):
+        print("Warning: Configuration file not found", file=sys.stderr)
+        return []
+
     ignore_patterns = []
-    if os.path.isfile(config_file):
-        with open(config_file) as f:
-            data = json.load(f)
-            ignore_patterns = [row["pattern"] for row in data.get("ignorePatterns", []) if "pattern" in row]
+    with open(config_file) as f:
+        data = json.load(f)
+        ignore_patterns = [row["pattern"] for row in data.get("ignorePatterns", []) if "pattern" in row]
     return ignore_patterns
 
 
 def get_ignore_files(config_file):
     """
-    Obtain a list of files to ignore specified in the environment variable.
+    Obtain a list of files to ignore specified in the configuration file whose path is specified as a command line argument.
 
     Args:
-        config_file (str): The path of the config file relative to the root.
+        config_file (str): The path of the configuration file relative to the root.
 
     Returns:
         List[str]: A list of markdown file paths (relative to the root) to ignore when performing linting.
     """
+    if not os.path.isfile(config_file):
+        print("Warning: Configuration file not found", file=sys.stderr)
+        return []
+
     ignore_files = []
-    if os.path.isfile(config_file):
-        with open(config_file) as f:
-            data = json.load(f)
-            ignore_files = [row["file"] for row in data.get("ignoreFiles", []) if "file" in row]
+    with open(config_file) as f:
+        data = json.load(f)
+        ignore_files = [row["file"] for row in data.get("ignoreFiles", []) if "file" in row]
     return ignore_files
 
 
