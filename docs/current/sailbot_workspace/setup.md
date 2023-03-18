@@ -178,3 +178,36 @@ git clone https://github.com/UBCSailbot/sailbot_workspace.git
 
 1. Open the file `.devcontainer/config/sailbot_workspace.code-workspace` in VS Code
 2. Click `Open Workspace`
+
+## Setup Sailbot Workspace in a GitHub Codespace
+
+A codespace is a development environment that's hosted in the cloud.[^5]
+Since Sailbot Workspace is resource intensive, it has high hardware requirements and power consumption
+which isn't ideal for development on laptops. GitHub Codespaces provides a seamless experience to work on a repository
+off-device, especially if the repository has a Dev Container like Sailbot Workspace does. They can run in VS Code
+or even in a browser for times when you aren't on your programming computer.
+
+Create a GitHub Codespace following the steps in the relevant GitHub Docs page:
+[create a codespace for a repository](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository){target=_blank}.
+A couple things to note:
+
+- For the best Sailbot Workspace development experience, select the high-spec machine available
+- There are usage limits if you don't want to pay:
+  [monthly included storage and core hours for personal accounts](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces#monthly-included-storage-and-core-hours-for-personal-accounts){target=_blank}
+    - Upgrade to a Pro account for increased usage limits (this is free for students):
+      [apply to GitHub Global Campus as a student](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student){target=_blank}
+    - Stop your codespace as soon as you are done using it:
+      [stopping a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace#stopping-a-codespace){target=_blank}
+    - Delete codespaces that you do not plan to use anymore:
+      [deleting a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/deleting-a-codespace#deleting-a-codespace){target=_blank}
+
+Reopen a codespace following the steps in the relevant GitHub Docs page:
+[reopening a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/opening-an-existing-codespace#reopening-a-codespace){target=_blank}.
+
+(Current) limitations of GitHub Codespaces:
+
+- Does not support X11 forwarding to run GUI applications
+- High-spec machines not available. As of March 2023, the highest-spec machine that is publically available
+  has a 4-core CPU and 8GB of RAM
+
+[^5]: [GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview){target=_blank}
