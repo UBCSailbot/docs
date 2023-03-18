@@ -19,7 +19,7 @@
         <link rel="next" href="../run/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.7bf56d0a.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.c4a75a56.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -528,6 +528,13 @@
         <li class="md-nav__item">
   <a href="#6-open-the-vs-code-workspace-file" class="md-nav__link">
     6. Open the VS Code workspace file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-sailbot-workspace-in-a-github-codespace" class="md-nav__link">
+    Setup Sailbot Workspace in a GitHub Codespace
   </a>
   
 </li>
@@ -1127,6 +1134,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#setup-sailbot-workspace-in-a-github-codespace" class="md-nav__link">
+    Setup Sailbot Workspace in a GitHub Codespace
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1371,6 +1385,36 @@ We recommend cloning it somewhere in your Ubuntu user's home directory, which is
 <li>Open the file <code>.devcontainer/config/sailbot_workspace.code-workspace</code> in VS Code</li>
 <li>Click <code>Open Workspace</code></li>
 </ol>
+<h2 id="setup-sailbot-workspace-in-a-github-codespace">Setup Sailbot Workspace in a GitHub Codespace<a class="headerlink" href="#setup-sailbot-workspace-in-a-github-codespace" title="Permanent link">&para;</a></h2>
+<p>A codespace is a development environment that's hosted in the cloud.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>
+Since Sailbot Workspace is resource intensive, it has high hardware requirements and power consumption
+which isn't ideal for development on laptops. GitHub Codespaces provides a seamless experience to work on a repository
+off-device, especially if the repository has a Dev Container like Sailbot Workspace does. They can run in VS Code
+or even in a browser for times when you aren't on your programming computer.</p>
+<p>Create a GitHub Codespace following the steps in the relevant GitHub Docs page:
+<a href="https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository" target="_blank">create a codespace for a repository</a>.
+A couple things to note:</p>
+<ul>
+<li>For the best Sailbot Workspace development experience, select the high-spec machine available</li>
+<li>There are usage limits if you don't want to pay:
+  <a href="https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces#monthly-included-storage-and-core-hours-for-personal-accounts" target="_blank">monthly included storage and core hours for personal accounts</a><ul>
+<li>Upgrade to a Pro account for increased usage limits (this is free for students):
+  <a href="https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student" target="_blank">apply to GitHub Global Campus as a student</a></li>
+<li>Stop your codespace as soon as you are done using it:
+  <a href="https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace#stopping-a-codespace" target="_blank">stopping a codespace</a></li>
+<li>Delete codespaces that you do not plan to use anymore:
+  <a href="https://docs.github.com/en/codespaces/developing-in-codespaces/deleting-a-codespace#deleting-a-codespace" target="_blank">deleting a codespace</a></li>
+</ul>
+</li>
+</ul>
+<p>Reopen a codespace following the steps in the relevant GitHub Docs page:
+<a href="https://docs.github.com/en/codespaces/developing-in-codespaces/opening-an-existing-codespace#reopening-a-codespace" target="_blank">reopening a codespace</a>.</p>
+<p>(Current) limitations of GitHub Codespaces:</p>
+<ul>
+<li>Does not support X11 forwarding to run GUI applications</li>
+<li>High-spec machines not available. As of March 2023, the highest-spec machine that is publically available
+  has a 4-core CPU and 8GB of RAM</li>
+</ul>
 <div class="footnote">
 <hr />
 <ol>
@@ -1386,6 +1430,9 @@ We recommend cloning it somewhere in your Ubuntu user's home directory, which is
 <li id="fn:4">
 <p><a href="https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems" target="_blank">File storage and performance across file systems</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
+<li id="fn:5">
+<p><a href="https://docs.github.com/en/codespaces/overview" target="_blank">GitHub Codespaces overview</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
 
@@ -1394,7 +1441,7 @@ We recommend cloning it somewhere in your Ubuntu user's home directory, which is
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 18, 2023</span>
       
     
   </small>
@@ -1413,10 +1460,10 @@ We recommend cloning it somewhere in your Ubuntu user's home directory, which is
 
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
-          </a>
+          </button>
         
       </main>
       
@@ -1540,7 +1587,7 @@ We recommend cloning it somewhere in your Ubuntu user's home directory, which is
     <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       
