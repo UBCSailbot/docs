@@ -179,6 +179,20 @@ git clone https://github.com/UBCSailbot/sailbot_workspace.git
 1. Open the file `.devcontainer/config/sailbot_workspace.code-workspace` in VS Code
 2. Click `Open Workspace`
 
+## 7. Run the `setup` VS Code task
+
+The `setup` task imports the ROS packages and install their dependencies. You can skip this step if you ran this
+task before and haven't changed ROS package dependencies since.
+
+1. Run the `Tasks: Run Task` command in the
+   [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
+2. Select `setup` from the dropdown menu
+
+    ??? bug "Can't see the `setup` task"
+
+        If you can't see the `setup` task, close and reopen VS Code before rerunning the `Tasks: Run Task` command.
+        This may occur when Sailbot Workspace is opened for the first time.
+
 ## Setup Sailbot Workspace in a GitHub Codespace
 
 A codespace is a development environment that's hosted in the cloud.[^5]
