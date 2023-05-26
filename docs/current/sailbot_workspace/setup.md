@@ -183,7 +183,7 @@ git clone https://github.com/UBCSailbot/sailbot_workspace.git
 
 !!! info ""
 
-    Moved from Run to Setup page in [:octicons-tag-24: v1.1.0](https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.1.0)
+    Moved from Run to Setup page in [:octicons-tag-24: v1.1.0](https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.1.0){target=_blank}
 
 The `setup` task clones the repositories defined in [`src/new_project.repos`](https://github.com/UBCSailbot/sailbot_workspace/blob/main/src/new_project.repos){target=_blank}
 and updates dependencies of the ROS packages.
