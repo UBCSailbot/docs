@@ -40,7 +40,9 @@ To run these programs:
     ??? note "Run Grafana"
 
         1. Connect to the MongoDB database
-            0. Prerequisite: MongoDB is running
+            0. Prerequisites:
+                1. MongoDB is running
+                2. Not running Sailbot Workspace in a [GitHub Codespace](./setup.md#setup-sailbot-workspace-in-a-github-codespace){target=_blank}
             1. Open the site by hovering over its local address and clicking "Open in Browser"
                 - Grafana is running on port 3000
             2. Login using the default username and password: `admin` and `admin`, respectively
