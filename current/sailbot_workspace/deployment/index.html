@@ -1143,12 +1143,13 @@ can be found in the <a href="https://github.com/UBCSailbot/sailbot_workspace" ta
 GitHub repository. Its README has been copied below.</p>
 </div>
 <h1 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h1>
+<p>Deploying our software to our autonomous sailboat's main computer.</p>
 <h2 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link">&para;</a></h2>
 <h3 id="start_containersh"><code>start_container.sh</code><a class="headerlink" href="#start_containersh" title="Permanent link">&para;</a></h3>
 <p>Runs the <a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/base-dev/base-dev.Dockerfile"><code>base</code></a>
-image. A new container is created every time this is run. The default container name is <code>sailbot</code>. Container names are unique,
-so if you want to use multiple deployment containers (e.g., from different branches) you will have to update the variable
-<code>CONTAINER_NAME</code> in the script.</p>
+image. A new container is created every time this is run. The default container name is <code>sailbot_deployment_container</code>.
+Container names are unique, so if you want to use multiple deployment containers (e.g., from different branches)
+you will have to update the variable <code>CONTAINER_NAME</code> in the script.</p>
 <p>Usage:</p>
 <ul>
 <li>Runs the base image used by the Dev Container by default: <code>./start_container.sh</code></li>
