@@ -2,7 +2,7 @@
 
 ## Run optional programs
 
-!!! note ""
+!!! info ""
 
     New in [:octicons-tag-24: v1.1.0](https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.1.0)
 

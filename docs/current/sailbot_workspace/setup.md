@@ -181,7 +181,7 @@ git clone https://github.com/UBCSailbot/sailbot_workspace.git
 
 ## 7. Run the `setup` VS Code task
 
-!!! note ""
+!!! info ""
 
     Moved from Run to Setup page in [:octicons-tag-24: v1.1.0](https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.1.0)
 
