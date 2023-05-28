@@ -471,6 +471,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../how_to/" class="md-nav__link">
+        How-To
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../deployment/" class="md-nav__link">
         Deployment
       </a>
@@ -1026,41 +1040,63 @@ Click on an image to learn more about its features and how to update it.</p>
 <td><a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/pre-base" target="_blank"><code>pre-base</code></a></td>
 <td><a href="https://hub.docker.com/_/ubuntu" target="_blank">Ubuntu 22.04</a></td>
 <td><a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/pre-base/pre-base.Dockerfile" target="_blank"><code>pre-base.Dockerfile</code></a></td>
-<td>To update ROS or OMPL</td>
+<td>To install ROS or OMPL</td>
 <td>Personal computer</td>
 </tr>
 <tr>
 <td><a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/base-dev" target="_blank"><code>base</code></a></td>
 <td><a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/pre-base" target="_blank"><code>pre-base</code></a></td>
 <td><a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/base-dev/base-dev.Dockerfile" target="_blank"><code>base-dev.Dockerfile</code></a></td>
-<td>To update core dependencies</td>
+<td>To install core dependencies</td>
+<td>Workflow dispatch</td>
+</tr>
+<tr>
+<td><a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/base-dev" target="_blank"><code>local-base</code></a></td>
+<td><a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/base-dev" target="_blank"><code>base</code></a></td>
+<td><a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/base-dev/base-dev.Dockerfile" target="_blank"><code>base-dev.Dockerfile</code></a></td>
+<td>To install core dev dependencies</td>
 <td>Workflow dispatch</td>
 </tr>
 <tr>
 <td><a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/base-dev" target="_blank"><code>dev</code></a></td>
-<td><a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/base-dev" target="_blank"><code>base</code></a></td>
+<td><a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/base-dev" target="_blank"><code>local-base</code></a></td>
 <td><a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/base-dev/base-dev.Dockerfile" target="_blank"><code>base-dev.Dockerfile</code></a></td>
-<td>To update development dependencies</td>
+<td>To install dev dependencies</td>
 <td>Workflow dispatch</td>
 </tr>
 <tr>
 <td><a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer" target="_blank">Dev Container</a></td>
 <td><a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/base-dev" target="_blank"><code>dev</code></a></td>
 <td><a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/Dockerfile" target="_blank"><code>Dockerfile</code></a></td>
-<td>To update Dev Container configuration</td>
+<td>To configure the Dev Container</td>
 <td>VS Code</td>
+</tr>
+<tr>
+<td><a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/docs" target="_blank"><code>docs</code></a></td>
+<td><a href="https://hub.docker.com/r/squidfunk/mkdocs-material" target="_blank"><code>mkdocs-material</code></a></td>
+<td><a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/docs/docs.Dockerfile" target="_blank"><code>docs.Dockerfile</code></a></td>
+<td>To install and run docs site</td>
+<td>VS Code (<a href="../how_to/#run-optional-programs" target="_blank">optional</a>)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/website" target="_blank"><code>website</code></a></td>
+<td><a href="https://hub.docker.com/_/microsoft-vscode-devcontainers" target="_blank"><code>javascript-node</code></a></td>
+<td><a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/website/website.Dockerfile" target="_blank"><code>website.Dockerfile</code></a></td>
+<td>To install and run website</td>
+<td>VS Code (<a href="../how_to/#run-optional-programs" target="_blank">optional</a>)</td>
 </tr>
 </tbody>
 </table>
 <!-- Images URLs -->
 <!-- Dockerfile URLs -->
+<!-- Miscellaneous -->
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 28, 2023</span>
       
     
   </small>

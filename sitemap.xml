@@ -21,6 +21,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://UBCSailbot.github.io/docs/current/sailbot_workspace/how_to/</loc>
+         <lastmod>2023-05-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://UBCSailbot.github.io/docs/current/sailbot_workspace/overview/</loc>
          <lastmod>2023-05-28</lastmod>
          <changefreq>daily</changefreq>
