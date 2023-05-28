@@ -15,28 +15,14 @@ VS Code may prompt you to rebuild the Dev Container when these files are modifie
 1. Run the `Dev Containers: Rebuild Container` command in the
    [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
 
-## 2. Run the `setup` VS Code task
-
-The `setup` task imports the ROS packages and install their dependencies. You can skip this step if you ran this
-task before and haven't changed ROS package dependencies since.
-
-1. Run the `Tasks: Run Task` command in the
-   [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
-2. Select `setup` from the dropdown menu
-
-    ??? bug "Can't see the `setup` task"
-
-        If you can't see the `setup` task, close and reopen VS Code before rerunning the `Tasks: Run Task` command.
-        This may occur when Sailbot Workspace is opened for the first time.
-
-## 3. Build the ROS packages
+## 2. Build the ROS packages
 
 You can skip this step if no modifications were made to C++ code, custom msgs, or compiled resources.
 
 1. Run the `Build` VS Code task: ++ctrl+shift+b++
     - On macOS the shortcut is ++cmd+shift+b++
 
-## 4. Run the ROS program
+## 3. Run the ROS program
 
 Run a ROS launch file or package-specific executable with `ros2 launch ...` or `ros2 run ...`, respectively.
 

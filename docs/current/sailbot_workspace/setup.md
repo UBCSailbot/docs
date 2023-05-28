@@ -179,6 +179,24 @@ git clone https://github.com/UBCSailbot/sailbot_workspace.git
 1. Open the file `.devcontainer/config/sailbot_workspace.code-workspace` in VS Code
 2. Click `Open Workspace`
 
+## 7. Run the `setup` VS Code task
+
+!!! info ""
+
+    Moved from Run to Setup page in [:octicons-tag-24: v1.1.0](https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.1.0){target=_blank}
+
+The `setup` task clones the repositories defined in [`src/new_project.repos`](https://github.com/UBCSailbot/sailbot_workspace/blob/main/src/new_project.repos){target=_blank}
+and updates dependencies of the ROS packages.
+
+1. Run the `Tasks: Run Task` command in the
+   [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
+2. Select `setup` from the dropdown menu
+
+    ??? bug "Can't see the `setup` task"
+
+        If you can't see the `setup` task, run the `Developer: Reload Window` command then rerun the `Tasks: Run Task` command.
+        This may occur when Sailbot Workspace is opened for the first time.
+
 ## Setup Sailbot Workspace in a GitHub Codespace
 
 A codespace is a development environment that's hosted in the cloud.[^5]
