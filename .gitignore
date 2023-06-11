@@ -3,4 +3,7 @@
 venv/
 
 # Social cards
-.cache
+.cache/
+
+# Build
+site/

@@ -11,6 +11,7 @@ edit_uri: "edit/main/docs/"
 # Configuration
 theme:
   name: material
+  custom_dir: docs/overrides
   logo: assets/ubcsailbot-white.png
   features:
     - content.action.edit
@@ -62,6 +63,8 @@ extra:
       link: https://github.com/UBCSailbot
     - icon: material/email
       link: mailto:software@ubcsailbot.org
+  version:
+    provider: mike
 
 extra_css:
   - stylesheets/extra.css
