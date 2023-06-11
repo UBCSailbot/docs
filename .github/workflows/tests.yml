@@ -114,7 +114,7 @@ jobs:
           mike deploy --push pr-${{ github.event.number }}
 
       - name: Deploy main version of the Docs
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
         run: |
           git config user.name ci-bot
           git config user.email ci-bot@example.com
