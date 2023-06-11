@@ -1488,7 +1488,9 @@ The easiest way to evaluate these potential solutions for our purposes is in <a 
 This repository starts from the <a href="https://www.mongodb.com/developer/languages/javascript/nextjs-with-mongodb/">Next.js with-mongodb example</a>
 to connect to the MongoDB database in sailbot_workspace.</p>
 <h2 id="example-app-using-mongodb">Example app using MongoDB<a class="headerlink" href="#example-app-using-mongodb" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.mongodb.com/">MongoDB</a> is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. This example will show you how to connect to and use MongoDB as your backend for your Next.js app.</p>
+<p><a href="https://www.mongodb.com/">MongoDB</a> is a general purpose, document-based, distributed database built for modern application
+developers and for the cloud era. This example will show you how to connect to and use MongoDB as your backend for your
+Next.js app.</p>
 <p>If you want to learn more about MongoDB, visit the following pages:</p>
 <ul>
 <li><a href="https://mongodb.com/atlas">MongoDB Atlas</a></li>
@@ -1498,7 +1500,9 @@ to connect to the MongoDB database in sailbot_workspace.</p>
 <p>Once you have access to the environment variables you'll need, deploy the example using <a href="https://vercel.com?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=next-example">Vercel</a>:</p>
 <p><a href="https://vercel.com/new/clone?project-name=with-mongodb&amp;repository-name=with-mongodb&amp;repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-mongodb&amp;integration-ids=oac_jnzmjqM10gllKmSrG0SGrHOH"><img alt="Deploy with Vercel" src="https://vercel.com/button" /></a></p>
 <h2 id="how-to-use">How to use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
-<p>Execute <a href="https://github.com/vercel/next.js/tree/canary/packages/create-next-app"><code>create-next-app</code></a> with <a href="https://docs.npmjs.com/cli/init">npm</a>, <a href="https://yarnpkg.com/lang/en/docs/cli/create/">Yarn</a>, or <a href="https://pnpm.io">pnpm</a> to bootstrap the example:</p>
+<p>Execute <a href="https://github.com/vercel/next.js/tree/canary/packages/create-next-app"><code>create-next-app</code></a> with
+<a href="https://docs.npmjs.com/cli/init">npm</a>, <a href="https://yarnpkg.com/lang/en/docs/cli/create/">Yarn</a>, or <a href="https://pnpm.io">pnpm</a>
+to bootstrap the example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npx<span class="w"> </span>create-next-app<span class="w"> </span>--example<span class="w"> </span>with-mongodb<span class="w"> </span>with-mongodb-app
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>yarn<span class="w"> </span>create<span class="w"> </span>next-app<span class="w"> </span>--example<span class="w"> </span>with-mongodb<span class="w"> </span>with-mongodb-app
@@ -1514,7 +1518,8 @@ to connect to the MongoDB database in sailbot_workspace.</p>
 </code></pre></div>
 <p>Set each variable on <code>.env.local</code>:</p>
 <ul>
-<li><code>MONGODB_URI</code> - Your MongoDB connection string. If you are using <a href="https://mongodb.com/atlas">MongoDB Atlas</a> you can find this by clicking the "Connect" button for your cluster.</li>
+<li><code>MONGODB_URI</code> - Your MongoDB connection string. If you are using <a href="https://mongodb.com/atlas">MongoDB Atlas</a> you can find
+this by clicking the "Connect" button for your cluster.</li>
 </ul>
 <h3 id="run-nextjs-in-development-mode">Run Next.js in development mode<a class="headerlink" href="#run-nextjs-in-development-mode" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>npm<span class="w"> </span>install
@@ -1525,15 +1530,20 @@ to connect to the MongoDB database in sailbot_workspace.</p>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>yarn<span class="w"> </span>install
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>yarn<span class="w"> </span>dev
 </code></pre></div>
-<p>Your app should be up and running on <a href="http://localhost:3000">http://localhost:3000</a>! If it doesn't work, post on <a href="https://github.com/vercel/next.js/discussions">GitHub discussions</a>.</p>
-<p>You will either see a message stating "You are connected to MongoDB" or "You are NOT connected to MongoDB". Ensure that you have provided the correct <code>MONGODB_URI</code> environment variable.</p>
-<p>When you are successfully connected, you can refer to the <a href="https://mongodb.github.io/node-mongodb-native/3.4/tutorials/collections/">MongoDB Node.js Driver docs</a> for further instructions on how to query your database.</p>
+<p>Your app should be up and running on <a href="http://localhost:3000">http://localhost:3000</a>! If it doesn't work, post on
+<a href="https://github.com/vercel/next.js/discussions">GitHub discussions</a>.</p>
+<p>You will either see a message stating "You are connected to MongoDB" or "You are NOT connected to MongoDB".
+Ensure that you have provided the correct <code>MONGODB_URI</code> environment variable.</p>
+<p>When you are successfully connected, you can refer to the <a href="https://mongodb.github.io/node-mongodb-native/3.4/tutorials/collections/">MongoDB Node.js Driver docs</a>
+for further instructions on how to query your database.</p>
 <h2 id="deploy-on-vercel">Deploy on Vercel<a class="headerlink" href="#deploy-on-vercel" title="Permanent link">&para;</a></h2>
-<p>You can deploy this app to the cloud with <a href="https://vercel.com?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=next-example">Vercel</a> (<a href="https://nextjs.org/docs/deployment">Documentation</a>).</p>
-<h4 id="deploy-your-local-project">Deploy Your Local Project<a class="headerlink" href="#deploy-your-local-project" title="Permanent link">&para;</a></h4>
+<p>You can deploy this app to the cloud with <a href="https://vercel.com?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=next-example">Vercel</a>
+(<a href="https://nextjs.org/docs/deployment">Documentation</a>).</p>
+<h3 id="deploy-your-local-project">Deploy Your Local Project<a class="headerlink" href="#deploy-your-local-project" title="Permanent link">&para;</a></h3>
 <p>To deploy your local project to Vercel, push it to GitHub/GitLab/Bitbucket and <a href="https://vercel.com/new?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=next-example">import to Vercel</a>.</p>
-<p><strong>Important</strong>: When you import your project on Vercel, make sure to click on <strong>Environment Variables</strong> and set them to match your <code>.env.local</code> file.</p>
-<h4 id="deploy-from-our-template">Deploy from Our Template<a class="headerlink" href="#deploy-from-our-template" title="Permanent link">&para;</a></h4>
+<p><strong>Important</strong>: When you import your project on Vercel, make sure to click on <strong>Environment Variables</strong> and set them to match
+your <code>.env.local</code> file.</p>
+<h3 id="deploy-from-our-template">Deploy from Our Template<a class="headerlink" href="#deploy-from-our-template" title="Permanent link">&para;</a></h3>
 <p>Alternatively, you can deploy using our template by clicking on the Deploy button below.</p>
 <p><a href="https://vercel.com/new/clone?project-name=with-mongodb&amp;repository-name=with-mongodb&amp;repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-mongodb&amp;integration-ids=oac_jnzmjqM10gllKmSrG0SGrHOH"><img alt="Deploy with Vercel" src="https://vercel.com/button" /></a></p>
 
