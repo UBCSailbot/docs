@@ -132,10 +132,14 @@ nav:
       - Docker Images: current/sailbot_workspace/docker_images.md
     - Boat Simulator:
       - Overview: current/boat_simulator/overview.md
+    - Custom Interfaces:
+      - Overview: current/custom_interfaces/overview.md
     - Local Pathfinding:
       - Overview: current/local_pathfinding/overview.md
     - Network Systems:
       - Overview: current/network_systems/overview.md
+    - Website:
+      - Overview: current/website/overview.md
   - Reference:
     - C++:
       - Getting Started: reference/cpp/start.md
