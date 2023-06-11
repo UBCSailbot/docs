@@ -478,15 +478,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#tasks" class="md-nav__link">
-    Tasks
+  <a href="#dev-container" class="md-nav__link">
+    Dev Container
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#debugging-wip" class="md-nav__link">
-    Debugging (WIP)
+  <a href="#multi-root-workspace" class="md-nav__link">
+    Multi-Root Workspace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
   </a>
   
 </li>
@@ -505,15 +519,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#run-rayes-software" class="md-nav__link">
     Run Raye's Software
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1101,15 +1115,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#tasks" class="md-nav__link">
-    Tasks
+  <a href="#dev-container" class="md-nav__link">
+    Dev Container
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#debugging-wip" class="md-nav__link">
-    Debugging (WIP)
+  <a href="#multi-root-workspace" class="md-nav__link">
+    Multi-Root Workspace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
   </a>
   
 </li>
@@ -1128,15 +1156,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#run-rayes-software" class="md-nav__link">
     Run Raye's Software
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1188,36 +1216,56 @@ Its README has been copied below.</p>
 <p><a href="https://github.com/UBCSailbot/sailbot_workspace/actions/workflows/build-images.yml"><img alt="Build Images" src="https://github.com/UBCSailbot/sailbot_workspace/actions/workflows/build-images.yml/badge.svg" /></a>
 <a href="https://github.com/UBCSailbot/sailbot_workspace/actions/workflows/tests.yml"><img alt="Tests" src="https://github.com/UBCSailbot/sailbot_workspace/actions/workflows/tests.yml/badge.svg" /></a></p>
 <p>This repository will get you set up to develop UBCSailbot's software on VS Code. It is based on athackst's
-<a href="https://github.com/athackst/vscode_ros2_workspace">vscode_ros2_workspace</a>.
-See their <a href="https://www.allisonthackston.com/articles/vscode_docker_ros2.html">write-up</a> for a more
-in-depth look on how this workspace functions.</p>
+<a href="https://github.com/athackst/vscode_ros2_workspace">vscode_ros2_workspace</a>.</p>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<p>An overview of Sailbot Workspace's features can be found below.
+See <a href="https://ubcsailbot.github.io/docs/current/sailbot_workspace/run/">our docs site</a> for how to use these features.</p>
 <h3 id="style">Style<a class="headerlink" href="#style" title="Permanent link">&para;</a></h3>
-<p>ROS2-approved formatters are included in the IDE.</p>
+<p>C++ and Python linters and formatters are integrated into Sailbot Workspace:</p>
 <ul>
-<li><strong>C++</strong> uncrustify; config from <code>ament_uncrustify</code></li>
-<li><strong>Python</strong> autopep8; vscode settings consistent with the <a href="https://index.ros.org/doc/ros2/Contributing/Code-Style-Language-Versions/">style guide</a></li>
+<li>ament_flake8</li>
+<li>ament_lint_cmake</li>
+<li>ament_xmllint</li>
+<li>black</li>
+<li>clang-tidy</li>
+<li>isort</li>
 </ul>
+<p>The <a href="https://github.com/ament/ament_lint/tree/humble">ament linters</a> are configured to be consistent with the
+<a href="https://docs.ros.org/en/humble/The-ROS2-Project/Contributing/Code-Style-Language-Versions.html">ROS style guide</a>.</p>
+<h3 id="dev-container">Dev Container<a class="headerlink" href="#dev-container" title="Permanent link">&para;</a></h3>
+<p><a href="https://code.visualstudio.com/docs/devcontainers/containers">Dev Containers</a> enable us to use a
+<a href="https://www.docker.com/resources/what-container/">Docker container</a> as a fully-featured development environment
+containing all our configuration and dependencies.
+Our Dev Container configuration can be found in <a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer"><code>.devcontainer/</code></a>.</p>
+<h3 id="multi-root-workspace">Multi-Root Workspace<a class="headerlink" href="#multi-root-workspace" title="Permanent link">&para;</a></h3>
+<p><a href="https://code.visualstudio.com/docs/editor/workspaces">Workspaces</a> are VS Code instances that contain one or more folders.
+Our workspace configuration file can be found at
+<a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/config/sailbot_workspace.code-workspace"><code>.devcontainer/config/sailbot_workspace.code-workspace</code></a>.</p>
+<p>Our software spans many repositories: <a href="https://github.com/orgs/UBCSailbot/teams/software-team/repositories">software team repositories</a>.
+<a href="https://code.visualstudio.com/docs/editor/multi-root-workspaces">Multi-root workspaces</a>
+make it easy to work with multiple repositories at the same time.
+Our roots are defined in the <code>folders</code> section of our workspace file.</p>
+<h3 id="debugging">Debugging<a class="headerlink" href="#debugging" title="Permanent link">&para;</a></h3>
+<p><a href="https://code.visualstudio.com/docs/editor/debugging#_launch-configurations">Launch configurations</a>
+have been created to debug our software. They are defined in the <code>launch</code> section of
+our workspace file.</p>
 <h3 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h3>
-<p>There are many pre-defined tasks. See
-<a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/config/sailbot_workspace.code-workspace">our workspace file</a>
-for a complete listing. Bring up the task menu by typing "Tasks: Run Task" in the command pallete, or creating a keyboard
-shortcut for <code>workbench.action.tasks.runTask</code>.</p>
-<h3 id="debugging-wip">Debugging (<a href="https://github.com/UBCSailbot/sailbot_workspace/issues/6">WIP</a>)<a class="headerlink" href="#debugging-wip" title="Permanent link">&para;</a></h3>
-<p>This repository has debug configurations for Python files and C++ programs. See
-<a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/config/sailbot_workspace.code-workspace">our workspace file</a>
-for configuration details.
-Bring up the debug configurations menu by typing "debug " in the command palette without the "&gt;" prefix, or select one
-from the Run and Debug view.</p>
+<p><a href="https://code.visualstudio.com/docs/editor/tasks">Tasks</a> provide an alternative to memorizing the multitude of
+CLI commands we use to setup, build, lint, test, and run our software. They are defined in <code>tasks</code> section of
+our workspace file.</p>
 <h3 id="continuous-integration">Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permanent link">&para;</a></h3>
-<p>This repository also has continuous integration that lints and tests our code.
-See <a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.github/workflows"><code>.github/workflows/</code></a>
-for the configuration files.</p>
+<p><a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions">Actions</a>
+were used to build <a href="https://github.com/orgs/UBCSailbot/packages?repo_name=sailbot_workspace">our Docker containers</a>
+and lint and test our code the same way it is done locally in Sailbot Workspace on GitHub.
+We use a <a href="https://docs.github.com/en/actions/using-workflows/reusing-workflows">reusable workflow</a>
+to create a single source of truth for our tests across all our repositories.
+Our CI can be found in <a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.github/workflows"><code>.github/workflows/</code></a>.</p>
 <h3 id="customization">Customization<a class="headerlink" href="#customization" title="Permanent link">&para;</a></h3>
-<p>This repository supports user-specific configuration files. To set this up see
-<a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/config#how-to-use-your-personal-configuration-file-in-the-dev-container">how to use your personal configuration file in the Dev Container</a>.</p>
-<h2 id="run-rayes-software">Run Raye's Software<a class="headerlink" href="#run-rayes-software" title="Permanent link">&para;</a></h2>
-<p>Raye was our previous project. Her software can be run in the <a href="https://github.com/UBCSailbot/sailbot_workspace/tree/raye"><code>raye</code> branch</a>.
+<p>This repository supports user-specific configuration files. To set this up, see
+<a href="https://ubcsailbot.github.io/docs/current/sailbot_workspace/how_to/#use-your-dotfiles">How to use your dotfiles</a>.</p>
+<h3 id="run-rayes-software">Run Raye's Software<a class="headerlink" href="#run-rayes-software" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.ubcsailbot.org/discover-raye">Raye</a> was our previous project.
+Her software can be run in the <a href="https://github.com/UBCSailbot/sailbot_workspace/tree/raye"><code>raye</code> branch</a>.
 The initial differences between the <code>main</code> and <code>raye</code> branches are summarized in
 <a href="https://github.com/UBCSailbot/sailbot_workspace/pull/61">this PR</a>.</p>
 <h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
