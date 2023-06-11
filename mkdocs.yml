@@ -28,12 +28,12 @@ theme:
     - search.suggest
     - toc.follow
   palette:
-    - media: "(prefers-color-scheme: light)" 
+    - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)" 
+    - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
         icon: material/brightness-4
@@ -46,9 +46,8 @@ plugins:
   - search:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - social:
-      cards_color:
-        fill: "#2F97EC"
-        text: "#FFFFFF"
+      cards_layout_options:
+        background_color: "#1665A2"
 
 # Customization
 extra:
