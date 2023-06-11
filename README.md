@@ -1,6 +1,5 @@
 # Docs
 
-[![Publish](https://github.com/UBCSailbot/docs/actions/workflows/publish.yml/badge.svg)](https://github.com/UBCSailbot/docs/actions/workflows/publish.yml)
 [![Tests](https://github.com/UBCSailbot/docs/actions/workflows/tests.yml/badge.svg)](https://github.com/UBCSailbot/docs/actions/workflows/tests.yml)
 
 UBCSailbot software team's documentation.
