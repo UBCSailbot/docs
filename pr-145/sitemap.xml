@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://UBCSailbot.github.io/docs/pr-145/current/custom_interfaces/overview/</loc>
+         <lastmod>2023-06-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://UBCSailbot.github.io/docs/pr-145/current/local_pathfinding/overview/</loc>
          <lastmod>2023-06-11</lastmod>
          <changefreq>daily</changefreq>
@@ -52,6 +57,11 @@
     </url>
     <url>
          <loc>https://UBCSailbot.github.io/docs/pr-145/current/sailbot_workspace/setup/</loc>
+         <lastmod>2023-06-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://UBCSailbot.github.io/docs/pr-145/current/website/overview/</loc>
          <lastmod>2023-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
