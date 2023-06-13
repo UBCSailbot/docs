@@ -92,7 +92,7 @@ launch configueration.
 
 ## Troubleshooting
 
-If you are having some trouble running Raye's software, here are some things you can try:
+If you are having some trouble running our software, here are some things you can try:
 
 ROS:
 
