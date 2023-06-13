@@ -126,7 +126,7 @@ nav:
     - Sailbot Workspace:
       - Overview: current/sailbot_workspace/overview.md
       - Setup: current/sailbot_workspace/setup.md
-      - Run: current/sailbot_workspace/run.md
+      - Development Workflow: current/sailbot_workspace/workflow.md
       - How-To: current/sailbot_workspace/how_to.md
       - Deployment: current/sailbot_workspace/deployment.md
       - Docker Images: current/sailbot_workspace/docker_images.md
