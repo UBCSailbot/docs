@@ -24,7 +24,7 @@ jobs:
   test-definitions:
     # sailbot_workspace: use locally-defined file
     # other repositories: set to UBCSailbot/sailbot_workspace/.github/workflows/test_definitions.yml@<release>
-    uses: UBCSailbot/sailbot_workspace/.github/workflows/test_definitions.yml@v1.2.0
+    uses: UBCSailbot/sailbot_workspace/.github/workflows/test_definitions.yml@v1.2.1
     # see https://github.com/UBCSailbot/sailbot_workspace/blob/main/.github/workflows/test_definitions.yml
     # for documentation on the inputs and secrets below
     with:
@@ -87,6 +87,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request' || github.event.action != 'closed'
     needs: [test-definitions, markdown-link-redirection-check, docs-build]
+    permissions:
+      contents: write
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -124,6 +126,8 @@ jobs:
     name: Delete Docs version
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    permissions:
+      contents: write
     steps:
       - name: Check out code
         uses: actions/checkout@v3
