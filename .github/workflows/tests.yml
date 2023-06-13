@@ -87,6 +87,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request' || github.event.action != 'closed'
     needs: [test-definitions, markdown-link-redirection-check, docs-build]
+    permissions:
+      contents: write
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -124,6 +126,8 @@ jobs:
     name: Delete Docs version
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    permissions:
+      contents: write
     steps:
       - name: Check out code
         uses: actions/checkout@v3
