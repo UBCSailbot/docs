@@ -131,3 +131,68 @@ To use your dotfiles:
 3. Run the `Dev Containers: Rebuild Container` VS Code command
 
 [^1]: [Dotfiles – What is a Dotfile and How to Create it in Mac and Linux](https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/){target=_blank}
+
+## Run Raye's software
+
+Raye was our previous project. Her software can be run in the `raye` branch:
+
+1. Switch to the `raye` branch: `git switch raye`
+2. Rebuild the Dev Container: run the `Dev Containers: Rebuild Container` command in the
+   [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
+
+!!! warning "`raye` branch disclaimers"
+
+    1. Since `raye` (and Raye's codebase in general) is not in active development, it may not be 100% functional
+       or contain all the features in `main`
+    2. `raye` is more memory intensive than `main` because the parent image of its Dev Container is much larger;
+       this may lead to worse performance
+
+### Build Raye's ROS packages
+
+To build Raye's ROS packages, run the following commands:
+
+```bash
+roscd
+catkin_make
+```
+
+### Run packages from different workspaces
+
+The `raye` branch has two ROS workspaces: one for Raye and one for the new project.
+To run ROS packages, you will have to source the overlay of the workspace that it is in:
+
+=== "New Project"
+
+    ```
+    srcnew
+    ```
+
+=== "Raye"
+
+    ```
+    srcraye
+    ```
+
+Then you can run launch files or package-specific executables in that workspace with:
+
+=== "New Project"
+
+    `ros2 launch ...` or `ros2 run ...`, respectively.
+
+=== "Raye"
+
+    `roslaunch ...` or `rosrun ...`, respectively.
+
+### Raye's known issues
+
+!!! bug "Run commands for Raye packages are very slow"
+
+    On non-Ubuntu-based Linux operating systems, Run commands for Raye packages may take a long time to start-up.
+    This is because the system has trouble resolving the local hostname.
+
+    To resolve this bug, run the commands below in the Dev Container:
+
+    ```bash
+    echo 'export ROS_HOSTNAME=localhost' >> ~/.bashrc
+    echo 'export ROS_MASTER_URI=http://localhost:11311' >> ~/.bashrc
+    ```
