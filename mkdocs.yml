@@ -126,10 +126,10 @@ nav:
     - Sailbot Workspace:
       - Overview: current/sailbot_workspace/overview.md
       - Setup: current/sailbot_workspace/setup.md
-      - Development Workflow: current/sailbot_workspace/workflow.md
-      - How-To: current/sailbot_workspace/how_to.md
+      - Workflow: current/sailbot_workspace/workflow.md
+      - How-To's: current/sailbot_workspace/how_to.md
       - Deployment: current/sailbot_workspace/deployment.md
-      - Docker Images: current/sailbot_workspace/docker_images.md
+      - Images: current/sailbot_workspace/docker_images.md
     - Boat Simulator:
       - Overview: current/boat_simulator/overview.md
     - Custom Interfaces:

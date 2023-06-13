@@ -1,4 +1,4 @@
-# How-To
+# How-To's
 
 ## Run optional programs
 

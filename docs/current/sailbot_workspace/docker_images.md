@@ -1,4 +1,4 @@
-# Sailbot Workspace Docker Images
+# Docker Images
 
 A table detailing the Docker images used to create the Dev Container can be found below.
 Click on an image to learn more about its features and how to update it.

@@ -1,4 +1,4 @@
-# Sailbot Workspace Development Workflow
+# Development Workflow
 
 ## 1. Update Sailbot Workspace
 

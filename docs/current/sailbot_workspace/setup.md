@@ -1,4 +1,4 @@
-# Sailbot Workspace Setup Instructions
+# Setup Instructions
 
 This workspace can be run on Windows, Linux, or macOS, but is the easiest to set up and performs the best on
 [Ubuntu](https://ubuntu.com/){target=_blank} and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){target=_blank}.
