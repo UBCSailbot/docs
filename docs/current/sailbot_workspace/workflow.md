@@ -65,6 +65,10 @@ launch configueration.
 
     Revamped in [:octicons-tag-24: v1.2.0](https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.2.0){target=_blank}
 
+??? tip "Running GUI applications on macOS"
+
+    If you want to run GUI applications on macOS, ensure that XQuartz is running.
+
 1. Run the package(s) that your changes are in: the run commands for each package should be documented in their READMEs,
    but in general they can be run using a VS Code or CLI command:
     - VS Code:
@@ -73,10 +77,6 @@ launch configueration.
     - CLI:
         - Launch files: `ros2 launch <package> <launch file>`
         - Nodes: `ros2 run <package> <executable>`
-
-    ??? tip "Running GUI applications on macOS"
-
-        If you want to run GUI applications on macOS, ensure that XQuartz is running.
 
 2. Debug your changes if they aren't behaving how you expect by setting breakpoints and running one of our launch
    configurations in the "Run and Debug" sidebar panel; launch configuration types:
