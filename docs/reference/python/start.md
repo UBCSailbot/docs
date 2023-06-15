@@ -6,7 +6,7 @@ so it is critical that you are familiar with the language if you are on one of t
 ## Python tutorials
 
 We understand that not everyone who joins Sailbot has Python in their toolkit, nor do we expect it either! Whether you
-are learning Python for the first time or you just want to brush up, we have provided some resources below. You **will not**
+are learning Python for the first time or you just want to brush up, we have provided some resources below. You may not
 learn absolutely everything from the resources below, but it is a good starting point. You will mostly learn through doing,
 as you would with most technical skills!
 
