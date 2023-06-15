@@ -1,11 +1,21 @@
 # Docs
 
-[![Publish](https://github.com/UBCSailbot/docs/actions/workflows/publish.yml/badge.svg)](https://github.com/UBCSailbot/docs/actions/workflows/publish.yml)
 [![Tests](https://github.com/UBCSailbot/docs/actions/workflows/tests.yml/badge.svg)](https://github.com/UBCSailbot/docs/actions/workflows/tests.yml)
 
-UBCSailbot software team's documentation.
+UBCSailbot software team's documentation site. It is meant to be developed in [Sailbot Workspace](https://github.com/UBCSailbot/sailbot_workspace)
+in conjunction with our other software, but doesn't have to be. There are instructions for both cases below.
 
 ## Setup
+
+### Setup in Sailbot Workspace
+
+1. Uncomment `docker-compose.docs.yml` in `.devcontainer/devcontainer.json`
+2. Rebuild the Dev Container
+
+Refer to [How to run optional programs](https://ubcsailbot.github.io/docs/main/current/sailbot_workspace/how_to/#run-optional-programs)
+for more details.
+
+### Setup By Itself
 
 1. Clone repository
 
@@ -26,14 +36,21 @@ UBCSailbot software team's documentation.
 
 ## Run
 
-### VS Code
+### Run in Sailbot Workspace
+
+After [setup](#setup-in-sailbot-workspace), the Docs site should be running on port 8000.
+
+Refer to [How to run optional programs](https://ubcsailbot.github.io/docs/main/current/sailbot_workspace/how_to/#run-optional-programs)
+for more details.
+
+### Run By Itself using VS Code
 
 1. `CTRL+P` to open Quick Open
 2. Run a launch configuration
     - "debug Run Application" runs `mkdocs serve`
     - "debug Launch Application" runs `mkdocs serve` and opens the application in a new Microsoft Edge window
 
-### Command Line
+### Run By Itself using CLI
 
 ```
 mkdocs serve
@@ -43,9 +60,14 @@ mkdocs serve
 
 This site is built using the latest versions of dependencies in [`docs/requirements.txt`](./docs/requirements.txt)
 at the time of the most recent commit to the main branch.
-To see exactly how the site will look before pushing or merging into the main branch,
-ensure your local dependencies are up to date with
+To see exactly how the site will look when deployed, ensure your local dependencies are up to date.
+
+### Update Dependencies in Sailbot Workspace
+
+Rebuild the Dev Container.
+
+### Update Dependencies By Itself
 
 ```
-pip install -Ur docs/requirements.txt --upgrade-strategy eager
+pip install -Ur docs/requirements.txt
 ```
