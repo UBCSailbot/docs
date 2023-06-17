@@ -78,6 +78,38 @@ launch configueration.
         - Launch files: `ros2 launch <package> <launch file>`
         - Nodes: `ros2 run <package> <executable>`
 
+        ??? tip "CLI features"
+
+            There are many commands that can be autocompleted in the terminal.
+            Take advantage of this so that you run commands faster and memorize less syntax.
+            If there is only one possibility, pressing tab once will complete it.
+            If there is more than one possibility, pressing tab again will list them out.
+
+            Some tab completion use cases:
+
+            - View available commands: lists all `ros2` commands
+
+                ```console
+                $ ros2 <tab><tab>
+                action                          extension_points                multicast                       security
+                bag                             extensions                      node                            service
+                ...
+                ```
+
+            - Complete commands: runs `ros2 launch local_pathfinding main_launch.py`
+
+                ```console
+                $ ros2<tab>la<tab>loc<tab>m<tab>
+                ```
+
+            - Navigate to directories: runs `cd .devcontainer/config` from the root directory of Sailbot Workspace
+
+                ```console
+                $ cd .d<tab>c<tab>
+                ```
+
+            Furthermore, navigate past commands with ++arrow-up++ and ++arrow-down++ and search through them with ++ctrl+r++.
+
 2. Debug your changes if they aren't behaving how you expect by setting breakpoints and running one of our launch
    configurations in the "Run and Debug" sidebar panel; launch configuration types:
     - Launch: runs the desired launch file or executable
