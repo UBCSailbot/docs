@@ -52,7 +52,7 @@ Things to note when making changes:
 
 In general, changes need to be built before they can be run. You can skip this step if you only modified Python source
 or test files (in `python_package/python_package/` or `python_package/test`, respectively), or are running a launch type
-launch configueration.
+launch configuration.
 
 1. Run the `Build` VS Code task: ++ctrl+shift+b++
     - On macOS the shortcut is ++cmd+shift+b++
