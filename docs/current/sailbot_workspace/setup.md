@@ -239,13 +239,20 @@ A couple things to note:
     - Delete codespaces that you do not plan to use anymore:
       [deleting a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/deleting-a-codespace#deleting-a-codespace){target=_blank}
 
-Reopen a codespace following the steps in the relevant GitHub Docs page:
-[reopening a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/opening-an-existing-codespace#reopening-a-codespace){target=_blank}.
+From there you can follow the setup instructions starting from [6. Open the VS Code workspace file](#6-open-the-vs-code-workspace-file).
 
-(Current) limitations of GitHub Codespaces:
+Once you have a codespace set up:
 
-- Does not support X11 forwarding to run GUI applications
-- High-spec machines not available. As of March 2023, the highest-spec machine that is publically available
-  has a 4-core CPU and 8GB of RAM
+- Open it by following the steps in the relevant GitHub Docs page:
+[reopening a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/opening-an-existing-codespace#reopening-a-codespace){target=_blank}
+- Close it by running the `Codespaces: Stop Current Codespace` command
+
+!!! warning "Known limitations of running Sailbot Workspace in a GitHub Codespace"
+
+    - Grafana: can't connect to MongoDB
+    - Python: can't detect our `custom_interfaces` repository
+    - Does not support X11 forwarding to run GUI applications
+    - High-spec machines not available: as of March 2023, the highest-spec machine that is publically available
+      has a 4-core CPU and 8GB of RAM
 
 [^5]: [GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview){target=_blank}

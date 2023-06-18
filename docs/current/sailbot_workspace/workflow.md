@@ -145,7 +145,7 @@ If you are not satisfied with the performance of Sailbot Workspace, here are som
 - Free up memory: close programs that you aren't using
 - Free up disk space: permanently delete large programs and files that you don't need anymore
 - Run Sailbot Workspace in a GitHub Codespace
-    - In a Codespace with 8GB of RAM, building all packages from scratch with the `-q` argument takes about a minute.
+    - In a codespace with 8GB of RAM, building all packages from scratch with the `-q` argument takes about a minute.
     If your computer takes longer than, or you want to free up memory and disk space, you can
     [setup Sailbot Workspace in a GitHub Codespace](./setup.md#setup-sailbot-workspace-in-a-github-codespace){target=_blank}
 - If you are running Sailbot Workspace on Windows, dual boot Ubuntu and run Sailbot Workspace there
