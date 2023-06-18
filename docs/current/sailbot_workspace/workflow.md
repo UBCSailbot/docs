@@ -123,23 +123,32 @@ launch configuration.
 
 If you are having some trouble running our software, here are some things you can try:
 
-ROS:
+- Delete generated files
+    - Run the `clean` task to clean your build
+    - Run the `purge` task to delete all generated files
+- Rebuild the Dev Container: run the `Dev Containers: Rebuild Container` command
+- Reload VS Code: run the `Developer: Reload Window` command
+- Delete Docker files
+    - Run `docker system prune` to remove all unused containers, networks, images (both dangling and unreferenced)
+        - Add `--all` to additionally remove unused images (don't have a container associated with them)
+        - Add `--volumes` to additionally remove volumes (makes Bash history and ROS logs persist across containers)
+        - Run `docker rmi -f $(docker images -aq)` to remove all images
 
-- Run the `clean` task to clean your build
-- Run the `purge` task to delete all generated files in the workspace
+    ??? tip "Running Docker CLI commands on Windows"
 
-Dev Container:
+        On Windows, Docker CLI commands should be run in the Ubuntu terminal while Docker Desktop is running.
 
-- Run the `Dev Containers: Rebuild Container` command
+## Performance Issues
 
-VS Code:
+If you are not satisfied with the performance of Sailbot Workspace, here are some things you can try:
 
-- Close and reopen VS Code
-- Update VS Code and its extensions
-
-Docker:
-
-- Run `docker system prune` to remove all unused containers, networks, images (both dangling and unreferenced)
-    - Add `--all` to additionally remove unused images
-    - Add `--volumes` to additionally remove volumes
-    - Run `docker rmi -f $(docker images -aq)` to remove all images
+- Free up memory: close programs that you aren't using
+- Free up disk space: permanently delete large programs and files that you don't need anymore
+- Run Sailbot Workspace in a GitHub Codespace
+    - In a Codespace with 8GB of RAM, building all packages from scratch with the `-q` argument takes about a minute.
+    If your computer takes longer than, or you want to free up memory and disk space, you can
+    [setup Sailbot Workspace in a GitHub Codespace](./setup.md#setup-sailbot-workspace-in-a-github-codespace){target=_blank}
+- If you are running Sailbot Workspace on Windows, dual boot Ubuntu and run Sailbot Workspace there
+    - Sailbot Workspace uses more memory and disk space than it does on bare metal Linux
+      because it uses Docker, which is not natively supported by Windows.
+      Thus, a Linux VM is used to run Docker on Windows, which requires more memory and disk space to achieve the same performance
