@@ -13,11 +13,14 @@ There are a couple programs that are not run by default to minimize resource usa
 - [MongoDB database](https://www.mongodb.com/){target=_blank}
 - [Grafana dashboards](https://grafana.com/){target=_blank}
 
-To run a program:
+### Start running an optional program
 
-1. In `dockerComposeFile` of `.devcontainer/devcontainer.json`, uncomment the Docker Compose file that defines the program
-2. Run the `Dev Containers: Rebuild Container` command
-3. Follow the program's run instructions:
+1. In the first section of `dockerComposeFile` of `.devcontainer/devcontainer.json`,
+   there is a list of Docker Compose files with comments at the end of the line that say which programs are defined in them.
+   Uncomment the Docker Compose file that the program is defined in: remove `//` at the beginning of the line
+    1. Programs that are defined in the uncommented Docker Compose files will be started and stopped with Sailbot Workspace
+2. Run the `Dev Containers: Rebuild Container` command to restart Sailbot Workspace
+3. Follow the program-specific run instructions:
 
     ??? note "Run Docs or Website"
 
@@ -39,41 +42,82 @@ To run a program:
     ??? note "Run Grafana"
 
         1. Connect to the MongoDB database
-            0. Prerequisites:
-                1. MongoDB is running
-                2. Not running Sailbot Workspace in a [GitHub Codespace](./setup.md#setup-sailbot-workspace-in-a-github-codespace){target=_blank}
-            1. Open the site by hovering over its local address and clicking "Open in Browser"
-                - Grafana is running on port 3000
-            2. Login using the default username and password: `admin` and `admin`, respectively
-            3. Once logged-in, click the cog icon (:material-cog:) in the bottom left to go to the data sources configuration
+            1. Ensure that:
+                1. You are not running Sailbot Workspace in a [GitHub Codespace](./setup.md#setup-sailbot-workspace-in-a-github-codespace){target=_blank}
+                2. MongoDB is running
+            2. Open the site by hovering over its local address and clicking "Open in Browser":
+               Grafana is running on port 3000
+            3. Login using the default username and password: `admin` and `admin`, respectively
+            4. Once logged-in, click the cog icon :material-cog: in the bottom left to go to the data sources configuration
                page
-            4. Add the `mongodb-community` data source
+            5. Add the `mongodb-community` data source
                 1. Paste our database's URL: `mongodb://localhost:27017`
                 2. Click "Save & test"
                 3. Verify that the message "MongoDB is Responding" pops up
 
-To stop running a program:
+### Manage an optional program
 
-1. Stop the program's container (where it is running):
-    1. Open Docker Desktop
-    2. Select "Containers" in the top right
-    3. Expand `sailbot_workspace_devcontainer`
-    4. Click the stop icon (:material-stop:) under actions for the container that you want to stop
-        - The name should be something like `<program>-1`
+Each program runs in a Docker container. Containers can be managed using Docker Desktop or CLI commands:
 
-    ??? note "Stop the program's container using terminal commands"
+- View Sailbot Workspace containers
 
-        You will have to use this method if you didn't install Docker using Docker desktop.
+    === ":material-docker: Docker Desktop"
 
-        In a terminal outside the Dev Container:
+        1. Select "Containers" in the top right
+        2. Expand "sailbot_workspace_devcontainer"
+            - The "Status" column shows whether a container is running or not
 
-        1. Get the program container's name by running `docker ps`, which lists the running containers
-            - The container should be named something like `sailbot_workspace_devcontainer-<program>-1`
-        2. Stop the program's container by running `docker stop <container>`
+    === ":octicons-terminal-24: CLI Commands"
 
-2. Stop future rebuilds of the Dev Container from restarting the program's container:
-    1. In `dockerComposeFile` of `.devcontainer/devcontainer.json`,
-       comment out the Docker Compose file that defines the program
+        ```
+        docker ps -a
+        ```
+
+        - Sailbot Workspace containers should be named something like `sailbot_workspace_devcontainer-<program>-<number>`
+        - The `STATUS` column shows whether a container is running or not
+
+- View a container's logs, the output of the container (including errors that caused it to stop)
+
+    === ":material-docker: Docker Desktop"
+
+        1. Click on a container
+        2. Navigate to the "Logs" view if not already on it
+
+    === ":octicons-terminal-24: CLI Commands"
+
+        ```
+        docker logs <container>
+        ```
+
+- Start a container that is not running
+
+    === ":material-docker: Docker Desktop"
+
+        1. Click start :material-play:
+
+    === ":octicons-terminal-24: CLI Commands"
+
+        ```
+        docker start <container>
+        ```
+
+- Stop a container that is running
+
+    === ":material-docker: Docker Desktop"
+
+        1. Click stop :material-stop:
+
+    === ":octicons-terminal-24: CLI Commands"
+
+        ```
+        docker stop <container>
+        ```
+
+### Stop running an optional program
+
+1. In `dockerComposeFile` of `.devcontainer/devcontainer.json`, comment out the Docker Compose file that the program is
+   defined in: add `//` to the beginning of the line
+2. Stop the program's container: see [Manage an optional program](#manage-an-optional-program)
 
 ## Temporarily add apt packages
 
