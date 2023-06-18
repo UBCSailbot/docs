@@ -198,7 +198,7 @@ git clone https://github.com/UBCSailbot/sailbot_workspace.git
 1. Ensure that Docker is running
 2. Run the `Dev Containers: Reopen in Container` command
 
-## 6. Open the VS Code workspace file
+## 6. Open the workspace file
 
 1. Open the file `.devcontainer/config/sailbot_workspace.code-workspace` in VS Code
 2. Click `Open Workspace`
@@ -214,8 +214,16 @@ and updates dependencies of the ROS packages.
 
 ??? bug "Can't see the `setup` task"
 
-    If you can't see the `setup` task, run the `Developer: Reload Window` command then rerun the `Tasks: Run Task` command.
-    This may occur when Sailbot Workspace is opened for the first time.
+    If you can't see the `setup` task, run the `Developer: Reload Window` command.
+    This may occur when the workspace file is opened for the first time.
+
+## 8. Run the `Build All` task
+
+The `Build All` task builds all the ROS packages.
+
+## 9. Reload the VS Code terminals and window
+
+Delete all open terminals and run the `Developer: Reload Window` command to detect the files that were generated from building.
 
 ## Setup Sailbot Workspace in a GitHub Codespace
 
@@ -239,7 +247,7 @@ A couple things to note:
     - Delete codespaces that you do not plan to use anymore:
       [deleting a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/deleting-a-codespace#deleting-a-codespace){target=_blank}
 
-From there you can follow the setup instructions starting from [6. Open the VS Code workspace file](#6-open-the-vs-code-workspace-file).
+From there you can follow the setup instructions starting from [6. Open the workspace file](#6-open-the-workspace-file).
 
 Once you have a codespace set up:
 
