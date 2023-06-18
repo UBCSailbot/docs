@@ -15,8 +15,7 @@ There are a couple programs that are not run by default to minimize resource usa
 
 To run a program:
 
-1. In `dockerComposeFile` of [`.devcontainer/devcontainer.json`](https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/devcontainer.json){target=_blank},
-   uncomment the Docker Compose file that defines the program
+1. In `dockerComposeFile` of `.devcontainer/devcontainer.json`, uncomment the Docker Compose file that defines the program
 2. Run the `Dev Containers: Rebuild Container` command
 3. Follow the program's run instructions:
 
@@ -73,15 +72,14 @@ To stop running a program:
         2. Stop the program's container by running `docker stop <container>`
 
 2. Stop future rebuilds of the Dev Container from restarting the program's container:
-    1. In `dockerComposeFile` of [`.devcontainer/devcontainer.json`](https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/devcontainer.json){target=_blank},
+    1. In `dockerComposeFile` of `.devcontainer/devcontainer.json`,
        comment out the Docker Compose file that defines the program
 
 ## Temporarily add apt packages
 
 If a task requires you to add apt packages, you can quickly test them in your Dev Container:
 
-1. Uncomment the section in [`Dockerfile`](https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/Dockerfile){target=_blank}
-   that installs additional packages
+1. Uncomment the section in `Dockerfile` that installs additional packages
 2. Add the desired packages below the line `# Your package list here` with the format:
 
     ```sh
@@ -92,10 +90,8 @@ If a task requires you to add apt packages, you can quickly test them in your De
 
 3. Run the `Dev Containers: Rebuild Container` command
 
-Before merging in the PR, you should migrate the apt package installations to a more permanent location in upstream images:
-
-- [`base`, `local-base`, `dev`](https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/base-dev){target=_blank}
-- [`pre-base`](https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/pre-base){target=_blank}
+Before merging in the PR, you should migrate the apt package installations to a more permanent location in upstream
+[images](./docker_images.md){target=_blank}: `base`, `local-base`, `dev`, or `pre-base`.
 
 ## Use your dotfiles
 
@@ -115,16 +111,16 @@ Dotfiles that are commonly modified include:
 
 To use your dotfiles:
 
-1. Ensure that the [`base`, `local-base`, or `dev` image](https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/base-dev){target=_blank}
+1. Ensure that the `base`, `local-base`, or `dev` [image](./docker_images.md){target=_blank}
    installs the programs that the dotfiles correspond to
-2. Copy the dotfiles to the [`.devcontainer/config/`](https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/config){target=_blank}
-   directory. If a dotfile is located in a child directory, you will have to created it.
+2. Copy the dotfiles to the `.devcontainer/config/` directory.
+   If a dotfile is located in a child directory, you will have to created it.
    For example, if a dotfile's path is `~/.config/ex_dotfile`, you will need to copy it to `.devcontainer/config/.config/ex_dotfile`
 
     !!! warning "Special cases"
 
         - `~/.gitconfig`: there is no need copy your Git dotfile, as Dev Containers do this automatically
-        - `~/.bashrc`: don't copy your Bash dotfile, as it would override the one created in the [`dev` image](https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/base-dev){target=_blank}.
+        - `~/.bashrc`: don't copy your Bash dotfile, as it would override the one created in the `dev` image.
         Instead, add your bash configuration `.aliases.bash` or `.functions.bash` in the config directory, as these are sourced
         by the created Bash dotfile.
 
