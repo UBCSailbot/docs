@@ -17,12 +17,12 @@ To run a program:
 
 1. In `dockerComposeFile` of [`.devcontainer/devcontainer.json`](https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/devcontainer.json){target=_blank},
    uncomment the Docker Compose file that defines the program
-2. Run the `Dev Containers: Rebuild Container` VS Code command
+2. Run the `Dev Containers: Rebuild Container` command
 3. Follow the program's run instructions:
 
     ??? note "Run Docs or Website"
 
-        1. Run the `Ports: Focus on Ports View` VS Code command
+        1. Run the `Ports: Focus on Ports View` command
         2. Open the site by hovering over its local address and clicking either "Open in Browser" or "Preview in Editor"
             - Docs is running on port 8000
             - Website is running on port 3005
@@ -90,7 +90,7 @@ If a task requires you to add apt packages, you can quickly test them in your De
     _pkg2_ \
     ```
 
-3. Run the `Dev Containers: Rebuild Container` VS Code command
+3. Run the `Dev Containers: Rebuild Container` command
 
 Before merging in the PR, you should migrate the apt package installations to a more permanent location in upstream images:
 
@@ -128,7 +128,7 @@ To use your dotfiles:
         Instead, add your bash configuration `.aliases.bash` or `.functions.bash` in the config directory, as these are sourced
         by the created Bash dotfile.
 
-3. Run the `Dev Containers: Rebuild Container` VS Code command
+3. Run the `Dev Containers: Rebuild Container` command
 
 [^1]: [Dotfiles – What is a Dotfile and How to Create it in Mac and Linux](https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/){target=_blank}
 
@@ -137,8 +137,7 @@ To use your dotfiles:
 Raye was our previous project. Her software can be run in the `raye` branch:
 
 1. Switch to the `raye` branch: `git switch raye`
-2. Rebuild the Dev Container: run the `Dev Containers: Rebuild Container` command in the
-   [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
+2. Rebuild the Dev Container: run the `Dev Containers: Rebuild Container` command
 
 !!! warning "`raye` branch disclaimers"
 

@@ -3,6 +3,31 @@
 This workspace can be run on Windows, Linux, or macOS, but is the easiest to set up and performs the best on
 [Ubuntu](https://ubuntu.com/){target=_blank} and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){target=_blank}.
 
+Throughout this documentation, there are references to running commands, tasks, and launch configurations in VS Code.
+Expand the box below to learn how to do so:
+
+??? note "Running commands, tasks, and launch configurations in VS Code"
+
+    > For keyboard shortcuts on MacOS, substitute ++ctrl++ with ++cmd++
+
+    Commands can be run in the Command Palette.
+    Open the Command Palette from the `View` menu or with ++ctrl+shift+p++.
+
+    Tasks can be run using the `Tasks: Run Task` command. Build tasks can be run with ++ctrl+shift+b++.
+
+    Launch configurations can be run from the [Run and Debug view](https://code.visualstudio.com/docs/editor/debugging#_run-and-debug-view){target=_blank}.
+
+    You can also run commands, tasks, launch configurations, and much more by typing their prefixes
+    into an empty Command Palette. Open an empty Command Palette with ++ctrl+p++.
+    See the list below for some prefixes and their functions.
+    For prefixes that are words, you will have to append a space to them to bring up their functions.
+
+    - Nothing: files
+    - `>`: commands
+    - `task`: tasks
+    - `debug`: launch configurations
+    - `?`: list all prefixes and their functions
+
 ## 1. Set up prerequisites
 
 ### Docker
@@ -171,15 +196,14 @@ git clone https://github.com/UBCSailbot/sailbot_workspace.git
 ## 5. Open Sailbot Workspace in a Dev Container
 
 1. Ensure that Docker is running
-2. Run the `Dev Containers: Reopen in Container` command in the
-   [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
+2. Run the `Dev Containers: Reopen in Container` command
 
 ## 6. Open the VS Code workspace file
 
 1. Open the file `.devcontainer/config/sailbot_workspace.code-workspace` in VS Code
 2. Click `Open Workspace`
 
-## 7. Run the `setup` VS Code task
+## 7. Run the `setup` task
 
 !!! info ""
 
@@ -188,14 +212,10 @@ git clone https://github.com/UBCSailbot/sailbot_workspace.git
 The `setup` task clones the repositories defined in [`src/new_project.repos`](https://github.com/UBCSailbot/sailbot_workspace/blob/main/src/new_project.repos){target=_blank}
 and updates dependencies of the ROS packages.
 
-1. Run the `Tasks: Run Task` command in the
-   [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
-2. Select `setup` from the dropdown menu
+??? bug "Can't see the `setup` task"
 
-    ??? bug "Can't see the `setup` task"
-
-        If you can't see the `setup` task, run the `Developer: Reload Window` command then rerun the `Tasks: Run Task` command.
-        This may occur when Sailbot Workspace is opened for the first time.
+    If you can't see the `setup` task, run the `Developer: Reload Window` command then rerun the `Tasks: Run Task` command.
+    This may occur when Sailbot Workspace is opened for the first time.
 
 ## Setup Sailbot Workspace in a GitHub Codespace
 
