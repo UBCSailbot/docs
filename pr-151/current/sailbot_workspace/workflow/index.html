@@ -1415,7 +1415,7 @@ These file may be modified if you:</p>
 <li>Update a file in <code>.devcontainer/</code> yourself</li>
 </ul>
 <p>However, there may be changes to the Dev Container that VS Code can't detect.
-To rebuild it yourself, run the <code>Dev Containers: Rebuild Container</code> command.</p>
+To rebuild it yourself, run the <code>Dev Containers: Rebuild Container</code> VS Code command.</p>
 </details>
 </li>
 <li>
@@ -1536,8 +1536,8 @@ If there is more than one possibility, pressing tab again will list them out.</p
 <li>Run the <code>purge</code> task to delete all generated files</li>
 </ul>
 </li>
-<li>Rebuild the Dev Container: run the <code>Dev Containers: Rebuild Container</code> command</li>
-<li>Reload VS Code: run the <code>Developer: Reload Window</code> command</li>
+<li>Rebuild the Dev Container: run the <code>Dev Containers: Rebuild Container</code> VS Code command</li>
+<li>Reload VS Code: run the <code>Developer: Reload Window</code> VS Code command</li>
 <li>
 <p>Delete Docker files</p>
 <ul>
@@ -1569,6 +1569,14 @@ If your computer takes longer than, or you want to free up memory and disk space
 <li>Sailbot Workspace uses more memory and disk space than it does on bare metal Linux
   because it uses Docker, which is not natively supported by Windows.
   Thus, a Linux VM is used to run Docker on Windows, which requires more memory and disk space to achieve the same performance</li>
+<li>Here is a guide to dual boot the operating systems we recommend: <a href="https://www.linuxtechi.com/dual-boot-ubuntu-22-04-and-windows-11/" target="_blank">How to Dual Boot Ubuntu 22.04 LTS and Windows 11</a><ul>
+<li>We recommend allocating at least 50 GB to Ubuntu to leave some wiggle room for Docker</li>
+<li>The process is similar for other Ubuntu and Windows versions,
+  but feel free to search for a guide specific to the combination you want to dual boot</li>
+<li>Since Sailbot Workspace uses Docker, it should be able to run well on any Linux distribution;
+  however, we may not be able to provide support if you encounter any difficulties</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1578,7 +1586,7 @@ If your computer takes longer than, or you want to free up memory and disk space
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 18, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 19, 2023</span>
       
     
   </small>

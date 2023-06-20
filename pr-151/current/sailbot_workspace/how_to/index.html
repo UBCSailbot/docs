@@ -1494,16 +1494,16 @@
 <li>Programs that are defined in the uncommented Docker Compose files will be started and stopped with Sailbot Workspace</li>
 </ol>
 </li>
-<li>Run the <code>Dev Containers: Rebuild Container</code> command to restart Sailbot Workspace</li>
+<li>Run the <code>Dev Containers: Rebuild Container</code> VS Code command to restart Sailbot Workspace</li>
 <li>
 <p>Follow the program-specific run instructions:</p>
 <details class="note">
 <summary>Run Docs or Website</summary>
 <ol>
-<li>Run the <code>Ports: Focus on Ports View</code> command</li>
+<li>Run the <code>Ports: Focus on Ports View</code> VS Code command</li>
 <li>Open the site by hovering over its local address and clicking either "Open in Browser" or "Preview in Editor"<ul>
-<li>Docs is running on port 8000</li>
-<li>Website is running on port 3005</li>
+<li>The local address of Docs is the line with a port of 8000</li>
+<li>The local address of Website is the line with a port of 3005</li>
 </ul>
 </li>
 <li>Changes made to its files are loaded when they are saved</li>
@@ -1533,8 +1533,10 @@
 <li>MongoDB is running</li>
 </ol>
 </li>
-<li>Open the site by hovering over its local address and clicking "Open in Browser":
-   Grafana is running on port 3000</li>
+<li>Open the site by hovering over its local address and clicking "Open in Browser"<ul>
+<li>The local address of Grafana is the line with a port of 3000</li>
+</ul>
+</li>
 <li>Login using the default username and password: <code>admin</code> and <code>admin</code>, respectively</li>
 <li>Once logged-in, click the cog icon <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66Z"/></svg></span> in the bottom left to go to the data sources configuration
    page</li>
@@ -1645,7 +1647,7 @@
 </code></pre></div>
 </li>
 <li>
-<p>Run the <code>Dev Containers: Rebuild Container</code> command</p>
+<p>Run the <code>Dev Containers: Rebuild Container</code> VS Code command</p>
 </li>
 </ol>
 <p>Before merging in the PR, you should migrate the apt package installations to a more permanent location in upstream
@@ -1685,14 +1687,14 @@ by the created Bash dotfile.</li>
 </div>
 </li>
 <li>
-<p>Run the <code>Dev Containers: Rebuild Container</code> command</p>
+<p>Run the <code>Dev Containers: Rebuild Container</code> VS Code command</p>
 </li>
 </ol>
 <h2 id="run-rayes-software">Run Raye's software<a class="headerlink" href="#run-rayes-software" title="Permanent link">&para;</a></h2>
 <p>Raye was our previous project. Her software can be run in the <code>raye</code> branch:</p>
 <ol>
 <li>Switch to the <code>raye</code> branch: <code>git switch raye</code></li>
-<li>Rebuild the Dev Container: run the <code>Dev Containers: Rebuild Container</code> command</li>
+<li>Rebuild the Dev Container: run the <code>Dev Containers: Rebuild Container</code> VS Code command</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title"><code>raye</code> branch disclaimers</p>
@@ -1758,7 +1760,7 @@ This is because the system has trouble resolving the local hostname.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 18, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 19, 2023</span>
       
     
   </small>
