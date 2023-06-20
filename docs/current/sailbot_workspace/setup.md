@@ -28,7 +28,7 @@ Expand the box below to learn how to do so:
     - `debug`: launch configurations
     - `?`: list all prefixes and their functions
 
-## 1. Set up prerequisites
+## 1. Setup prerequisites
 
 ### Docker
 
@@ -98,68 +98,70 @@ use all the features of Sailbot Workspace.
 1. [Install VS Code](https://code.visualstudio.com/docs/setup/setup-overview){target=_blank}
 2. Install the [Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack){target=_blank}
 
-## 2. Set up X11 forwarding
+## 2. Setup X11 forwarding
 
-X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications. You can skip this step if
-you aren't running any GUI applications.
+X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications.
+You can skip this step since we currently aren't running any GUI applications.
 
-1. Ensure that the versions of VS Code and its Dev Containers extension support X11 forwarding:
-    1. VS Code version >= 1.75
-    2. Dev Containers version >= 0.275.1
-2. Verify that `echo $DISPLAY` returns something like `:0`
+??? info "Setup instructions for X11 forwarding"
 
-    ??? warning "`echo $DISPLAY` doesn't return anything"
+    1. Ensure that the versions of VS Code and its Dev Containers extension support X11 forwarding:
+        1. VS Code version >= 1.75
+        2. Dev Containers version >= 0.275.1
+    2. Verify that `echo $DISPLAY` returns something like `:0`
 
-        If `echo $DISPLAY` doesn't return anything, set it to `:0` on shell initialization:
+        ??? warning "`echo $DISPLAY` doesn't return anything"
 
-        1. Find out what shell you are using with `echo $SHELL`
-            1. Most Linux distributions use Bash by default, whose rc file path is `~/.bashrc`
-            2. macOS uses Zsh by default, whose rc file path is: `~/.zshrc`
-        2. Run `echo 'export DISPLAY=:0' >> <rc file path>`, replacing `<rc file path>`
-           with the path to your shell's rc file
-        3. Run `echo $DISPLAY` after closing and reopening your terminal, verifying it returns something like `:0`
+            If `echo $DISPLAY` doesn't return anything, set it to `:0` on shell initialization:
 
-3. Install a X11 server
+            1. Find out what shell you are using with `echo $SHELL`
+                1. Most Linux distributions use Bash by default, whose rc file path is `~/.bashrc`
+                2. macOS uses Zsh by default, whose rc file path is: `~/.zshrc`
+            2. Run `echo 'export DISPLAY=:0' >> <rc file path>`, replacing `<rc file path>`
+            with the path to your shell's rc file
+            3. Run `echo $DISPLAY` after closing and reopening your terminal, verifying it returns something like `:0`
 
-    === ":material-microsoft-windows: Windows"
-
-        WSL includes a X11 server.
-
-    === ":material-apple: macOS"
-
-        1. Set up XQuartz following [this guide](https://gist.github.com/sorny/969fe55d85c9b0035b0109a31cbcb088){target=_blank}
-        2. Copy the default xinitrc to your home directory: `cp /opt/X11/etc/X11/xinit/xinitrc ~/.xinitrc`
-        3. Add `xhost +localhost` to `~/.xinitrc` after its first line
-
-    === ":material-linux: Linux"
-
-        === ":material-linux: General"
-
-            As of February 2023, almost all Linux distributions include a X11 server, Xorg.
-            This may change in the future as Wayland matures.
-
-        === ":material-arch: Arch Linux"
-
-            1. Install xhost: `sudo pacman -S xorg-xhost`
-            2. Copy the default xinitrc to your home directory: `cp /etc/X11/xinit/xinitrc ~/.xinitrc`
-            3. Add `xhost +local:docker` to `~/.xinitrc` after its first line
-
-4. Verify that X11 forwarding works:
-    1. Install `x11-apps`
+    3. Install a X11 server
 
         === ":material-microsoft-windows: Windows"
 
-            In Ubuntu, `sudo apt install x11-apps`.
+            WSL includes a X11 server.
 
         === ":material-apple: macOS"
 
-            XQuartz includes `x11-apps`. Ensure that XQuartz is running.
+            1. Set up XQuartz following [this guide](https://gist.github.com/sorny/969fe55d85c9b0035b0109a31cbcb088){target=_blank}
+            2. Copy the default xinitrc to your home directory: `cp /opt/X11/etc/X11/xinit/xinitrc ~/.xinitrc`
+            3. Add `xhost +localhost` to `~/.xinitrc` after its first line
 
         === ":material-linux: Linux"
 
-            Install `x11-apps` using your desired package manager.
+            === ":material-linux: General"
 
-    2. Verify that running `xcalc` opens a calculator and that you can use it
+                As of February 2023, almost all Linux distributions include a X11 server, Xorg.
+                This may change in the future as Wayland matures.
+
+            === ":material-arch: Arch Linux"
+
+                1. Install xhost: `sudo pacman -S xorg-xhost`
+                2. Copy the default xinitrc to your home directory: `cp /etc/X11/xinit/xinitrc ~/.xinitrc`
+                3. Add `xhost +local:docker` to `~/.xinitrc` after its first line
+
+    4. Verify that X11 forwarding works:
+        1. Install `x11-apps`
+
+            === ":material-microsoft-windows: Windows"
+
+                In Ubuntu, `sudo apt install x11-apps`.
+
+            === ":material-apple: macOS"
+
+                XQuartz includes `x11-apps`. Ensure that XQuartz is running.
+
+            === ":material-linux: Linux"
+
+                Install `x11-apps` using your desired package manager.
+
+        2. Verify that running `xcalc` opens a calculator and that you can use it
 
 ## 3. Clone Sailbot Workspace
 
