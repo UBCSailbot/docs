@@ -26,8 +26,8 @@ There are a couple programs that are not run by default to minimize resource usa
 
         1. Run the `Ports: Focus on Ports View` command
         2. Open the site by hovering over its local address and clicking either "Open in Browser" or "Preview in Editor"
-            - Docs is running on port 8000
-            - Website is running on port 3005
+            - The local address of Docs is the line with a port of 8000
+            - The local address of Website is the line with a port of 3005
         3. Changes made to its files are loaded when they are saved
 
     ??? note "Run MongoDB"
@@ -45,8 +45,8 @@ There are a couple programs that are not run by default to minimize resource usa
             1. Ensure that:
                 1. You are not running Sailbot Workspace in a [GitHub Codespace](./setup.md#setup-sailbot-workspace-in-a-github-codespace){target=_blank}
                 2. MongoDB is running
-            2. Open the site by hovering over its local address and clicking "Open in Browser":
-               Grafana is running on port 3000
+            2. Open the site by hovering over its local address and clicking "Open in Browser"
+                - The local address of Grafana is the line with a port of 3000
             3. Login using the default username and password: `admin` and `admin`, respectively
             4. Once logged-in, click the cog icon :material-cog: in the bottom left to go to the data sources configuration
                page
