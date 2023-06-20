@@ -152,3 +152,9 @@ If you are not satisfied with the performance of Sailbot Workspace, here are som
     - Sailbot Workspace uses more memory and disk space than it does on bare metal Linux
       because it uses Docker, which is not natively supported by Windows.
       Thus, a Linux VM is used to run Docker on Windows, which requires more memory and disk space to achieve the same performance
+    - Here is a guide to dual boot the operating systems we recommend: [How to Dual Boot Ubuntu 22.04 LTS and Windows 11](https://www.linuxtechi.com/dual-boot-ubuntu-22-04-and-windows-11/){target=_blank}
+        - We recommend allocating at least 50 GB to Ubuntu to leave some wiggle room for Docker
+        - The process is similar for other Ubuntu and Windows versions,
+          but feel free to search for a guide specific to the combination you want to dual boot
+        - Since Sailbot Workspace uses Docker, it should be able to run well on any Linux distribution;
+          however, we may not be able to provide support if you encounter any difficulties
