@@ -3,27 +3,27 @@
 This workspace can be run on Windows, Linux, or macOS, but is the easiest to set up and performs the best on
 [Ubuntu](https://ubuntu.com/){target=_blank} and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){target=_blank}.
 
-Throughout this documentation, there are references to running commands, tasks, and launch configurations in VS Code.
+Throughout this documentation, there are references to running VS Code commands, tasks, and launch configurations.
 Expand the box below to learn how to do so:
 
-??? note "Running commands, tasks, and launch configurations in VS Code"
+??? note "Running VS Code commands, tasks, and launch configurations"
 
     > For keyboard shortcuts on MacOS, substitute ++ctrl++ with ++cmd++
 
-    Commands can be run in the Command Palette.
+    VS Code commands can be run in the Command Palette.
     Open the Command Palette from the `View` menu or with ++ctrl+shift+p++.
 
-    Tasks can be run using the `Tasks: Run Task` command. Build tasks can be run with ++ctrl+shift+b++.
+    Tasks can be run using the `Tasks: Run Task` VS Code command. Build tasks can be run with ++ctrl+shift+b++.
 
     Launch configurations can be run from the [Run and Debug view](https://code.visualstudio.com/docs/editor/debugging#_run-and-debug-view){target=_blank}.
 
-    You can also run commands, tasks, launch configurations, and much more by typing their prefixes
+    You can also run VS Code commands, tasks, launch configurations, and much more by typing their prefixes
     into an empty Command Palette. Open an empty Command Palette with ++ctrl+p++.
     See the list below for some prefixes and their functions.
     For prefixes that are words, you will have to append a space to them to bring up their functions.
 
     - Nothing: files
-    - `>`: commands
+    - `>`: VS Code commands
     - `task`: tasks
     - `debug`: launch configurations
     - `?`: list all prefixes and their functions
@@ -196,7 +196,7 @@ git clone https://github.com/UBCSailbot/sailbot_workspace.git
 ## 5. Open Sailbot Workspace in a Dev Container
 
 1. Ensure that Docker is running
-2. Run the `Dev Containers: Reopen in Container` command
+2. Run the `Dev Containers: Reopen in Container` VS Code command
 
 ## 6. Open the workspace file
 
@@ -213,7 +213,7 @@ The `setup` task clones the repositories defined in `src/new_project.repos` and 
 
 ??? bug "Can't see the `setup` task"
 
-    If you can't see the `setup` task, run the `Developer: Reload Window` command.
+    If you can't see the `setup` task, run the `Developer: Reload Window` VS Code command.
     This may occur when the workspace file is opened for the first time.
 
 ## 8. Run the `Build All` task
@@ -222,7 +222,8 @@ The `Build All` task builds all the ROS packages.
 
 ## 9. Reload the VS Code terminals and window
 
-Delete all open terminals and run the `Developer: Reload Window` command to detect the files that were generated from building.
+Delete all open terminals and run the `Developer: Reload Window` VS Code command
+to detect the files that were generated from building.
 
 ## Setup Sailbot Workspace in a GitHub Codespace
 
@@ -252,7 +253,7 @@ Once you have a codespace set up:
 
 - Open it by following the steps in the relevant GitHub Docs page:
 [reopening a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/opening-an-existing-codespace#reopening-a-codespace){target=_blank}
-- Close it by running the `Codespaces: Stop Current Codespace` command
+- Close it by running the `Codespaces: Stop Current Codespace` VS Code command
 
 !!! warning "Known limitations of running Sailbot Workspace in a GitHub Codespace"
 

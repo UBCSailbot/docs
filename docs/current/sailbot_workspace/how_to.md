@@ -19,12 +19,12 @@ There are a couple programs that are not run by default to minimize resource usa
    there is a list of Docker Compose files with comments at the end of the line that say which programs are defined in them.
    Uncomment the Docker Compose file that the program is defined in: remove `//` at the beginning of the line
     1. Programs that are defined in the uncommented Docker Compose files will be started and stopped with Sailbot Workspace
-2. Run the `Dev Containers: Rebuild Container` command to restart Sailbot Workspace
+2. Run the `Dev Containers: Rebuild Container` VS Code command to restart Sailbot Workspace
 3. Follow the program-specific run instructions:
 
     ??? note "Run Docs or Website"
 
-        1. Run the `Ports: Focus on Ports View` command
+        1. Run the `Ports: Focus on Ports View` VS Code command
         2. Open the site by hovering over its local address and clicking either "Open in Browser" or "Preview in Editor"
             - The local address of Docs is the line with a port of 8000
             - The local address of Website is the line with a port of 3005
@@ -132,7 +132,7 @@ If a task requires you to add apt packages, you can quickly test them in your De
     _pkg2_ \
     ```
 
-3. Run the `Dev Containers: Rebuild Container` command
+3. Run the `Dev Containers: Rebuild Container` VS Code command
 
 Before merging in the PR, you should migrate the apt package installations to a more permanent location in upstream
 [images](./docker_images.md){target=_blank}: `base`, `local-base`, `dev`, or `pre-base`.
@@ -168,7 +168,7 @@ To use your dotfiles:
         Instead, add your bash configuration `.aliases.bash` or `.functions.bash` in the config directory, as these are sourced
         by the created Bash dotfile.
 
-3. Run the `Dev Containers: Rebuild Container` command
+3. Run the `Dev Containers: Rebuild Container` VS Code command
 
 [^1]: [Dotfiles – What is a Dotfile and How to Create it in Mac and Linux](https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/){target=_blank}
 
@@ -177,7 +177,7 @@ To use your dotfiles:
 Raye was our previous project. Her software can be run in the `raye` branch:
 
 1. Switch to the `raye` branch: `git switch raye`
-2. Rebuild the Dev Container: run the `Dev Containers: Rebuild Container` command
+2. Rebuild the Dev Container: run the `Dev Containers: Rebuild Container` VS Code command
 
 !!! warning "`raye` branch disclaimers"
 

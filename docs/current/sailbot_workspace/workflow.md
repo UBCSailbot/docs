@@ -22,7 +22,7 @@ If there are new features or bug fixes that you want to try, you will need to up
         - Update a file in `.devcontainer/` yourself
 
         However, there may be changes to the Dev Container that VS Code can't detect.
-        To rebuild it yourself, run the `Dev Containers: Rebuild Container` command.
+        To rebuild it yourself, run the `Dev Containers: Rebuild Container` VS Code command.
 
 4. If you want to run our docs, website, or other optional programs, see [How to run optional programs](./how_to.md#run-optional-programs){target=_blank}
 
@@ -126,8 +126,8 @@ If you are having some trouble running our software, here are some things you ca
 - Delete generated files
     - Run the `clean` task to clean your build
     - Run the `purge` task to delete all generated files
-- Rebuild the Dev Container: run the `Dev Containers: Rebuild Container` command
-- Reload VS Code: run the `Developer: Reload Window` command
+- Rebuild the Dev Container: run the `Dev Containers: Rebuild Container` VS Code command
+- Reload VS Code: run the `Developer: Reload Window` VS Code command
 - Delete Docker files
     - Run `docker system prune` to remove all unused containers, networks, images (both dangling and unreferenced)
         - Add `--all` to additionally remove unused images (don't have a container associated with them)
