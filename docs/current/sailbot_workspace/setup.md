@@ -1,7 +1,10 @@
 # Setup Instructions
 
-This workspace can be run on Windows, Linux, or macOS, but is the easiest to set up and performs the best on
+Sailbot Workspace can be run on Windows, Linux, or macOS, but is the easiest to set up and performs the best on
 [Ubuntu](https://ubuntu.com/){target=_blank} and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){target=_blank}.
+The workspace may not perform well on Windows computers with 8GB of memory or less;
+in this case, please check out our recommendations in the [Performance Issues](./workflow.md#performance-issues){target=_blank}
+section.
 
 Throughout this documentation, there are references to running VS Code commands, tasks, and launch configurations.
 Expand the box below to learn how to do so:
@@ -230,26 +233,24 @@ to detect the files that were generated from building.
 ## Setup Sailbot Workspace in a GitHub Codespace
 
 A codespace is a development environment that's hosted in the cloud.[^5]
-Since Sailbot Workspace is resource intensive, it has high hardware requirements and power consumption
-which isn't ideal for development on laptops. GitHub Codespaces provides a seamless experience to work on a repository
-off-device, especially if the repository has a Dev Container like Sailbot Workspace does. They can run in VS Code
+Since Sailbot Workspace is resource intensive, it has high hardware requirements and power consumption,
+which aren't ideal for development on laptops. GitHub Codespaces provide a seamless experience to work on repositories
+off-device, especially if they specify a Dev Container like Sailbot Workspace. Codespaces can run in VS Code
 or even in a browser for times when you aren't on your programming computer.
 
-Create a GitHub Codespace following the steps in the relevant GitHub Docs page:
+1. Create a GitHub Codespace following the steps in the relevant GitHub Docs page:
 [create a codespace for a repository](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository){target=_blank}.
 A couple things to note:
-
-- For the best Sailbot Workspace development experience, select the high-spec machine available
-- There are usage limits if you don't want to pay:
-  [monthly included storage and core hours for personal accounts](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces#monthly-included-storage-and-core-hours-for-personal-accounts){target=_blank}
-    - Upgrade to a Pro account for increased usage limits (this is free for students):
-      [apply to GitHub Global Campus as a student](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student){target=_blank}
-    - Stop your codespace as soon as you are done using it:
-      [stopping a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace#stopping-a-codespace){target=_blank}
-    - Delete codespaces that you do not plan to use anymore:
-      [deleting a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/deleting-a-codespace#deleting-a-codespace){target=_blank}
-
-From there you can follow the setup instructions starting from [6. Open the workspace file](#6-open-the-workspace-file).
+    - For the best Sailbot Workspace development experience, select the high-spec machine available
+    - There are usage limits if you don't want to pay:
+    [monthly included storage and core hours for personal accounts](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces#monthly-included-storage-and-core-hours-for-personal-accounts){target=_blank}
+        - Upgrade to a Pro account for increased usage limits (this is free for students):
+        [apply to GitHub Global Campus as a student](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student){target=_blank}
+        - Stop your codespace as soon as you are done using it:
+        [stopping a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace#stopping-a-codespace){target=_blank}
+        - Delete codespaces that you do not plan to use anymore:
+        [deleting a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/deleting-a-codespace#deleting-a-codespace){target=_blank}
+2. Follow the local setup instructions starting from [6. Open the workspace file](#6-open-the-workspace-file)
 
 Once you have a codespace set up:
 
