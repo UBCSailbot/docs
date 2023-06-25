@@ -7,7 +7,9 @@ and [commit history](https://github.com/UBCSailbot/sailbot_workspace/commits/mai
 If there are new features or bug fixes that you want to try, you will need to update your local version of Sailbot Workspace:
 
 1. Switch to the main branch if you aren't in it already
+    - If you are unable to switch branches because you have uncommitted changes, stash them
 2. Pull the latest changes
+    - If you stashed your uncommitted changes, pop them
 3. If prompted, rebuild the Dev Container
 
     ??? question "When does the Dev Container need to be rebuilt?"
