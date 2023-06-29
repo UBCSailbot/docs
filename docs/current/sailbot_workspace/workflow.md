@@ -125,9 +125,10 @@ launch configuration.
 
 If you are having some trouble running our software, here are some things you can try:
 
-- Delete generated files
-    - Run the `clean` task to clean your build
-    - Run the `purge` task to delete all generated files
+- Build from scratch
+    - Run the `clean` task to delete C++ generated files
+    - Run the `purge` task to delete ROS generated files
+    - Run the `Build All` task to rebuild
 - Rebuild the Dev Container: run the `Dev Containers: Rebuild Container` VS Code command
 - Reload VS Code: run the `Developer: Reload Window` VS Code command
 - Delete Docker files
