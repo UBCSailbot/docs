@@ -1400,7 +1400,7 @@
 and <a href="https://github.com/UBCSailbot/sailbot_workspace/commits/main" target="_blank">commit history</a>.
 If there are new features or bug fixes that you want to try, you will need to update your local version of Sailbot Workspace:</p>
 <ol>
-<li>Switch to the main branch if you aren't in it already<ul>
+<li>Switch Sailbot Workspace to the main branch if you aren't in it already<ul>
 <li>If you are unable to switch branches because you have uncommitted changes, stash them</li>
 </ul>
 </li>
@@ -1425,8 +1425,11 @@ To rebuild it yourself, run the <code>Dev Containers: Rebuild Container</code> V
 </details>
 </li>
 <li>
-<p>If you want to run our docs, website, or other optional programs, see <a href="../how_to/#run-optional-programs" target="_blank">How to run optional programs</a></p>
+<p>If you aren't working in any other branches,
+   run the <code>setup</code> task to switch the branches of all sub-repositories to their default specified in <code>src/new_project.repos</code>
+   and pull their latest changes</p>
 </li>
+<li>If you want to run our docs, website, or other optional programs, see <a href="../how_to/#run-optional-programs" target="_blank">How to run optional programs</a></li>
 </ol>
 <h2 id="2-make-your-changes">2. Make your changes<a class="headerlink" href="#2-make-your-changes" title="Permanent link">&para;</a></h2>
 <p>We make changes to our software following our <a href="https://ubcsailbot.github.io/docs/reference/github/workflow/overview/" target="_blank">GitHub development workflow</a>.
@@ -1537,28 +1540,28 @@ If there is more than one possibility, pressing tab again will list them out.</p
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p>If you are having some trouble running our software, here are some things you can try:</p>
 <ul>
-<li>Build from scratch<ul>
+<li>Build from scratch<ol>
 <li>Run the <code>clean</code> task to delete C++ generated files</li>
 <li>Run the <code>purge</code> task to delete ROS generated files</li>
 <li>Run the <code>Build All</code> task to rebuild</li>
-</ul>
+</ol>
 </li>
 <li>Rebuild the Dev Container: run the <code>Dev Containers: Rebuild Container</code> VS Code command</li>
 <li>Reload VS Code: run the <code>Developer: Reload Window</code> VS Code command</li>
 <li>
 <p>Delete Docker files</p>
-<ul>
-<li>Run <code>docker system prune</code> to remove all unused containers, networks, images (both dangling and unreferenced)<ul>
-<li>Add <code>--all</code> to additionally remove unused images (don't have a container associated with them)</li>
-<li>Add <code>--volumes</code> to additionally remove volumes (makes Bash history and ROS logs persist across containers)</li>
-<li>Run <code>docker rmi -f $(docker images -aq)</code> to remove all images</li>
-</ul>
-</li>
-</ul>
 <details class="tip">
 <summary>Running Docker CLI commands on Windows</summary>
 <p>On Windows, Docker CLI commands should be run in the Ubuntu terminal while Docker Desktop is running.</p>
 </details>
+<ul>
+<li>Run <code>docker system prune</code> to remove all unused containers, networks, and dangling and unreferenced images<ul>
+<li>Add <code>--all</code> to additionally remove unused images (don't have a container associated with them)</li>
+<li>Add <code>--volumes</code> to additionally remove volumes (makes Bash history and ROS logs persist across containers)</li>
+</ul>
+</li>
+<li>Run <code>docker rmi -f $(docker images -aq)</code> to remove all images</li>
+</ul>
 </li>
 </ul>
 <h2 id="performance-issues">Performance Issues<a class="headerlink" href="#performance-issues" title="Permanent link">&para;</a></h2>
@@ -1591,7 +1594,7 @@ If your computer takes longer than, or you want to free up memory and disk space
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 28, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 30, 2023</span>
       
     
   </small>
