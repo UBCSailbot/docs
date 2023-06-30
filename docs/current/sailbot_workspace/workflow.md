@@ -126,20 +126,21 @@ launch configuration.
 If you are having some trouble running our software, here are some things you can try:
 
 - Build from scratch
-    - Run the `clean` task to delete C++ generated files
-    - Run the `purge` task to delete ROS generated files
-    - Run the `Build All` task to rebuild
+    1. Run the `clean` task to delete C++ generated files
+    2. Run the `purge` task to delete ROS generated files
+    3. Run the `Build All` task to rebuild
 - Rebuild the Dev Container: run the `Dev Containers: Rebuild Container` VS Code command
 - Reload VS Code: run the `Developer: Reload Window` VS Code command
 - Delete Docker files
-    - Run `docker system prune` to remove all unused containers, networks, images (both dangling and unreferenced)
-        - Add `--all` to additionally remove unused images (don't have a container associated with them)
-        - Add `--volumes` to additionally remove volumes (makes Bash history and ROS logs persist across containers)
-        - Run `docker rmi -f $(docker images -aq)` to remove all images
 
     ??? tip "Running Docker CLI commands on Windows"
 
         On Windows, Docker CLI commands should be run in the Ubuntu terminal while Docker Desktop is running.
+
+    - Run `docker system prune` to remove all unused containers, networks, and dangling and unreferenced images
+        - Add `--all` to additionally remove unused images (don't have a container associated with them)
+        - Add `--volumes` to additionally remove volumes (makes Bash history and ROS logs persist across containers)
+    - Run `docker rmi -f $(docker images -aq)` to remove all images
 
 ## Performance Issues
 
