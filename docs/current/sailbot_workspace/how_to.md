@@ -29,6 +29,8 @@ There are a couple programs that are not run by default to minimize resource usa
             - The local address of Docs is the line with a port of 8000
             - The local address of Website is the line with a port of 3005
         3. Changes made to its files are loaded when they are saved
+            1. **If Auto Save is on, turn it off so that the Docs/Website servers aren't continuously reloading**
+                - Auto Save is on by default in GitHub Codespaces
 
     ??? note "Run MongoDB"
 
