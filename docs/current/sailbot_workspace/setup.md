@@ -77,6 +77,8 @@ allowing it to be installed on Windows and macOS in addition to Linux.
                     in PowerShell, replacing `<username>` with the name of the newly-created user
                     3. Run `whoami` after closing and reopening Ubuntu, verifying that it returns your Ubuntu username
 
+        3. From now on, run commands in the Ubuntu terminal, not PowerShell or Command Prompt
+
     2. [Install Docker Desktop](https://docs.docker.com/desktop/install/windows-install/){target=_blank}
     with the WSL 2 backend
 
@@ -100,6 +102,25 @@ use all the features of Sailbot Workspace.
 
 1. [Install VS Code](https://code.visualstudio.com/docs/setup/setup-overview){target=_blank}
 2. Install the [Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack){target=_blank}
+
+### Git
+
+Git is a free and open source distributed version control system designed to handle everything from
+small to very large projects with speed and efficiency.[^4]
+
+1. Check if Git is installed with `git --version`; it is installed by default on most operating systems
+    - If not installed, see [Git Downloads](https://git-scm.com/download){target=_blank}
+        - If you want to use Git on Windows outside of WSL, you would need to install Git for Windows
+2. Configure your name and email: [Git config file setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-config-file-setup){target=_blank}
+3. Login to GitHub
+    - If you have Git for Windows installed and authenticated, see [Git Credential Manager setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup){target=_blank}
+    - Otherwise, use the GitHub CLI
+        1. Install the GitHub CLI: [Installation](https://cli.github.com/manual/installation){target=_blank}
+            - On Windows, run the Ubuntu installation commands in the Ubuntu terminal:
+              [Debian, Ubuntu Linux, Raspberry Pi OS (apt)](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt){target=_blank}
+        2. Run `gh auth login` and select the first option for all choices
+
+[^4]: [Git](https://git-scm.com/){target=_blank}
 
 ## 2. Setup X11 forwarding
 
@@ -168,17 +189,17 @@ You can skip this step since we currently aren't running any GUI applications.
 
 ## 3. Clone Sailbot Workspace
 
-```sh
-git clone https://github.com/UBCSailbot/sailbot_workspace.git
-```
-
 ??? tip "Where to clone on Windows"
 
     Windows has a native file system as well as file systems for each WSL distribution.
-    For the fastest performance speed,[^4] clone Sailbot Workspace in the WSL file system.
-    We recommend cloning it somewhere in your Ubuntu user's home directory, which is what Ubuntu opens to by default.
+    For the fastest performance speed,[^5] clone Sailbot Workspace in the WSL file system.
+    We recommend cloning it somewhere in your Ubuntu user's home directory, which is where Ubuntu opens to by default.
 
-    [^4]: [File storage and performance across file systems](https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems){target=_blank}
+    [^5]: [File storage and performance across file systems](https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems){target=_blank}
+
+```sh
+git clone https://github.com/UBCSailbot/sailbot_workspace.git
+```
 
 ## 4. Open Sailbot Workspace in VS Code
 
@@ -232,7 +253,7 @@ to detect the files that were generated from building.
 
 ## Setup Sailbot Workspace in a GitHub Codespace
 
-A codespace is a development environment that's hosted in the cloud.[^5]
+A codespace is a development environment that's hosted in the cloud.[^6]
 Since Sailbot Workspace is resource intensive, it has high hardware requirements and power consumption,
 which aren't ideal for development on laptops. GitHub Codespaces provide a seamless experience to work on repositories
 off-device, especially if they specify a Dev Container like Sailbot Workspace. Codespaces can run in VS Code
@@ -266,4 +287,4 @@ Once you have a codespace set up:
     - High-spec machines not available: as of March 2023, the highest-spec machine that is publically available
       has a 4-core CPU and 8GB of RAM
 
-[^5]: [GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview){target=_blank}
+[^6]: [GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview){target=_blank}
