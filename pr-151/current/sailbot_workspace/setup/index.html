@@ -514,6 +514,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    Git
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1391,6 +1398,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    Git
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1570,6 +1584,9 @@ in PowerShell, replacing <code>&lt;username&gt;</code> with the name of the newl
 </li>
 </ol>
 </li>
+<li>
+<p>From now on, run commands in the Ubuntu terminal, not PowerShell or Command Prompt</p>
+</li>
 </ol>
 </li>
 <li>
@@ -1601,6 +1618,32 @@ use all the features of Sailbot Workspace.</p>
 <ol>
 <li><a href="https://code.visualstudio.com/docs/setup/setup-overview" target="_blank">Install VS Code</a></li>
 <li>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack" target="_blank">Remote Development Extension Pack</a></li>
+</ol>
+<h3 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h3>
+<p>Git is a free and open source distributed version control system designed to handle everything from
+small to very large projects with speed and efficiency.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+<ol>
+<li>Check if Git is installed with <code>git --version</code>; it is installed by default on most operating systems<ul>
+<li>If not installed, see <a href="https://git-scm.com/download" target="_blank">Git Downloads</a><ul>
+<li>If you want to use Git on Windows outside of WSL, you would need to install Git for Windows</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Configure your name and email: <a href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-config-file-setup" target="_blank">Git config file setup</a></li>
+<li>Login to GitHub<ul>
+<li>If you have Git for Windows installed and authenticated, see <a href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup" target="_blank">Git Credential Manager setup</a></li>
+<li>Otherwise, use the GitHub CLI<ol>
+<li>Install the GitHub CLI: <a href="https://cli.github.com/manual/installation" target="_blank">Installation</a><ul>
+<li>On Windows, run the Ubuntu installation commands in the Ubuntu terminal:
+  <a href="https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt" target="_blank">Debian, Ubuntu Linux, Raspberry Pi OS (apt)</a></li>
+</ul>
+</li>
+<li>Run <code>gh auth login</code> and select the first option for all choices</li>
+</ol>
+</li>
+</ul>
+</li>
 </ol>
 <h2 id="2-setup-x11-forwarding">2. Setup X11 forwarding<a class="headerlink" href="#2-setup-x11-forwarding" title="Permanent link">&para;</a></h2>
 <p>X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications.
@@ -1691,14 +1734,14 @@ This may change in the future as Wayland matures.</p>
 </ol>
 </details>
 <h2 id="3-clone-sailbot-workspace">3. Clone Sailbot Workspace<a class="headerlink" href="#3-clone-sailbot-workspace" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/UBCSailbot/sailbot_workspace.git
-</code></pre></div>
 <details class="tip">
 <summary>Where to clone on Windows</summary>
 <p>Windows has a native file system as well as file systems for each WSL distribution.
-For the fastest performance speed,<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> clone Sailbot Workspace in the WSL file system.
-We recommend cloning it somewhere in your Ubuntu user's home directory, which is what Ubuntu opens to by default.</p>
+For the fastest performance speed,<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> clone Sailbot Workspace in the WSL file system.
+We recommend cloning it somewhere in your Ubuntu user's home directory, which is where Ubuntu opens to by default.</p>
 </details>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/UBCSailbot/sailbot_workspace.git
+</code></pre></div>
 <h2 id="4-open-sailbot-workspace-in-vs-code">4. Open Sailbot Workspace in VS Code<a class="headerlink" href="#4-open-sailbot-workspace-in-vs-code" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -1747,7 +1790,7 @@ This may occur when the workspace file is opened for the first time.</p>
 <p>Delete all open terminals and run the <code>Developer: Reload Window</code> VS Code command
 to detect the files that were generated from building.</p>
 <h2 id="setup-sailbot-workspace-in-a-github-codespace">Setup Sailbot Workspace in a GitHub Codespace<a class="headerlink" href="#setup-sailbot-workspace-in-a-github-codespace" title="Permanent link">&para;</a></h2>
-<p>A codespace is a development environment that's hosted in the cloud.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>
+<p>A codespace is a development environment that's hosted in the cloud.<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>
 Since Sailbot Workspace is resource intensive, it has high hardware requirements and power consumption,
 which aren't ideal for development on laptops. GitHub Codespaces provide a seamless experience to work on repositories
 off-device, especially if they specify a Dev Container like Sailbot Workspace. Codespaces can run in VS Code
@@ -1800,10 +1843,13 @@ A couple things to note:<ul>
 <p><a href="https://docs.docker.com/desktop/faqs/linuxfaqs/#what-is-the-difference-between-docker-desktop-for-linux-and-docker-engine" target="_blank">What is the difference between Docker Desktop for Linux and Docker Engine</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p><a href="https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems" target="_blank">File storage and performance across file systems</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p><a href="https://git-scm.com/" target="_blank">Git</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p><a href="https://docs.github.com/en/codespaces/overview" target="_blank">GitHub Codespaces overview</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p><a href="https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems" target="_blank">File storage and performance across file systems</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://docs.github.com/en/codespaces/overview" target="_blank">GitHub Codespaces overview</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1813,7 +1859,7 @@ A couple things to note:<ul>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 20, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
       
     
   </small>

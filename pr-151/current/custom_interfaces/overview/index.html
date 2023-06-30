@@ -103,7 +103,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ros_msgs" class="md-skip">
+        <a href="#custom-interfaces" class="md-skip">
           Skip to content
         </a>
       
@@ -620,9 +620,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Overview
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#external-interfaces" class="md-nav__link">
+    External Interfaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal-interfaces" class="md-nav__link">
+    Internal Interfaces
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1249,6 +1287,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#external-interfaces" class="md-nav__link">
+    External Interfaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal-interfaces" class="md-nav__link">
+    Internal Interfaces
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1284,8 +1344,118 @@
 <a href="https://github.com/UBCSailbot/custom_interfaces" target="_blank">custom_interfaces</a> GitHub repository.
 Its README has been copied below.</p>
 </div>
-<h1 id="ros_msgs">ros_msgs<a class="headerlink" href="#ros_msgs" title="Permanent link">&para;</a></h1>
-<p>UBC Sailbot's custom ROS msgs</p>
+<h1 id="custom-interfaces">Custom Interfaces<a class="headerlink" href="#custom-interfaces" title="Permanent link">&para;</a></h1>
+<p>UBC Sailbot's custom interfaces ROS package.</p>
+<h2 id="external-interfaces">External Interfaces<a class="headerlink" href="#external-interfaces" title="Permanent link">&para;</a></h2>
+<p>Used to communicate data between ROS packages.</p>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Type</th>
+<th>Publisher</th>
+<th>Subscriber</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ais_ships</code></td>
+<td>AISShips</td>
+<td>AIS Receiver</td>
+<td>Local Pathfinding</td>
+</tr>
+<tr>
+<td><code>batteries</code></td>
+<td>Batteries</td>
+<td>CAN Transceiver</td>
+<td>Local/Remote Transceiver</td>
+</tr>
+<tr>
+<td><code>desired_heading</code></td>
+<td>DesiredHeading</td>
+<td>Local Pathfinding</td>
+<td>Controller</td>
+</tr>
+<tr>
+<td><code>data_sensors</code></td>
+<td>GenericSensors</td>
+<td>CAN Transceiver</td>
+<td>Local/Remote Transceiver</td>
+</tr>
+<tr>
+<td><code>global_path</code></td>
+<td>GlobalPath</td>
+<td>Local/Remote Transceiver</td>
+<td>Local Pathfinding</td>
+</tr>
+<tr>
+<td><code>gps</code></td>
+<td>GPS</td>
+<td>CAN Transceiver</td>
+<td>Local/Remote Transceiver, Local Pathfinding</td>
+</tr>
+<tr>
+<td><code>mock_gps</code></td>
+<td>GPS</td>
+<td>Boat Simulator</td>
+<td>CAN Transceiver</td>
+</tr>
+<tr>
+<td><code>filtered_wind_sensor</code></td>
+<td>WindSensor</td>
+<td>CAN Transceiver</td>
+<td>Local/Remote Transceiver, Local Pathfinding</td>
+</tr>
+<tr>
+<td><code>mock_wind_sensors</code></td>
+<td>WindSensors</td>
+<td>Boat Simulator</td>
+<td>CAN Transceiver</td>
+</tr>
+<tr>
+<td><code>wind_sensors</code></td>
+<td>WindSensors</td>
+<td>CAN Transceiver</td>
+<td>Local/Remote Transceiver</td>
+</tr>
+</tbody>
+</table>
+<h2 id="internal-interfaces">Internal Interfaces<a class="headerlink" href="#internal-interfaces" title="Permanent link">&para;</a></h2>
+<p>Used to standardize conventions across external interfaces.</p>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Used In</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HelperAISShip</td>
+<td>AISShips</td>
+</tr>
+<tr>
+<td>HelperBattery</td>
+<td>Batteries</td>
+</tr>
+<tr>
+<td>HelperGenericSensor</td>
+<td>GenericSensors</td>
+</tr>
+<tr>
+<td>HelperHeading</td>
+<td>DesiredHeading, GPS, HelperAISShip</td>
+</tr>
+<tr>
+<td>HelperLatLon</td>
+<td>GlobalPath, GPS, HelperAISShip</td>
+</tr>
+<tr>
+<td>HelperSpeed</td>
+<td>GPS, HelperAISShip, WindSensor</td>
+</tr>
+</tbody>
+</table>
 
   <hr>
 <div class="md-source-file">
