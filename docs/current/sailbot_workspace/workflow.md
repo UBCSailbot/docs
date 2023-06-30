@@ -6,7 +6,7 @@ Sailbot Workspace is still in active development, check out its [recent releases
 and [commit history](https://github.com/UBCSailbot/sailbot_workspace/commits/main){target=_blank}.
 If there are new features or bug fixes that you want to try, you will need to update your local version of Sailbot Workspace:
 
-1. Switch to the main branch if you aren't in it already
+1. Switch Sailbot Workspace to the main branch if you aren't in it already
     - If you are unable to switch branches because you have uncommitted changes, stash them
 2. Pull the latest changes
     - If you stashed your uncommitted changes, pop them
@@ -26,7 +26,10 @@ If there are new features or bug fixes that you want to try, you will need to up
         However, there may be changes to the Dev Container that VS Code can't detect.
         To rebuild it yourself, run the `Dev Containers: Rebuild Container` VS Code command.
 
-4. If you want to run our docs, website, or other optional programs, see [How to run optional programs](./how_to.md#run-optional-programs){target=_blank}
+4. If you aren't working in any other branches,
+   run the `setup` task to switch the branches of all sub-repositories to their default specified in `src/new_project.repos`
+   and pull their latest changes
+5. If you want to run our docs, website, or other optional programs, see [How to run optional programs](./how_to.md#run-optional-programs){target=_blank}
 
 ## 2. Make your changes
 
