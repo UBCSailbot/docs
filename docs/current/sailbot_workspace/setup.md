@@ -1,9 +1,37 @@
 # Setup Instructions
 
-This workspace can be run on Windows, Linux, or macOS, but is the easiest to set up and performs the best on
+Sailbot Workspace can be run on Windows, Linux, or macOS, but is the easiest to set up and performs the best on
 [Ubuntu](https://ubuntu.com/){target=_blank} and [its derivatives](https://distrowatch.com/search.php?basedon=Ubuntu){target=_blank}.
+The workspace may not perform well on Windows computers with 8GB of memory or less;
+in this case, please check out our recommendations in the [Performance Issues](./workflow.md#performance-issues){target=_blank}
+section.
 
-## 1. Set up prerequisites
+Throughout this documentation, there are references to running VS Code commands, tasks, and launch configurations.
+Expand the box below to learn how to do so:
+
+??? note "Running VS Code commands, tasks, and launch configurations"
+
+    > For keyboard shortcuts on MacOS, substitute ++ctrl++ with ++cmd++
+
+    VS Code commands can be run in the Command Palette.
+    Open the Command Palette from the `View` menu or with ++ctrl+shift+p++.
+
+    Tasks can be run using the `Tasks: Run Task` VS Code command. Build tasks can be run with ++ctrl+shift+b++.
+
+    Launch configurations can be run from the [Run and Debug view](https://code.visualstudio.com/docs/editor/debugging#_run-and-debug-view){target=_blank}.
+
+    You can also run VS Code commands, tasks, launch configurations, and much more by typing their prefixes
+    into an empty Command Palette. Open an empty Command Palette with ++ctrl+p++.
+    See the list below for some prefixes and their functions.
+    For prefixes that are words, you will have to append a space to them to bring up their functions.
+
+    - Nothing: files
+    - `>`: VS Code commands
+    - `task`: tasks
+    - `debug`: launch configurations
+    - `?`: list all prefixes and their functions
+
+## 1. Setup prerequisites
 
 ### Docker
 
@@ -49,6 +77,8 @@ allowing it to be installed on Windows and macOS in addition to Linux.
                     in PowerShell, replacing `<username>` with the name of the newly-created user
                     3. Run `whoami` after closing and reopening Ubuntu, verifying that it returns your Ubuntu username
 
+        3. From now on, run commands in the Ubuntu terminal, not PowerShell or Command Prompt
+
     2. [Install Docker Desktop](https://docs.docker.com/desktop/install/windows-install/){target=_blank}
     with the WSL 2 backend
 
@@ -73,82 +103,103 @@ use all the features of Sailbot Workspace.
 1. [Install VS Code](https://code.visualstudio.com/docs/setup/setup-overview){target=_blank}
 2. Install the [Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack){target=_blank}
 
-## 2. Set up X11 forwarding
+### Git
 
-X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications. You can skip this step if
-you aren't running any GUI applications.
+Git is a free and open source distributed version control system designed to handle everything from
+small to very large projects with speed and efficiency.[^4]
 
-1. Ensure that the versions of VS Code and its Dev Containers extension support X11 forwarding:
-    1. VS Code version >= 1.75
-    2. Dev Containers version >= 0.275.1
-2. Verify that `echo $DISPLAY` returns something like `:0`
+1. Check if Git is installed with `git --version`; it is installed by default on most operating systems
+    - If not installed, see [Git Downloads](https://git-scm.com/download){target=_blank}
+        - If you want to use Git on Windows outside of WSL, you would need to install Git for Windows
+2. Configure your name and email: [Git config file setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-config-file-setup){target=_blank}
+3. Login to GitHub
+    - If you have Git for Windows installed and authenticated, see [Git Credential Manager setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup){target=_blank}
+    - Otherwise, use the GitHub CLI
+        1. Install the GitHub CLI: [Installation](https://cli.github.com/manual/installation){target=_blank}
+            - On Windows, run the Ubuntu installation commands in the Ubuntu terminal:
+              [Debian, Ubuntu Linux, Raspberry Pi OS (apt)](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt){target=_blank}
+        2. Run `gh auth login` and select the first option for all choices
 
-    ??? warning "`echo $DISPLAY` doesn't return anything"
+[^4]: [Git](https://git-scm.com/){target=_blank}
 
-        If `echo $DISPLAY` doesn't return anything, set it to `:0` on shell initialization:
+## 2. Setup X11 forwarding
 
-        1. Find out what shell you are using with `echo $SHELL`
-            1. Most Linux distributions use Bash by default, whose rc file path is `~/.bashrc`
-            2. macOS uses Zsh by default, whose rc file path is: `~/.zshrc`
-        2. Run `echo 'export DISPLAY=:0' >> <rc file path>`, replacing `<rc file path>`
-           with the path to your shell's rc file
-        3. Run `echo $DISPLAY` after closing and reopening your terminal, verifying it returns something like `:0`
+X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications.
+You can skip this step since we currently aren't running any GUI applications.
 
-3. Install a X11 server
+??? info "Setup instructions for X11 forwarding"
 
-    === ":material-microsoft-windows: Windows"
+    1. Ensure that the versions of VS Code and its Dev Containers extension support X11 forwarding:
+        1. VS Code version >= 1.75
+        2. Dev Containers version >= 0.275.1
+    2. Verify that `echo $DISPLAY` returns something like `:0`
 
-        WSL includes a X11 server.
+        ??? warning "`echo $DISPLAY` doesn't return anything"
 
-    === ":material-apple: macOS"
+            If `echo $DISPLAY` doesn't return anything, set it to `:0` on shell initialization:
 
-        1. Set up XQuartz following [this guide](https://gist.github.com/sorny/969fe55d85c9b0035b0109a31cbcb088){target=_blank}
-        2. Copy the default xinitrc to your home directory: `cp /opt/X11/etc/X11/xinit/xinitrc ~/.xinitrc`
-        3. Add `xhost +localhost` to `~/.xinitrc` after its first line
+            1. Find out what shell you are using with `echo $SHELL`
+                1. Most Linux distributions use Bash by default, whose rc file path is `~/.bashrc`
+                2. macOS uses Zsh by default, whose rc file path is: `~/.zshrc`
+            2. Run `echo 'export DISPLAY=:0' >> <rc file path>`, replacing `<rc file path>`
+            with the path to your shell's rc file
+            3. Run `echo $DISPLAY` after closing and reopening your terminal, verifying it returns something like `:0`
 
-    === ":material-linux: Linux"
-
-        === ":material-linux: General"
-
-            As of February 2023, almost all Linux distributions include a X11 server, Xorg.
-            This may change in the future as Wayland matures.
-
-        === ":material-arch: Arch Linux"
-
-            1. Install xhost: `sudo pacman -S xorg-xhost`
-            2. Copy the default xinitrc to your home directory: `cp /etc/X11/xinit/xinitrc ~/.xinitrc`
-            3. Add `xhost +local:docker` to `~/.xinitrc` after its first line
-
-4. Verify that X11 forwarding works:
-    1. Install `x11-apps`
+    3. Install a X11 server
 
         === ":material-microsoft-windows: Windows"
 
-            In Ubuntu, `sudo apt install x11-apps`.
+            WSL includes a X11 server.
 
         === ":material-apple: macOS"
 
-            XQuartz includes `x11-apps`. Ensure that XQuartz is running.
+            1. Set up XQuartz following [this guide](https://gist.github.com/sorny/969fe55d85c9b0035b0109a31cbcb088){target=_blank}
+            2. Copy the default xinitrc to your home directory: `cp /opt/X11/etc/X11/xinit/xinitrc ~/.xinitrc`
+            3. Add `xhost +localhost` to `~/.xinitrc` after its first line
 
         === ":material-linux: Linux"
 
-            Install `x11-apps` using your desired package manager.
+            === ":material-linux: General"
 
-    2. Verify that running `xcalc` opens a calculator and that you can use it
+                As of February 2023, almost all Linux distributions include a X11 server, Xorg.
+                This may change in the future as Wayland matures.
+
+            === ":material-arch: Arch Linux"
+
+                1. Install xhost: `sudo pacman -S xorg-xhost`
+                2. Copy the default xinitrc to your home directory: `cp /etc/X11/xinit/xinitrc ~/.xinitrc`
+                3. Add `xhost +local:docker` to `~/.xinitrc` after its first line
+
+    4. Verify that X11 forwarding works:
+        1. Install `x11-apps`
+
+            === ":material-microsoft-windows: Windows"
+
+                In Ubuntu, `sudo apt install x11-apps`.
+
+            === ":material-apple: macOS"
+
+                XQuartz includes `x11-apps`. Ensure that XQuartz is running.
+
+            === ":material-linux: Linux"
+
+                Install `x11-apps` using your desired package manager.
+
+        2. Verify that running `xcalc` opens a calculator and that you can use it
 
 ## 3. Clone Sailbot Workspace
-
-```sh
-git clone https://github.com/UBCSailbot/sailbot_workspace.git
-```
 
 ??? tip "Where to clone on Windows"
 
     Windows has a native file system as well as file systems for each WSL distribution.
-    For the fastest performance speed,[^4] clone Sailbot Workspace in the WSL file system.
-    We recommend cloning it somewhere in your Ubuntu user's home directory, which is what Ubuntu opens to by default.
+    For the fastest performance speed,[^5] clone Sailbot Workspace in the WSL file system.
+    We recommend cloning it somewhere in your Ubuntu user's home directory, which is where Ubuntu opens to by default.
 
-    [^4]: [File storage and performance across file systems](https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems){target=_blank}
+    [^5]: [File storage and performance across file systems](https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems){target=_blank}
+
+```sh
+git clone https://github.com/UBCSailbot/sailbot_workspace.git
+```
 
 ## 4. Open Sailbot Workspace in VS Code
 
@@ -171,61 +222,68 @@ git clone https://github.com/UBCSailbot/sailbot_workspace.git
 ## 5. Open Sailbot Workspace in a Dev Container
 
 1. Ensure that Docker is running
-2. Run the `Dev Containers: Reopen in Container` command in the
-   [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
+2. Run the `Dev Containers: Reopen in Container` VS Code command
 
-## 6. Open the VS Code workspace file
+## 6. Open the workspace file
 
 1. Open the file `.devcontainer/config/sailbot_workspace.code-workspace` in VS Code
 2. Click `Open Workspace`
 
-## 7. Run the `setup` VS Code task
+## 7. Run the `setup` task
 
 !!! info ""
 
     Moved from Run to Setup page in [:octicons-tag-24: v1.1.0](https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.1.0){target=_blank}
 
-The `setup` task clones the repositories defined in [`src/new_project.repos`](https://github.com/UBCSailbot/sailbot_workspace/blob/main/src/new_project.repos){target=_blank}
-and updates dependencies of the ROS packages.
+The `setup` task clones the repositories defined in `src/new_project.repos` and updates dependencies of the ROS packages.
 
-1. Run the `Tasks: Run Task` command in the
-   [VS Code command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette){target=_blank}
-2. Select `setup` from the dropdown menu
+??? bug "Can't see the `setup` task"
 
-    ??? bug "Can't see the `setup` task"
+    If you can't see the `setup` task, run the `Developer: Reload Window` VS Code command.
+    This may occur when the workspace file is opened for the first time.
 
-        If you can't see the `setup` task, run the `Developer: Reload Window` command then rerun the `Tasks: Run Task` command.
-        This may occur when Sailbot Workspace is opened for the first time.
+## 8. Run the `Build All` task
+
+The `Build All` task builds all the ROS packages.
+
+## 9. Reload the VS Code terminals and window
+
+Delete all open terminals and run the `Developer: Reload Window` VS Code command
+to detect the files that were generated from building.
 
 ## Setup Sailbot Workspace in a GitHub Codespace
 
-A codespace is a development environment that's hosted in the cloud.[^5]
-Since Sailbot Workspace is resource intensive, it has high hardware requirements and power consumption
-which isn't ideal for development on laptops. GitHub Codespaces provides a seamless experience to work on a repository
-off-device, especially if the repository has a Dev Container like Sailbot Workspace does. They can run in VS Code
+A codespace is a development environment that's hosted in the cloud.[^6]
+Since Sailbot Workspace is resource intensive, it has high hardware requirements and power consumption,
+which aren't ideal for development on laptops. GitHub Codespaces provide a seamless experience to work on repositories
+off-device, especially if they specify a Dev Container like Sailbot Workspace. Codespaces can run in VS Code
 or even in a browser for times when you aren't on your programming computer.
 
-Create a GitHub Codespace following the steps in the relevant GitHub Docs page:
+1. Create a GitHub Codespace following the steps in the relevant GitHub Docs page:
 [create a codespace for a repository](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository){target=_blank}.
 A couple things to note:
+    - For the best Sailbot Workspace development experience, select the high-spec machine available
+    - There are usage limits if you don't want to pay:
+    [monthly included storage and core hours for personal accounts](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces#monthly-included-storage-and-core-hours-for-personal-accounts){target=_blank}
+        - Upgrade to a Pro account for increased usage limits (this is free for students):
+        [apply to GitHub Global Campus as a student](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student){target=_blank}
+        - Stop your codespace as soon as you are done using it:
+        [stopping a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace#stopping-a-codespace){target=_blank}
+        - Delete codespaces that you do not plan to use anymore:
+        [deleting a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/deleting-a-codespace#deleting-a-codespace){target=_blank}
+2. Follow the local setup instructions starting from [6. Open the workspace file](#6-open-the-workspace-file)
 
-- For the best Sailbot Workspace development experience, select the high-spec machine available
-- There are usage limits if you don't want to pay:
-  [monthly included storage and core hours for personal accounts](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces#monthly-included-storage-and-core-hours-for-personal-accounts){target=_blank}
-    - Upgrade to a Pro account for increased usage limits (this is free for students):
-      [apply to GitHub Global Campus as a student](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student){target=_blank}
-    - Stop your codespace as soon as you are done using it:
-      [stopping a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace#stopping-a-codespace){target=_blank}
-    - Delete codespaces that you do not plan to use anymore:
-      [deleting a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/deleting-a-codespace#deleting-a-codespace){target=_blank}
+Once you have a codespace set up:
 
-Reopen a codespace following the steps in the relevant GitHub Docs page:
-[reopening a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/opening-an-existing-codespace#reopening-a-codespace){target=_blank}.
+- Open it by following the steps in the relevant GitHub Docs page:
+[reopening a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/opening-an-existing-codespace#reopening-a-codespace){target=_blank}
+- Close it by running the `Codespaces: Stop Current Codespace` VS Code command
 
-(Current) limitations of GitHub Codespaces:
+!!! warning "Known limitations of running Sailbot Workspace in a GitHub Codespace"
 
-- Does not support X11 forwarding to run GUI applications
-- High-spec machines not available. As of March 2023, the highest-spec machine that is publically available
-  has a 4-core CPU and 8GB of RAM
+    - Grafana: can't connect to MongoDB
+    - Does not support X11 forwarding to run GUI applications
+    - High-spec machines not available: as of March 2023, the highest-spec machine that is publically available
+      has a 4-core CPU and 8GB of RAM
 
-[^5]: [GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview){target=_blank}
+[^6]: [GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview){target=_blank}
