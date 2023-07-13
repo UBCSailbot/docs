@@ -493,11 +493,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-set-up-prerequisites" class="md-nav__link">
-    1. Set up prerequisites
+  <a href="#1-setup-prerequisites" class="md-nav__link">
+    1. Setup prerequisites
   </a>
   
-    <nav class="md-nav" aria-label="1. Set up prerequisites">
+    <nav class="md-nav" aria-label="1. Setup prerequisites">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -514,14 +514,21 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    Git
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-set-up-x11-forwarding" class="md-nav__link">
-    2. Set up X11 forwarding
+  <a href="#2-setup-x11-forwarding" class="md-nav__link">
+    2. Setup X11 forwarding
   </a>
   
 </li>
@@ -548,15 +555,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-open-the-vs-code-workspace-file" class="md-nav__link">
-    6. Open the VS Code workspace file
+  <a href="#6-open-the-workspace-file" class="md-nav__link">
+    6. Open the workspace file
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-run-the-setup-vs-code-task" class="md-nav__link">
-    7. Run the setup VS Code task
+  <a href="#7-run-the-setup-task" class="md-nav__link">
+    7. Run the setup task
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-run-the-build-all-task" class="md-nav__link">
+    8. Run the Build All task
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-reload-the-vs-code-terminals-and-window" class="md-nav__link">
+    9. Reload the VS Code terminals and window
   </a>
   
 </li>
@@ -1356,11 +1377,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-set-up-prerequisites" class="md-nav__link">
-    1. Set up prerequisites
+  <a href="#1-setup-prerequisites" class="md-nav__link">
+    1. Setup prerequisites
   </a>
   
-    <nav class="md-nav" aria-label="1. Set up prerequisites">
+    <nav class="md-nav" aria-label="1. Setup prerequisites">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1377,14 +1398,21 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    Git
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-set-up-x11-forwarding" class="md-nav__link">
-    2. Set up X11 forwarding
+  <a href="#2-setup-x11-forwarding" class="md-nav__link">
+    2. Setup X11 forwarding
   </a>
   
 </li>
@@ -1411,15 +1439,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-open-the-vs-code-workspace-file" class="md-nav__link">
-    6. Open the VS Code workspace file
+  <a href="#6-open-the-workspace-file" class="md-nav__link">
+    6. Open the workspace file
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-run-the-setup-vs-code-task" class="md-nav__link">
-    7. Run the setup VS Code task
+  <a href="#7-run-the-setup-task" class="md-nav__link">
+    7. Run the setup task
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-run-the-build-all-task" class="md-nav__link">
+    8. Run the Build All task
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-reload-the-vs-code-terminals-and-window" class="md-nav__link">
+    9. Reload the VS Code terminals and window
   </a>
   
 </li>
@@ -1463,9 +1505,35 @@
 
 
 <h1 id="setup-instructions">Setup Instructions<a class="headerlink" href="#setup-instructions" title="Permanent link">&para;</a></h1>
-<p>This workspace can be run on Windows, Linux, or macOS, but is the easiest to set up and performs the best on
-<a href="https://ubuntu.com/" target="_blank">Ubuntu</a> and <a href="https://distrowatch.com/search.php?basedon=Ubuntu" target="_blank">its derivatives</a>.</p>
-<h2 id="1-set-up-prerequisites">1. Set up prerequisites<a class="headerlink" href="#1-set-up-prerequisites" title="Permanent link">&para;</a></h2>
+<p>Sailbot Workspace can be run on Windows, Linux, or macOS, but is the easiest to set up and performs the best on
+<a href="https://ubuntu.com/" target="_blank">Ubuntu</a> and <a href="https://distrowatch.com/search.php?basedon=Ubuntu" target="_blank">its derivatives</a>.
+The workspace may not perform well on Windows computers with 8GB of memory or less;
+in this case, please check out our recommendations in the <a href="../workflow/#performance-issues" target="_blank">Performance Issues</a>
+section.</p>
+<p>Throughout this documentation, there are references to running VS Code commands, tasks, and launch configurations.
+Expand the box below to learn how to do so:</p>
+<details class="note">
+<summary>Running VS Code commands, tasks, and launch configurations</summary>
+<blockquote>
+<p>For keyboard shortcuts on MacOS, substitute <span class="keys"><kbd class="key-control">Ctrl</kbd></span> with <span class="keys"><kbd class="key-command">Cmd</kbd></span></p>
+</blockquote>
+<p>VS Code commands can be run in the Command Palette.
+Open the Command Palette from the <code>View</code> menu or with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span>.</p>
+<p>Tasks can be run using the <code>Tasks: Run Task</code> VS Code command. Build tasks can be run with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-b">B</kbd></span>.</p>
+<p>Launch configurations can be run from the <a href="https://code.visualstudio.com/docs/editor/debugging#_run-and-debug-view" target="_blank">Run and Debug view</a>.</p>
+<p>You can also run VS Code commands, tasks, launch configurations, and much more by typing their prefixes
+into an empty Command Palette. Open an empty Command Palette with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-p">P</kbd></span>.
+See the list below for some prefixes and their functions.
+For prefixes that are words, you will have to append a space to them to bring up their functions.</p>
+<ul>
+<li>Nothing: files</li>
+<li><code>&gt;</code>: VS Code commands</li>
+<li><code>task</code>: tasks</li>
+<li><code>debug</code>: launch configurations</li>
+<li><code>?</code>: list all prefixes and their functions</li>
+</ul>
+</details>
+<h2 id="1-setup-prerequisites">1. Setup prerequisites<a class="headerlink" href="#1-setup-prerequisites" title="Permanent link">&para;</a></h2>
 <h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
 <p><a href="https://www.docker.com/" target="_blank">Docker</a> is a platform that uses OS-level virtualization<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> to develop, ship, and
 run applications.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> We use it to separate our applications from our infrastructure<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup> so that we can update and
@@ -1516,6 +1584,9 @@ in PowerShell, replacing <code>&lt;username&gt;</code> with the name of the newl
 </li>
 </ol>
 </li>
+<li>
+<p>From now on, run commands in the Ubuntu terminal, not PowerShell or Command Prompt</p>
+</li>
 </ol>
 </li>
 <li>
@@ -1548,9 +1619,37 @@ use all the features of Sailbot Workspace.</p>
 <li><a href="https://code.visualstudio.com/docs/setup/setup-overview" target="_blank">Install VS Code</a></li>
 <li>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack" target="_blank">Remote Development Extension Pack</a></li>
 </ol>
-<h2 id="2-set-up-x11-forwarding">2. Set up X11 forwarding<a class="headerlink" href="#2-set-up-x11-forwarding" title="Permanent link">&para;</a></h2>
-<p>X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications. You can skip this step if
-you aren't running any GUI applications.</p>
+<h3 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h3>
+<p>Git is a free and open source distributed version control system designed to handle everything from
+small to very large projects with speed and efficiency.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+<ol>
+<li>Check if Git is installed with <code>git --version</code>; it is installed by default on most operating systems<ul>
+<li>If not installed, see <a href="https://git-scm.com/download" target="_blank">Git Downloads</a><ul>
+<li>If you want to use Git on Windows outside of WSL, you would need to install Git for Windows</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Configure your name and email: <a href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-config-file-setup" target="_blank">Git config file setup</a></li>
+<li>Login to GitHub<ul>
+<li>If you have Git for Windows installed and authenticated, see <a href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup" target="_blank">Git Credential Manager setup</a></li>
+<li>Otherwise, use the GitHub CLI<ol>
+<li>Install the GitHub CLI: <a href="https://cli.github.com/manual/installation" target="_blank">Installation</a><ul>
+<li>On Windows, run the Ubuntu installation commands in the Ubuntu terminal:
+  <a href="https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt" target="_blank">Debian, Ubuntu Linux, Raspberry Pi OS (apt)</a></li>
+</ul>
+</li>
+<li>Run <code>gh auth login</code> and select the first option for all choices</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-setup-x11-forwarding">2. Setup X11 forwarding<a class="headerlink" href="#2-setup-x11-forwarding" title="Permanent link">&para;</a></h2>
+<p>X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications.
+You can skip this step since we currently aren't running any GUI applications.</p>
+<details class="info">
+<summary>Setup instructions for X11 forwarding</summary>
 <ol>
 <li>Ensure that the versions of VS Code and its Dev Containers extension support X11 forwarding:<ol>
 <li>VS Code version &gt;= 1.75</li>
@@ -1569,7 +1668,7 @@ you aren't running any GUI applications.</p>
 </ol>
 </li>
 <li>Run <code>echo 'export DISPLAY=:0' &gt;&gt; &lt;rc file path&gt;</code>, replacing <code>&lt;rc file path&gt;</code>
-   with the path to your shell's rc file</li>
+with the path to your shell's rc file</li>
 <li>Run <code>echo $DISPLAY</code> after closing and reopening your terminal, verifying it returns something like <code>:0</code></li>
 </ol>
 </details>
@@ -1633,15 +1732,16 @@ This may change in the future as Wayland matures.</p>
 </ol>
 </li>
 </ol>
+</details>
 <h2 id="3-clone-sailbot-workspace">3. Clone Sailbot Workspace<a class="headerlink" href="#3-clone-sailbot-workspace" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/UBCSailbot/sailbot_workspace.git
-</code></pre></div>
 <details class="tip">
 <summary>Where to clone on Windows</summary>
 <p>Windows has a native file system as well as file systems for each WSL distribution.
-For the fastest performance speed,<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> clone Sailbot Workspace in the WSL file system.
-We recommend cloning it somewhere in your Ubuntu user's home directory, which is what Ubuntu opens to by default.</p>
+For the fastest performance speed,<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> clone Sailbot Workspace in the WSL file system.
+We recommend cloning it somewhere in your Ubuntu user's home directory, which is where Ubuntu opens to by default.</p>
 </details>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/UBCSailbot/sailbot_workspace.git
+</code></pre></div>
 <h2 id="4-open-sailbot-workspace-in-vs-code">4. Open Sailbot Workspace in VS Code<a class="headerlink" href="#4-open-sailbot-workspace-in-vs-code" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -1667,62 +1767,68 @@ We recommend cloning it somewhere in your Ubuntu user's home directory, which is
 <h2 id="5-open-sailbot-workspace-in-a-dev-container">5. Open Sailbot Workspace in a Dev Container<a class="headerlink" href="#5-open-sailbot-workspace-in-a-dev-container" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Ensure that Docker is running</li>
-<li>Run the <code>Dev Containers: Reopen in Container</code> command in the
-   <a href="https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette" target="_blank">VS Code command palette</a></li>
+<li>Run the <code>Dev Containers: Reopen in Container</code> VS Code command</li>
 </ol>
-<h2 id="6-open-the-vs-code-workspace-file">6. Open the VS Code workspace file<a class="headerlink" href="#6-open-the-vs-code-workspace-file" title="Permanent link">&para;</a></h2>
+<h2 id="6-open-the-workspace-file">6. Open the workspace file<a class="headerlink" href="#6-open-the-workspace-file" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Open the file <code>.devcontainer/config/sailbot_workspace.code-workspace</code> in VS Code</li>
 <li>Click <code>Open Workspace</code></li>
 </ol>
-<h2 id="7-run-the-setup-vs-code-task">7. Run the <code>setup</code> VS Code task<a class="headerlink" href="#7-run-the-setup-vs-code-task" title="Permanent link">&para;</a></h2>
+<h2 id="7-run-the-setup-task">7. Run the <code>setup</code> task<a class="headerlink" href="#7-run-the-setup-task" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p>Moved from Run to Setup page in <a href="https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.1.0" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.75 6.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z"/><path d="M2.5 1h8.44a1.5 1.5 0 0 1 1.06.44l10.25 10.25a1.5 1.5 0 0 1 0 2.12l-8.44 8.44a1.5 1.5 0 0 1-2.12 0L1.44 12A1.497 1.497 0 0 1 1 10.94V2.5A1.5 1.5 0 0 1 2.5 1Zm0 1.5v8.44l10.25 10.25 8.44-8.44L10.94 2.5Z"/></svg></span> v1.1.0</a></p>
 </div>
-<p>The <code>setup</code> task clones the repositories defined in <a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/src/new_project.repos" target="_blank"><code>src/new_project.repos</code></a>
-and updates dependencies of the ROS packages.</p>
-<ol>
-<li>Run the <code>Tasks: Run Task</code> command in the
-   <a href="https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette" target="_blank">VS Code command palette</a></li>
-<li>
-<p>Select <code>setup</code> from the dropdown menu</p>
+<p>The <code>setup</code> task clones the repositories defined in <code>src/new_project.repos</code> and updates dependencies of the ROS packages.</p>
 <details class="bug">
 <summary>Can't see the <code>setup</code> task</summary>
-<p>If you can't see the <code>setup</code> task, run the <code>Developer: Reload Window</code> command then rerun the <code>Tasks: Run Task</code> command.
-This may occur when Sailbot Workspace is opened for the first time.</p>
+<p>If you can't see the <code>setup</code> task, run the <code>Developer: Reload Window</code> VS Code command.
+This may occur when the workspace file is opened for the first time.</p>
 </details>
-</li>
-</ol>
+<h2 id="8-run-the-build-all-task">8. Run the <code>Build All</code> task<a class="headerlink" href="#8-run-the-build-all-task" title="Permanent link">&para;</a></h2>
+<p>The <code>Build All</code> task builds all the ROS packages.</p>
+<h2 id="9-reload-the-vs-code-terminals-and-window">9. Reload the VS Code terminals and window<a class="headerlink" href="#9-reload-the-vs-code-terminals-and-window" title="Permanent link">&para;</a></h2>
+<p>Delete all open terminals and run the <code>Developer: Reload Window</code> VS Code command
+to detect the files that were generated from building.</p>
 <h2 id="setup-sailbot-workspace-in-a-github-codespace">Setup Sailbot Workspace in a GitHub Codespace<a class="headerlink" href="#setup-sailbot-workspace-in-a-github-codespace" title="Permanent link">&para;</a></h2>
-<p>A codespace is a development environment that's hosted in the cloud.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>
-Since Sailbot Workspace is resource intensive, it has high hardware requirements and power consumption
-which isn't ideal for development on laptops. GitHub Codespaces provides a seamless experience to work on a repository
-off-device, especially if the repository has a Dev Container like Sailbot Workspace does. They can run in VS Code
+<p>A codespace is a development environment that's hosted in the cloud.<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>
+Since Sailbot Workspace is resource intensive, it has high hardware requirements and power consumption,
+which aren't ideal for development on laptops. GitHub Codespaces provide a seamless experience to work on repositories
+off-device, especially if they specify a Dev Container like Sailbot Workspace. Codespaces can run in VS Code
 or even in a browser for times when you aren't on your programming computer.</p>
-<p>Create a GitHub Codespace following the steps in the relevant GitHub Docs page:
+<ol>
+<li>Create a GitHub Codespace following the steps in the relevant GitHub Docs page:
 <a href="https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository" target="_blank">create a codespace for a repository</a>.
-A couple things to note:</p>
-<ul>
+A couple things to note:<ul>
 <li>For the best Sailbot Workspace development experience, select the high-spec machine available</li>
 <li>There are usage limits if you don't want to pay:
-  <a href="https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces#monthly-included-storage-and-core-hours-for-personal-accounts" target="_blank">monthly included storage and core hours for personal accounts</a><ul>
+<a href="https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces#monthly-included-storage-and-core-hours-for-personal-accounts" target="_blank">monthly included storage and core hours for personal accounts</a><ul>
 <li>Upgrade to a Pro account for increased usage limits (this is free for students):
-  <a href="https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student" target="_blank">apply to GitHub Global Campus as a student</a></li>
+<a href="https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student" target="_blank">apply to GitHub Global Campus as a student</a></li>
 <li>Stop your codespace as soon as you are done using it:
-  <a href="https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace#stopping-a-codespace" target="_blank">stopping a codespace</a></li>
+<a href="https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace#stopping-a-codespace" target="_blank">stopping a codespace</a></li>
 <li>Delete codespaces that you do not plan to use anymore:
-  <a href="https://docs.github.com/en/codespaces/developing-in-codespaces/deleting-a-codespace#deleting-a-codespace" target="_blank">deleting a codespace</a></li>
+<a href="https://docs.github.com/en/codespaces/developing-in-codespaces/deleting-a-codespace#deleting-a-codespace" target="_blank">deleting a codespace</a></li>
 </ul>
 </li>
 </ul>
-<p>Reopen a codespace following the steps in the relevant GitHub Docs page:
-<a href="https://docs.github.com/en/codespaces/developing-in-codespaces/opening-an-existing-codespace#reopening-a-codespace" target="_blank">reopening a codespace</a>.</p>
-<p>(Current) limitations of GitHub Codespaces:</p>
+</li>
+<li>Follow the local setup instructions starting from <a href="#6-open-the-workspace-file">6. Open the workspace file</a></li>
+</ol>
+<p>Once you have a codespace set up:</p>
 <ul>
+<li>Open it by following the steps in the relevant GitHub Docs page:
+<a href="https://docs.github.com/en/codespaces/developing-in-codespaces/opening-an-existing-codespace#reopening-a-codespace" target="_blank">reopening a codespace</a></li>
+<li>Close it by running the <code>Codespaces: Stop Current Codespace</code> VS Code command</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Known limitations of running Sailbot Workspace in a GitHub Codespace</p>
+<ul>
+<li>Grafana: can't connect to MongoDB</li>
 <li>Does not support X11 forwarding to run GUI applications</li>
-<li>High-spec machines not available. As of March 2023, the highest-spec machine that is publically available
+<li>High-spec machines not available: as of March 2023, the highest-spec machine that is publically available
   has a 4-core CPU and 8GB of RAM</li>
 </ul>
+</div>
 <div class="footnote">
 <hr />
 <ol>
@@ -1736,10 +1842,13 @@ A couple things to note:</p>
 <p><a href="https://docs.docker.com/desktop/faqs/linuxfaqs/#what-is-the-difference-between-docker-desktop-for-linux-and-docker-engine" target="_blank">What is the difference between Docker Desktop for Linux and Docker Engine</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p><a href="https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems" target="_blank">File storage and performance across file systems</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p><a href="https://git-scm.com/" target="_blank">Git</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p><a href="https://docs.github.com/en/codespaces/overview" target="_blank">GitHub Codespaces overview</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p><a href="https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems" target="_blank">File storage and performance across file systems</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://docs.github.com/en/codespaces/overview" target="_blank">GitHub Codespaces overview</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1749,7 +1858,7 @@ A couple things to note:</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 14, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 12, 2023</span>
       
     
   </small>

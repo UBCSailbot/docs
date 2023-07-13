@@ -541,6 +541,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#performance-issues" class="md-nav__link">
+    Performance Issues
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1349,6 +1356,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#performance-issues" class="md-nav__link">
+    Performance Issues
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1386,8 +1400,14 @@
 and <a href="https://github.com/UBCSailbot/sailbot_workspace/commits/main" target="_blank">commit history</a>.
 If there are new features or bug fixes that you want to try, you will need to update your local version of Sailbot Workspace:</p>
 <ol>
-<li>Switch to the main branch if you aren't in it already</li>
-<li>Pull the latest changes</li>
+<li>Switch Sailbot Workspace to the main branch if you aren't in it already<ul>
+<li>If you are unable to switch branches because you have uncommitted changes, stash them</li>
+</ul>
+</li>
+<li>Pull the latest changes<ul>
+<li>If you stashed your uncommitted changes, pop them</li>
+</ul>
+</li>
 <li>
 <p>If prompted, rebuild the Dev Container</p>
 <details class="question">
@@ -1401,13 +1421,15 @@ These file may be modified if you:</p>
 <li>Update a file in <code>.devcontainer/</code> yourself</li>
 </ul>
 <p>However, there may be changes to the Dev Container that VS Code can't detect.
-To rebuild it yourself, run the <code>Dev Containers: Rebuild Container</code> command
-in the <a href="https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette" target="_blank">VS Code command palette</a>.</p>
+To rebuild it yourself, run the <code>Dev Containers: Rebuild Container</code> VS Code command.</p>
 </details>
 </li>
 <li>
-<p>If you want to run our docs, website, or other optional programs, see <a href="../how_to/#run-optional-programs" target="_blank">How to run optional programs</a></p>
+<p>If you aren't working in any other branches,
+   run the <code>setup</code> task to switch the branches of all sub-repositories to their default specified in <code>src/new_project.repos</code>
+   and pull their latest changes</p>
 </li>
+<li>If you want to run our docs, website, or other optional programs, see <a href="../how_to/#run-optional-programs" target="_blank">How to run optional programs</a></li>
 </ol>
 <h2 id="2-make-your-changes">2. Make your changes<a class="headerlink" href="#2-make-your-changes" title="Permanent link">&para;</a></h2>
 <p>We make changes to our software following our <a href="https://ubcsailbot.github.io/docs/reference/github/workflow/overview/" target="_blank">GitHub development workflow</a>.
@@ -1430,14 +1452,12 @@ especially when working with multiple repositories.</p>
 </div>
 <p>In general, changes need to be built before they can be run. You can skip this step if you only modified Python source
 or test files (in <code>python_package/python_package/</code> or <code>python_package/test</code>, respectively), or are running a launch type
-launch configueration.</p>
+launch configuration.</p>
 <ol>
-<li>Run the <code>Build</code> VS Code task: <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-b">B</kbd></span><ul>
-<li>On macOS the shortcut is <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-b">B</kbd></span></li>
-</ul>
-</li>
-<li>Depending on which packages you modified, select whether to build all packages or a single one</li>
+<li>Depending on which packages you modified, run the <code>Build All</code> or <code>Build Package</code> task<ol>
 <li>Unless you want to run <code>clang-tidy</code>, use the <code>-q</code> build argument (default) for quicker build times</li>
+</ol>
+</li>
 </ol>
 <h2 id="4-verify-your-changes">4. Verify your changes<a class="headerlink" href="#4-verify-your-changes" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
@@ -1457,16 +1477,47 @@ launch configueration.</p>
 <li>Nodes: <code>ROS: Run a ROS executable (rosrun)</code></li>
 </ul>
 </li>
-<li>CLI:<ul>
+<li>
+<p>CLI:</p>
+<ul>
 <li>Launch files: <code>ros2 launch &lt;package&gt; &lt;launch file&gt;</code></li>
 <li>Nodes: <code>ros2 run &lt;package&gt; &lt;executable&gt;</code></li>
 </ul>
+<details class="tip">
+<summary>CLI features</summary>
+<p>There are many commands that can be autocompleted in the terminal.
+Take advantage of this so that you run commands faster and memorize less syntax.
+If there is only one possibility, pressing tab once will complete it.
+If there is more than one possibility, pressing tab again will list them out.</p>
+<p>Some tab completion use cases:</p>
+<ul>
+<li>
+<p>View available commands: lists all <code>ros2</code> commands</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>ros2<span class="w"> </span>&lt;tab&gt;&lt;tab&gt;
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">action                          extension_points                multicast                       security</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">bag                             extensions                      node                            service</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">...</span>
+</code></pre></div>
+</li>
+<li>
+<p>Complete commands: runs <code>ros2 launch local_pathfinding main_launch.py</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>ros2&lt;tab&gt;la&lt;tab&gt;loc&lt;tab&gt;m&lt;tab&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Navigate to directories: runs <code>cd .devcontainer/config</code> from the root directory of Sailbot Workspace</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>.d&lt;tab&gt;c&lt;tab&gt;
+</code></pre></div>
+</li>
+</ul>
+<p>Furthermore, navigate past commands with <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> and <span class="keys"><kbd class="key-arrow-down">Down</kbd></span> and search through them with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-r">R</kbd></span>.</p>
+</details>
 </li>
 </ul>
 </li>
 <li>
 <p>Debug your changes if they aren't behaving how you expect by setting breakpoints and running one of our launch
-   configurations in the "Run and Debug" sidebar panel; launch configuration types:</p>
+   configurations; launch configuration types:</p>
 <ul>
 <li>Launch: runs the desired launch file or executable<ul>
 <li>For launch files, <code>ROS: Launch</code></li>
@@ -1488,28 +1539,52 @@ launch configueration.</p>
 </ol>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p>If you are having some trouble running our software, here are some things you can try:</p>
-<p>ROS:</p>
 <ul>
-<li>Run the <code>clean</code> VS Code task to clean your build</li>
-<li>Run the <code>purge</code> VS Code task to delete all generated files in the workspace</li>
+<li>Build from scratch<ol>
+<li>Run the <code>clean</code> task to delete C++ generated files</li>
+<li>Run the <code>purge</code> task to delete ROS generated files</li>
+<li>Run the <code>Build All</code> task to rebuild</li>
+</ol>
+</li>
+<li>Rebuild the Dev Container: run the <code>Dev Containers: Rebuild Container</code> VS Code command</li>
+<li>Reload VS Code: run the <code>Developer: Reload Window</code> VS Code command</li>
+<li>
+<p>Delete Docker files</p>
+<details class="tip">
+<summary>Running Docker CLI commands on Windows</summary>
+<p>On Windows, Docker CLI commands should be run in the Ubuntu terminal while Docker Desktop is running.</p>
+</details>
+<ul>
+<li>Run <code>docker system prune</code> to remove all unused containers, networks, and dangling and unreferenced images<ul>
+<li>Add <code>--all</code> to additionally remove unused images (don't have a container associated with them)</li>
+<li>Add <code>--volumes</code> to additionally remove volumes (makes Bash history and ROS logs persist across containers)</li>
 </ul>
-<p>Dev Container:</p>
-<ul>
-<li>Run the <code>Dev Containers: Rebuild Container</code> command in the
-  <a href="https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette" target="_blank">VS Code command palette</a>
-  to rebuild the Dev Container</li>
-</ul>
-<p>VS Code:</p>
-<ul>
-<li>Close and reopen the VS Code</li>
-<li>Update VS Code and its extensions</li>
-</ul>
-<p>Docker:</p>
-<ul>
-<li>Run <code>docker system prune</code> to remove all unused containers, networks, images (both dangling and unreferenced)<ul>
-<li>Add <code>--all</code> to additionally remove unused images</li>
-<li>Add <code>--volumes</code> to additionally remove volumes</li>
+</li>
 <li>Run <code>docker rmi -f $(docker images -aq)</code> to remove all images</li>
+</ul>
+</li>
+</ul>
+<h2 id="performance-issues">Performance Issues<a class="headerlink" href="#performance-issues" title="Permanent link">&para;</a></h2>
+<p>If you are not satisfied with the performance of Sailbot Workspace, here are some things you can try:</p>
+<ul>
+<li>Free up memory: close programs that you aren't using</li>
+<li>Free up disk space: permanently delete large programs and files that you don't need anymore</li>
+<li>Run Sailbot Workspace in a GitHub Codespace<ul>
+<li>In a codespace with 8GB of RAM, building all packages from scratch with the <code>-q</code> argument takes about a minute.
+If your computer takes longer than, or you want to free up memory and disk space, you can
+<a href="../setup/#setup-sailbot-workspace-in-a-github-codespace" target="_blank">setup Sailbot Workspace in a GitHub Codespace</a></li>
+</ul>
+</li>
+<li>If you are running Sailbot Workspace on Windows, dual boot Ubuntu and run Sailbot Workspace there<ul>
+<li>Sailbot Workspace performs worse on Windows than bare metal Linux because it uses Docker, which is not natively supported.</li>
+<li>Here is a guide to dual boot the operating systems we recommend: <a href="https://www.linuxtechi.com/dual-boot-ubuntu-22-04-and-windows-11/" target="_blank">How to Dual Boot Ubuntu 22.04 LTS and Windows 11</a><ul>
+<li>We recommend allocating at least 50 GB to Ubuntu to leave some wiggle room for Docker</li>
+<li>The process is similar for other Ubuntu and Windows versions,
+  but feel free to search for a guide specific to the combination you want to dual boot</li>
+<li>Since Sailbot Workspace uses Docker, it should be able to run on any Linux distribution, not just Ubuntu.
+  However, we may not be able to provide support if you encounter any difficulties with this</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1519,7 +1594,7 @@ launch configueration.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 14, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 12, 2023</span>
       
     
   </small>

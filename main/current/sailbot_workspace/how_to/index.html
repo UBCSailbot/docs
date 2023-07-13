@@ -525,6 +525,33 @@
     Run optional programs
   </a>
   
+    <nav class="md-nav" aria-label="Run optional programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-running-an-optional-program" class="md-nav__link">
+    Start running an optional program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-an-optional-program" class="md-nav__link">
+    Manage an optional program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-running-an-optional-program" class="md-nav__link">
+    Stop running an optional program
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1339,6 +1366,33 @@
     Run optional programs
   </a>
   
+    <nav class="md-nav" aria-label="Run optional programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-running-an-optional-program" class="md-nav__link">
+    Start running an optional program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-an-optional-program" class="md-nav__link">
+    Manage an optional program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-running-an-optional-program" class="md-nav__link">
+    Stop running an optional program
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1432,23 +1486,33 @@
 <li><a href="https://www.mongodb.com/" target="_blank">MongoDB database</a></li>
 <li><a href="https://grafana.com/" target="_blank">Grafana dashboards</a></li>
 </ul>
-<p>To run a program:</p>
+<h3 id="start-running-an-optional-program">Start running an optional program<a class="headerlink" href="#start-running-an-optional-program" title="Permanent link">&para;</a></h3>
 <ol>
-<li>In <code>dockerComposeFile</code> of <a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/devcontainer.json" target="_blank"><code>.devcontainer/devcontainer.json</code></a>,
-   uncomment the Docker Compose file that defines the program</li>
-<li>Run the <code>Dev Containers: Rebuild Container</code> VS Code command</li>
+<li>In the first section of <code>dockerComposeFile</code> of <code>.devcontainer/devcontainer.json</code>,
+   there is a list of Docker Compose files with comments at the end of the line that say which programs are defined in them.
+   Uncomment the Docker Compose file that the program is defined in: remove <code>//</code> at the beginning of the line<ol>
+<li>Programs that are defined in the uncommented Docker Compose files will be started and stopped with Sailbot Workspace</li>
+</ol>
+</li>
+<li>Run the <code>Dev Containers: Rebuild Container</code> VS Code command to restart Sailbot Workspace</li>
 <li>
-<p>Follow the program's run instructions:</p>
+<p>Follow the program-specific run instructions:</p>
 <details class="note">
 <summary>Run Docs or Website</summary>
 <ol>
 <li>Run the <code>Ports: Focus on Ports View</code> VS Code command</li>
 <li>Open the site by hovering over its local address and clicking either "Open in Browser" or "Preview in Editor"<ul>
-<li>Docs is running on port 8000</li>
-<li>Website is running on port 3005</li>
+<li>The local address of Docs is the line with a port of 8000</li>
+<li>The local address of Website is the line with a port of 3005</li>
 </ul>
 </li>
-<li>Changes made to its files are loaded when they are saved</li>
+<li>Changes made to its files are loaded when they are saved<ol>
+<li><strong>If Auto Save is on, turn it off so that the Docs/Website servers aren't continuously reloading</strong><ul>
+<li>Auto Save is on by default in GitHub Codespaces</li>
+</ul>
+</li>
+</ol>
+</li>
 </ol>
 </details>
 <details class="note">
@@ -1470,17 +1534,17 @@
 <summary>Run Grafana</summary>
 <ol>
 <li>Connect to the MongoDB database<ol>
-<li>Prerequisites:<ol>
+<li>Ensure that:<ol>
+<li>You are not running Sailbot Workspace in a <a href="../setup/#setup-sailbot-workspace-in-a-github-codespace" target="_blank">GitHub Codespace</a></li>
 <li>MongoDB is running</li>
-<li>Not running Sailbot Workspace in a <a href="../setup/#setup-sailbot-workspace-in-a-github-codespace" target="_blank">GitHub Codespace</a></li>
 </ol>
 </li>
 <li>Open the site by hovering over its local address and clicking "Open in Browser"<ul>
-<li>Grafana is running on port 3000</li>
+<li>The local address of Grafana is the line with a port of 3000</li>
 </ul>
 </li>
 <li>Login using the default username and password: <code>admin</code> and <code>admin</code>, respectively</li>
-<li>Once logged-in, click the cog icon (<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66Z"/></svg></span>) in the bottom left to go to the data sources configuration
+<li>Once logged-in, click the cog icon <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66Z"/></svg></span> in the bottom left to go to the data sources configuration
    page</li>
 <li>Add the <code>mongodb-community</code> data source<ol>
 <li>Paste our database's URL: <code>mongodb://localhost:27017</code></li>
@@ -1494,61 +1558,106 @@
 </details>
 </li>
 </ol>
-<p>To stop running a program:</p>
-<ol>
+<h3 id="manage-an-optional-program">Manage an optional program<a class="headerlink" href="#manage-an-optional-program" title="Permanent link">&para;</a></h3>
+<p>Each program runs in a Docker container. Containers can be managed using Docker Desktop or CLI commands:</p>
+<ul>
 <li>
-<p>Stop the program's container (where it is running):</p>
+<p>View Sailbot Workspace containers</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0 0 16.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24-.19-.14m-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"/></svg></span> Docker Desktop</label><label for="__tabbed_1_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.25 12a.75.75 0 0 1-.22.53l-2.75 2.75a.75.75 0 0 1-1.06-1.06L7.44 12 5.22 9.78a.75.75 0 1 1 1.06-1.06l2.75 2.75c.141.14.22.331.22.53Zm2 2a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5h-5Z"/><path d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25Z"/></svg></span> CLI Commands</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <ol>
-<li>Open Docker Desktop</li>
 <li>Select "Containers" in the top right</li>
-<li>Expand <code>sailbot_workspace_devcontainer</code></li>
-<li>Click the stop icon (<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 18H6V6h12v12Z"/></svg></span>) under actions for the container that you want to stop<ul>
-<li>The name should be something like <code>&lt;program&gt;-1</code></li>
+<li>Expand "sailbot_workspace_devcontainer"<ul>
+<li>The "Status" column shows whether a container is running or not</li>
 </ul>
 </li>
 </ol>
-<details class="note">
-<summary>Stop the program's container using terminal commands</summary>
-<p>You will have to use this method if you didn't install Docker using Docker desktop.</p>
-<p>In a terminal outside the Dev Container:</p>
-<ol>
-<li>Get the program container's name by running <code>docker ps</code>, which lists the running containers<ul>
-<li>The container should be named something like <code>sailbot_workspace_devcontainer-&lt;program&gt;-1</code></li>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker ps -a
+</code></pre></div>
+<ul>
+<li>Sailbot Workspace containers should be named something like <code>sailbot_workspace_devcontainer-&lt;program&gt;-&lt;number&gt;</code></li>
+<li>The <code>STATUS</code> column shows whether a container is running or not</li>
 </ul>
-</li>
-<li>Stop the program's container by running <code>docker stop &lt;container&gt;</code></li>
-</ol>
-</details>
+</div>
+</div>
+</div>
 </li>
 <li>
-<p>Stop future rebuilds of the Dev Container from restarting the program's container:</p>
+<p>View a container's logs, the output of the container (including errors that caused it to stop)</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0 0 16.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24-.19-.14m-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"/></svg></span> Docker Desktop</label><label for="__tabbed_2_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.25 12a.75.75 0 0 1-.22.53l-2.75 2.75a.75.75 0 0 1-1.06-1.06L7.44 12 5.22 9.78a.75.75 0 1 1 1.06-1.06l2.75 2.75c.141.14.22.331.22.53Zm2 2a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5h-5Z"/><path d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25Z"/></svg></span> CLI Commands</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <ol>
-<li>In <code>dockerComposeFile</code> of <a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/devcontainer.json" target="_blank"><code>.devcontainer/devcontainer.json</code></a>,
-   comment out the Docker Compose file that defines the program</li>
+<li>Click on a container</li>
+<li>Navigate to the "Logs" view if not already on it</li>
 </ol>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker logs &lt;container&gt;
+</code></pre></div>
+</div>
+</div>
+</div>
 </li>
+<li>
+<p>Start a container that is not running</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0 0 16.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24-.19-.14m-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"/></svg></span> Docker Desktop</label><label for="__tabbed_3_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.25 12a.75.75 0 0 1-.22.53l-2.75 2.75a.75.75 0 0 1-1.06-1.06L7.44 12 5.22 9.78a.75.75 0 1 1 1.06-1.06l2.75 2.75c.141.14.22.331.22.53Zm2 2a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5h-5Z"/><path d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25Z"/></svg></span> CLI Commands</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>Click start <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5.14v14l11-7-11-7Z"/></svg></span></li>
+</ol>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker start &lt;container&gt;
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Stop a container that is running</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0 0 16.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24-.19-.14m-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"/></svg></span> Docker Desktop</label><label for="__tabbed_4_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.25 12a.75.75 0 0 1-.22.53l-2.75 2.75a.75.75 0 0 1-1.06-1.06L7.44 12 5.22 9.78a.75.75 0 1 1 1.06-1.06l2.75 2.75c.141.14.22.331.22.53Zm2 2a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5h-5Z"/><path d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25Z"/></svg></span> CLI Commands</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>Click stop <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 18H6V6h12v12Z"/></svg></span></li>
+</ol>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker stop &lt;container&gt;
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+<h3 id="stop-running-an-optional-program">Stop running an optional program<a class="headerlink" href="#stop-running-an-optional-program" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In <code>dockerComposeFile</code> of <code>.devcontainer/devcontainer.json</code>, comment out the Docker Compose file that the program is
+   defined in: add <code>//</code> to the beginning of the line</li>
+<li>Stop the program's container: see <a href="#manage-an-optional-program">Manage an optional program</a></li>
 </ol>
 <h2 id="temporarily-add-apt-packages">Temporarily add apt packages<a class="headerlink" href="#temporarily-add-apt-packages" title="Permanent link">&para;</a></h2>
 <p>If a task requires you to add apt packages, you can quickly test them in your Dev Container:</p>
 <ol>
-<li>Uncomment the section in <a href="https://github.com/UBCSailbot/sailbot_workspace/blob/main/.devcontainer/Dockerfile" target="_blank"><code>Dockerfile</code></a>
-   that installs additional packages</li>
+<li>Uncomment the section in <code>Dockerfile</code> that installs additional packages</li>
 <li>
 <p>Add the desired packages below the line <code># Your package list here</code> with the format:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Your package list here</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>_pkg1_<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>_pkg2_<span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Your package list here</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>_pkg1_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>_pkg2_<span class="w"> </span><span class="se">\</span>
 </code></pre></div>
 </li>
 <li>
 <p>Run the <code>Dev Containers: Rebuild Container</code> VS Code command</p>
 </li>
 </ol>
-<p>Before merging in the PR, you should migrate the apt package installations to a more permanent location in upstream images:</p>
-<ul>
-<li><a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/base-dev" target="_blank"><code>base</code>, <code>local-base</code>, <code>dev</code></a></li>
-<li><a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/pre-base" target="_blank"><code>pre-base</code></a></li>
-</ul>
+<p>Before merging in the PR, you should migrate the apt package installations to a more permanent location in upstream
+<a href="../docker_images/" target="_blank">images</a>: <code>base</code>, <code>local-base</code>, <code>dev</code>, or <code>pre-base</code>.</p>
 <h2 id="use-your-dotfiles">Use your dotfiles<a class="headerlink" href="#use-your-dotfiles" title="Permanent link">&para;</a></h2>
 <p>Dotfiles are configuration files for various programs.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <details class="info">
@@ -1567,17 +1676,17 @@
 </ul>
 <p>To use your dotfiles:</p>
 <ol>
-<li>Ensure that the <a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/base-dev" target="_blank"><code>base</code>, <code>local-base</code>, or <code>dev</code> image</a>
+<li>Ensure that the <code>base</code>, <code>local-base</code>, or <code>dev</code> <a href="../docker_images/" target="_blank">image</a>
    installs the programs that the dotfiles correspond to</li>
 <li>
-<p>Copy the dotfiles to the <a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/config" target="_blank"><code>.devcontainer/config/</code></a>
-   directory. If a dotfile is located in a child directory, you will have to created it.
+<p>Copy the dotfiles to the <code>.devcontainer/config/</code> directory.
+   If a dotfile is located in a child directory, you will have to created it.
    For example, if a dotfile's path is <code>~/.config/ex_dotfile</code>, you will need to copy it to <code>.devcontainer/config/.config/ex_dotfile</code></p>
 <div class="admonition warning">
 <p class="admonition-title">Special cases</p>
 <ul>
 <li><code>~/.gitconfig</code>: there is no need copy your Git dotfile, as Dev Containers do this automatically</li>
-<li><code>~/.bashrc</code>: don't copy your Bash dotfile, as it would override the one created in the <a href="https://github.com/UBCSailbot/sailbot_workspace/tree/main/.devcontainer/base-dev" target="_blank"><code>dev</code> image</a>.
+<li><code>~/.bashrc</code>: don't copy your Bash dotfile, as it would override the one created in the <code>dev</code> image.
 Instead, add your bash configuration <code>.aliases.bash</code> or <code>.functions.bash</code> in the config directory, as these are sourced
 by the created Bash dotfile.</li>
 </ul>
@@ -1591,8 +1700,7 @@ by the created Bash dotfile.</li>
 <p>Raye was our previous project. Her software can be run in the <code>raye</code> branch:</p>
 <ol>
 <li>Switch to the <code>raye</code> branch: <code>git switch raye</code></li>
-<li>Rebuild the Dev Container: run the <code>Dev Containers: Rebuild Container</code> command in the
-   <a href="https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette" target="_blank">VS Code command palette</a></li>
+<li>Rebuild the Dev Container: run the <code>Dev Containers: Rebuild Container</code> VS Code command</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title"><code>raye</code> branch disclaimers</p>
@@ -1605,26 +1713,26 @@ by the created Bash dotfile.</li>
 </div>
 <h3 id="build-rayes-ros-packages">Build Raye's ROS packages<a class="headerlink" href="#build-rayes-ros-packages" title="Permanent link">&para;</a></h3>
 <p>To build Raye's ROS packages, run the following commands:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>roscd
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>catkin_make
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>roscd
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>catkin_make
 </code></pre></div>
 <h3 id="run-packages-from-different-workspaces">Run packages from different workspaces<a class="headerlink" href="#run-packages-from-different-workspaces" title="Permanent link">&para;</a></h3>
 <p>The <code>raye</code> branch has two ROS workspaces: one for Raye and one for the new project.
 To run ROS packages, you will have to source the overlay of the workspace that it is in:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">New Project</label><label for="__tabbed_1_2">Raye</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">New Project</label><label for="__tabbed_5_2">Raye</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>srcnew
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>srcnew
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>srcraye
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>srcraye
 </code></pre></div>
 </div>
 </div>
 </div>
 <p>Then you can run launch files or package-specific executables in that workspace with:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">New Project</label><label for="__tabbed_2_2">Raye</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">New Project</label><label for="__tabbed_6_2">Raye</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><code>ros2 launch ...</code> or <code>ros2 run ...</code>, respectively.</p>
@@ -1640,8 +1748,8 @@ To run ROS packages, you will have to source the overlay of the workspace that i
 <p>On non-Ubuntu-based Linux operating systems, Run commands for Raye packages may take a long time to start-up.
 This is because the system has trouble resolving the local hostname.</p>
 <p>To resolve this bug, run the commands below in the Dev Container:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export ROS_HOSTNAME=localhost&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export ROS_MASTER_URI=http://localhost:11311&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export ROS_HOSTNAME=localhost&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export ROS_MASTER_URI=http://localhost:11311&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 </code></pre></div>
 </div>
 <div class="footnote">
@@ -1658,7 +1766,7 @@ This is because the system has trouble resolving the local hostname.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 14, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 12, 2023</span>
       
     
   </small>
