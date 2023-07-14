@@ -217,7 +217,8 @@ git clone https://github.com/UBCSailbot/sailbot_workspace.git
 
         The `code` command is installed by default.
 
-2. Run `code sailbot_workspace`
+2. Open the `sailbot_workspace/` directory in VS Code: run `code <path to sailbot workspace>`
+    - For example, if you just cloned the repository, the command would be `code sailbot_workspace`
 
 ## 5. Open Sailbot Workspace in a Dev Container
 
