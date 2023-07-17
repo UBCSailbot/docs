@@ -658,6 +658,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+    <nav class="md-nav" aria-label="Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-interfaces" class="md-nav__link">
+    Common Interfaces
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1307,6 +1327,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+    <nav class="md-nav" aria-label="Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-interfaces" class="md-nav__link">
+    Common Interfaces
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1374,7 +1414,7 @@ Its README has been copied below.</p>
 <td><code>desired_heading</code></td>
 <td>DesiredHeading</td>
 <td>Local Pathfinding</td>
-<td>Controller</td>
+<td>Controller, Boat Simulator</td>
 </tr>
 <tr>
 <td><code>data_sensors</code></td>
@@ -1456,6 +1496,46 @@ Its README has been copied below.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<h3 id="common-interfaces">Common Interfaces<a class="headerlink" href="#common-interfaces" title="Permanent link">&para;</a></h3>
+<p>The ROS2 <a href="https://github.com/ros2/common_interfaces/tree/humble">common_interfaces</a> repository defines a set of
+packages which contain common interface files. Since we are using the Humble version of ROS2, see the <code>humble</code> branch.
+These interfaces can be used in this repository or as a reference for ideas and best practices.</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Possible Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>diagnostic_msgs</td>
+<td>Could be used for website sensors</td>
+</tr>
+<tr>
+<td>geometry_msgs</td>
+<td>Simulator, Local Pathfinding</td>
+</tr>
+<tr>
+<td>sensor_msgs</td>
+<td>Reference for CAN Transceiver</td>
+</tr>
+<tr>
+<td>std_msgs</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td>std_srvs</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td>visualization_msgs</td>
+<td>Reference</td>
+</tr>
+</tbody>
+</table>
+<p>For more detail on the usefulness of each package, see <a href="https://github.com/UBCSailbot/custom_interfaces/issues/3#issuecomment-1626875658">this issue comment</a>.</p>
 
   <hr>
 <div class="md-source-file">
