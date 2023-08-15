@@ -285,7 +285,7 @@ your account if you are not already.
 the bottom-right corner of VS Code without any error messages. For more information on how to use Copilot and a tutorial,
 refer to:
 
-    - [The GitHub Copilot Quickstart Guide](https://docs.github.com/en/copilot/getting-started-with-github-copilot){target=_blank}
+    - [The GitHub Copilot Getting Started Guide](https://docs.github.com/en/copilot/getting-started-with-github-copilot){target=_blank}
     - [Configuring GitHub Copilot in your Environment](https://docs.github.com/en/copilot/configuring-github-copilot/configuring-github-copilot-in-your-environment){target=_blank}
 
 ## Setup Sailbot Workspace in a GitHub Codespace
