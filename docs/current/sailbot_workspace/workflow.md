@@ -22,6 +22,32 @@ Sailbot Workspace is still in active development, check out its [recent releases
 and [commit history](https://github.com/UBCSailbot/sailbot_workspace/commits/main){target=_blank}.
 If there are new features or bug fixes that you want to try, you will need to update your local version of Sailbot Workspace:
 
+??? note "Make sure git is tracking Sailbot Workspace"
+
+    Sailbot Workspace contains other git repositories
+    (these are **not** [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules){target=_blank}).
+    For example, most subdirectories in `/workspaces/sailbot_workspace/src` are git repositories, and if you happen to
+    be in any of those subdirectories, you may be updating the wrong repository.
+
+    One way to check that you are indeed tracking Sailbot Workspace is to execute the following command:
+
+    ```bash
+    git remote -v
+    ```
+
+    You should see something like the following output depending on what protocol you are using:
+
+    === "HTTPS"
+        ```
+        origin  https://github.com/UBCSailbot/sailbot_workspace.git (fetch)
+        origin  https://github.com/UBCSailbot/sailbot_workspace.git (push)
+        ```
+    === "SSH"
+        ```
+        origin  git@github.com:UBCSailbot/sailbot_workspace.git (fetch)
+        origin  git@github.com:UBCSailbot/sailbot_workspace.git (push)
+        ```
+
 1. Switch Sailbot Workspace to the main branch if you aren't in it already
     - If you are unable to switch branches because you have uncommitted changes, stash them
 2. Pull the latest changes
