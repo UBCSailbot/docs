@@ -8,6 +8,10 @@ hide:
 
 Welcome to the UBC Sailbot software team docs :wave:
 
+Looking to get started with running the Sailbot codebase? Start by setting up the Sailbot Workspace:
+
+[:octicons-arrow-right-24: Getting Started](./current/sailbot_workspace/setup.md){target=_blank}
+
 ## :fontawesome-solid-circle-info: What information is on this website?
 
 Information on our current project is contained on this website. In particular, information on each of our major software
@@ -25,11 +29,11 @@ tools, how we use these tools on UBC Sailbot, and external links to helpful refe
 The docs site is primarily for the members on the UBC Sailbot software team. However, curious members of the public and/or
 those who are interested in contributing to our open source software would also benefit from this site.
 
-## :logo: How was this website created?
+## :material-sail-boat: Prospective Members
 
-We use [:logo: Material for MkDocs](https://squidfunk.github.io/mkdocs-material/){target=_blank}, an open source software
-that allows developers to create fast and lightweight websites simply using [markdown](./reference/markdown.md){target=_blank}.
-This enables the software team to quickly create documentation and put it on a professional website without requiring our
-team members to possess extensive web development knowledge.
+Are you a member of the UBC community? Are you interested in what we do at UBC Sailbot? We are always looking for motivated
+students to help us tackle the challenge of autonomous sailing. Learn more below!
 
-[:octicons-arrow-right-24: Website Source](https://github.com/UBCSailbot/docs){target=_blank}
+[:octicons-arrow-right-24: Software Team Posting](https://docs.google.com/document/d/1bToOV3JvMZFJ9jotrjlFIvDgY8xiXfH7Yg1wkGm8Qf4/edit?usp=sharing){target=_blank}
+
+[:octicons-arrow-right-24: Apply to join UBC Sailbot](https://www.ubcsailbot.org/recruitment){target=_blank}
