@@ -1,13 +1,41 @@
 # Development Workflow
 
-## 1. Update Sailbot Workspace
+## 1. Open Sailbot Workspace
+
+Once you have [set up Sailbot Workspace](setup.md), you can open it by opening a new VS Code window and selecting:
+
+```
+File > Open Recent > /workspaces/sailbot_workspace/.devcontainer/config/sailbot_workspace (Workspace) [Dev Container: Sailbot Workspace]
+```
+
+??? tip "Another way to open Sailbot Workspace on Windows"
+
+    1. Pin VS Code to the taskbar
+    2. Right-click VS Code in the taskbar and pin `sailbot_workspace (Workspace) [Dev Container]`
+
+    Then you can open Sailbot Workspace by selecting it from the "Pinned" section of the VS Code taskbar icon's
+    right-click menu.
+
+## 2. Update Sailbot Workspace
 
 Sailbot Workspace is still in active development, check out its [recent releases](https://github.com/UBCSailbot/sailbot_workspace/releases){target=_blank}
 and [commit history](https://github.com/UBCSailbot/sailbot_workspace/commits/main){target=_blank}.
 If there are new features or bug fixes that you want to try, you will need to update your local version of Sailbot Workspace:
 
 1. Switch Sailbot Workspace to the main branch if you aren't in it already
+
+    ??? tip "If you running Git commands in the CLI, make sure that you are in the correct repository"
+
+        Sailbot Workspace contains other repositories in the `src/` directory, so if you are in one of its subdirectories
+        you may be in the wrong repository.
+
+        To check which repository you are in, run `git remote -v`; if its output contains `sailbot_workspace`,
+        you are good to go.
+        If not, you can navigate the root directory of the Sailbot Workspace repository with `cd $ROS_WORKSPACE`,
+        or open a new terminal in its root directory with ++ctrl+shift+grave++ then ++enter++.
+
     - If you are unable to switch branches because you have uncommitted changes, stash them
+
 2. Pull the latest changes
     - If you stashed your uncommitted changes, pop them
 3. If prompted, rebuild the Dev Container
@@ -31,7 +59,7 @@ If there are new features or bug fixes that you want to try, you will need to up
    and pull their latest changes
 5. If you want to run our docs, website, or other optional programs, see [How to run optional programs](./how_to.md#run-optional-programs){target=_blank}
 
-## 2. Make your changes
+## 3. Make your changes
 
 We make changes to our software following our [GitHub development workflow](https://ubcsailbot.github.io/docs/reference/github/workflow/overview/){target=_blank}.
 Of particular relevance is the [Developing on Branches page](https://ubcsailbot.github.io/docs/reference/github/workflow/branches/){target=_blank}.
@@ -48,7 +76,7 @@ Things to note when making changes:
   not all lint errors can be fixed by formatters, so you may have to resolve some manually
 - When changing a package's source files, you likely should update its test files accordingly
 
-## 3. Build your changes
+## 4. Build your changes
 
 !!! info ""
 
@@ -61,7 +89,7 @@ launch configuration.
 1. Depending on which packages you modified, run the `Build All` or `Build Package` task
     1. Unless you want to run `clang-tidy`, use the `-q` build argument (default) for quicker build times
 
-## 4. Verify your changes
+## 5. Verify your changes
 
 !!! info ""
 
