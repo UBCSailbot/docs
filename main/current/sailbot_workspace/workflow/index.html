@@ -575,29 +575,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-update-sailbot-workspace" class="md-nav__link">
-    1. Update Sailbot Workspace
+  <a href="#1-open-sailbot-workspace" class="md-nav__link">
+    1. Open Sailbot Workspace
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-make-your-changes" class="md-nav__link">
-    2. Make your changes
+  <a href="#2-update-sailbot-workspace" class="md-nav__link">
+    2. Update Sailbot Workspace
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-build-your-changes" class="md-nav__link">
-    3. Build your changes
+  <a href="#3-make-your-changes" class="md-nav__link">
+    3. Make your changes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-verify-your-changes" class="md-nav__link">
-    4. Verify your changes
+  <a href="#4-build-your-changes" class="md-nav__link">
+    4. Build your changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-verify-your-changes" class="md-nav__link">
+    5. Verify your changes
   </a>
   
 </li>
@@ -1628,29 +1635,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-update-sailbot-workspace" class="md-nav__link">
-    1. Update Sailbot Workspace
+  <a href="#1-open-sailbot-workspace" class="md-nav__link">
+    1. Open Sailbot Workspace
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-make-your-changes" class="md-nav__link">
-    2. Make your changes
+  <a href="#2-update-sailbot-workspace" class="md-nav__link">
+    2. Update Sailbot Workspace
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-build-your-changes" class="md-nav__link">
-    3. Build your changes
+  <a href="#3-make-your-changes" class="md-nav__link">
+    3. Make your changes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-verify-your-changes" class="md-nav__link">
-    4. Verify your changes
+  <a href="#4-build-your-changes" class="md-nav__link">
+    4. Build your changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-verify-your-changes" class="md-nav__link">
+    5. Verify your changes
   </a>
   
 </li>
@@ -1701,16 +1715,42 @@
 
 
 <h1 id="development-workflow">Development Workflow<a class="headerlink" href="#development-workflow" title="Permanent link">&para;</a></h1>
-<h2 id="1-update-sailbot-workspace">1. Update Sailbot Workspace<a class="headerlink" href="#1-update-sailbot-workspace" title="Permanent link">&para;</a></h2>
+<h2 id="1-open-sailbot-workspace">1. Open Sailbot Workspace<a class="headerlink" href="#1-open-sailbot-workspace" title="Permanent link">&para;</a></h2>
+<p>Once you have <a href="../setup/">set up Sailbot Workspace</a>, you can open it by opening a new VS Code window and selecting:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>File &gt; Open Recent &gt; /workspaces/sailbot_workspace/.devcontainer/config/sailbot_workspace (Workspace) [Dev Container: Sailbot Workspace]
+</code></pre></div>
+<details class="tip">
+<summary>Another way to open Sailbot Workspace on Windows</summary>
+<ol>
+<li>Pin VS Code to the taskbar</li>
+<li>Right-click VS Code in the taskbar and pin <code>sailbot_workspace (Workspace) [Dev Container]</code></li>
+</ol>
+<p>Then you can open Sailbot Workspace by selecting it from the "Pinned" section of the VS Code taskbar icon's
+right-click menu.</p>
+</details>
+<h2 id="2-update-sailbot-workspace">2. Update Sailbot Workspace<a class="headerlink" href="#2-update-sailbot-workspace" title="Permanent link">&para;</a></h2>
 <p>Sailbot Workspace is still in active development, check out its <a href="https://github.com/UBCSailbot/sailbot_workspace/releases" target="_blank">recent releases</a>
 and <a href="https://github.com/UBCSailbot/sailbot_workspace/commits/main" target="_blank">commit history</a>.
 If there are new features or bug fixes that you want to try, you will need to update your local version of Sailbot Workspace:</p>
 <ol>
-<li>Switch Sailbot Workspace to the main branch if you aren't in it already<ul>
+<li>
+<p>Switch Sailbot Workspace to the main branch if you aren't in it already</p>
+<details class="tip">
+<summary>If you running Git commands in the CLI, make sure that you are in the correct repository</summary>
+<p>Sailbot Workspace contains other repositories in the <code>src/</code> directory, so if you are in one of its subdirectories
+you may be in the wrong repository.</p>
+<p>To check which repository you are in, run <code>git remote -v</code>; if its output contains <code>sailbot_workspace</code>,
+you are good to go.
+If not, you can navigate the root directory of the Sailbot Workspace repository with <code>cd $ROS_WORKSPACE</code>,
+or open a new terminal in its root directory with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-grave">`</kbd></span> then <span class="keys"><kbd class="key-enter">Enter</kbd></span>.</p>
+</details>
+<ul>
 <li>If you are unable to switch branches because you have uncommitted changes, stash them</li>
 </ul>
 </li>
-<li>Pull the latest changes<ul>
+<li>
+<p>Pull the latest changes</p>
+<ul>
 <li>If you stashed your uncommitted changes, pop them</li>
 </ul>
 </li>
@@ -1737,7 +1777,7 @@ To rebuild it yourself, run the <code>Dev Containers: Rebuild Container</code> V
 </li>
 <li>If you want to run our docs, website, or other optional programs, see <a href="../how_to/#run-optional-programs" target="_blank">How to run optional programs</a></li>
 </ol>
-<h2 id="2-make-your-changes">2. Make your changes<a class="headerlink" href="#2-make-your-changes" title="Permanent link">&para;</a></h2>
+<h2 id="3-make-your-changes">3. Make your changes<a class="headerlink" href="#3-make-your-changes" title="Permanent link">&para;</a></h2>
 <p>We make changes to our software following our <a href="https://ubcsailbot.github.io/docs/reference/github/workflow/overview/" target="_blank">GitHub development workflow</a>.
 Of particular relevance is the <a href="https://ubcsailbot.github.io/docs/reference/github/workflow/branches/" target="_blank">Developing on Branches page</a>.</p>
 <div class="admonition tip">
@@ -1752,7 +1792,7 @@ especially when working with multiple repositories.</p>
   not all lint errors can be fixed by formatters, so you may have to resolve some manually</li>
 <li>When changing a package's source files, you likely should update its test files accordingly</li>
 </ul>
-<h2 id="3-build-your-changes">3. Build your changes<a class="headerlink" href="#3-build-your-changes" title="Permanent link">&para;</a></h2>
+<h2 id="4-build-your-changes">4. Build your changes<a class="headerlink" href="#4-build-your-changes" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p>Revamped in <a href="https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.2.0" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.75 6.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z"/><path d="M2.5 1h8.44a1.5 1.5 0 0 1 1.06.44l10.25 10.25a1.5 1.5 0 0 1 0 2.12l-8.44 8.44a1.5 1.5 0 0 1-2.12 0L1.44 12A1.497 1.497 0 0 1 1 10.94V2.5A1.5 1.5 0 0 1 2.5 1Zm0 1.5v8.44l10.25 10.25 8.44-8.44L10.94 2.5Z"/></svg></span> v1.2.0</a></p>
 </div>
@@ -1765,7 +1805,7 @@ launch configuration.</p>
 </ol>
 </li>
 </ol>
-<h2 id="4-verify-your-changes">4. Verify your changes<a class="headerlink" href="#4-verify-your-changes" title="Permanent link">&para;</a></h2>
+<h2 id="5-verify-your-changes">5. Verify your changes<a class="headerlink" href="#5-verify-your-changes" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p>Revamped in <a href="https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.2.0" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.75 6.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z"/><path d="M2.5 1h8.44a1.5 1.5 0 0 1 1.06.44l10.25 10.25a1.5 1.5 0 0 1 0 2.12l-8.44 8.44a1.5 1.5 0 0 1-2.12 0L1.44 12A1.497 1.497 0 0 1 1 10.94V2.5A1.5 1.5 0 0 1 2.5 1Zm0 1.5v8.44l10.25 10.25 8.44-8.44L10.94 2.5Z"/></svg></span> v1.2.0</a></p>
 </div>
@@ -1799,20 +1839,20 @@ If there is more than one possibility, pressing tab again will list them out.</p
 <ul>
 <li>
 <p>View available commands: lists all <code>ros2</code> commands</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>ros2<span class="w"> </span>&lt;tab&gt;&lt;tab&gt;
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">action                          extension_points                multicast                       security</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">bag                             extensions                      node                            service</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">...</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>ros2<span class="w"> </span>&lt;tab&gt;&lt;tab&gt;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="go">action                          extension_points                multicast                       security</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="go">bag                             extensions                      node                            service</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="go">...</span>
 </code></pre></div>
 </li>
 <li>
 <p>Complete commands: runs <code>ros2 launch local_pathfinding main_launch.py</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>ros2&lt;tab&gt;la&lt;tab&gt;loc&lt;tab&gt;m&lt;tab&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>ros2&lt;tab&gt;la&lt;tab&gt;loc&lt;tab&gt;m&lt;tab&gt;
 </code></pre></div>
 </li>
 <li>
 <p>Navigate to directories: runs <code>cd .devcontainer/config</code> from the root directory of Sailbot Workspace</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>.d&lt;tab&gt;c&lt;tab&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>.d&lt;tab&gt;c&lt;tab&gt;
 </code></pre></div>
 </li>
 </ul>
@@ -1900,7 +1940,7 @@ If your computer takes longer than, or you want to free up memory and disk space
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 1, 2023</span>
       
     
   </small>
