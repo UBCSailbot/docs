@@ -39,7 +39,7 @@ network_systems
 ```
 
 At the root of the directory is a `package.xml`. This file tells ROS2 that the network_systems package exists. It is
-what allows us to run, for example: `ros2 run network_systems example`.
+what allows us to run, for example: `ros2 run network_systems main_launch.py`.
 
 `.github/` contains Github specific files like workflows for continuous integration.
 
