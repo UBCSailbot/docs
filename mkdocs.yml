@@ -19,6 +19,7 @@ theme:
     - content.code.annotate
     - content.code.copy
     - content.tabs.link
+    - navigation.expand
     - navigation.footer
     - navigation.instant
     - navigation.tabs
