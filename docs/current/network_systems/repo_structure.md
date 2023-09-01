@@ -1,4 +1,4 @@
-# NET Workspace Structure
+# Repository Structure
 
 ## root
 
