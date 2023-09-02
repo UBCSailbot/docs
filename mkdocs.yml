@@ -130,6 +130,7 @@ nav:
       - Setup: current/sailbot_workspace/setup.md
       - Workflow: current/sailbot_workspace/workflow.md
       - How-To's: current/sailbot_workspace/how_to.md
+      - Launch Files: current/sailbot_workspace/launch_files.md
       - Deployment: current/sailbot_workspace/deployment.md
       - Images: current/sailbot_workspace/docker_images.md
     - Boat Simulator:
