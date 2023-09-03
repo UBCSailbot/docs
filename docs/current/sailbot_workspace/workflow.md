@@ -165,7 +165,7 @@ For more information on launch file use in our system, see [this page](./launch_
 ### Debugging
 
 Debug your changes if they aren't behaving how you expect by setting breakpoints and running one of our launch
-configurations; launch configuration types:
+configurations in the **Run and Debug** tab on the VS Code primary sidebar. The launch configuration types are:
 
 - Launch: runs the desired launch file or executable
     - For launch files, `ROS: Launch`
