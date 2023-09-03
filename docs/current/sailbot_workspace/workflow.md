@@ -181,6 +181,15 @@ Run lint and test tasks to make sure you changes will pass our CI:
 - For C++ packages, `clang-tidy`
 - `test`
 
+In addition to VS Code tasks, the :fontawesome-solid-flask: **Testing** tab on the VS Code primary sidebar
+contains individual tests. One can run specific unit tests by clicking the :material-play-outline: **Run Test**
+icon beside the test name.
+
+<img
+    alt="VS Code Test Tab" src="../../../assets/images/sailbot_workspace/workflow/vscode_testing_tab.png"
+    style="display: block; margin-left: auto; margin-right: auto; width: 75%;"
+/>
+
 ## Troubleshooting
 
 If you are having some trouble running our software, here are some things you can try:
