@@ -124,43 +124,43 @@ be documented in their READMEs, but in general they can be run using a VS Code o
     - Nodes:
         - `ros2 run <package> <executable>`
 
+    ??? tip "CLI features"
+
+        There are many commands that can be autocompleted in the terminal.
+        Take advantage of this so that you run commands faster and memorize less syntax.
+        If there is only one possibility, pressing tab once will complete it.
+        If there is more than one possibility, pressing tab again will list them out.
+
+        Some tab completion use cases:
+
+        - View available commands: lists all `ros2` commands
+
+            ```console
+            $ ros2 <tab><tab>
+            action                          extension_points                multicast                       security
+            bag                             extensions                      node                            service
+            ...
+            ```
+
+        - Complete commands: runs `ros2 launch local_pathfinding main_launch.py`
+
+            ```console
+            $ ros2<tab>la<tab>loc<tab>m<tab>
+            ```
+
+        - Navigate to directories: runs `cd .devcontainer/config` from the root directory of Sailbot Workspace
+
+            ```console
+            $ cd .d<tab>c<tab>
+            ```
+
+        Furthermore, navigate past commands with ++arrow-up++ and ++arrow-down++ and search through them with ++ctrl+r++.
+
 === ":material-microsoft-visual-studio-code: VS Code"
     - Launch files: `ROS: Run a ROS launch file (roslaunch)`
     - Nodes: `ROS: Run a ROS executable (rosrun)`
 
 For more information on launch file use in our system, see [this page](./launch_files.md){target=_blank}.
-
-??? tip "CLI features"
-
-    There are many commands that can be autocompleted in the terminal.
-    Take advantage of this so that you run commands faster and memorize less syntax.
-    If there is only one possibility, pressing tab once will complete it.
-    If there is more than one possibility, pressing tab again will list them out.
-
-    Some tab completion use cases:
-
-    - View available commands: lists all `ros2` commands
-
-        ```console
-        $ ros2 <tab><tab>
-        action                          extension_points                multicast                       security
-        bag                             extensions                      node                            service
-        ...
-        ```
-
-    - Complete commands: runs `ros2 launch local_pathfinding main_launch.py`
-
-        ```console
-        $ ros2<tab>la<tab>loc<tab>m<tab>
-        ```
-
-    - Navigate to directories: runs `cd .devcontainer/config` from the root directory of Sailbot Workspace
-
-        ```console
-        $ cd .d<tab>c<tab>
-        ```
-
-    Furthermore, navigate past commands with ++arrow-up++ and ++arrow-down++ and search through them with ++ctrl+r++.
 
 ### Debugging
 
