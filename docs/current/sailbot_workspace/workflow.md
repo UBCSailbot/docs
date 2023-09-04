@@ -121,7 +121,7 @@ icon beside the test name.
 To verify that your changes do what you expect, you may want to run the package you modified. The run commands for each
 package should be documented in their READMEs, but in general they can be run using a CLI or VS Code command:
 
-=== ":octicons-command-palette-16: CLI Command"
+=== ":octicons-command-palette-16: CLI"
     - Launch files:
         - `ros2 launch <package> <launch file>`
         - `ros2 launch <path to launch file>`
@@ -160,7 +160,7 @@ package should be documented in their READMEs, but in general they can be run us
 
         Furthermore, navigate past commands with ++arrow-up++ and ++arrow-down++ and search through them with ++ctrl+r++.
 
-=== ":material-microsoft-visual-studio-code: VS Code Command"
+=== ":material-microsoft-visual-studio-code: VS Code"
     - Launch files: `ROS: Run a ROS launch file (roslaunch)`
     - Nodes: `ROS: Run a ROS executable (rosrun)`
 
