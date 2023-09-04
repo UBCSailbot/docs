@@ -99,25 +99,29 @@ launch configuration.
 
     If you want to run GUI applications on macOS, ensure that XQuartz is running.
 
-### Run the System or a Package
+### Lint and Test
 
-#### Global Launch
+Run lint and test tasks to make sure you changes will pass our CI:
 
-Run the entire system with the following CLI command:
+- `ament lint`
+- For C++ packages, `clang-tidy`
+- `test`
 
-```sh
-ros2 launch $ROS_WORKSPACE/src/global_launch/main_launch.py
-```
+In addition to VS Code tasks, the :fontawesome-solid-flask: **Testing** tab on the VS Code primary sidebar
+contains individual tests. One can run specific unit tests by clicking the :material-play-outline: **Run Test**
+icon beside the test name.
 
-This launches all ROS packages used in the system. Since the global launch file is not part
-of a ROS package itself, the path to the launch file is provided.
+<img
+    alt="VS Code Test Tab" src="../../../assets/images/sailbot_workspace/workflow/vscode_testing_tab.png"
+    style="display: block; margin-left: auto; margin-right: auto; width: 75%;"
+/>
 
-#### Package Launch
+### Run a Package
 
-It is possible to run a specific a ROS package rather than the entire system. The run commands for each package should
-be documented in their READMEs, but in general they can be run using a VS Code or CLI command:
+To verify that your changes do what you expect, you may want to run the package you modified. The run commands for each
+package should be documented in their READMEs, but in general they can be run using a CLI or VS Code command:
 
-=== ":octicons-command-palette-16: CLI"
+=== ":octicons-command-palette-16: CLI Command"
     - Launch files:
         - `ros2 launch <package> <launch file>`
         - `ros2 launch <path to launch file>`
@@ -156,11 +160,23 @@ be documented in their READMEs, but in general they can be run using a VS Code o
 
         Furthermore, navigate past commands with ++arrow-up++ and ++arrow-down++ and search through them with ++ctrl+r++.
 
-=== ":material-microsoft-visual-studio-code: VS Code"
+=== ":material-microsoft-visual-studio-code: VS Code Command"
     - Launch files: `ROS: Run a ROS launch file (roslaunch)`
     - Nodes: `ROS: Run a ROS executable (rosrun)`
 
 For more information on launch file use in our system, see [this page](./launch_files.md){target=_blank}.
+
+### Run the System
+
+To verify that you didn't break anything, you may want to run the entire system. This can be done with the following
+CLI command:
+
+```sh
+ros2 launch $ROS_WORKSPACE/src/global_launch/main_launch.py
+```
+
+This launches all ROS packages used in the system. Since the global launch file is not part
+of a ROS package itself, the path to the launch file is provided.
 
 ### Debugging
 
@@ -172,23 +188,6 @@ configurations in the **Run and Debug** tab on the VS Code primary sidebar. The 
     - For C++ executables, `C++ (GDB): Launch`
 - Attach: attaches to a running executable
     - `ROS: Attach`
-
-### Lint and Test
-
-Run lint and test tasks to make sure you changes will pass our CI:
-
-- `ament lint`
-- For C++ packages, `clang-tidy`
-- `test`
-
-In addition to VS Code tasks, the :fontawesome-solid-flask: **Testing** tab on the VS Code primary sidebar
-contains individual tests. One can run specific unit tests by clicking the :material-play-outline: **Run Test**
-icon beside the test name.
-
-<img
-    alt="VS Code Test Tab" src="../../../assets/images/sailbot_workspace/workflow/vscode_testing_tab.png"
-    style="display: block; margin-left: auto; margin-right: auto; width: 75%;"
-/>
 
 ## Troubleshooting
 
