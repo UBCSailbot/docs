@@ -113,7 +113,7 @@ icon beside the test name.
 
 <img
     alt="VS Code Test Tab" src="../../../assets/images/sailbot_workspace/workflow/vscode_testing_tab.png"
-    style="display: block; margin-left: auto; margin-right: auto; width: 75%;"
+    style="display: block; margin-left: auto; margin-right: auto; width: 50%;"
 />
 
 ### Run a Package
