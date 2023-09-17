@@ -22,8 +22,7 @@ The process is as follows:
 2. Global argument declarations and environment variables are loaded into the launch process.
 3. Local arguments, specific to the package, are declared.
 4. Both global and local arguments are parsed based on the argument declarations and are set for use upon start up.
-5. The environment variables are set for use upon start up.
-6. The ROS nodes belonging to the package begin execution, utilizing the ROS parameters from the configuration file.
+5. The ROS nodes belonging to the package begin execution, utilizing the ROS parameters from the configuration file.
 
 ??? warning "When launching individual packages, be aware of dependencies between ROS packages"
     Some packages rely on the data produced by other packages in the system. This may cause only
