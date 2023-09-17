@@ -108,7 +108,9 @@ Before running the system, be sure to run the `Build All` VS Code task to build 
 
     There will be a prompt to select which launch file to run. Select the desired launch file.
 
-Note that the global launch file is not part of a ROS package, so the path to the global launch file always
+Remember to that you need to potentially reload the window if the nodes are not being detected
+by VS Code. This usually happens when somebody build for the first time. Also, note that the global
+launch file is not part of a ROS package, so the path to the global launch file always
 must be provided. This is not always the case when a launch file is contained within a ROS package.
 
 ### Using CLI Arguments
