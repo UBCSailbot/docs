@@ -46,10 +46,8 @@ all ROS packages are declared.
 3. For each package launch file:
     - The CLI arguments, global argument declarations, and environment variables are passed into the package launch
       file.
-    - Local arguments, specific to the package, are declared.
-    - Both the global and local arguments are parsed based on the argument declarations and are set for use upon
-      start up.
-    - The environment variables are set for use upon start up.
+    - Local arguments, specific to the package, are declared. Both the global and local arguments are parsed based on the
+      argument declarations and are set for use upon start up.
     - The ROS nodes belonging to the package begin execution, utilizing the ROS parameters from the configuration file.
 
 ## Invoking Launch Files
