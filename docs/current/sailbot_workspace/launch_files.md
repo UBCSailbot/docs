@@ -117,6 +117,8 @@ the following command will launch local pathfinding while setting the log level 
 ros2 launch local_pathfinding main_launch.py log_level:=debug
 ```
 
+It can also be ran with the VS Code command named **ROS: Launch**.
+
 Passing arguments takes the form of `<arg name>:=<arg value>`. To list the arguments that a launch file takes,
 simply add the `-s` flag at the end of the launch command.
 

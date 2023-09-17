@@ -168,15 +168,9 @@ For more information on launch file use in our system, see [this page](./launch_
 
 ### Run the System
 
-To verify that you didn't break anything, you may want to run the entire system. This can be done with the following
-CLI command:
-
-```sh
-ros2 launch $ROS_WORKSPACE/src/global_launch/main_launch.py
-```
-
-This launches all ROS packages used in the system. Since the global launch file is not part
-of a ROS package itself, the path to the launch file is provided.
+To verify that you didn't break anything, you may want to run the entire system. See
+[Invoking Launch Files](./launch_files.md#invoking-launch-files) for more information
+on running the system.
 
 ### Debugging
 
