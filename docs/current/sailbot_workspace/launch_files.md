@@ -87,18 +87,26 @@ Once built, the package launch file can be invoked either in the CLI or using a 
         ```
 
 === ":material-microsoft-visual-studio-code: VS Code"
-    Run the following VS Code command: `ROS: Run a ROS launch file (roslaunch)`
+    Run the following VS Code command from the **Run and Debug** tab: `ROS: Launch (workspace)`
 
     There will be a prompt to select which launch file to run. Select the desired launch file.
 
 ### Global Launch
 
 Before running the system, be sure to run the `Build All` VS Code task to build all ROS packages.
-Run the entire system with the following CLI command:
 
-```sh
-ros2 launch $ROS_WORKSPACE/src/global_launch/main_launch.py
-```
+=== ":octicons-command-palette-16: CLI"
+
+    Run the entire system with the following CLI command:
+
+    ```sh
+    ros2 launch $ROS_WORKSPACE/src/global_launch/main_launch.py
+    ```
+
+=== ":material-microsoft-visual-studio-code: VS Code"
+    Run the following VS Code command from the **Run and Debug** tab: `ROS: Launch (workspace)`
+
+    There will be a prompt to select which launch file to run. Select the desired launch file.
 
 Note that the global launch file is not part of a ROS package, so the path to the global launch file always
 must be provided. This is not always the case when a launch file is contained within a ROS package.
