@@ -1880,17 +1880,29 @@ ROS packages from running.</p>
 </div>
 </div>
 <div class="tabbed-block">
-<p>Run the following VS Code command: <code>ROS: Run a ROS launch file (roslaunch)</code></p>
+<p>Run the following VS Code command from the <strong>Run and Debug</strong> tab: <code>ROS: Launch (workspace)</code></p>
 <p>There will be a prompt to select which launch file to run. Select the desired launch file.</p>
 </div>
 </div>
 </div>
 <h3 id="global-launch">Global Launch<a class="headerlink" href="#global-launch" title="Permanent link">&para;</a></h3>
-<p>Before running the system, be sure to run the <code>Build All</code> VS Code task to build all ROS packages.
-Run the entire system with the following CLI command:</p>
+<p>Before running the system, be sure to run the <code>Build All</code> VS Code task to build all ROS packages.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m6.354 8.04-4.773 4.773a.75.75 0 1 0 1.061 1.06L7.945 8.57a.75.75 0 0 0 0-1.06L2.642 2.206a.75.75 0 0 0-1.06 1.061L6.353 8.04ZM8.75 11.5a.75.75 0 0 0 0 1.5h5.5a.75.75 0 0 0 0-1.5h-5.5Z"/></svg></span> CLI</label><label for="__tabbed_2_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 16.47V7.39l-6 4.54M2.22 9.19a.858.858 0 0 1-.02-1.15l1.2-1.11c.2-.18.69-.26 1.05 0l3.42 2.61 7.93-7.25c.32-.32.87-.45 1.5-.12l4 1.91c.36.21.7.54.7 1.15v13.5c0 .4-.29.83-.6 1l-4.4 2.1c-.32.13-.92.01-1.13-.2l-8.02-7.3-3.4 2.6c-.38.26-.85.19-1.05 0l-1.2-1.1c-.32-.33-.28-.87.05-1.2l3-2.7"/></svg></span> VS Code</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Run the entire system with the following CLI command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span><span class="nv">$ROS_WORKSPACE</span>/src/global_launch/main_launch.py
 </code></pre></div>
-<p>Note that the global launch file is not part of a ROS package, so the path to the global launch file always
+</div>
+<div class="tabbed-block">
+<p>Run the following VS Code command from the <strong>Run and Debug</strong> tab: <code>ROS: Launch (workspace)</code></p>
+<p>There will be a prompt to select which launch file to run. Select the desired launch file.</p>
+</div>
+</div>
+</div>
+<p>Remember to that you need to potentially reload the window if the nodes are not being detected
+by VS Code. This usually happens when somebody build for the first time. Also, note that the global
+launch file is not part of a ROS package, so the path to the global launch file always
 must be provided. This is not always the case when a launch file is contained within a ROS package.</p>
 <h3 id="using-cli-arguments">Using CLI Arguments<a class="headerlink" href="#using-cli-arguments" title="Permanent link">&para;</a></h3>
 <p>Invoking the launch files as is will provide the system with the default CLI arguments. As an example,
