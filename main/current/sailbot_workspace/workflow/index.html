@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.30068a00.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -607,6 +607,40 @@
     5. Verify your changes
   </a>
   
+    <nav class="md-nav" aria-label="5. Verify your changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lint-and-test" class="md-nav__link">
+    Lint and Test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-a-package" class="md-nav__link">
+    Run a Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-system" class="md-nav__link">
+    Run the System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -683,6 +717,26 @@
   
   <span class="md-ellipsis">
     Images
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../launch_files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Launch Files
   </span>
   
 
@@ -1689,6 +1743,40 @@
     5. Verify your changes
   </a>
   
+    <nav class="md-nav" aria-label="5. Verify your changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lint-and-test" class="md-nav__link">
+    Lint and Test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-a-package" class="md-nav__link">
+    Run a Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-system" class="md-nav__link">
+    Run the System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1835,21 +1923,36 @@ launch configuration.</p>
 <summary>Running GUI applications on macOS</summary>
 <p>If you want to run GUI applications on macOS, ensure that XQuartz is running.</p>
 </details>
-<ol>
-<li>
-<p>Run the package(s) that your changes are in: the run commands for each package should be documented in their READMEs,
-   but in general they can be run using a VS Code or CLI command:</p>
+<h3 id="lint-and-test">Lint and Test<a class="headerlink" href="#lint-and-test" title="Permanent link">&para;</a></h3>
+<p>Run lint and test tasks to make sure you changes will pass our CI:</p>
 <ul>
-<li>VS Code:<ul>
-<li>Launch files: <code>ROS: Run a ROS launch file (roslaunch)</code></li>
-<li>Nodes: <code>ROS: Run a ROS executable (rosrun)</code></li>
+<li><code>ament lint</code></li>
+<li>For C++ packages, <code>clang-tidy</code></li>
+<li><code>test</code></li>
+</ul>
+<p>In addition to VS Code tasks, the <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg></span> <strong>Testing</strong> tab on the VS Code primary sidebar
+contains individual tests. One can run specific unit tests by clicking the <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.5 8.64 13.77 12 8.5 15.36V8.64M6.5 5v14l11-7"/></svg></span> <strong>Run Test</strong>
+icon beside the test name.</p>
+<p><img
+    alt="VS Code Test Tab" src="../../../assets/images/sailbot_workspace/workflow/vscode_testing_tab.png"
+    style="display: block; margin-left: auto; margin-right: auto; width: 50%;"
+/></p>
+<h3 id="run-a-package">Run a Package<a class="headerlink" href="#run-a-package" title="Permanent link">&para;</a></h3>
+<p>To verify that your changes do what you expect, you may want to run the package you modified. The run commands for each
+package should be documented in their READMEs, but in general they can be run using a CLI or VS Code command:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m6.354 8.04-4.773 4.773a.75.75 0 1 0 1.061 1.06L7.945 8.57a.75.75 0 0 0 0-1.06L2.642 2.206a.75.75 0 0 0-1.06 1.061L6.353 8.04ZM8.75 11.5a.75.75 0 0 0 0 1.5h5.5a.75.75 0 0 0 0-1.5h-5.5Z"/></svg></span> CLI</label><label for="__tabbed_1_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 16.47V7.39l-6 4.54M2.22 9.19a.858.858 0 0 1-.02-1.15l1.2-1.11c.2-.18.69-.26 1.05 0l3.42 2.61 7.93-7.25c.32-.32.87-.45 1.5-.12l4 1.91c.36.21.7.54.7 1.15v13.5c0 .4-.29.83-.6 1l-4.4 2.1c-.32.13-.92.01-1.13-.2l-8.02-7.3-3.4 2.6c-.38.26-.85.19-1.05 0l-1.2-1.1c-.32-.33-.28-.87.05-1.2l3-2.7"/></svg></span> VS Code</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Launch files:<ul>
+<li><code>ros2 launch &lt;package&gt; &lt;launch file&gt;</code></li>
+<li><code>ros2 launch &lt;path to launch file&gt;</code></li>
 </ul>
 </li>
-<li>
-<p>CLI:</p>
-<ul>
-<li>Launch files: <code>ros2 launch &lt;package&gt; &lt;launch file&gt;</code></li>
-<li>Nodes: <code>ros2 run &lt;package&gt; &lt;executable&gt;</code></li>
+<li>Nodes:<ul>
+<li><code>ros2 run &lt;package&gt; &lt;executable&gt;</code></li>
+</ul>
+</li>
 </ul>
 <details class="tip">
 <summary>CLI features</summary>
@@ -1880,12 +1983,23 @@ If there is more than one possibility, pressing tab again will list them out.</p
 </ul>
 <p>Furthermore, navigate past commands with <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> and <span class="keys"><kbd class="key-arrow-down">Down</kbd></span> and search through them with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-r">R</kbd></span>.</p>
 </details>
-</li>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Launch files: <code>ROS: Run a ROS launch file (roslaunch)</code></li>
+<li>Nodes: <code>ROS: Run a ROS executable (rosrun)</code></li>
 </ul>
-</li>
-<li>
+</div>
+</div>
+</div>
+<p>For more information on launch file use in our system, see <a href="../launch_files/" target="_blank">this page</a>.</p>
+<h3 id="run-the-system">Run the System<a class="headerlink" href="#run-the-system" title="Permanent link">&para;</a></h3>
+<p>To verify that you didn't break anything, you may want to run the entire system. See
+<a href="../launch_files/#invoking-launch-files">Invoking Launch Files</a> for more information
+on running the system.</p>
+<h3 id="debugging">Debugging<a class="headerlink" href="#debugging" title="Permanent link">&para;</a></h3>
 <p>Debug your changes if they aren't behaving how you expect by setting breakpoints and running one of our launch
-   configurations; launch configuration types:</p>
+configurations in the <strong>Run and Debug</strong> tab on the VS Code primary sidebar. The launch configuration types are:</p>
 <ul>
 <li>Launch: runs the desired launch file or executable<ul>
 <li>For launch files, <code>ROS: Launch</code></li>
@@ -1897,14 +2011,6 @@ If there is more than one possibility, pressing tab again will list them out.</p
 </ul>
 </li>
 </ul>
-</li>
-<li>Run lint and test tasks to make sure you changes will pass our CI:<ul>
-<li><code>ament lint</code></li>
-<li>For C++ packages, <code>clang-tidy</code></li>
-<li><code>test</code></li>
-</ul>
-</li>
-</ol>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p>If you are having some trouble running our software, here are some things you can try:</p>
 <ul>
@@ -1962,7 +2068,7 @@ If your computer takes longer than, or you want to free up memory and disk space
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 1, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 19, 2023</span>
       
     
   </small>
