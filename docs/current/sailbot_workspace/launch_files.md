@@ -63,7 +63,8 @@ At the bare minimum, the following packages need to be built with the `Build` or
 - `custom_interfaces`
 - The package you want to launch
 
-Once built, the package launch file can be invoked either in the CLI or using a VS Code command:
+Packages only need to be rebuilt either when the workspace is first set up, or if any changes are made to the ROS
+package. Once built, the package launch file can be invoked either in the CLI or using a VS Code command:
 
 === ":octicons-command-palette-16: CLI"
     Either the package and launch file name, or the path to the launch file can be used:
@@ -93,7 +94,9 @@ Once built, the package launch file can be invoked either in the CLI or using a 
 
 ### Global Launch
 
-Before running the system, be sure to run the `Build All` VS Code task to build all ROS packages.
+Before running the system, be sure to run the `Build All` VS Code task to build all ROS packages. If the ROS launch
+debug configuration is being used, then this step is not necessary as the `Build All` task is ran automatically before
+launch.
 
 === ":octicons-command-palette-16: CLI"
 
