@@ -99,58 +99,89 @@ launch configuration.
 
     If you want to run GUI applications on macOS, ensure that XQuartz is running.
 
-1. Run the package(s) that your changes are in: the run commands for each package should be documented in their READMEs,
-   but in general they can be run using a VS Code or CLI command:
-    - VS Code:
-        - Launch files: `ROS: Run a ROS launch file (roslaunch)`
-        - Nodes: `ROS: Run a ROS executable (rosrun)`
-    - CLI:
-        - Launch files: `ros2 launch <package> <launch file>`
-        - Nodes: `ros2 run <package> <executable>`
+### Lint and Test
 
-        ??? tip "CLI features"
+Run lint and test tasks to make sure you changes will pass our CI:
 
-            There are many commands that can be autocompleted in the terminal.
-            Take advantage of this so that you run commands faster and memorize less syntax.
-            If there is only one possibility, pressing tab once will complete it.
-            If there is more than one possibility, pressing tab again will list them out.
+- `ament lint`
+- For C++ packages, `clang-tidy`
+- `test`
 
-            Some tab completion use cases:
+In addition to VS Code tasks, the :fontawesome-solid-flask: **Testing** tab on the VS Code primary sidebar
+contains individual tests. One can run specific unit tests by clicking the :material-play-outline: **Run Test**
+icon beside the test name.
 
-            - View available commands: lists all `ros2` commands
+<img
+    alt="VS Code Test Tab" src="../../../assets/images/sailbot_workspace/workflow/vscode_testing_tab.png"
+    style="display: block; margin-left: auto; margin-right: auto; width: 50%;"
+/>
 
-                ```console
-                $ ros2 <tab><tab>
-                action                          extension_points                multicast                       security
-                bag                             extensions                      node                            service
-                ...
-                ```
+### Run a Package
 
-            - Complete commands: runs `ros2 launch local_pathfinding main_launch.py`
+To verify that your changes do what you expect, you may want to run the package you modified. The run commands for each
+package should be documented in their READMEs, but in general they can be run using a CLI or VS Code command:
 
-                ```console
-                $ ros2<tab>la<tab>loc<tab>m<tab>
-                ```
+=== ":octicons-command-palette-16: CLI"
+    - Launch files:
+        - `ros2 launch <package> <launch file>`
+        - `ros2 launch <path to launch file>`
+    - Nodes:
+        - `ros2 run <package> <executable>`
 
-            - Navigate to directories: runs `cd .devcontainer/config` from the root directory of Sailbot Workspace
+    ??? tip "CLI features"
 
-                ```console
-                $ cd .d<tab>c<tab>
-                ```
+        There are many commands that can be autocompleted in the terminal.
+        Take advantage of this so that you run commands faster and memorize less syntax.
+        If there is only one possibility, pressing tab once will complete it.
+        If there is more than one possibility, pressing tab again will list them out.
 
-            Furthermore, navigate past commands with ++arrow-up++ and ++arrow-down++ and search through them with ++ctrl+r++.
+        Some tab completion use cases:
 
-2. Debug your changes if they aren't behaving how you expect by setting breakpoints and running one of our launch
-   configurations; launch configuration types:
-    - Launch: runs the desired launch file or executable
-        - For launch files, `ROS: Launch`
-        - For C++ executables, `C++ (GDB): Launch`
-    - Attach: attaches to a running executable
-        - `ROS: Attach`
-3. Run lint and test tasks to make sure you changes will pass our CI:
-    - `ament lint`
-    - For C++ packages, `clang-tidy`
-    - `test`
+        - View available commands: lists all `ros2` commands
+
+            ```console
+            $ ros2 <tab><tab>
+            action                          extension_points                multicast                       security
+            bag                             extensions                      node                            service
+            ...
+            ```
+
+        - Complete commands: runs `ros2 launch local_pathfinding main_launch.py`
+
+            ```console
+            $ ros2<tab>la<tab>loc<tab>m<tab>
+            ```
+
+        - Navigate to directories: runs `cd .devcontainer/config` from the root directory of Sailbot Workspace
+
+            ```console
+            $ cd .d<tab>c<tab>
+            ```
+
+        Furthermore, navigate past commands with ++arrow-up++ and ++arrow-down++ and search through them with ++ctrl+r++.
+
+=== ":material-microsoft-visual-studio-code: VS Code"
+    - Launch files: `ROS: Run a ROS launch file (roslaunch)`
+    - Nodes: `ROS: Run a ROS executable (rosrun)`
+
+For more information on launch file use in our system, see [this page](./launch_files.md){target=_blank}.
+
+### Run the System
+
+To verify that you didn't break anything, you may want to run the entire system. See
+[Invoking Launch Files](./launch_files.md#invoking-launch-files) for more information
+on running the system.
+
+### Debugging
+
+Debug your changes if they aren't behaving how you expect by setting breakpoints and running one of our launch
+configurations in the **Run and Debug** tab on the VS Code primary sidebar. The launch configuration types are:
+
+- Launch: runs the desired launch file or executable
+    - For launch files, `ROS: Launch`
+    - For C++ executables, `C++ (GDB): Launch`
+- Attach: attaches to a running executable
+    - `ROS: Attach`
 
 ## Troubleshooting
 

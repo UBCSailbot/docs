@@ -252,6 +252,17 @@ The `Build All` task builds all the ROS packages.
 Delete all open terminals and run the `Developer: Reload Window` VS Code command
 to detect the files that were generated from building.
 
+## 10. Start the system
+
+Run the entire system by telling ROS to launch with the global launch file using the following command
+in the terminal:
+
+```sh
+ros2 launch $ROS_WORKSPACE/src/global_launch/main_launch.py
+```
+
+Use ++ctrl+c++ in the terminal to stop the system.
+
 ## Enable GitHub Copilot in your VS Code Editor
 
 [^6]: [GitHub Copilot Quickstart Guide](https://docs.github.com/en/copilot/quickstart){target=_blank}
