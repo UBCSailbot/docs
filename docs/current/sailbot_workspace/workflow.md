@@ -55,7 +55,7 @@ If there are new features or bug fixes that you want to try, you will need to up
         To rebuild it yourself, run the `Dev Containers: Rebuild Container` VS Code command.
 
 4. If you aren't working in any other branches,
-   run the `setup` task to switch the branches of all sub-repositories to their default specified in `src/new_project.repos`
+   run the `setup` task to switch the branches of all sub-repositories to their default specified in `src/polaris.repos`
    and pull their latest changes
 5. If you want to run our docs, website, or other optional programs, see [How to run optional programs](./how_to.md#run-optional-programs){target=_blank}
 
