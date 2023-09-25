@@ -139,6 +139,8 @@ nav:
       - Overview: current/custom_interfaces/overview.md
     - Local Pathfinding:
       - Overview: current/local_pathfinding/overview.md
+    - Notebooks:
+      - Overview: current/notebooks/overview.md
     - Network Systems:
       - Overview: current/network_systems/overview.md
     - Website:
