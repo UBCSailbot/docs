@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://UBCSailbot.github.io/docs/pr-169/current/controller/overview/</loc>
+         <lastmod>2023-09-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://UBCSailbot.github.io/docs/pr-169/current/custom_interfaces/overview/</loc>
          <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
