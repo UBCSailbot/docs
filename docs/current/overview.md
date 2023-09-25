@@ -1,6 +1,6 @@
 # Current Project Overview
 
-Our current project is an autonomous research vessel capable of collecting oceanic and atmospheric data. With our
+Our current project, Polaris, is an autonomous research vessel capable of collecting oceanic and atmospheric data. With our
 expertise in autonomous sailing, the goal is to monitor the health of our oceans while collaborating with stakeholders
 and researchers involved in climate science and oceanography.
 
