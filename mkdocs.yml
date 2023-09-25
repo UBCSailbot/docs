@@ -135,6 +135,8 @@ nav:
       - Launch Files: current/sailbot_workspace/launch_files.md
     - Boat Simulator:
       - Overview: current/boat_simulator/overview.md
+    - Controller:
+      - Overview: current/controller/overview.md
     - Custom Interfaces:
       - Overview: current/custom_interfaces/overview.md
     - Local Pathfinding:
