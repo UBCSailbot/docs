@@ -82,6 +82,15 @@ allowing it to be installed on Windows and macOS in addition to Linux.
     2. [Install Docker Desktop](https://docs.docker.com/desktop/install/windows-install/){target=_blank}
     with the WSL 2 backend
 
+        ??? bug "Docker Desktop - Unexpected WSL Error"
+
+            ![image](../../assets/images/sailbot_workspace/workflow/sailbot_bug.png)
+
+            If the above error shows when trying to start Docker Desktop on your laptop:
+
+            1. For windows users navigate to `C:\Users\user_name` and delete the .Docker folder
+            2. Restart Docker Desktop
+
 === ":material-apple: macOS"
 
     [Install Docker Desktop](https://docs.docker.com/desktop/install/mac-install/){target=_blank} for your computer's CPU.
