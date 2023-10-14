@@ -88,7 +88,7 @@ allowing it to be installed on Windows and macOS in addition to Linux.
                 3. Restart your computer
 
                 More potential solutions can be found here:
-                [Link](https://github.com/docker/for-win/issues/13273)
+                [Link](https://github.com/docker/for-win/issues/13273){target=_blank}
 
 
 
