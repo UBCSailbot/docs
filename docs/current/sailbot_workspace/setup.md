@@ -79,6 +79,19 @@ allowing it to be installed on Windows and macOS in addition to Linux.
 
         3. From now on, run commands in the Ubuntu terminal, not PowerShell or Command Prompt
 
+            ??? bug "Docker Desktop can't start up and WSL hangs when restarting"
+
+                If Ubuntu can't start up and WSL hangs when restarting:
+
+                1. Open command prompt as administrator and run the command `netsh winsock reset`
+                2. Uninstall and reinstall Docker Desktop
+                3. Restart your computer
+
+                More potential solutions can be found here:
+                [Link](https://github.com/docker/for-win/issues/13273){target=_blank}
+
+
+
     2. [Install Docker Desktop](https://docs.docker.com/desktop/install/windows-install/){target=_blank}
     with the WSL 2 backend
 
