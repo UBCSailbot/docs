@@ -2126,6 +2126,17 @@ in PowerShell, replacing <code>&lt;username&gt;</code> with the name of the newl
 </li>
 <li>
 <p>From now on, run commands in the Ubuntu terminal, not PowerShell or Command Prompt</p>
+<details class="bug">
+<summary>Docker Desktop can't start up and WSL hangs when restarting</summary>
+<p>If Ubuntu can't start up and WSL hangs when restarting:</p>
+<ol>
+<li>Open command prompt as administrator and run the command <code>netsh winsock reset</code></li>
+<li>Uninstall and reinstall Docker Desktop</li>
+<li>Restart your computer</li>
+</ol>
+<p>More potential solutions can be found here:
+<a href="https://github.com/docker/for-win/issues/13273" target="_blank">Link</a></p>
+</details>
 </li>
 </ol>
 </li>
@@ -2459,7 +2470,7 @@ A couple things to note:<ul>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 17, 2023</span>
       
     
   </small>
