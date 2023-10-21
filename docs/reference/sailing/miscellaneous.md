@@ -44,7 +44,7 @@ from the boat is 90°. The Relative Bearing ($B_r$) of the lighthouse from the b
 ### Track Made Good
 
 Boats do not necessarily travel in the same direction as their ***Heading***, due to the effects of ocean current and
-wind. The direction that the boat moves in relative to the sea floor is called the ***Track Made Good***. This is the
+wind. The path the boat has traveled relative to the sea floor is called the ***Track Made Good***. This is the
 same as if you measured motion compared to land or with a GPS.
 
 ![image](../../assets/images/sailing/track_made_good.jpg)
