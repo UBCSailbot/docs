@@ -141,6 +141,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://UBCSailbot.github.io/docs/main/reference/sailing/ais_terms/</loc>
+         <lastmod>2023-11-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://UBCSailbot.github.io/docs/main/reference/sailing/boat_parts/</loc>
          <lastmod>2023-11-01</lastmod>
          <changefreq>daily</changefreq>
