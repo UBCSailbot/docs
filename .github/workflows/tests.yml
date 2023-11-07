@@ -27,11 +27,8 @@ jobs:
       ros-ci: false
       clang-tidy: false
       rebuild-docs: false
-    # If rebuild-docs is true:
-    # 1. Create the repository secret PAT_TOKEN (copy from Bitwarden)
-    # 2. Uncomment the 2 lines below
-    # secrets:
-    #   gh-token: ${{ secrets.PAT_TOKEN }}
+    secrets:
+      PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
 
   markdown-link-redirection-check:
     runs-on: ubuntu-latest
