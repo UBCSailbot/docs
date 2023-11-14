@@ -1164,6 +1164,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#linters" class="md-nav__link">
+    Linters
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1893,6 +1900,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#linters" class="md-nav__link">
+    Linters
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1943,7 +1957,7 @@ developers and for the cloud era. If you want to learn more about MongoDB, visit
 <code>.env.local</code> and ensure the variables are defined below:</p>
 <ul>
 <li><code>MONGODB_URI</code>: Your MongoDB connection string. Use <code>mongodb://localhost:27017/&lt;DB_NAME&gt;</code> to establish a connection
-with the local database.</li>
+  with the local database.</li>
 <li><code>NEXT_PUBLIC_SERVER_HOST</code>: The host URL of the website.</li>
 <li><code>NEXT_PUBLIC_SERVER_PORT</code>: The port number of the website.</li>
 <li><code>NEXT_PUBLIC_POLLING_TIME_MS</code>: The time interval for polling the database in milliseconds.</li>
@@ -1961,22 +1975,19 @@ This directory contains all installed packages.</p>
 </li>
 <li>
 <p>Run the command <code>npm install &lt;package-name&gt;</code>.
-Replace <code>&lt;package-name&gt;</code> with the actual name of the package you want to add.</p>
-<ul>
-<li>Should you encounter errors related to resolving peer dependencies,
-please re-run the command with the header <code>--legacy-peer-deps</code>.
-Do not to use <code>--force</code> unless you're well aware of the potential consequences.</li>
-</ul>
+   Replace <code>&lt;package-name&gt;</code> with the actual name of the package you want to add.</p>
+</li>
+<li>
+<p>Should you encounter errors related to resolving peer dependencies, please re-run the command with
+   the header <code>--legacy-peer-deps</code>. Do not to use <code>--force</code> unless you're well aware of the potential consequences.</p>
 </li>
 <li>
 <p>Review the <code>package.json</code> file to ensure the new package and its version have been added to the dependencies section.</p>
-<ul>
-<li>Confirm that <code>package-lock.json</code> has also been updated.
-This file holds specific version information to ensure consistent installations across different environments.</li>
-</ul>
 </li>
+<li>Confirm that <code>package-lock.json</code> has also been updated.
+     This file holds specific version information to ensure consistent installations across different environments.</li>
 <li>Once the installation process is finished, please make sure to commit the files <code>package.json</code> and <code>package-lock.json</code>.
-These files are essential for version controlling the dependencies that have been added.</li>
+   These files are essential for version controlling the dependencies that have been added.</li>
 </ol>
 <h2 id="run">Run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h2>
 <p>Using <a href="https://github.com/UBCSailbot/sailbot_workspace">Sailbot Workspace</a>,
@@ -1984,6 +1995,16 @@ the website should be up and running on <a href="http://localhost:3005">http://l
 <p>Otherwise, you execute the following commands to run it in development mode:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>npm<span class="w"> </span>run<span class="w"> </span>dev
 </code></pre></div>
+<h2 id="linters">Linters<a class="headerlink" href="#linters" title="Permanent link">&para;</a></h2>
+<p>Before merging in new changes to the repository, please execute the following commands in order:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm<span class="w"> </span>run<span class="w"> </span>format
+</code></pre></div>
+<p>This command runs <a href="https://prettier.io/docs/en/index.html">Prettier</a> to automatically format the code according to
+the rules defined in the configuration file <code>.prettierrc</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npm<span class="w"> </span>run<span class="w"> </span>lint
+</code></pre></div>
+<p>This command runs <a href="https://eslint.org/docs/latest/use/getting-started">ESLint</a> to analyze the code for potential errors
+and enforce coding style based on the rules defined in the configuration file <code>.eslintrc</code>.</p>
 
   <hr>
 <div class="md-source-file">
