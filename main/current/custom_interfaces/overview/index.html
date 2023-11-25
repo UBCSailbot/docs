@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.12">
     
     
       
@@ -2040,6 +2040,11 @@ documented in the <code>.msg</code> or <code>.srv</code> file associated with th
 <h2 id="project-wide-interfaces">Project-wide Interfaces<a class="headerlink" href="#project-wide-interfaces" title="Permanent link">&para;</a></h2>
 <p>ROS messages and services used across many ROS packages in the project.</p>
 <h3 id="project-wide-external-interfaces">Project-wide External Interfaces<a class="headerlink" href="#project-wide-external-interfaces" title="Permanent link">&para;</a></h3>
+<!---
+Formatting reminder:
+1. Keep 'Type' column organized alphabetically
+2. 'mock' version of topic should be after its common counterpart
+--->
 <table>
 <thead>
 <tr>
@@ -2053,25 +2058,55 @@ documented in the <code>.msg</code> or <code>.srv</code> file associated with th
 <tr>
 <td><code>ais_ships</code></td>
 <td>AISShips</td>
-<td>AIS Receiver</td>
-<td>Local Pathfinding</td>
+<td>CanTrxRosIntf</td>
+<td>Local Pathfinding, Local Transceiver</td>
+</tr>
+<tr>
+<td><code>mock_ais_ships</code></td>
+<td>AISShips</td>
+<td>Mock AIS</td>
+<td>CanSimIntf</td>
 </tr>
 <tr>
 <td><code>batteries</code></td>
 <td>Batteries</td>
-<td>CAN Transceiver</td>
+<td>CanTrxRosIntf</td>
 <td>Local Transceiver</td>
+</tr>
+<tr>
+<td><code>boat_sim_input</code></td>
+<td>CanSimToBoatSim</td>
+<td>CanSimIntf</td>
+<td>Boat Simulator</td>
 </tr>
 <tr>
 <td><code>desired_heading</code></td>
 <td>DesiredHeading</td>
 <td>Local Pathfinding</td>
-<td>Controller, Boat Simulator</td>
+<td>CanTrxRosIntf</td>
 </tr>
 <tr>
 <td><code>data_sensors</code></td>
 <td>GenericSensors</td>
-<td>CAN Transceiver</td>
+<td>CanTrxRosIntf</td>
+<td>Local Transceiver</td>
+</tr>
+<tr>
+<td><code>gps</code></td>
+<td>GPS</td>
+<td>CanTrxRosIntf</td>
+<td>Controller, Local Transceiver, Local Pathfinding</td>
+</tr>
+<tr>
+<td><code>mock_gps</code></td>
+<td>GPS</td>
+<td>Boat Simulator</td>
+<td>CanSimIntf</td>
+</tr>
+<tr>
+<td><code>local_path_data</code></td>
+<td>LPathData</td>
+<td>Local Pathfinding</td>
 <td>Local Transceiver</td>
 </tr>
 <tr>
@@ -2081,40 +2116,28 @@ documented in the <code>.msg</code> or <code>.srv</code> file associated with th
 <td>Local Pathfinding</td>
 </tr>
 <tr>
-<td><code>gps</code></td>
-<td>GPS</td>
-<td>CAN Transceiver</td>
-<td>Local Transceiver, Local Pathfinding</td>
-</tr>
-<tr>
-<td><code>local_path_data</code></td>
-<td>LPathData</td>
-<td>Local Pathfinding</td>
-<td>Local Transceiver</td>
-</tr>
-<tr>
-<td><code>mock_gps</code></td>
-<td>GPS</td>
-<td>Boat Simulator</td>
-<td>CAN Transceiver</td>
+<td><code>sail_cmd</code></td>
+<td>SailCmd</td>
+<td>Controller</td>
+<td>CanTrxRosIntf</td>
 </tr>
 <tr>
 <td><code>filtered_wind_sensor</code></td>
 <td>WindSensor</td>
-<td>CAN Transceiver</td>
-<td>Local Transceiver, Local Pathfinding</td>
+<td>CanTrxRosIntf</td>
+<td>Controller, Local Transceiver, Local Pathfinding</td>
+</tr>
+<tr>
+<td><code>wind_sensors</code></td>
+<td>WindSensors</td>
+<td>CanTrxRosIntf</td>
+<td>Local Transceiver</td>
 </tr>
 <tr>
 <td><code>mock_wind_sensors</code></td>
 <td>WindSensors</td>
 <td>Boat Simulator</td>
-<td>CAN Transceiver</td>
-</tr>
-<tr>
-<td><code>wind_sensors</code></td>
-<td>WindSensors</td>
-<td>CAN Transceiver</td>
-<td>Local Transceiver</td>
+<td>CanSimIntf</td>
 </tr>
 </tbody>
 </table>
