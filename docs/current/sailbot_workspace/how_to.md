@@ -11,7 +11,6 @@ There are a couple programs that are not run by default to minimize resource usa
 - [Docs site](https://github.com/UBCSailbot/docs){target=_blank}
 - [Pathfinding website](https://github.com/UBCSailbot/website){target=_blank}
 - [MongoDB database](https://www.mongodb.com/){target=_blank}
-- [Grafana dashboards](https://grafana.com/){target=_blank}
 
 ### Start running an optional program
 
@@ -40,22 +39,6 @@ There are a couple programs that are not run by default to minimize resource usa
                 2. Our database's connection string is `mongodb://localhost:27017`
         2. See the [MongoDB VS Code extension docs](https://www.mongodb.com/docs/mongodb-vscode/){target=_blank} for how
            to use it to navigate or explore the database
-
-    ??? note "Run Grafana"
-
-        1. Connect to the MongoDB database
-            1. Ensure that:
-                1. You are not running Sailbot Workspace in a [GitHub Codespace](./setup.md#setup-sailbot-workspace-in-a-github-codespace){target=_blank}
-                2. MongoDB is running
-            2. Open the site by hovering over its local address and clicking "Open in Browser"
-                - The local address of Grafana is the line with a port of 3000
-            3. Login using the default username and password: `admin` and `admin`, respectively
-            4. Once logged-in, click the cog icon :material-cog: in the bottom left to go to the data sources configuration
-               page
-            5. Add the `mongodb-community` data source
-                1. Paste our database's URL: `mongodb://localhost:27017`
-                2. Click "Save & test"
-                3. Verify that the message "MongoDB is Responding" pops up
 
 ### Manage an optional program
 

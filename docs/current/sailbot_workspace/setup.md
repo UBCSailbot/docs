@@ -353,7 +353,6 @@ Once you have a codespace set up:
 
 !!! warning "Known limitations of running Sailbot Workspace in a GitHub Codespace"
 
-    - Grafana: can't connect to MongoDB
     - Does not support X11 forwarding to run GUI applications
     - High-spec machines not available: as of March 2023, the highest-spec machine that is publically available
       has a 4-core CPU and 8GB of RAM
