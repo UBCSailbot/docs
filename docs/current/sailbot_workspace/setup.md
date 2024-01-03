@@ -135,7 +135,7 @@ small to very large projects with speed and efficiency.[^4]
         - If you want to use Git on Windows outside of WSL, you would need to install Git for Windows
 2. Configure your name and email: [Git config file setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-config-file-setup){target=_blank}
 3. Login to GitHub
-    - If you have Git for Windows installed and authenticated, see [Git Credential Manager setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup){target=_blank}
+    - If you have Git for Windows installed, see [Git Credential Manager setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup){target=_blank}
     - Otherwise, use the GitHub CLI
         1. Install the GitHub CLI: [Installation](https://cli.github.com/manual/installation){target=_blank}
             - On Windows, run the Ubuntu installation commands in the Ubuntu terminal:
