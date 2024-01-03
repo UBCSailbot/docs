@@ -137,7 +137,7 @@ small to very large projects with speed and efficiency.[^4]
 3. Login to GitHub
     - If you have Git for Windows installed and authenticated, see [Git Credential Manager setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup){target=_blank}
     - Otherwise, use the GitHub CLI
-        1. Install the GitHub CLI: [Installation](https://cli.github.com/manual/installation){target=_blank}
+        1. Install the GitHub CLI: [Installation](https://github.com/cli/cli#installation){target=_blank}
             - On Windows, run the Ubuntu installation commands in the Ubuntu terminal:
               [Debian, Ubuntu Linux, Raspberry Pi OS (apt)](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt){target=_blank}
         2. Run `gh auth login` and select the first option for all choices
