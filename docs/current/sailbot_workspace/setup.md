@@ -142,7 +142,7 @@ small to very large projects with speed and efficiency.[^4]
               [Debian, Ubuntu Linux, Raspberry Pi OS (apt)](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt){target=_blank}
         2. Run `gh auth login` and select the first option for all choices
 
-[^4]: [Git](https://git-scm.com/){target=_blank}
+[^4]: [Git](https://git-scm.com){target=_blank}
 
 ## 2. Setup X11 forwarding
 
