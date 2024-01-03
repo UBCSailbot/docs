@@ -31,15 +31,6 @@ There are a couple programs that are not run by default to minimize resource usa
             1. **If Auto Save is on, turn it off so that the Docs/Website servers aren't continuously reloading**
                 - Auto Save is on by default in GitHub Codespaces
 
-    ??? note "Run MongoDB"
-
-        1. Setup the [MongoDB VS Code extension](https://www.mongodb.com/products/vs-code){target=_blank}
-            1. [Connect it to the running database](https://www.mongodb.com/docs/mongodb-vscode/connect/#create-a-connection-to-a-deployment){target=_blank}
-                1. Use the default methods: "Paste Connection String" and "Open from Overview Page"
-                2. Our database's connection string is `mongodb://localhost:27017`
-        2. See the [MongoDB VS Code extension docs](https://www.mongodb.com/docs/mongodb-vscode/){target=_blank} for how
-           to use it to navigate or explore the database
-
 ### Manage an optional program
 
 Each program runs in a Docker container. Containers can be managed using Docker Desktop or CLI commands:
