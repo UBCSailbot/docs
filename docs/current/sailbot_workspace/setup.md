@@ -343,7 +343,7 @@ A couple things to note:
         [stopping a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace#stopping-a-codespace){target=_blank}
         - Delete codespaces that you do not plan to use anymore:
         [deleting a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/deleting-a-codespace#deleting-a-codespace){target=_blank}
-2. Follow the local setup instructions starting from [6. Open the workspace file](#6-open-the-workspace-file)
+2. Follow the local setup instructions starting from [5. Open the workspace file](#5-open-the-workspace-file)
 
 Once you have a codespace set up:
 
