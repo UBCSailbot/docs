@@ -242,15 +242,18 @@ git clone https://github.com/UBCSailbot/sailbot_workspace.git
 2. Open the `sailbot_workspace/` directory in VS Code: run `code <relative path to sailbot workspace>`
     - For example, if you just cloned the repository, the command would be `code sailbot_workspace`
 
-## 5. Open Sailbot Workspace in a Dev Container
+## 5. Open the workspace file
+
+Click the popup to `Open Workspace`. If there isn't a popup:
+
+1. Open the file `sailbot.code-workspace` in VS Code
+2. Click `Open Workspace`
+
+## 6. Open Sailbot Workspace in a Dev Container
 
 1. Ensure that Docker is running
-2. Run the `Dev Containers: Reopen in Container` VS Code command
-
-## 6. Open the workspace file
-
-1. Open the file `.devcontainer/config/sailbot_workspace.code-workspace` in VS Code
-2. Click `Open Workspace`
+2. Click the popup to `Reopen in Container`. If there isn't a popup,
+   run the `Dev Containers: Reopen in Container` VS Code command
 
 ## 7. Run the `setup` task
 
