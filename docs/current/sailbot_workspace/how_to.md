@@ -19,17 +19,13 @@ There are a couple programs that are not run by default to minimize resource usa
    Uncomment the Docker Compose file that the program is defined in: remove `//` at the beginning of the line
     1. Programs that are defined in the uncommented Docker Compose files will be started and stopped with Sailbot Workspace
 2. Run the `Dev Containers: Rebuild Container` VS Code command to restart Sailbot Workspace
-3. Follow the program-specific run instructions:
-
-    ??? note "Run Docs or Website"
-
-        1. Run the `Ports: Focus on Ports View` VS Code command
-        2. Open the site by hovering over its local address and clicking either "Open in Browser" or "Preview in Editor"
-            - The local address of Docs is the line with a port of 8000
-            - The local address of Website is the line with a port of 3005
-        3. Changes made to its files are loaded when they are saved
-            1. **If Auto Save is on, turn it off so that the Docs/Website servers aren't continuously reloading**
-                - Auto Save is on by default in GitHub Codespaces
+3. Run the `Ports: Focus on Ports View` VS Code command
+4. Open the site by hovering over its local address and clicking either "Open in Browser" or "Preview in Editor"
+    - The local address of Docs is the line with a port of 8000
+    - The local address of Website is the line with a port of 3005
+5. Changes made to its files are loaded when they are saved
+    1. **If Auto Save is on, turn it off so that the Docs/Website servers aren't continuously reloading**
+        - Auto Save is on by default in GitHub Codespaces
 
 ### Manage an optional program
 
