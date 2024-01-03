@@ -147,7 +147,7 @@ small to very large projects with speed and efficiency.[^4]
 ## 2. Setup X11 forwarding
 
 X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications.
-You can skip this step since we currently aren't running any GUI applications.
+***You can skip this step*** since we currently aren't running any GUI applications.
 
 ??? info "Setup instructions for X11 forwarding"
 
