@@ -135,7 +135,7 @@ small to very large projects with speed and efficiency.[^4]
         - If you want to use Git on Windows outside of WSL, you would need to install Git for Windows
 2. Configure your name and email: [Git config file setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-config-file-setup){target=_blank}
 3. Login to GitHub
-    - If you have Git for Windows installed and authenticated, see [Git Credential Manager setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup){target=_blank}
+    - If you have Git for Windows installed, see [Git Credential Manager setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup){target=_blank}
     - Otherwise, use the GitHub CLI
         1. Install the GitHub CLI: [Installation](https://github.com/cli/cli#installation){target=_blank}
             - On Windows, run the Ubuntu installation commands in the Ubuntu terminal:
@@ -147,7 +147,7 @@ small to very large projects with speed and efficiency.[^4]
 ## 2. Setup X11 forwarding
 
 X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications.
-You can skip this step since we currently aren't running any GUI applications.
+***You can skip this step*** since we currently aren't running any GUI applications.
 
 ??? info "Setup instructions for X11 forwarding"
 
@@ -242,15 +242,18 @@ git clone https://github.com/UBCSailbot/sailbot_workspace.git
 2. Open the `sailbot_workspace/` directory in VS Code: run `code <relative path to sailbot workspace>`
     - For example, if you just cloned the repository, the command would be `code sailbot_workspace`
 
-## 5. Open Sailbot Workspace in a Dev Container
+## 5. Open the workspace file
+
+Click the popup to `Open Workspace`. If there isn't a popup:
+
+1. Open the file `sailbot.code-workspace` in VS Code
+2. Click `Open Workspace`
+
+## 6. Open Sailbot Workspace in a Dev Container
 
 1. Ensure that Docker is running
-2. Run the `Dev Containers: Reopen in Container` VS Code command
-
-## 6. Open the workspace file
-
-1. Open the file `.devcontainer/config/sailbot_workspace.code-workspace` in VS Code
-2. Click `Open Workspace`
+2. Click the popup to `Reopen in Container`. If there isn't a popup,
+   run the `Dev Containers: Reopen in Container` VS Code command
 
 ## 7. Run the `setup` task
 
@@ -276,8 +279,7 @@ to detect the files that were generated from building.
 
 ## 10. Start the system
 
-Run the entire system by telling ROS to launch with the global launch file using the following command
-in the terminal:
+Run the entire system to verify everything is working using the following command in the terminal:
 
 ```sh
 ros2 launch $ROS_WORKSPACE/src/global_launch/main_launch.py
@@ -341,7 +343,7 @@ A couple things to note:
         [stopping a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace#stopping-a-codespace){target=_blank}
         - Delete codespaces that you do not plan to use anymore:
         [deleting a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/deleting-a-codespace#deleting-a-codespace){target=_blank}
-2. Follow the local setup instructions starting from [6. Open the workspace file](#6-open-the-workspace-file)
+2. Follow the local setup instructions starting from [5. Open the workspace file](#5-open-the-workspace-file)
 
 Once you have a codespace set up:
 
@@ -351,7 +353,6 @@ Once you have a codespace set up:
 
 !!! warning "Known limitations of running Sailbot Workspace in a GitHub Codespace"
 
-    - Grafana: can't connect to MongoDB
     - Does not support X11 forwarding to run GUI applications
     - High-spec machines not available: as of March 2023, the highest-spec machine that is publically available
       has a 4-core CPU and 8GB of RAM

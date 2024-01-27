@@ -48,7 +48,8 @@ bubbles represent the flow of data between them. The color of the bubbles denote
 - Purple: Controls
 - Green: Network Systems
 - Blue: Pathfinding
-- White: Outside the Software Team's scope
+- Red: Website
+- White: Not a part of the Software Team's codebase
 
 Components that are used in both the production and development environments are darker,
 while ones that are only used in one are lighter.
