@@ -1,35 +1,60 @@
 # How-To's
 
-## Run optional programs
+## Containerized applications
 
 !!! info ""
 
     New in [:octicons-tag-24: v1.1.0](https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.1.0){target=_blank}
 
-There are a couple programs that are not run by default to minimize resource usage:
+We have containerized the following applications for a variety of reasons:
 
-- [Docs site](https://github.com/UBCSailbot/docs){target=_blank}
-- [Pathfinding website](https://github.com/UBCSailbot/website){target=_blank}
 - [MongoDB database](https://www.mongodb.com/){target=_blank}
+- [Docs site](https://github.com/UBCSailbot/docs){target=_blank}
+- [Website](https://github.com/UBCSailbot/website){target=_blank}
 
-### Start running an optional program
+### Running containerized applications
 
-1. In the first section of `dockerComposeFile` of `.devcontainer/devcontainer.json`,
-   there is a list of Docker Compose files with comments at the end of the line that say which programs are defined in them.
-   Uncomment the Docker Compose file that the program is defined in: remove `//` at the beginning of the line
-    1. Programs that are defined in the uncommented Docker Compose files will be started and stopped with Sailbot Workspace
+In the first section of `dockerComposeFile` of `.devcontainer/devcontainer.json`, there is a list of files:
+each file contains the configuration for one or more applications.
+
+The ones that are commented out are not run. To run them:
+
+1. Uncomment the Docker Compose file(s) that the application(s) you desire to run are defined in
+    - Programs that are defined in the uncommented Docker Compose files will be started and stopped with Sailbot Workspace
 2. Run the `Dev Containers: Rebuild Container` VS Code command to restart Sailbot Workspace
-3. Run the `Ports: Focus on Ports View` VS Code command
-4. Open the site by hovering over its local address and clicking either "Open in Browser" or "Preview in Editor"
+
+To stop running them:
+
+1. Comment out the corresponding Docker Compose file
+2. Stop the application's container: see [Managing containerized applications](#managing-containerized-applications)
+
+### Viewing MongoDB data
+
+Connect the [MongoDB VS Code extension](https://www.mongodb.com/products/vs-code){target=_blank} to the running database:
+[Create a Connection for Deployment](https://www.mongodb.com/docs/mongodb-vscode/connect/#create-a-connection-to-a-deployment){target=_blank}
+
+- Use the default methods: "Paste Connection String" and "Open from Overview Page"
+- Our database's connection string is `mongodb://localhost:27017`
+- See the [MongoDB VS Code extension docs](https://www.mongodb.com/docs/mongodb-vscode/){target=_blank} for how
+  to use it to navigate or explore the database
+
+### Opening Docs or Website
+
+Docs runs on port 8000 and Website 3005. You can see them in your browser at `localhost:<port>`. To open them using VS Code:
+
+1. Run the `Ports: Focus on Ports View` VS Code command
+2. Open the site by hovering over its local address and clicking either "Open in Browser" or "Preview in Editor"
     - The local address of Docs is the line with a port of 8000
     - The local address of Website is the line with a port of 3005
-5. Changes made to its files are loaded when they are saved
-    1. **If Auto Save is on, turn it off so that the Docs/Website servers aren't continuously reloading**
-        - Auto Save is on by default in GitHub Codespaces
 
-### Manage an optional program
+!!! tip "Turn off auto saving"
 
-Each program runs in a Docker container. Containers can be managed using Docker Desktop or CLI commands:
+    Changes made to their files are loaded when they are saved, so **if Auto Save is on, turn it off**
+    so that the Docs/Website servers aren't continuously reloading. Auto Save is on by default in GitHub Codespaces
+
+### Managing containerized applications
+
+Each application runs in a Docker container. Containers can be managed using Docker Desktop or CLI commands:
 
 - View Sailbot Workspace containers
 
@@ -45,7 +70,7 @@ Each program runs in a Docker container. Containers can be managed using Docker 
         docker ps -a
         ```
 
-        - Sailbot Workspace containers should be named something like `sailbot_workspace_devcontainer-<program>-<number>`
+        - Sailbot Workspace containers should be named something like `sailbot_workspace_devcontainer-<application>-<number>`
         - The `STATUS` column shows whether a container is running or not
 
 - View a container's logs, the output of the container (including errors that caused it to stop)
@@ -84,12 +109,6 @@ Each program runs in a Docker container. Containers can be managed using Docker 
         ```
         docker stop <container>
         ```
-
-### Stop running an optional program
-
-1. In `dockerComposeFile` of `.devcontainer/devcontainer.json`, comment out the Docker Compose file that the program is
-   defined in: add `//` to the beginning of the line
-2. Stop the program's container: see [Manage an optional program](#manage-an-optional-program)
 
 ## Temporarily add apt packages
 

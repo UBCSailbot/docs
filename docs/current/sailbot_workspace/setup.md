@@ -272,22 +272,12 @@ The `setup` task clones the repositories defined in `src/polaris.repos` and upda
 
 The `Build All` task builds all the ROS packages.
 
-## 9. Setup the MongoDB VS Code extension
-
-Connect the [extension](https://www.mongodb.com/products/vs-code){target=_blank} to the running database:
-[Create a Connection for Deployment](https://www.mongodb.com/docs/mongodb-vscode/connect/#create-a-connection-to-a-deployment){target=_blank}
-
-- Use the default methods: "Paste Connection String" and "Open from Overview Page"
-- Our database's connection string is `mongodb://localhost:27017`
-- See the [MongoDB VS Code extension docs](https://www.mongodb.com/docs/mongodb-vscode/){target=_blank} for how
-  to use it to navigate or explore the database
-
-## 10. Reload the VS Code terminals and window
+## 9. Reload the VS Code terminals and window
 
 Delete all open terminals and run the `Developer: Reload Window` VS Code command
 to detect the files that were generated from building.
 
-## 11. Start the system
+## 10. Start the system
 
 Run the entire system to verify everything is working using the following command in the terminal:
 
