@@ -610,37 +610,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#run-optional-programs" class="md-nav__link">
+  <a href="#containerized-applications" class="md-nav__link">
     <span class="md-ellipsis">
-      Run optional programs
+      Containerized applications
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Run optional programs">
+    <nav class="md-nav" aria-label="Containerized applications">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#start-running-an-optional-program" class="md-nav__link">
+  <a href="#running-containerized-applications" class="md-nav__link">
     <span class="md-ellipsis">
-      Start running an optional program
+      Running containerized applications
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#manage-an-optional-program" class="md-nav__link">
+  <a href="#viewing-mongodb-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Manage an optional program
+      Viewing MongoDB data
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#stop-running-an-optional-program" class="md-nav__link">
+  <a href="#opening-docs-or-website" class="md-nav__link">
     <span class="md-ellipsis">
-      Stop running an optional program
+      Opening Docs or Website
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-containerized-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing containerized applications
     </span>
   </a>
   
@@ -1963,37 +1972,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#run-optional-programs" class="md-nav__link">
+  <a href="#containerized-applications" class="md-nav__link">
     <span class="md-ellipsis">
-      Run optional programs
+      Containerized applications
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Run optional programs">
+    <nav class="md-nav" aria-label="Containerized applications">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#start-running-an-optional-program" class="md-nav__link">
+  <a href="#running-containerized-applications" class="md-nav__link">
     <span class="md-ellipsis">
-      Start running an optional program
+      Running containerized applications
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#manage-an-optional-program" class="md-nav__link">
+  <a href="#viewing-mongodb-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Manage an optional program
+      Viewing MongoDB data
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#stop-running-an-optional-program" class="md-nav__link">
+  <a href="#opening-docs-or-website" class="md-nav__link">
     <span class="md-ellipsis">
-      Stop running an optional program
+      Opening Docs or Website
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-containerized-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing containerized applications
     </span>
   </a>
   
@@ -2096,30 +2114,43 @@
 
 
 <h1 id="how-tos">How-To's<a class="headerlink" href="#how-tos" title="Permanent link">&para;</a></h1>
-<h2 id="run-optional-programs">Run optional programs<a class="headerlink" href="#run-optional-programs" title="Permanent link">&para;</a></h2>
+<h2 id="containerized-applications">Containerized applications<a class="headerlink" href="#containerized-applications" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p>New in <a href="https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.1.0" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.75 6.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z"/><path d="M2.5 1h8.44a1.5 1.5 0 0 1 1.06.44l10.25 10.25a1.5 1.5 0 0 1 0 2.12l-8.44 8.44a1.5 1.5 0 0 1-2.12 0L1.44 12A1.497 1.497 0 0 1 1 10.94V2.5A1.5 1.5 0 0 1 2.5 1Zm0 1.5v8.44l10.25 10.25 8.44-8.44L10.94 2.5Z"/></svg></span> v1.1.0</a></p>
 </div>
-<p>There are a couple programs that are not run by default to minimize resource usage:</p>
+<p>We have containerized the following applications for a variety of reasons:</p>
 <ul>
-<li><a href="https://github.com/UBCSailbot/docs" target="_blank">Docs site</a></li>
-<li><a href="https://github.com/UBCSailbot/website" target="_blank">Pathfinding website</a></li>
 <li><a href="https://www.mongodb.com/" target="_blank">MongoDB database</a></li>
-<li><a href="https://grafana.com/" target="_blank">Grafana dashboards</a></li>
+<li><a href="https://github.com/UBCSailbot/docs" target="_blank">Docs site</a></li>
+<li><a href="https://github.com/UBCSailbot/website" target="_blank">Website</a></li>
 </ul>
-<h3 id="start-running-an-optional-program">Start running an optional program<a class="headerlink" href="#start-running-an-optional-program" title="Permanent link">&para;</a></h3>
+<h3 id="running-containerized-applications">Running containerized applications<a class="headerlink" href="#running-containerized-applications" title="Permanent link">&para;</a></h3>
+<p>In the first section of <code>dockerComposeFile</code> of <code>.devcontainer/devcontainer.json</code>, there is a list of files:
+each file contains the configuration for one or more applications.</p>
+<p>The ones that are commented out are not run. To run them:</p>
 <ol>
-<li>In the first section of <code>dockerComposeFile</code> of <code>.devcontainer/devcontainer.json</code>,
-   there is a list of Docker Compose files with comments at the end of the line that say which programs are defined in them.
-   Uncomment the Docker Compose file that the program is defined in: remove <code>//</code> at the beginning of the line<ol>
+<li>Uncomment the Docker Compose file(s) that the application(s) you desire to run are defined in<ul>
 <li>Programs that are defined in the uncommented Docker Compose files will be started and stopped with Sailbot Workspace</li>
-</ol>
+</ul>
 </li>
 <li>Run the <code>Dev Containers: Rebuild Container</code> VS Code command to restart Sailbot Workspace</li>
-<li>
-<p>Follow the program-specific run instructions:</p>
-<details class="note">
-<summary>Run Docs or Website</summary>
+</ol>
+<p>To stop running them:</p>
+<ol>
+<li>Comment out the corresponding Docker Compose file</li>
+<li>Stop the application's container: see <a href="#managing-containerized-applications">Managing containerized applications</a></li>
+</ol>
+<h3 id="viewing-mongodb-data">Viewing MongoDB data<a class="headerlink" href="#viewing-mongodb-data" title="Permanent link">&para;</a></h3>
+<p>Connect the <a href="https://www.mongodb.com/products/vs-code" target="_blank">MongoDB VS Code extension</a> to the running database:
+<a href="https://www.mongodb.com/docs/mongodb-vscode/connect/#create-a-connection-to-a-deployment" target="_blank">Create a Connection for Deployment</a></p>
+<ul>
+<li>Use the default methods: "Paste Connection String" and "Open from Overview Page"</li>
+<li>Our database's connection string is <code>mongodb://localhost:27017</code></li>
+<li>See the <a href="https://www.mongodb.com/docs/mongodb-vscode/" target="_blank">MongoDB VS Code extension docs</a> for how
+  to use it to navigate or explore the database</li>
+</ul>
+<h3 id="opening-docs-or-website">Opening Docs or Website<a class="headerlink" href="#opening-docs-or-website" title="Permanent link">&para;</a></h3>
+<p>Docs runs on port 8000 and Website 3005. You can see them in your browser at <code>localhost:&lt;port&gt;</code>. To open them using VS Code:</p>
 <ol>
 <li>Run the <code>Ports: Focus on Ports View</code> VS Code command</li>
 <li>Open the site by hovering over its local address and clicking either "Open in Browser" or "Preview in Editor"<ul>
@@ -2127,60 +2158,14 @@
 <li>The local address of Website is the line with a port of 3005</li>
 </ul>
 </li>
-<li>Changes made to its files are loaded when they are saved<ol>
-<li><strong>If Auto Save is on, turn it off so that the Docs/Website servers aren't continuously reloading</strong><ul>
-<li>Auto Save is on by default in GitHub Codespaces</li>
-</ul>
-</li>
 </ol>
-</li>
-</ol>
-</details>
-<details class="note">
-<summary>Run MongoDB</summary>
-<ol>
-<li>Setup the <a href="https://www.mongodb.com/products/vs-code" target="_blank">MongoDB VS Code extension</a><ol>
-<li><a href="https://www.mongodb.com/docs/mongodb-vscode/connect/#create-a-connection-to-a-deployment" target="_blank">Connect it to the running database</a><ol>
-<li>Use the default methods: "Paste Connection String" and "Open from Overview Page"</li>
-<li>Our database's connection string is <code>mongodb://localhost:27017</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>See the <a href="https://www.mongodb.com/docs/mongodb-vscode/" target="_blank">MongoDB VS Code extension docs</a> for how
-   to use it to navigate or explore the database</li>
-</ol>
-</details>
-<details class="note">
-<summary>Run Grafana</summary>
-<ol>
-<li>Connect to the MongoDB database<ol>
-<li>Ensure that:<ol>
-<li>You are not running Sailbot Workspace in a <a href="../setup/#setup-sailbot-workspace-in-a-github-codespace" target="_blank">GitHub Codespace</a></li>
-<li>MongoDB is running</li>
-</ol>
-</li>
-<li>Open the site by hovering over its local address and clicking "Open in Browser"<ul>
-<li>The local address of Grafana is the line with a port of 3000</li>
-</ul>
-</li>
-<li>Login using the default username and password: <code>admin</code> and <code>admin</code>, respectively</li>
-<li>Once logged-in, click the cog icon <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66Z"/></svg></span> in the bottom left to go to the data sources configuration
-   page</li>
-<li>Add the <code>mongodb-community</code> data source<ol>
-<li>Paste our database's URL: <code>mongodb://localhost:27017</code></li>
-<li>Click "Save &amp; test"</li>
-<li>Verify that the message "MongoDB is Responding" pops up</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</details>
-</li>
-</ol>
-<h3 id="manage-an-optional-program">Manage an optional program<a class="headerlink" href="#manage-an-optional-program" title="Permanent link">&para;</a></h3>
-<p>Each program runs in a Docker container. Containers can be managed using Docker Desktop or CLI commands:</p>
+<div class="admonition tip">
+<p class="admonition-title">Turn off auto saving</p>
+<p>Changes made to their files are loaded when they are saved, so <strong>if Auto Save is on, turn it off</strong>
+so that the Docs/Website servers aren't continuously reloading. Auto Save is on by default in GitHub Codespaces</p>
+</div>
+<h3 id="managing-containerized-applications">Managing containerized applications<a class="headerlink" href="#managing-containerized-applications" title="Permanent link">&para;</a></h3>
+<p>Each application runs in a Docker container. Containers can be managed using Docker Desktop or CLI commands:</p>
 <ul>
 <li>
 <p>View Sailbot Workspace containers</p>
@@ -2199,7 +2184,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker ps -a
 </code></pre></div>
 <ul>
-<li>Sailbot Workspace containers should be named something like <code>sailbot_workspace_devcontainer-&lt;program&gt;-&lt;number&gt;</code></li>
+<li>Sailbot Workspace containers should be named something like <code>sailbot_workspace_devcontainer-&lt;application&gt;-&lt;number&gt;</code></li>
 <li>The <code>STATUS</code> column shows whether a container is running or not</li>
 </ul>
 </div>
@@ -2256,12 +2241,6 @@
 </div>
 </li>
 </ul>
-<h3 id="stop-running-an-optional-program">Stop running an optional program<a class="headerlink" href="#stop-running-an-optional-program" title="Permanent link">&para;</a></h3>
-<ol>
-<li>In <code>dockerComposeFile</code> of <code>.devcontainer/devcontainer.json</code>, comment out the Docker Compose file that the program is
-   defined in: add <code>//</code> to the beginning of the line</li>
-<li>Stop the program's container: see <a href="#manage-an-optional-program">Manage an optional program</a></li>
-</ol>
 <h2 id="temporarily-add-apt-packages">Temporarily add apt packages<a class="headerlink" href="#temporarily-add-apt-packages" title="Permanent link">&para;</a></h2>
 <p>If a task requires you to add apt packages, you can quickly test them in your Dev Container:</p>
 <ol>
@@ -2401,7 +2380,7 @@ This is because the system has trouble resolving the local hostname.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 12, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 27, 2024</span>
   </span>
 
     
