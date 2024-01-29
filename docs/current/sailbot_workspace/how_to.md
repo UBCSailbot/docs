@@ -169,6 +169,8 @@ Raye was our previous project. Her software can be run in the `raye` branch:
 
 1. Switch to the `raye` branch: `git switch raye`
 2. Rebuild the Dev Container: run the `Dev Containers: Rebuild Container` VS Code command
+3. If you want to run [Raye's local pathfinding visualizer](https://github.com/UBCSailbot/raye-local-pathfinding?tab=readme-ov-file#visualizing-the-simulation){target=_blank},
+   complete [step 2 of the setup instructions](./setup.md#2-setup-x11-forwarding){target=_blank}
 
 !!! warning "`raye` branch disclaimers"
 
