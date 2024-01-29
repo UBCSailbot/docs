@@ -268,45 +268,9 @@ ros2 launch $ROS_WORKSPACE/src/global_launch/main_launch.py
 
 Use ++ctrl+c++ in the terminal to stop the system.
 
-## Enable GitHub Copilot in your VS Code Editor
-
-[^5]: [GitHub Copilot Quickstart Guide](https://docs.github.com/en/copilot/quickstart){target=_blank}
-
-GitHub Copilot is an AI paired programming tool that can help you accelerate your development by providing suggestions
-for whole lines or entire functions inside your editor.[^5] To enable GitHub Copilot:
-
-1. [Apply to GitHub Global Campus as a student](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student){target=_blank}
-to use GitHub Copilot and get other student benefits for free. It may take a few days for your student status to be
-verified. In the meantime, you can still continue with the next steps. However, you will need to use the GitHub Copilot
-free trial until your account is verified.
-
-2. [Sign up for GitHub Copilot for your personal account](https://docs.github.com/en/copilot/quickstart#signing-up-for-github-copilot-for-your-personal-account){target=_blank}.
-If it offers a free trial, then take it. You should see a page telling you that you can use GitHub Copilot for free
-(if you have a verified student account).
-
-3. Sign into your GitHub account in VS Code. The GitHub Copilot extension should automatically prompt you to sign into
-your account if you are not already.
-
-    ??? warning "VS Code is not prompting me to sign into my account"
-        You may already be signed in into your GitHub account. You can check by clicking on the :octicons-person-16:
-        **Accounts** icon in the bottom-left corner in VS Code and verify that you see your GitHub account.
-
-        If you do not see your account, you can get the sign in prompt by trying:
-
-        - Reloading the VS Code window: ++ctrl+shift+p++ and select `Developer: Reload Window`
-        - Rebuilding the devcontainer: ++ctrl+shift+p++ and select `Dev Containers: Rebuild Container`
-        - If using a Mac, use ++cmd++ instead of ++ctrl++
-
-4. If all the previous steps were done correctly, you should see the :octicons-copilot-48: **GitHub Copilot** icon in
-the bottom-right corner of VS Code without any error messages. For more information on how to use Copilot and a tutorial,
-refer to:
-
-    - [The GitHub Copilot Getting Started Guide](https://docs.github.com/en/copilot/getting-started-with-github-copilot){target=_blank}
-    - [Configuring GitHub Copilot in your Environment](https://docs.github.com/en/copilot/configuring-github-copilot/configuring-github-copilot-in-your-environment){target=_blank}
-
 ## Setup Sailbot Workspace in a GitHub Codespace
 
-A codespace is a development environment that's hosted in the cloud.[^6]
+A codespace is a development environment that's hosted in the cloud.[^5]
 Since Sailbot Workspace is resource intensive, it has high hardware requirements and power consumption,
 which aren't ideal for development on laptops. GitHub Codespaces provide a seamless experience to work on repositories
 off-device, especially if they specify a Dev Container like Sailbot Workspace. Codespaces can run in VS Code
@@ -338,4 +302,4 @@ Once you have a codespace set up:
     - High-spec machines not available: as of March 2023, the highest-spec machine that is publically available
       has a 4-core CPU and 8GB of RAM
 
-[^6]: [GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview){target=_blank}
+[^5]: [GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview){target=_blank}
