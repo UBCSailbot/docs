@@ -50,18 +50,16 @@ allowing it to be installed on Windows and macOS in addition to Linux.
 
 === ":material-microsoft-windows: Windows"
 
-    1. Set up prerequisites, [WSL](https://learn.microsoft.com/en-us/windows/wsl/){target=_blank} and [Ubuntu](https://ubuntu.com/){target=_blank}:
+    1. Set up prerequisites, WSL and Ubuntu:
 
-        1. In PowerShell, run `wsl --install Ubuntu`
+        1. In PowerShell, run `wsl --install Ubuntu`, then `exit`, `wsl --update`, and `wsl --set-default Ubuntu`
 
-            ??? warning "Already installed WSL or Ubuntu?"
+            ??? warning "Ubuntu is already installed?"
 
-                If WSL or Ubuntu is already installed, ensure that they are up-to-date:
+                If Ubuntu is already installed, check that it is the right WSL version:
 
-                1. Update WSL by running `wsl --update` in PowerShell
-                2. Ensure that Ubuntu is WSL 2, not 1:
-                    1. Check the WSL versions of Linux distributions with `wsl -l -v`
-                    2. If Ubuntu's `VERSION` is 1, upgrade it to WSL 2 with `wsl --set-version Ubuntu 2`
+                1. Check the WSL versions of Linux distributions with `wsl -l -v`
+                2. If Ubuntu's `VERSION` is 1, upgrade it to WSL 2 with `wsl --set-version Ubuntu 2`
 
         2. Open the Ubuntu app to set up or verify its configuration:
             1. If you are opening Ubuntu for the first time, a setup process will run;
