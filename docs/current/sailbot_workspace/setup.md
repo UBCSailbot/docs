@@ -126,17 +126,32 @@ use all the features of Sailbot Workspace.
 Git is a free and open source distributed version control system designed to handle everything from
 small to very large projects with speed and efficiency.[^4]
 
-1. Check if Git is installed with `git --version`; it is installed by default on most operating systems
-    - If not installed, see [Git Downloads](https://git-scm.com/download){target=_blank}
-        - If you want to use Git on Windows outside of WSL, you would need to install Git for Windows
+1. Check if Git is installed with `git --version` (on Windows, run command in PowerShell)
+    - If not installed, download and install it from [Git Downloads](https://git-scm.com/download){target=_blank}
 2. Configure your name and email: [Git config file setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-config-file-setup){target=_blank}
+   (on Windows, run commands in Ubuntu)
 3. Login to GitHub
-    - If you have Git for Windows installed, see [Git Credential Manager setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup){target=_blank}
-    - Otherwise, use the GitHub CLI
+
+    === ":material-microsoft-windows: Windows"
+
+        1. Run the `git config` command for your Git version in [Git Credential Manager setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup){target=_blank} (run command in Ubuntu)
+
+            !!! warning "Which Git to check"
+
+                Git is installed seperately in Windows and Ubuntu, so they could be at different versions.
+                We want to check the version of Git on Windows, not Ubuntu:
+                run `git --version` in PowerShell and not Ubuntu.
+                However, the `git config` command itself is run in Ubuntu.
+
+    === ":material-apple: macOS / :material-linux: Linux"
+
         1. Install the GitHub CLI: [Installation](https://github.com/cli/cli#installation){target=_blank}
-            - On Windows, run the Ubuntu installation commands in the Ubuntu terminal:
-              [Debian, Ubuntu Linux, Raspberry Pi OS (apt)](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt){target=_blank}
         2. Run `gh auth login` and select the first option for all choices
+
+4. Verify that you have successfully logged in to GitHub by cloning a private GitHub repository (run command in Ubuntu)
+    1. If you are a part of the [UBCSailbot Software GitHub team](https://github.com/orgs/UBCSailbot/teams/software-team){target=_blank},
+       you shouldn't see any errors running `git clone https://github.com/UBCSailbot/raye-ais.git`
+    2. You can delete this repository with `rm -rf raye-ais`
 
 [^4]: [Git SCM](https://git-scm.com){target=_blank}
 
