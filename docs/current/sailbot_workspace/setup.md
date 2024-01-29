@@ -6,31 +6,6 @@ The workspace may not perform well on Windows computers with 8GB of memory or le
 in this case, please check out our recommendations in the [Performance Issues](./workflow.md#performance-issues){target=_blank}
 section.
 
-Throughout this documentation, there are references to running VS Code commands, tasks, and launch configurations.
-Expand the box below to learn how to do so:
-
-??? note "Running VS Code commands, tasks, and launch configurations"
-
-    > For keyboard shortcuts on MacOS, substitute ++ctrl++ with ++cmd++
-
-    VS Code commands can be run in the Command Palette.
-    Open the Command Palette from the `View` menu or with ++ctrl+shift+p++.
-
-    Tasks can be run using the `Tasks: Run Task` VS Code command. Build tasks can be run with ++ctrl+shift+b++.
-
-    Launch configurations can be run from the [Run and Debug view](https://code.visualstudio.com/docs/editor/debugging#_run-and-debug-view){target=_blank}.
-
-    You can also run VS Code commands, tasks, launch configurations, and much more by typing their prefixes
-    into an empty Command Palette. Open an empty Command Palette with ++ctrl+p++.
-    See the list below for some prefixes and their functions.
-    For prefixes that are words, you will have to append a space to them to bring up their functions.
-
-    - Nothing: files
-    - `>`: VS Code commands
-    - `task`: tasks
-    - `debug`: launch configurations
-    - `?`: list all prefixes and their functions
-
 ## 1. Setup prerequisites
 
 ### Docker
@@ -266,11 +241,8 @@ Click the popup to `Open Workspace`. If there isn't a popup:
 
 ## 7. Run the `setup` task
 
-!!! info ""
-
-    Moved from Run to Setup page in [:octicons-tag-24: v1.1.0](https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.1.0){target=_blank}
-
 The `setup` task clones the repositories defined in `src/polaris.repos` and updates dependencies of the ROS packages.
+If you don't know how to run a VS Code task, see [How to run VS Code commands, tasks, and launch configurations](./how_to.md#run-vs-code-commands-tasks-and-launch-configurations).
 
 ??? bug "Can't see the `setup` task"
 

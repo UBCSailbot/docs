@@ -1,6 +1,30 @@
 # How-To's
 
-## Containerized applications
+## Run VS Code commands, tasks, and launch configurations
+
+!!! tip "MacOS keyboard shortcuts"
+
+    For keyboard shortcuts on MacOS, substitute ++ctrl++ with ++cmd++.
+
+VS Code commands can be run in the Command Palette.
+Open the Command Palette from the `View` menu or with ++ctrl+shift+p++.
+
+Tasks can be run using the `Tasks: Run Task` VS Code command. Build tasks can be run with ++ctrl+shift+b++.
+
+Launch configurations can be run from the [Run and Debug view](https://code.visualstudio.com/docs/editor/debugging#_run-and-debug-view){target=_blank}.
+
+You can also run VS Code commands, tasks, launch configurations, and much more by typing their prefixes
+into an empty Command Palette. Open an empty Command Palette with ++ctrl+p++ or by clicking the box in the center
+of the title bar. See the list below for some prefixes and their functions.
+For prefixes that are words, you will have to append a space to them to bring up their functions.
+
+- Nothing: files
+- `>`: VS Code commands
+- `task`: tasks
+- `debug`: launch configurations
+- `?`: list all prefixes and their functions
+
+## Work with containerized applications
 
 !!! info ""
 
