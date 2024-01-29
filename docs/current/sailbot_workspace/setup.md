@@ -275,7 +275,7 @@ to detect the files that were generated from building.
 
 ## 10. Start the system
 
-Run the entire system to verify everything is working using the following command in the terminal:
+Run the entire system to verify everything is working using the following command in the VS Code terminal:
 
 ```sh
 ros2 launch $ROS_WORKSPACE/src/global_launch/main_launch.py
