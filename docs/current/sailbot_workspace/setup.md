@@ -75,19 +75,6 @@ allowing it to be installed on Windows and macOS in addition to Linux.
                     in PowerShell, replacing `<username>` with the name of the newly-created user
                     3. Run `whoami` after closing and reopening Ubuntu, verifying that it returns your Ubuntu username
 
-        3. Run the rest of the commands in these setup instructions in the Ubuntu app, not PowerShell or Command Prompt
-
-            ??? bug "Docker Desktop can't start up and WSL hangs when restarting"
-
-                If Ubuntu can't start up and WSL hangs when restarting:
-
-                1. Open command prompt as administrator and run the command `netsh winsock reset`
-                2. Uninstall and reinstall Docker Desktop
-                3. Restart your computer
-
-                More potential solutions can be found here:
-                [Link](https://github.com/docker/for-win/issues/13273){target=_blank}
-
     2. [Install Docker Desktop](https://docs.docker.com/desktop/install/windows-install/){target=_blank}
     with the WSL 2 backend
 
@@ -99,6 +86,17 @@ allowing it to be installed on Windows and macOS in addition to Linux.
 
             1. For windows users navigate to `C:\Users\user_name` and delete the .Docker folder
             2. Restart Docker Desktop
+
+        ??? bug "Docker Desktop can't start up and WSL hangs when restarting"
+
+            If Ubuntu can't start up and WSL hangs when restarting:
+
+            1. Open command prompt as administrator and run the command `netsh winsock reset`
+            2. Uninstall and reinstall Docker Desktop
+            3. Restart your computer
+
+            More potential solutions can be found here:
+            [Link](https://github.com/docker/for-win/issues/13273){target=_blank}
 
 === ":material-apple: macOS"
 
