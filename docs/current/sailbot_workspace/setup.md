@@ -63,7 +63,7 @@ allowing it to be installed on Windows and macOS in addition to Linux.
                     1. Check the WSL versions of Linux distributions with `wsl -l -v`
                     2. If Ubuntu's `VERSION` is 1, upgrade it to WSL 2 with `wsl --set-version Ubuntu 2`
 
-        2. Open Ubuntu to set up or verify its configuration:
+        2. Open the Ubuntu app to set up or verify its configuration:
             1. If you are opening Ubuntu for the first time, a setup process will run;
             follow the prompts to finish setting it up
             2. Run `whoami` to verify that it returns your Ubuntu username
@@ -77,7 +77,7 @@ allowing it to be installed on Windows and macOS in addition to Linux.
                     in PowerShell, replacing `<username>` with the name of the newly-created user
                     3. Run `whoami` after closing and reopening Ubuntu, verifying that it returns your Ubuntu username
 
-        3. From now on, run commands in the Ubuntu terminal, not PowerShell or Command Prompt
+        3. Run the rest of the commands in these setup instructions in the Ubuntu app, not PowerShell or Command Prompt
 
             ??? bug "Docker Desktop can't start up and WSL hangs when restarting"
 
@@ -89,8 +89,6 @@ allowing it to be installed on Windows and macOS in addition to Linux.
 
                 More potential solutions can be found here:
                 [Link](https://github.com/docker/for-win/issues/13273){target=_blank}
-
-
 
     2. [Install Docker Desktop](https://docs.docker.com/desktop/install/windows-install/){target=_blank}
     with the WSL 2 backend
@@ -214,13 +212,10 @@ X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applicat
 
 ## 3. Clone Sailbot Workspace
 
-??? tip "Where to clone on Windows"
+!!! tip "Where to clone on Windows"
 
     Windows has a native file system as well as file systems for each WSL distribution.
-    For the fastest performance speed,[^5] clone Sailbot Workspace in the WSL file system.
-    We recommend cloning it somewhere in your Ubuntu user's home directory, which is where Ubuntu opens to by default.
-
-    [^5]: [File storage and performance across file systems](https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems){target=_blank}
+    For sailbot workspace to work properly, **run the commands below in the Ubuntu app.**
 
 ```sh
 git clone https://github.com/UBCSailbot/sailbot_workspace.git
@@ -292,10 +287,10 @@ Use ++ctrl+c++ in the terminal to stop the system.
 
 ## Enable GitHub Copilot in your VS Code Editor
 
-[^6]: [GitHub Copilot Quickstart Guide](https://docs.github.com/en/copilot/quickstart){target=_blank}
+[^5]: [GitHub Copilot Quickstart Guide](https://docs.github.com/en/copilot/quickstart){target=_blank}
 
 GitHub Copilot is an AI paired programming tool that can help you accelerate your development by providing suggestions
-for whole lines or entire functions inside your editor.[^6] To enable GitHub Copilot:
+for whole lines or entire functions inside your editor.[^5] To enable GitHub Copilot:
 
 1. [Apply to GitHub Global Campus as a student](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student){target=_blank}
 to use GitHub Copilot and get other student benefits for free. It may take a few days for your student status to be
@@ -328,7 +323,7 @@ refer to:
 
 ## Setup Sailbot Workspace in a GitHub Codespace
 
-A codespace is a development environment that's hosted in the cloud.[^7]
+A codespace is a development environment that's hosted in the cloud.[^6]
 Since Sailbot Workspace is resource intensive, it has high hardware requirements and power consumption,
 which aren't ideal for development on laptops. GitHub Codespaces provide a seamless experience to work on repositories
 off-device, especially if they specify a Dev Container like Sailbot Workspace. Codespaces can run in VS Code
@@ -360,4 +355,4 @@ Once you have a codespace set up:
     - High-spec machines not available: as of March 2023, the highest-spec machine that is publically available
       has a 4-core CPU and 8GB of RAM
 
-[^7]: [GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview){target=_blank}
+[^6]: [GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview){target=_blank}
