@@ -6,31 +6,6 @@ The workspace may not perform well on Windows computers with 8GB of memory or le
 in this case, please check out our recommendations in the [Performance Issues](./workflow.md#performance-issues){target=_blank}
 section.
 
-Throughout this documentation, there are references to running VS Code commands, tasks, and launch configurations.
-Expand the box below to learn how to do so:
-
-??? note "Running VS Code commands, tasks, and launch configurations"
-
-    > For keyboard shortcuts on MacOS, substitute ++ctrl++ with ++cmd++
-
-    VS Code commands can be run in the Command Palette.
-    Open the Command Palette from the `View` menu or with ++ctrl+shift+p++.
-
-    Tasks can be run using the `Tasks: Run Task` VS Code command. Build tasks can be run with ++ctrl+shift+b++.
-
-    Launch configurations can be run from the [Run and Debug view](https://code.visualstudio.com/docs/editor/debugging#_run-and-debug-view){target=_blank}.
-
-    You can also run VS Code commands, tasks, launch configurations, and much more by typing their prefixes
-    into an empty Command Palette. Open an empty Command Palette with ++ctrl+p++.
-    See the list below for some prefixes and their functions.
-    For prefixes that are words, you will have to append a space to them to bring up their functions.
-
-    - Nothing: files
-    - `>`: VS Code commands
-    - `task`: tasks
-    - `debug`: launch configurations
-    - `?`: list all prefixes and their functions
-
 ## 1. Setup prerequisites
 
 ### Docker
@@ -50,20 +25,18 @@ allowing it to be installed on Windows and macOS in addition to Linux.
 
 === ":material-microsoft-windows: Windows"
 
-    1. Set up prerequisites, [WSL](https://learn.microsoft.com/en-us/windows/wsl/){target=_blank} and [Ubuntu](https://ubuntu.com/){target=_blank}:
+    1. Set up prerequisites, WSL and Ubuntu:
 
-        1. In PowerShell, run `wsl --install Ubuntu`
+        1. In PowerShell, run `wsl --install Ubuntu`, then `exit`, `wsl --update`, and `wsl --set-default Ubuntu`
 
-            ??? warning "Already installed WSL or Ubuntu?"
+            ??? warning "Ubuntu is already installed?"
 
-                If WSL or Ubuntu is already installed, ensure that they are up-to-date:
+                If Ubuntu is already installed, check that it is the right WSL version:
 
-                1. Update WSL by running `wsl --update` in PowerShell
-                2. Ensure that Ubuntu is WSL 2, not 1:
-                    1. Check the WSL versions of Linux distributions with `wsl -l -v`
-                    2. If Ubuntu's `VERSION` is 1, upgrade it to WSL 2 with `wsl --set-version Ubuntu 2`
+                1. Check the WSL versions of Linux distributions with `wsl -l -v`
+                2. If Ubuntu's `VERSION` is 1, upgrade it to WSL 2 with `wsl --set-version Ubuntu 2`
 
-        2. Open Ubuntu to set up or verify its configuration:
+        2. Open the Ubuntu app to set up or verify its configuration:
             1. If you are opening Ubuntu for the first time, a setup process will run;
             follow the prompts to finish setting it up
             2. Run `whoami` to verify that it returns your Ubuntu username
@@ -77,21 +50,6 @@ allowing it to be installed on Windows and macOS in addition to Linux.
                     in PowerShell, replacing `<username>` with the name of the newly-created user
                     3. Run `whoami` after closing and reopening Ubuntu, verifying that it returns your Ubuntu username
 
-        3. From now on, run commands in the Ubuntu terminal, not PowerShell or Command Prompt
-
-            ??? bug "Docker Desktop can't start up and WSL hangs when restarting"
-
-                If Ubuntu can't start up and WSL hangs when restarting:
-
-                1. Open command prompt as administrator and run the command `netsh winsock reset`
-                2. Uninstall and reinstall Docker Desktop
-                3. Restart your computer
-
-                More potential solutions can be found here:
-                [Link](https://github.com/docker/for-win/issues/13273){target=_blank}
-
-
-
     2. [Install Docker Desktop](https://docs.docker.com/desktop/install/windows-install/){target=_blank}
     with the WSL 2 backend
 
@@ -103,6 +61,17 @@ allowing it to be installed on Windows and macOS in addition to Linux.
 
             1. For windows users navigate to `C:\Users\user_name` and delete the .Docker folder
             2. Restart Docker Desktop
+
+        ??? bug "Docker Desktop can't start up and WSL hangs when restarting"
+
+            If Ubuntu can't start up and WSL hangs when restarting:
+
+            1. Open command prompt as administrator and run the command `netsh winsock reset`
+            2. Uninstall and reinstall Docker Desktop
+            3. Restart your computer
+
+            More potential solutions can be found here:
+            [Link](https://github.com/docker/for-win/issues/13273){target=_blank}
 
 === ":material-apple: macOS"
 
@@ -130,24 +99,42 @@ use all the features of Sailbot Workspace.
 Git is a free and open source distributed version control system designed to handle everything from
 small to very large projects with speed and efficiency.[^4]
 
-1. Check if Git is installed with `git --version`; it is installed by default on most operating systems
-    - If not installed, see [Git Downloads](https://git-scm.com/download){target=_blank}
-        - If you want to use Git on Windows outside of WSL, you would need to install Git for Windows
+1. Check if Git is installed with `git --version` (on Windows, run command in PowerShell)
+    - If not installed, download and install it from [Git Downloads](https://git-scm.com/download){target=_blank}
 2. Configure your name and email: [Git config file setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-config-file-setup){target=_blank}
+   (on Windows, run commands in Ubuntu)
 3. Login to GitHub
-    - If you have Git for Windows installed, see [Git Credential Manager setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup){target=_blank}
-    - Otherwise, use the GitHub CLI
+
+    === ":material-microsoft-windows: Windows"
+
+        1. Run the `git config` command for your Git version in [Git Credential Manager setup](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup){target=_blank} (run command in Ubuntu)
+
+            !!! warning "Which Git to check"
+
+                Git is installed seperately in Windows and Ubuntu, so they could be at different versions.
+                We want to check the version of Git on Windows, not Ubuntu:
+                run `git --version` in PowerShell and not Ubuntu.
+                However, the `git config` command itself is run in Ubuntu.
+
+    === ":material-apple: macOS / :material-linux: Linux"
+
         1. Install the GitHub CLI: [Installation](https://github.com/cli/cli#installation){target=_blank}
-            - On Windows, run the Ubuntu installation commands in the Ubuntu terminal:
-              [Debian, Ubuntu Linux, Raspberry Pi OS (apt)](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt){target=_blank}
         2. Run `gh auth login` and select the first option for all choices
+
+4. Verify that you have successfully logged in to GitHub by cloning a private GitHub repository (run command in Ubuntu)
+    1. If you are a part of the [UBCSailbot Software GitHub team](https://github.com/orgs/UBCSailbot/teams/software-team){target=_blank},
+       you shouldn't see any errors running `git clone https://github.com/UBCSailbot/raye-ais.git`
+    2. You can delete this repository with `rm -rf raye-ais`
 
 [^4]: [Git SCM](https://git-scm.com){target=_blank}
 
 ## 2. Setup X11 forwarding
 
 X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications.
-***You can skip this step*** since we currently aren't running any GUI applications.
+
+!!! warning ""
+
+    You can skip this step since we currently aren't running any GUI applications
 
 ??? info "Setup instructions for X11 forwarding"
 
@@ -211,13 +198,10 @@ X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applicat
 
 ## 3. Clone Sailbot Workspace
 
-??? tip "Where to clone on Windows"
+!!! tip "Where to clone on Windows"
 
+    **Run the command below in the Ubuntu app** to clone it in the Ubuntu file system, otherwise sailbot workspace will not work.
     Windows has a native file system as well as file systems for each WSL distribution.
-    For the fastest performance speed,[^5] clone Sailbot Workspace in the WSL file system.
-    We recommend cloning it somewhere in your Ubuntu user's home directory, which is where Ubuntu opens to by default.
-
-    [^5]: [File storage and performance across file systems](https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems){target=_blank}
 
 ```sh
 git clone https://github.com/UBCSailbot/sailbot_workspace.git
@@ -257,11 +241,8 @@ Click the popup to `Open Workspace`. If there isn't a popup:
 
 ## 7. Run the `setup` task
 
-!!! info ""
-
-    Moved from Run to Setup page in [:octicons-tag-24: v1.1.0](https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.1.0){target=_blank}
-
 The `setup` task clones the repositories defined in `src/polaris.repos` and updates dependencies of the ROS packages.
+If you don't know how to run a VS Code task, see [How to run VS Code commands, tasks, and launch configurations](./how_to.md#run-vs-code-commands-tasks-and-launch-configurations).
 
 ??? bug "Can't see the `setup` task"
 
@@ -279,7 +260,7 @@ to detect the files that were generated from building.
 
 ## 10. Start the system
 
-Run the entire system to verify everything is working using the following command in the terminal:
+Run the entire system to verify everything is working using the following command in the VS Code terminal:
 
 ```sh
 ros2 launch $ROS_WORKSPACE/src/global_launch/main_launch.py
@@ -287,45 +268,9 @@ ros2 launch $ROS_WORKSPACE/src/global_launch/main_launch.py
 
 Use ++ctrl+c++ in the terminal to stop the system.
 
-## Enable GitHub Copilot in your VS Code Editor
-
-[^6]: [GitHub Copilot Quickstart Guide](https://docs.github.com/en/copilot/quickstart){target=_blank}
-
-GitHub Copilot is an AI paired programming tool that can help you accelerate your development by providing suggestions
-for whole lines or entire functions inside your editor.[^6] To enable GitHub Copilot:
-
-1. [Apply to GitHub Global Campus as a student](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student){target=_blank}
-to use GitHub Copilot and get other student benefits for free. It may take a few days for your student status to be
-verified. In the meantime, you can still continue with the next steps. However, you will need to use the GitHub Copilot
-free trial until your account is verified.
-
-2. [Sign up for GitHub Copilot for your personal account](https://docs.github.com/en/copilot/quickstart#signing-up-for-github-copilot-for-your-personal-account){target=_blank}.
-If it offers a free trial, then take it. You should see a page telling you that you can use GitHub Copilot for free
-(if you have a verified student account).
-
-3. Sign into your GitHub account in VS Code. The GitHub Copilot extension should automatically prompt you to sign into
-your account if you are not already.
-
-    ??? warning "VS Code is not prompting me to sign into my account"
-        You may already be signed in into your GitHub account. You can check by clicking on the :octicons-person-16:
-        **Accounts** icon in the bottom-left corner in VS Code and verify that you see your GitHub account.
-
-        If you do not see your account, you can get the sign in prompt by trying:
-
-        - Reloading the VS Code window: ++ctrl+shift+p++ and select `Developer: Reload Window`
-        - Rebuilding the devcontainer: ++ctrl+shift+p++ and select `Dev Containers: Rebuild Container`
-        - If using a Mac, use ++cmd++ instead of ++ctrl++
-
-4. If all the previous steps were done correctly, you should see the :octicons-copilot-48: **GitHub Copilot** icon in
-the bottom-right corner of VS Code without any error messages. For more information on how to use Copilot and a tutorial,
-refer to:
-
-    - [The GitHub Copilot Getting Started Guide](https://docs.github.com/en/copilot/getting-started-with-github-copilot){target=_blank}
-    - [Configuring GitHub Copilot in your Environment](https://docs.github.com/en/copilot/configuring-github-copilot/configuring-github-copilot-in-your-environment){target=_blank}
-
 ## Setup Sailbot Workspace in a GitHub Codespace
 
-A codespace is a development environment that's hosted in the cloud.[^7]
+A codespace is a development environment that's hosted in the cloud.[^5]
 Since Sailbot Workspace is resource intensive, it has high hardware requirements and power consumption,
 which aren't ideal for development on laptops. GitHub Codespaces provide a seamless experience to work on repositories
 off-device, especially if they specify a Dev Container like Sailbot Workspace. Codespaces can run in VS Code
@@ -357,4 +302,4 @@ Once you have a codespace set up:
     - High-spec machines not available: as of March 2023, the highest-spec machine that is publically available
       has a 4-core CPU and 8GB of RAM
 
-[^7]: [GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview){target=_blank}
+[^5]: [GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview){target=_blank}
