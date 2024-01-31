@@ -200,7 +200,7 @@ X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applicat
 
 !!! tip "Where to clone on Windows"
 
-    **Run the command below in the Ubuntu app** to clone it in the Ubuntu file system so that sailbot workspace can work.
+    **Run the command below in the Ubuntu app** to clone it in the Ubuntu file system, otherwise sailbot workspace will not work.
     Windows has a native file system as well as file systems for each WSL distribution.
 
 ```sh
