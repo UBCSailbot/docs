@@ -691,15 +691,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enable-github-copilot-in-your-vs-code-editor" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enable GitHub Copilot in your VS Code Editor
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#setup-sailbot-workspace-in-a-github-codespace" class="md-nav__link">
     <span class="md-ellipsis">
       Setup Sailbot Workspace in a GitHub Codespace
@@ -2125,15 +2116,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enable-github-copilot-in-your-vs-code-editor" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enable GitHub Copilot in your VS Code Editor
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#setup-sailbot-workspace-in-a-github-codespace" class="md-nav__link">
     <span class="md-ellipsis">
       Setup Sailbot Workspace in a GitHub Codespace
@@ -2179,29 +2161,6 @@
 The workspace may not perform well on Windows computers with 8GB of memory or less;
 in this case, please check out our recommendations in the <a href="../workflow/#performance-issues" target="_blank">Performance Issues</a>
 section.</p>
-<p>Throughout this documentation, there are references to running VS Code commands, tasks, and launch configurations.
-Expand the box below to learn how to do so:</p>
-<details class="note">
-<summary>Running VS Code commands, tasks, and launch configurations</summary>
-<blockquote>
-<p>For keyboard shortcuts on MacOS, substitute <span class="keys"><kbd class="key-control">Ctrl</kbd></span> with <span class="keys"><kbd class="key-command">Cmd</kbd></span></p>
-</blockquote>
-<p>VS Code commands can be run in the Command Palette.
-Open the Command Palette from the <code>View</code> menu or with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span>.</p>
-<p>Tasks can be run using the <code>Tasks: Run Task</code> VS Code command. Build tasks can be run with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-b">B</kbd></span>.</p>
-<p>Launch configurations can be run from the <a href="https://code.visualstudio.com/docs/editor/debugging#_run-and-debug-view" target="_blank">Run and Debug view</a>.</p>
-<p>You can also run VS Code commands, tasks, launch configurations, and much more by typing their prefixes
-into an empty Command Palette. Open an empty Command Palette with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-p">P</kbd></span>.
-See the list below for some prefixes and their functions.
-For prefixes that are words, you will have to append a space to them to bring up their functions.</p>
-<ul>
-<li>Nothing: files</li>
-<li><code>&gt;</code>: VS Code commands</li>
-<li><code>task</code>: tasks</li>
-<li><code>debug</code>: launch configurations</li>
-<li><code>?</code>: list all prefixes and their functions</li>
-</ul>
-</details>
 <h2 id="1-setup-prerequisites">1. Setup prerequisites<a class="headerlink" href="#1-setup-prerequisites" title="Permanent link">&para;</a></h2>
 <h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
 <p><a href="https://www.docker.com/" target="_blank">Docker</a> is a platform that uses OS-level virtualization<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> to develop, ship, and
@@ -2216,25 +2175,21 @@ allowing it to be installed on Windows and macOS in addition to Linux.</p>
 <div class="tabbed-block">
 <ol>
 <li>
-<p>Set up prerequisites, <a href="https://learn.microsoft.com/en-us/windows/wsl/" target="_blank">WSL</a> and <a href="https://ubuntu.com/" target="_blank">Ubuntu</a>:</p>
+<p>Set up prerequisites, WSL and Ubuntu:</p>
 <ol>
 <li>
-<p>In PowerShell, run <code>wsl --install Ubuntu</code></p>
+<p>In PowerShell, run <code>wsl --install Ubuntu</code>, then <code>exit</code>, <code>wsl --update</code>, and <code>wsl --set-default Ubuntu</code></p>
 <details class="warning">
-<summary>Already installed WSL or Ubuntu?</summary>
-<p>If WSL or Ubuntu is already installed, ensure that they are up-to-date:</p>
+<summary>Ubuntu is already installed?</summary>
+<p>If Ubuntu is already installed, check that it is the right WSL version:</p>
 <ol>
-<li>Update WSL by running <code>wsl --update</code> in PowerShell</li>
-<li>Ensure that Ubuntu is WSL 2, not 1:<ol>
 <li>Check the WSL versions of Linux distributions with <code>wsl -l -v</code></li>
 <li>If Ubuntu's <code>VERSION</code> is 1, upgrade it to WSL 2 with <code>wsl --set-version Ubuntu 2</code></li>
-</ol>
-</li>
 </ol>
 </details>
 </li>
 <li>
-<p>Open Ubuntu to set up or verify its configuration:</p>
+<p>Open the Ubuntu app to set up or verify its configuration:</p>
 <ol>
 <li>If you are opening Ubuntu for the first time, a setup process will run;
 follow the prompts to finish setting it up</li>
@@ -2253,20 +2208,6 @@ in PowerShell, replacing <code>&lt;username&gt;</code> with the name of the newl
 </li>
 </ol>
 </li>
-<li>
-<p>From now on, run commands in the Ubuntu terminal, not PowerShell or Command Prompt</p>
-<details class="bug">
-<summary>Docker Desktop can't start up and WSL hangs when restarting</summary>
-<p>If Ubuntu can't start up and WSL hangs when restarting:</p>
-<ol>
-<li>Open command prompt as administrator and run the command <code>netsh winsock reset</code></li>
-<li>Uninstall and reinstall Docker Desktop</li>
-<li>Restart your computer</li>
-</ol>
-<p>More potential solutions can be found here:
-<a href="https://github.com/docker/for-win/issues/13273" target="_blank">Link</a></p>
-</details>
-</li>
 </ol>
 </li>
 <li>
@@ -2280,6 +2221,17 @@ with the WSL 2 backend</p>
 <li>For windows users navigate to <code>C:\Users\user_name</code> and delete the .Docker folder</li>
 <li>Restart Docker Desktop</li>
 </ol>
+</details>
+<details class="bug">
+<summary>Docker Desktop can't start up and WSL hangs when restarting</summary>
+<p>If Ubuntu can't start up and WSL hangs when restarting:</p>
+<ol>
+<li>Open command prompt as administrator and run the command <code>netsh winsock reset</code></li>
+<li>Uninstall and reinstall Docker Desktop</li>
+<li>Restart your computer</li>
+</ol>
+<p>More potential solutions can be found here:
+<a href="https://github.com/docker/for-win/issues/13273" target="_blank">Link</a></p>
 </details>
 </li>
 </ol>
@@ -2312,31 +2264,53 @@ use all the features of Sailbot Workspace.</p>
 <p>Git is a free and open source distributed version control system designed to handle everything from
 small to very large projects with speed and efficiency.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
 <ol>
-<li>Check if Git is installed with <code>git --version</code>; it is installed by default on most operating systems<ul>
-<li>If not installed, see <a href="https://git-scm.com/download" target="_blank">Git Downloads</a><ul>
-<li>If you want to use Git on Windows outside of WSL, you would need to install Git for Windows</li>
+<li>Check if Git is installed with <code>git --version</code> (on Windows, run command in PowerShell)<ul>
+<li>If not installed, download and install it from <a href="https://git-scm.com/download" target="_blank">Git Downloads</a></li>
 </ul>
 </li>
-</ul>
+<li>Configure your name and email: <a href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-config-file-setup" target="_blank">Git config file setup</a>
+   (on Windows, run commands in Ubuntu)</li>
+<li>
+<p>Login to GitHub</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12V6.75l6-1.32v6.48L3 12m17-9v8.75l-10 .15V5.21L20 3M3 13l6 .09v6.81l-6-1.15V13m17 .25V22l-10-1.91V13.1l10 .15Z"/></svg></span> Windows</label><label for="__tabbed_2_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11Z"/></svg></span> macOS / <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.62 8.35c-.42.28-1.75 1.04-1.95 1.19-.39.31-.75.29-1.14-.01-.2-.16-1.53-.92-1.95-1.19-.48-.31-.45-.7.08-.92 1.64-.69 3.28-.64 4.91.03.49.21.51.6.05.9m7.22 7.28c-.93-2.09-2.2-3.99-3.84-5.66a4.31 4.31 0 0 1-1.06-1.88c-.1-.33-.17-.67-.24-1.01-.2-.88-.29-1.78-.7-2.61-.73-1.58-2-2.4-3.84-2.47-1.81.05-3.16.81-3.95 2.4-.21.43-.36.88-.46 1.34-.17.76-.32 1.55-.5 2.32-.15.65-.45 1.21-.96 1.71-1.61 1.57-2.9 3.37-3.88 5.35-.14.29-.28.58-.37.88-.19.66.29 1.12.99.96.44-.09.88-.18 1.3-.31.41-.15.57-.05.67.35.65 2.15 2.07 3.66 4.24 4.5 4.12 1.56 8.93-.66 9.97-4.58.07-.27.17-.37.47-.27.46.14.93.24 1.4.35.49.09.85-.16.92-.64.03-.26-.06-.49-.16-.73"/></svg></span> Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>
+<p>Run the <code>git config</code> command for your Git version in <a href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup" target="_blank">Git Credential Manager setup</a> (run command in Ubuntu)</p>
+<div class="admonition warning">
+<p class="admonition-title">Which Git to check</p>
+<p>Git is installed seperately in Windows and Ubuntu, so they could be at different versions.
+We want to check the version of Git on Windows, not Ubuntu:
+run <code>git --version</code> in PowerShell and not Ubuntu.
+However, the <code>git config</code> command itself is run in Ubuntu.</p>
+</div>
 </li>
-<li>Configure your name and email: <a href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-config-file-setup" target="_blank">Git config file setup</a></li>
-<li>Login to GitHub<ul>
-<li>If you have Git for Windows installed, see <a href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup" target="_blank">Git Credential Manager setup</a></li>
-<li>Otherwise, use the GitHub CLI<ol>
-<li>Install the GitHub CLI: <a href="https://github.com/cli/cli#installation" target="_blank">Installation</a><ul>
-<li>On Windows, run the Ubuntu installation commands in the Ubuntu terminal:
-  <a href="https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt" target="_blank">Debian, Ubuntu Linux, Raspberry Pi OS (apt)</a></li>
-</ul>
-</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Install the GitHub CLI: <a href="https://github.com/cli/cli#installation" target="_blank">Installation</a></li>
 <li>Run <code>gh auth login</code> and select the first option for all choices</li>
 </ol>
+</div>
+</div>
+</div>
 </li>
-</ul>
+<li>
+<p>Verify that you have successfully logged in to GitHub by cloning a private GitHub repository (run command in Ubuntu)</p>
+<ol>
+<li>If you are a part of the <a href="https://github.com/orgs/UBCSailbot/teams/software-team" target="_blank">UBCSailbot Software GitHub team</a>,
+   you shouldn't see any errors running <code>git clone https://github.com/UBCSailbot/raye-ais.git</code></li>
+<li>You can delete this repository with <code>rm -rf raye-ais</code></li>
+</ol>
 </li>
 </ol>
 <h2 id="2-setup-x11-forwarding">2. Setup X11 forwarding<a class="headerlink" href="#2-setup-x11-forwarding" title="Permanent link">&para;</a></h2>
-<p>X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications.
-<strong><em>You can skip this step</em></strong> since we currently aren't running any GUI applications.</p>
+<p>X11 forwarding is a mechanism that enables Sailbot Workspace to run GUI applications.</p>
+<div class="admonition warning">
+<p>You can skip this step since we currently aren't running any GUI applications</p>
+</div>
 <details class="info">
 <summary>Setup instructions for X11 forwarding</summary>
 <ol>
@@ -2364,7 +2338,7 @@ with the path to your shell's rc file</li>
 </li>
 <li>
 <p>Install a X11 server</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12V6.75l6-1.32v6.48L3 12m17-9v8.75l-10 .15V5.21L20 3M3 13l6 .09v6.81l-6-1.15V13m17 .25V22l-10-1.91V13.1l10 .15Z"/></svg></span> Windows</label><label for="__tabbed_2_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11Z"/></svg></span> macOS</label><label for="__tabbed_2_3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.62 8.35c-.42.28-1.75 1.04-1.95 1.19-.39.31-.75.29-1.14-.01-.2-.16-1.53-.92-1.95-1.19-.48-.31-.45-.7.08-.92 1.64-.69 3.28-.64 4.91.03.49.21.51.6.05.9m7.22 7.28c-.93-2.09-2.2-3.99-3.84-5.66a4.31 4.31 0 0 1-1.06-1.88c-.1-.33-.17-.67-.24-1.01-.2-.88-.29-1.78-.7-2.61-.73-1.58-2-2.4-3.84-2.47-1.81.05-3.16.81-3.95 2.4-.21.43-.36.88-.46 1.34-.17.76-.32 1.55-.5 2.32-.15.65-.45 1.21-.96 1.71-1.61 1.57-2.9 3.37-3.88 5.35-.14.29-.28.58-.37.88-.19.66.29 1.12.99.96.44-.09.88-.18 1.3-.31.41-.15.57-.05.67.35.65 2.15 2.07 3.66 4.24 4.5 4.12 1.56 8.93-.66 9.97-4.58.07-.27.17-.37.47-.27.46.14.93.24 1.4.35.49.09.85-.16.92-.64.03-.26-.06-.49-.16-.73"/></svg></span> Linux</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12V6.75l6-1.32v6.48L3 12m17-9v8.75l-10 .15V5.21L20 3M3 13l6 .09v6.81l-6-1.15V13m17 .25V22l-10-1.91V13.1l10 .15Z"/></svg></span> Windows</label><label for="__tabbed_3_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11Z"/></svg></span> macOS</label><label for="__tabbed_3_3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.62 8.35c-.42.28-1.75 1.04-1.95 1.19-.39.31-.75.29-1.14-.01-.2-.16-1.53-.92-1.95-1.19-.48-.31-.45-.7.08-.92 1.64-.69 3.28-.64 4.91.03.49.21.51.6.05.9m7.22 7.28c-.93-2.09-2.2-3.99-3.84-5.66a4.31 4.31 0 0 1-1.06-1.88c-.1-.33-.17-.67-.24-1.01-.2-.88-.29-1.78-.7-2.61-.73-1.58-2-2.4-3.84-2.47-1.81.05-3.16.81-3.95 2.4-.21.43-.36.88-.46 1.34-.17.76-.32 1.55-.5 2.32-.15.65-.45 1.21-.96 1.71-1.61 1.57-2.9 3.37-3.88 5.35-.14.29-.28.58-.37.88-.19.66.29 1.12.99.96.44-.09.88-.18 1.3-.31.41-.15.57-.05.67.35.65 2.15 2.07 3.66 4.24 4.5 4.12 1.56 8.93-.66 9.97-4.58.07-.27.17-.37.47-.27.46.14.93.24 1.4.35.49.09.85-.16.92-.64.03-.26-.06-.49-.16-.73"/></svg></span> Linux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>WSL includes a X11 server.</p>
@@ -2377,7 +2351,7 @@ with the path to your shell's rc file</li>
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.62 8.35c-.42.28-1.75 1.04-1.95 1.19-.39.31-.75.29-1.14-.01-.2-.16-1.53-.92-1.95-1.19-.48-.31-.45-.7.08-.92 1.64-.69 3.28-.64 4.91.03.49.21.51.6.05.9m7.22 7.28c-.93-2.09-2.2-3.99-3.84-5.66a4.31 4.31 0 0 1-1.06-1.88c-.1-.33-.17-.67-.24-1.01-.2-.88-.29-1.78-.7-2.61-.73-1.58-2-2.4-3.84-2.47-1.81.05-3.16.81-3.95 2.4-.21.43-.36.88-.46 1.34-.17.76-.32 1.55-.5 2.32-.15.65-.45 1.21-.96 1.71-1.61 1.57-2.9 3.37-3.88 5.35-.14.29-.28.58-.37.88-.19.66.29 1.12.99.96.44-.09.88-.18 1.3-.31.41-.15.57-.05.67.35.65 2.15 2.07 3.66 4.24 4.5 4.12 1.56 8.93-.66 9.97-4.58.07-.27.17-.37.47-.27.46.14.93.24 1.4.35.49.09.85-.16.92-.64.03-.26-.06-.49-.16-.73"/></svg></span> General</label><label for="__tabbed_3_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-.89 2.18-1.43 3.61-2.42 5.73.61.64 1.35 1.39 2.56 2.24-1.3-.54-2.19-1.07-2.85-1.63C8 11 6.03 14.75 2 22c3.17-1.83 5.63-2.96 7.92-3.39-.1-.42-.16-.88-.15-1.36v-.1c.05-2.03 1.11-3.59 2.36-3.48 1.25.1 2.22 1.83 2.17 3.87-.01.38-.05.75-.12 1.09 2.26.44 4.69 1.56 7.82 3.37-.62-1.14-1.17-2.16-1.69-3.13-.81-.64-1.7-1.48-3.46-2.37 1.21.3 2.08.66 2.76 1.07C14.26 7.62 13.83 6.3 12 2Z"/></svg></span> Arch Linux</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.62 8.35c-.42.28-1.75 1.04-1.95 1.19-.39.31-.75.29-1.14-.01-.2-.16-1.53-.92-1.95-1.19-.48-.31-.45-.7.08-.92 1.64-.69 3.28-.64 4.91.03.49.21.51.6.05.9m7.22 7.28c-.93-2.09-2.2-3.99-3.84-5.66a4.31 4.31 0 0 1-1.06-1.88c-.1-.33-.17-.67-.24-1.01-.2-.88-.29-1.78-.7-2.61-.73-1.58-2-2.4-3.84-2.47-1.81.05-3.16.81-3.95 2.4-.21.43-.36.88-.46 1.34-.17.76-.32 1.55-.5 2.32-.15.65-.45 1.21-.96 1.71-1.61 1.57-2.9 3.37-3.88 5.35-.14.29-.28.58-.37.88-.19.66.29 1.12.99.96.44-.09.88-.18 1.3-.31.41-.15.57-.05.67.35.65 2.15 2.07 3.66 4.24 4.5 4.12 1.56 8.93-.66 9.97-4.58.07-.27.17-.37.47-.27.46.14.93.24 1.4.35.49.09.85-.16.92-.64.03-.26-.06-.49-.16-.73"/></svg></span> General</label><label for="__tabbed_4_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-.89 2.18-1.43 3.61-2.42 5.73.61.64 1.35 1.39 2.56 2.24-1.3-.54-2.19-1.07-2.85-1.63C8 11 6.03 14.75 2 22c3.17-1.83 5.63-2.96 7.92-3.39-.1-.42-.16-.88-.15-1.36v-.1c.05-2.03 1.11-3.59 2.36-3.48 1.25.1 2.22 1.83 2.17 3.87-.01.38-.05.75-.12 1.09 2.26.44 4.69 1.56 7.82 3.37-.62-1.14-1.17-2.16-1.69-3.13-.81-.64-1.7-1.48-3.46-2.37 1.21.3 2.08.66 2.76 1.07C14.26 7.62 13.83 6.3 12 2Z"/></svg></span> Arch Linux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>As of February 2023, almost all Linux distributions include a X11 server, Xorg.
@@ -2401,7 +2375,7 @@ This may change in the future as Wayland matures.</p>
 <ol>
 <li>
 <p>Install <code>x11-apps</code></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12V6.75l6-1.32v6.48L3 12m17-9v8.75l-10 .15V5.21L20 3M3 13l6 .09v6.81l-6-1.15V13m17 .25V22l-10-1.91V13.1l10 .15Z"/></svg></span> Windows</label><label for="__tabbed_4_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11Z"/></svg></span> macOS</label><label for="__tabbed_4_3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.62 8.35c-.42.28-1.75 1.04-1.95 1.19-.39.31-.75.29-1.14-.01-.2-.16-1.53-.92-1.95-1.19-.48-.31-.45-.7.08-.92 1.64-.69 3.28-.64 4.91.03.49.21.51.6.05.9m7.22 7.28c-.93-2.09-2.2-3.99-3.84-5.66a4.31 4.31 0 0 1-1.06-1.88c-.1-.33-.17-.67-.24-1.01-.2-.88-.29-1.78-.7-2.61-.73-1.58-2-2.4-3.84-2.47-1.81.05-3.16.81-3.95 2.4-.21.43-.36.88-.46 1.34-.17.76-.32 1.55-.5 2.32-.15.65-.45 1.21-.96 1.71-1.61 1.57-2.9 3.37-3.88 5.35-.14.29-.28.58-.37.88-.19.66.29 1.12.99.96.44-.09.88-.18 1.3-.31.41-.15.57-.05.67.35.65 2.15 2.07 3.66 4.24 4.5 4.12 1.56 8.93-.66 9.97-4.58.07-.27.17-.37.47-.27.46.14.93.24 1.4.35.49.09.85-.16.92-.64.03-.26-.06-.49-.16-.73"/></svg></span> Linux</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12V6.75l6-1.32v6.48L3 12m17-9v8.75l-10 .15V5.21L20 3M3 13l6 .09v6.81l-6-1.15V13m17 .25V22l-10-1.91V13.1l10 .15Z"/></svg></span> Windows</label><label for="__tabbed_5_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11Z"/></svg></span> macOS</label><label for="__tabbed_5_3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.62 8.35c-.42.28-1.75 1.04-1.95 1.19-.39.31-.75.29-1.14-.01-.2-.16-1.53-.92-1.95-1.19-.48-.31-.45-.7.08-.92 1.64-.69 3.28-.64 4.91.03.49.21.51.6.05.9m7.22 7.28c-.93-2.09-2.2-3.99-3.84-5.66a4.31 4.31 0 0 1-1.06-1.88c-.1-.33-.17-.67-.24-1.01-.2-.88-.29-1.78-.7-2.61-.73-1.58-2-2.4-3.84-2.47-1.81.05-3.16.81-3.95 2.4-.21.43-.36.88-.46 1.34-.17.76-.32 1.55-.5 2.32-.15.65-.45 1.21-.96 1.71-1.61 1.57-2.9 3.37-3.88 5.35-.14.29-.28.58-.37.88-.19.66.29 1.12.99.96.44-.09.88-.18 1.3-.31.41-.15.57-.05.67.35.65 2.15 2.07 3.66 4.24 4.5 4.12 1.56 8.93-.66 9.97-4.58.07-.27.17-.37.47-.27.46.14.93.24 1.4.35.49.09.85-.16.92-.64.03-.26-.06-.49-.16-.73"/></svg></span> Linux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>In Ubuntu, <code>sudo apt install x11-apps</code>.</p>
@@ -2423,19 +2397,18 @@ This may change in the future as Wayland matures.</p>
 </ol>
 </details>
 <h2 id="3-clone-sailbot-workspace">3. Clone Sailbot Workspace<a class="headerlink" href="#3-clone-sailbot-workspace" title="Permanent link">&para;</a></h2>
-<details class="tip">
-<summary>Where to clone on Windows</summary>
-<p>Windows has a native file system as well as file systems for each WSL distribution.
-For the fastest performance speed,<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> clone Sailbot Workspace in the WSL file system.
-We recommend cloning it somewhere in your Ubuntu user's home directory, which is where Ubuntu opens to by default.</p>
-</details>
+<div class="admonition tip">
+<p class="admonition-title">Where to clone on Windows</p>
+<p><strong>Run the command below in the Ubuntu app</strong> to clone it in the Ubuntu file system, otherwise sailbot workspace will not work.
+Windows has a native file system as well as file systems for each WSL distribution.</p>
+</div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/UBCSailbot/sailbot_workspace.git
 </code></pre></div>
 <h2 id="4-open-sailbot-workspace-in-vs-code">4. Open Sailbot Workspace in VS Code<a class="headerlink" href="#4-open-sailbot-workspace-in-vs-code" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Install <code>code</code> command in <code>PATH</code></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12V6.75l6-1.32v6.48L3 12m17-9v8.75l-10 .15V5.21L20 3M3 13l6 .09v6.81l-6-1.15V13m17 .25V22l-10-1.91V13.1l10 .15Z"/></svg></span> Windows</label><label for="__tabbed_5_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11Z"/></svg></span> macOS</label><label for="__tabbed_5_3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.62 8.35c-.42.28-1.75 1.04-1.95 1.19-.39.31-.75.29-1.14-.01-.2-.16-1.53-.92-1.95-1.19-.48-.31-.45-.7.08-.92 1.64-.69 3.28-.64 4.91.03.49.21.51.6.05.9m7.22 7.28c-.93-2.09-2.2-3.99-3.84-5.66a4.31 4.31 0 0 1-1.06-1.88c-.1-.33-.17-.67-.24-1.01-.2-.88-.29-1.78-.7-2.61-.73-1.58-2-2.4-3.84-2.47-1.81.05-3.16.81-3.95 2.4-.21.43-.36.88-.46 1.34-.17.76-.32 1.55-.5 2.32-.15.65-.45 1.21-.96 1.71-1.61 1.57-2.9 3.37-3.88 5.35-.14.29-.28.58-.37.88-.19.66.29 1.12.99.96.44-.09.88-.18 1.3-.31.41-.15.57-.05.67.35.65 2.15 2.07 3.66 4.24 4.5 4.12 1.56 8.93-.66 9.97-4.58.07-.27.17-.37.47-.27.46.14.93.24 1.4.35.49.09.85-.16.92-.64.03-.26-.06-.49-.16-.73"/></svg></span> Linux</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12V6.75l6-1.32v6.48L3 12m17-9v8.75l-10 .15V5.21L20 3M3 13l6 .09v6.81l-6-1.15V13m17 .25V22l-10-1.91V13.1l10 .15Z"/></svg></span> Windows</label><label for="__tabbed_6_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11Z"/></svg></span> macOS</label><label for="__tabbed_6_3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.62 8.35c-.42.28-1.75 1.04-1.95 1.19-.39.31-.75.29-1.14-.01-.2-.16-1.53-.92-1.95-1.19-.48-.31-.45-.7.08-.92 1.64-.69 3.28-.64 4.91.03.49.21.51.6.05.9m7.22 7.28c-.93-2.09-2.2-3.99-3.84-5.66a4.31 4.31 0 0 1-1.06-1.88c-.1-.33-.17-.67-.24-1.01-.2-.88-.29-1.78-.7-2.61-.73-1.58-2-2.4-3.84-2.47-1.81.05-3.16.81-3.95 2.4-.21.43-.36.88-.46 1.34-.17.76-.32 1.55-.5 2.32-.15.65-.45 1.21-.96 1.71-1.61 1.57-2.9 3.37-3.88 5.35-.14.29-.28.58-.37.88-.19.66.29 1.12.99.96.44-.09.88-.18 1.3-.31.41-.15.57-.05.67.35.65 2.15 2.07 3.66 4.24 4.5 4.12 1.56 8.93-.66 9.97-4.58.07-.27.17-.37.47-.27.46.14.93.24 1.4.35.49.09.85-.16.92-.64.03-.26-.06-.49-.16-.73"/></svg></span> Linux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>The <code>code</code> command is installed by default.</p>
@@ -2469,10 +2442,8 @@ We recommend cloning it somewhere in your Ubuntu user's home directory, which is
    run the <code>Dev Containers: Reopen in Container</code> VS Code command</li>
 </ol>
 <h2 id="7-run-the-setup-task">7. Run the <code>setup</code> task<a class="headerlink" href="#7-run-the-setup-task" title="Permanent link">&para;</a></h2>
-<div class="admonition info">
-<p>Moved from Run to Setup page in <a href="https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.1.0" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.75 6.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z"/><path d="M2.5 1h8.44a1.5 1.5 0 0 1 1.06.44l10.25 10.25a1.5 1.5 0 0 1 0 2.12l-8.44 8.44a1.5 1.5 0 0 1-2.12 0L1.44 12A1.497 1.497 0 0 1 1 10.94V2.5A1.5 1.5 0 0 1 2.5 1Zm0 1.5v8.44l10.25 10.25 8.44-8.44L10.94 2.5Z"/></svg></span> v1.1.0</a></p>
-</div>
-<p>The <code>setup</code> task clones the repositories defined in <code>src/polaris.repos</code> and updates dependencies of the ROS packages.</p>
+<p>The <code>setup</code> task clones the repositories defined in <code>src/polaris.repos</code> and updates dependencies of the ROS packages.
+If you don't know how to run a VS Code task, see <a href="../how_to/#run-vs-code-commands-tasks-and-launch-configurations">How to run VS Code commands, tasks, and launch configurations</a>.</p>
 <details class="bug">
 <summary>Can't see the <code>setup</code> task</summary>
 <p>If you can't see the <code>setup</code> task, run the <code>Developer: Reload Window</code> VS Code command.
@@ -2484,52 +2455,12 @@ This may occur when the workspace file is opened for the first time.</p>
 <p>Delete all open terminals and run the <code>Developer: Reload Window</code> VS Code command
 to detect the files that were generated from building.</p>
 <h2 id="10-start-the-system">10. Start the system<a class="headerlink" href="#10-start-the-system" title="Permanent link">&para;</a></h2>
-<p>Run the entire system to verify everything is working using the following command in the terminal:</p>
+<p>Run the entire system to verify everything is working using the following command in the VS Code terminal:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span><span class="nv">$ROS_WORKSPACE</span>/src/global_launch/main_launch.py
 </code></pre></div>
 <p>Use <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> in the terminal to stop the system.</p>
-<h2 id="enable-github-copilot-in-your-vs-code-editor">Enable GitHub Copilot in your VS Code Editor<a class="headerlink" href="#enable-github-copilot-in-your-vs-code-editor" title="Permanent link">&para;</a></h2>
-<p>GitHub Copilot is an AI paired programming tool that can help you accelerate your development by providing suggestions
-for whole lines or entire functions inside your editor.<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> To enable GitHub Copilot:</p>
-<ol>
-<li>
-<p><a href="https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student" target="_blank">Apply to GitHub Global Campus as a student</a>
-to use GitHub Copilot and get other student benefits for free. It may take a few days for your student status to be
-verified. In the meantime, you can still continue with the next steps. However, you will need to use the GitHub Copilot
-free trial until your account is verified.</p>
-</li>
-<li>
-<p><a href="https://docs.github.com/en/copilot/quickstart#signing-up-for-github-copilot-for-your-personal-account" target="_blank">Sign up for GitHub Copilot for your personal account</a>.
-If it offers a free trial, then take it. You should see a page telling you that you can use GitHub Copilot for free
-(if you have a verified student account).</p>
-</li>
-<li>
-<p>Sign into your GitHub account in VS Code. The GitHub Copilot extension should automatically prompt you to sign into
-your account if you are not already.</p>
-<details class="warning">
-<summary>VS Code is not prompting me to sign into my account</summary>
-<p>You may already be signed in into your GitHub account. You can check by clicking on the <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.561 8.073a6.005 6.005 0 0 1 3.432 5.142.75.75 0 1 1-1.498.07 4.5 4.5 0 0 0-8.99 0 .75.75 0 0 1-1.498-.07 6.004 6.004 0 0 1 3.431-5.142 3.999 3.999 0 1 1 5.123 0ZM10.5 5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/></svg></span>
-<strong>Accounts</strong> icon in the bottom-left corner in VS Code and verify that you see your GitHub account.</p>
-<p>If you do not see your account, you can get the sign in prompt by trying:</p>
-<ul>
-<li>Reloading the VS Code window: <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> and select <code>Developer: Reload Window</code></li>
-<li>Rebuilding the devcontainer: <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> and select <code>Dev Containers: Rebuild Container</code></li>
-<li>If using a Mac, use <span class="keys"><kbd class="key-command">Cmd</kbd></span> instead of <span class="keys"><kbd class="key-control">Ctrl</kbd></span></li>
-</ul>
-</details>
-</li>
-<li>
-<p>If all the previous steps were done correctly, you should see the <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M47.801 34.003c-1.72 2.988-11.706 10.037-23.82 10.037S1.881 36.991.161 34.003a1.309 1.309 0 0 1-.161-.57v-5.615c.012-.17.047-.338.11-.498.744-1.867 2.692-4.58 5.206-5.308.333-.855.826-2.106 1.287-3.029a20.112 20.112 0 0 1-.104-2.171c0-2.659.563-4.992 2.262-6.729.793-.811 1.777-1.433 2.945-1.901C14.502 5.911 18.483 4 23.938 4c5.455 0 9.523 1.911 12.319 4.182 1.167.468 2.151 1.09 2.944 1.901 1.699 1.737 2.263 4.07 2.263 6.729 0 .736-.027 1.465-.105 2.171.461.923.954 2.174 1.288 3.029 2.513.728 4.461 3.441 5.205 5.308.081.205.115.424.115.645v5.318c0 .252-.04.502-.166.72ZM24.325 22.031h-.688a8.52 8.52 0 0 1-.709 1.016c-1.537 1.892-3.833 2.98-7.008 2.98-3.447 0-5.972-.717-7.557-2.514a4.408 4.408 0 0 1-.171-.21l-.195.21v13.155c2.867 1.558 9.02 4.353 15.984 4.353s13.117-2.795 15.984-4.353V23.513l-.195-.21s-.066.091-.171.21c-1.584 1.797-4.11 2.514-7.557 2.514-3.175 0-5.47-1.088-7.008-2.98a8.637 8.637 0 0 1-.709-1.016h-.033.033Zm-1.969-5.864a14.31 14.31 0 0 0 .127-1.785v-.042c-.003-1.537-.339-2.538-.876-3.152-.681-.78-2.09-1.378-5.06-1.057-3.008.326-4.69 1.073-5.643 2.048-.923.944-1.408 2.356-1.408 4.633 0 2.42.348 3.849 1.115 4.719.729.827 2.165 1.499 5.309 1.499 2.417 0 3.799-.786 4.683-1.873.948-1.168 1.482-2.878 1.753-4.99Zm3.25 0c.271 2.112.805 3.822 1.754 4.99.883 1.087 2.265 1.873 4.682 1.873 3.145 0 4.58-.672 5.309-1.499.767-.87 1.116-2.299 1.116-4.719 0-2.277-.485-3.689-1.408-4.633-.954-.975-2.635-1.722-5.644-2.048-2.969-.321-4.378.277-5.06 1.057-.537.614-.873 1.615-.876 3.152v.042c.002.53.042 1.123.127 1.785Z"/><path d="M28.998 28.516c1.104 0 1.999.895 1.999 1.999v3.998a2 2 0 1 1-3.998 0v-3.998c0-1.104.895-1.999 1.999-1.999Zm-9.996 0c1.104 0 1.999.895 1.999 1.999v3.998a2 2 0 1 1-3.998 0v-3.998c0-1.104.895-1.999 1.999-1.999Z"/></svg></span> <strong>GitHub Copilot</strong> icon in
-the bottom-right corner of VS Code without any error messages. For more information on how to use Copilot and a tutorial,
-refer to:</p>
-<ul>
-<li><a href="https://docs.github.com/en/copilot/getting-started-with-github-copilot" target="_blank">The GitHub Copilot Getting Started Guide</a></li>
-<li><a href="https://docs.github.com/en/copilot/configuring-github-copilot/configuring-github-copilot-in-your-environment" target="_blank">Configuring GitHub Copilot in your Environment</a></li>
-</ul>
-</li>
-</ol>
 <h2 id="setup-sailbot-workspace-in-a-github-codespace">Setup Sailbot Workspace in a GitHub Codespace<a class="headerlink" href="#setup-sailbot-workspace-in-a-github-codespace" title="Permanent link">&para;</a></h2>
-<p>A codespace is a development environment that's hosted in the cloud.<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>
+<p>A codespace is a development environment that's hosted in the cloud.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>
 Since Sailbot Workspace is resource intensive, it has high hardware requirements and power consumption,
 which aren't ideal for development on laptops. GitHub Codespaces provide a seamless experience to work on repositories
 off-device, especially if they specify a Dev Container like Sailbot Workspace. Codespaces can run in VS Code
@@ -2583,13 +2514,7 @@ A couple things to note:<ul>
 <p><a href="https://git-scm.com" target="_blank">Git SCM</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p><a href="https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems" target="_blank">File storage and performance across file systems</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
-</li>
-<li id="fn:6">
-<p><a href="https://docs.github.com/en/copilot/quickstart" target="_blank">GitHub Copilot Quickstart Guide</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
-</li>
-<li id="fn:7">
-<p><a href="https://docs.github.com/en/codespaces/overview" target="_blank">GitHub Codespaces overview</a>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p><a href="https://docs.github.com/en/codespaces/overview" target="_blank">GitHub Codespaces overview</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -2613,7 +2538,7 @@ A couple things to note:<ul>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 27, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 31, 2024</span>
   </span>
 
     

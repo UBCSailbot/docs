@@ -610,13 +610,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#containerized-applications" class="md-nav__link">
+  <a href="#run-vs-code-commands-tasks-and-launch-configurations" class="md-nav__link">
     <span class="md-ellipsis">
-      Containerized applications
+      Run VS Code commands, tasks, and launch configurations
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Containerized applications">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#work-with-containerized-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Work with containerized applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Work with containerized applications">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -664,6 +673,15 @@
   <a href="#temporarily-add-apt-packages" class="md-nav__link">
     <span class="md-ellipsis">
       Temporarily add apt packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-github-copilot-in-sailbot-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable GitHub Copilot in Sailbot Workspace
     </span>
   </a>
   
@@ -1972,13 +1990,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#containerized-applications" class="md-nav__link">
+  <a href="#run-vs-code-commands-tasks-and-launch-configurations" class="md-nav__link">
     <span class="md-ellipsis">
-      Containerized applications
+      Run VS Code commands, tasks, and launch configurations
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Containerized applications">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#work-with-containerized-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Work with containerized applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Work with containerized applications">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2026,6 +2053,15 @@
   <a href="#temporarily-add-apt-packages" class="md-nav__link">
     <span class="md-ellipsis">
       Temporarily add apt packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-github-copilot-in-sailbot-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable GitHub Copilot in Sailbot Workspace
     </span>
   </a>
   
@@ -2114,7 +2150,27 @@
 
 
 <h1 id="how-tos">How-To's<a class="headerlink" href="#how-tos" title="Permanent link">&para;</a></h1>
-<h2 id="containerized-applications">Containerized applications<a class="headerlink" href="#containerized-applications" title="Permanent link">&para;</a></h2>
+<h2 id="run-vs-code-commands-tasks-and-launch-configurations">Run VS Code commands, tasks, and launch configurations<a class="headerlink" href="#run-vs-code-commands-tasks-and-launch-configurations" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">MacOS keyboard shortcuts</p>
+<p>For keyboard shortcuts on MacOS, substitute <span class="keys"><kbd class="key-control">Ctrl</kbd></span> with <span class="keys"><kbd class="key-command">Cmd</kbd></span>.</p>
+</div>
+<p>VS Code commands can be run in the Command Palette.
+Open the Command Palette from the <code>View</code> menu or with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span>.</p>
+<p>Tasks can be run using the <code>Tasks: Run Task</code> VS Code command. Build tasks can be run with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-b">B</kbd></span>.</p>
+<p>Launch configurations can be run from the <a href="https://code.visualstudio.com/docs/editor/debugging#_run-and-debug-view" target="_blank">Run and Debug view</a>.</p>
+<p>You can also run VS Code commands, tasks, launch configurations, and much more by typing their prefixes
+into an empty Command Palette. Open an empty Command Palette with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-p">P</kbd></span> or by clicking the box in the center
+of the title bar. See the list below for some prefixes and their functions.
+For prefixes that are words, you will have to append a space to them to bring up their functions.</p>
+<ul>
+<li>Nothing: files</li>
+<li><code>&gt;</code>: VS Code commands</li>
+<li><code>task</code>: tasks</li>
+<li><code>debug</code>: launch configurations</li>
+<li><code>?</code>: list all prefixes and their functions</li>
+</ul>
+<h2 id="work-with-containerized-applications">Work with containerized applications<a class="headerlink" href="#work-with-containerized-applications" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p>New in <a href="https://github.com/UBCSailbot/sailbot_workspace/releases/tag/v1.1.0" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.75 6.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z"/><path d="M2.5 1h8.44a1.5 1.5 0 0 1 1.06.44l10.25 10.25a1.5 1.5 0 0 1 0 2.12l-8.44 8.44a1.5 1.5 0 0 1-2.12 0L1.44 12A1.497 1.497 0 0 1 1 10.94V2.5A1.5 1.5 0 0 1 2.5 1Zm0 1.5v8.44l10.25 10.25 8.44-8.44L10.94 2.5Z"/></svg></span> v1.1.0</a></p>
 </div>
@@ -2258,8 +2314,52 @@ so that the Docs/Website servers aren't continuously reloading. Auto Save is on 
 </ol>
 <p>Before merging in the PR, you should migrate the apt package installations to a more permanent location in upstream
 <a href="../docker_images/" target="_blank">images</a>: <code>base</code>, <code>local-base</code>, <code>dev</code>, or <code>pre-base</code>.</p>
+<h2 id="enable-github-copilot-in-sailbot-workspace">Enable GitHub Copilot in Sailbot Workspace<a class="headerlink" href="#enable-github-copilot-in-sailbot-workspace" title="Permanent link">&para;</a></h2>
+<p>GitHub Copilot is an AI paired programming tool that can help you accelerate your development by providing suggestions
+for whole lines or entire functions inside your editor.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> To enable GitHub Copilot:</p>
+<ol>
+<li>
+<p><a href="https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student" target="_blank">Apply to GitHub Global Campus as a student</a>
+to use GitHub Copilot and get other student benefits for free. It may take a few days for your student status to be
+verified. In the meantime, you can still continue with the next steps. However, you will need to use the GitHub Copilot
+free trial until your account is verified.</p>
+</li>
+<li>
+<p><a href="https://docs.github.com/en/copilot/quickstart#signing-up-for-github-copilot-for-your-personal-account" target="_blank">Sign up for GitHub Copilot for your personal account</a>.
+If it offers a free trial, then take it. You should see a page telling you that you can use GitHub Copilot for free
+(if you have a verified student account).</p>
+</li>
+<li>
+<p>Uncomment the <code>github.copilot</code> extension in <code>.devcontainer/devcontainer.json</code> and run the
+   <code>Dev Containers: Rebuild Container</code> VS Code command</p>
+</li>
+<li>
+<p>Sign into your GitHub account in VS Code. The GitHub Copilot extension should automatically prompt you to sign into
+your account if you are not already.</p>
+<details class="warning">
+<summary>VS Code is not prompting me to sign into my account</summary>
+<p>You may already be signed in into your GitHub account. You can check by clicking on the <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.561 8.073a6.005 6.005 0 0 1 3.432 5.142.75.75 0 1 1-1.498.07 4.5 4.5 0 0 0-8.99 0 .75.75 0 0 1-1.498-.07 6.004 6.004 0 0 1 3.431-5.142 3.999 3.999 0 1 1 5.123 0ZM10.5 5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/></svg></span>
+<strong>Accounts</strong> icon in the bottom-left corner in VS Code and verify that you see your GitHub account.</p>
+<p>If you do not see your account, you can get the sign in prompt by trying:</p>
+<ul>
+<li>Reloading the VS Code window: <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> and select <code>Developer: Reload Window</code></li>
+<li>Rebuilding the devcontainer: <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> and select <code>Dev Containers: Rebuild Container</code></li>
+<li>If using a Mac, use <span class="keys"><kbd class="key-command">Cmd</kbd></span> instead of <span class="keys"><kbd class="key-control">Ctrl</kbd></span></li>
+</ul>
+</details>
+</li>
+<li>
+<p>If all the previous steps were done correctly, you should see the <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M47.801 34.003c-1.72 2.988-11.706 10.037-23.82 10.037S1.881 36.991.161 34.003a1.309 1.309 0 0 1-.161-.57v-5.615c.012-.17.047-.338.11-.498.744-1.867 2.692-4.58 5.206-5.308.333-.855.826-2.106 1.287-3.029a20.112 20.112 0 0 1-.104-2.171c0-2.659.563-4.992 2.262-6.729.793-.811 1.777-1.433 2.945-1.901C14.502 5.911 18.483 4 23.938 4c5.455 0 9.523 1.911 12.319 4.182 1.167.468 2.151 1.09 2.944 1.901 1.699 1.737 2.263 4.07 2.263 6.729 0 .736-.027 1.465-.105 2.171.461.923.954 2.174 1.288 3.029 2.513.728 4.461 3.441 5.205 5.308.081.205.115.424.115.645v5.318c0 .252-.04.502-.166.72ZM24.325 22.031h-.688a8.52 8.52 0 0 1-.709 1.016c-1.537 1.892-3.833 2.98-7.008 2.98-3.447 0-5.972-.717-7.557-2.514a4.408 4.408 0 0 1-.171-.21l-.195.21v13.155c2.867 1.558 9.02 4.353 15.984 4.353s13.117-2.795 15.984-4.353V23.513l-.195-.21s-.066.091-.171.21c-1.584 1.797-4.11 2.514-7.557 2.514-3.175 0-5.47-1.088-7.008-2.98a8.637 8.637 0 0 1-.709-1.016h-.033.033Zm-1.969-5.864a14.31 14.31 0 0 0 .127-1.785v-.042c-.003-1.537-.339-2.538-.876-3.152-.681-.78-2.09-1.378-5.06-1.057-3.008.326-4.69 1.073-5.643 2.048-.923.944-1.408 2.356-1.408 4.633 0 2.42.348 3.849 1.115 4.719.729.827 2.165 1.499 5.309 1.499 2.417 0 3.799-.786 4.683-1.873.948-1.168 1.482-2.878 1.753-4.99Zm3.25 0c.271 2.112.805 3.822 1.754 4.99.883 1.087 2.265 1.873 4.682 1.873 3.145 0 4.58-.672 5.309-1.499.767-.87 1.116-2.299 1.116-4.719 0-2.277-.485-3.689-1.408-4.633-.954-.975-2.635-1.722-5.644-2.048-2.969-.321-4.378.277-5.06 1.057-.537.614-.873 1.615-.876 3.152v.042c.002.53.042 1.123.127 1.785Z"/><path d="M28.998 28.516c1.104 0 1.999.895 1.999 1.999v3.998a2 2 0 1 1-3.998 0v-3.998c0-1.104.895-1.999 1.999-1.999Zm-9.996 0c1.104 0 1.999.895 1.999 1.999v3.998a2 2 0 1 1-3.998 0v-3.998c0-1.104.895-1.999 1.999-1.999Z"/></svg></span> <strong>GitHub Copilot</strong> icon in
+the bottom-right corner of VS Code without any error messages. For more information on how to use Copilot and a tutorial,
+refer to:</p>
+<ul>
+<li><a href="https://docs.github.com/en/copilot/getting-started-with-github-copilot" target="_blank">The GitHub Copilot Getting Started Guide</a></li>
+<li><a href="https://docs.github.com/en/copilot/configuring-github-copilot/configuring-github-copilot-in-your-environment" target="_blank">Configuring GitHub Copilot in your Environment</a></li>
+</ul>
+</li>
+</ol>
 <h2 id="use-your-dotfiles">Use your dotfiles<a class="headerlink" href="#use-your-dotfiles" title="Permanent link">&para;</a></h2>
-<p>Dotfiles are configuration files for various programs.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>Dotfiles are configuration files for various programs.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <details class="info">
 <summary>More about dotfiles</summary>
 <ul>
@@ -2301,6 +2401,8 @@ by the created Bash dotfile.</li>
 <ol>
 <li>Switch to the <code>raye</code> branch: <code>git switch raye</code></li>
 <li>Rebuild the Dev Container: run the <code>Dev Containers: Rebuild Container</code> VS Code command</li>
+<li>If you want to run <a href="https://github.com/UBCSailbot/raye-local-pathfinding?tab=readme-ov-file#visualizing-the-simulation" target="_blank">Raye's local pathfinding visualizer</a>,
+   complete <a href="../setup/#2-setup-x11-forwarding" target="_blank">step 2 of the setup instructions</a></li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title"><code>raye</code> branch disclaimers</p>
@@ -2356,7 +2458,10 @@ This is because the system has trouble resolving the local hostname.</p>
 <hr />
 <ol>
 <li id="fn:1">
-<p><a href="https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/" target="_blank">Dotfiles – What is a Dotfile and How to Create it in Mac and Linux</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a href="https://docs.github.com/en/copilot/quickstart" target="_blank">GitHub Copilot Quickstart Guide</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/" target="_blank">Dotfiles – What is a Dotfile and How to Create it in Mac and Linux</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -2380,7 +2485,7 @@ This is because the system has trouble resolving the local hostname.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 27, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 31, 2024</span>
   </span>
 
     
