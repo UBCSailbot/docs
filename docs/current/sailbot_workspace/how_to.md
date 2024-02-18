@@ -134,7 +134,49 @@ Each application runs in a Docker container. Containers can be managed using Doc
         docker stop <container>
         ```
 
-## Temporarily add apt packages
+## Manage software packages
+
+### Add apt or python dependencies to ROS packages
+
+If running your ROS packages requires external dependencies from an apt repository or python package, the following
+should be added to the `package.xml` file in the root directory of the ROS package:
+
+```xml
+<exec_depend>ROSDEP_KEY</exec_depend>
+```
+
+Replace `ROSDEP_KEY` with the rosdep key for the dependency, which can be found online.
+
+=== ":material-debian: Apt Dependencies"
+    - Rosdep keys for apt repositories can be found [here](https://github.com/ros/rosdistro/blob/master/rosdep/base.yaml){target=_blank}
+    - Use the key associated with **debian** since sailbot workspace uses Ubuntu, a Linux distribution based on debian
+    - Do not include the square brackets in `package.xml`
+
+=== ":material-language-python: Python Dependencies"
+    - Rosdep keys for python packages can be found [here](https://github.com/ros/rosdistro/blob/master/rosdep/python.yaml){target=_blank}
+    - Use the key associated with **debian** since sailbot workspace uses Ubuntu, a Linux distribution based on debian
+    - Make sure that the key you are using is for **Python 3** and not Python 2
+    - Do not include the square brackets in `package.xml`
+
+After completing these steps, [run the `setup` task](#run-vs-code-commands-tasks-and-launch-configurations) and the
+desired dependencies should be installed. ROS uses a dependency management utility, rosdep, to handle the installation
+of dependencies. In addition to runtime dependencies, rosdep also handles dependencies for build time, dependencies for
+testing, sharing dependencies between ROS packages, and more.
+See the [ROS documentation on rosdep](https://docs.ros.org/en/humble/Tutorials/Intermediate/Rosdep.html){target=_blank}
+to learn more.
+
+??? bug "Why can't I just install the dependencies myself in the commandline interface with `pip` or `apt-get`?"
+
+    Although this will temporarily work, installing apt and/or Python dependencies directly in sailbot workspace using
+    the commandline interface will not persist between container instances. The dependencies will need to be manually
+    installed every single time you create a new instance of sailbot workspace, which is not feasible when we start to
+    use many dependencies at once.
+
+    Of course, one could also install dependencies inside the sailbot workspace Docker images to allow such dependencies
+    to persist across container instances. However, using putting dependencies inside `package.xml` distinguishes between
+    what dependencies are needed at runtime for ROS packages and what dependencies are needed for infrastructure purposes.
+
+### Temporarily add apt dependencies
 
 If a task requires you to add apt packages, you can quickly test them in your Dev Container:
 
