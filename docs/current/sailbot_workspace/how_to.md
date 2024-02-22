@@ -155,7 +155,7 @@ Replace `ROSDEP_KEY` with the rosdep key for the dependency, which can be found 
 === ":material-language-python: Python Dependencies"
     - Rosdep keys for python packages can be found [here](https://github.com/ros/rosdistro/blob/master/rosdep/python.yaml){target=_blank}
     - Use the key associated with **debian** since sailbot workspace uses Ubuntu, a Linux distribution based on debian
-    - Make sure that the key you are using is for **Python 3** and not Python 2
+    - For Python3 dependencies you will most likely have to change the rosdep key from `python-*` to `python3-*`
     - Do not include the square brackets in `package.xml`
 
 After completing these steps, [run the `setup` task](#run-vs-code-commands-tasks-and-launch-configurations) and the
@@ -173,7 +173,7 @@ to learn more.
     use many dependencies at once.
 
     Of course, one could also install dependencies inside the sailbot workspace Docker images to allow such dependencies
-    to persist across container instances. However, using putting dependencies inside `package.xml` distinguishes between
+    to persist across container instances. However, putting dependencies inside `package.xml` distinguishes between
     what dependencies are needed at runtime for ROS packages and what dependencies are needed for infrastructure purposes.
 
 ### Temporarily add apt dependencies
