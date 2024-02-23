@@ -693,11 +693,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#temporarily-add-apt-packages" class="md-nav__link">
+  <a href="#manage-software-packages" class="md-nav__link">
     <span class="md-ellipsis">
-      Temporarily add apt packages
+      Manage software packages
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Manage software packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-apt-or-python-dependencies-to-ros-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add apt or python dependencies to ROS packages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporarily-add-apt-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporarily add apt dependencies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2083,11 +2107,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#temporarily-add-apt-packages" class="md-nav__link">
+  <a href="#manage-software-packages" class="md-nav__link">
     <span class="md-ellipsis">
-      Temporarily add apt packages
+      Manage software packages
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Manage software packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-apt-or-python-dependencies-to-ros-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add apt or python dependencies to ROS packages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporarily-add-apt-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporarily add apt dependencies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2330,15 +2378,57 @@ so that the Docs/Website servers aren't continuously reloading. Auto Save is on 
 </div>
 </li>
 </ul>
-<h2 id="temporarily-add-apt-packages">Temporarily add apt packages<a class="headerlink" href="#temporarily-add-apt-packages" title="Permanent link">&para;</a></h2>
+<h2 id="manage-software-packages">Manage software packages<a class="headerlink" href="#manage-software-packages" title="Permanent link">&para;</a></h2>
+<h3 id="add-apt-or-python-dependencies-to-ros-packages">Add apt or python dependencies to ROS packages<a class="headerlink" href="#add-apt-or-python-dependencies-to-ros-packages" title="Permanent link">&para;</a></h3>
+<p>If running your ROS packages requires external dependencies from an apt repository or python package, the following
+should be added to the <code>package.xml</code> file in the root directory of the ROS package:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;exec_depend&gt;</span>ROSDEP_KEY<span class="nt">&lt;/exec_depend&gt;</span>
+</code></pre></div>
+<p>Replace <code>ROSDEP_KEY</code> with the rosdep key for the dependency, which can be found online.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg></span> Apt Dependencies</label><label for="__tabbed_5_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89Z"/></svg></span> Python Dependencies</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Rosdep keys for apt repositories can be found <a href="https://github.com/ros/rosdistro/blob/master/rosdep/base.yaml" target="_blank">here</a></li>
+<li>Use the key associated with <strong>debian</strong> since sailbot workspace uses Ubuntu, a Linux distribution based on debian</li>
+<li>Do not include the square brackets in <code>package.xml</code></li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Rosdep keys for python packages can be found <a href="https://github.com/ros/rosdistro/blob/master/rosdep/python.yaml" target="_blank">here</a></li>
+<li>Use the key associated with <strong>debian</strong> since sailbot workspace uses Ubuntu, a Linux distribution based on debian</li>
+<li>For Python3 dependencies you will most likely have to change the rosdep key from <code>python-*</code> to <code>python3-*</code></li>
+<li>Do not include the square brackets in <code>package.xml</code></li>
+</ul>
+</div>
+</div>
+</div>
+<p>After completing these steps, <a href="#run-vs-code-commands-tasks-and-launch-configurations">run the <code>setup</code> task</a> and the
+desired dependencies should be installed. ROS uses a dependency management utility, rosdep, to handle the installation
+of dependencies. In addition to runtime dependencies, rosdep also handles dependencies for build time, dependencies for
+testing, sharing dependencies between ROS packages, and more.
+See the <a href="https://docs.ros.org/en/humble/Tutorials/Intermediate/Rosdep.html" target="_blank">ROS documentation on rosdep</a>
+to learn more.</p>
+<details class="bug">
+<summary>Why can't I just install the dependencies myself in the commandline interface with <code>pip</code> or <code>apt-get</code>?</summary>
+<p>Although this will temporarily work, installing apt and/or Python dependencies directly in sailbot workspace using
+the commandline interface will not persist between container instances. The dependencies will need to be manually
+installed every single time you create a new instance of sailbot workspace, which is not feasible when we start to
+use many dependencies at once.</p>
+<p>Of course, one could also install dependencies inside the sailbot workspace Docker images to allow such dependencies
+to persist across container instances. However, putting dependencies inside <code>package.xml</code> distinguishes between
+what dependencies are needed at runtime for ROS packages and what dependencies are needed for infrastructure purposes.</p>
+</details>
+<h3 id="temporarily-add-apt-dependencies">Temporarily add apt dependencies<a class="headerlink" href="#temporarily-add-apt-dependencies" title="Permanent link">&para;</a></h3>
 <p>If a task requires you to add apt packages, you can quickly test them in your Dev Container:</p>
 <ol>
 <li>Uncomment the section in <code>Dockerfile</code> that installs additional packages</li>
 <li>
 <p>Add the desired packages below the line <code># Your package list here</code> with the format:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Your package list here</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>_pkg1_<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>_pkg2_<span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Your package list here</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>_pkg1_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>_pkg2_<span class="w"> </span><span class="se">\</span>
 </code></pre></div>
 </li>
 <li>
@@ -2448,26 +2538,26 @@ by the created Bash dotfile.</li>
 </div>
 <h3 id="build-rayes-ros-packages">Build Raye's ROS packages<a class="headerlink" href="#build-rayes-ros-packages" title="Permanent link">&para;</a></h3>
 <p>To build Raye's ROS packages, run the following commands:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>roscd
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>catkin_make
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>roscd
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>catkin_make
 </code></pre></div>
 <h3 id="run-packages-from-different-workspaces">Run packages from different workspaces<a class="headerlink" href="#run-packages-from-different-workspaces" title="Permanent link">&para;</a></h3>
 <p>The <code>raye</code> branch has two ROS workspaces: one for Raye and one for the new project.
 To run ROS packages, you will have to source the overlay of the workspace that it is in:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">New Project</label><label for="__tabbed_5_2">Raye</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">New Project</label><label for="__tabbed_6_2">Raye</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>srcnew
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>srcnew
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>srcraye
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>srcraye
 </code></pre></div>
 </div>
 </div>
 </div>
 <p>Then you can run launch files or package-specific executables in that workspace with:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">New Project</label><label for="__tabbed_6_2">Raye</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">New Project</label><label for="__tabbed_7_2">Raye</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><code>ros2 launch ...</code> or <code>ros2 run ...</code>, respectively.</p>
@@ -2483,8 +2573,8 @@ To run ROS packages, you will have to source the overlay of the workspace that i
 <p>On non-Ubuntu-based Linux operating systems, Run commands for Raye packages may take a long time to start-up.
 This is because the system has trouble resolving the local hostname.</p>
 <p>To resolve this bug, run the commands below in the Dev Container:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export ROS_HOSTNAME=localhost&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export ROS_MASTER_URI=http://localhost:11311&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export ROS_HOSTNAME=localhost&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export ROS_MASTER_URI=http://localhost:11311&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 </code></pre></div>
 </div>
 <div class="footnote">
@@ -2518,7 +2608,7 @@ This is because the system has trouble resolving the local hostname.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 31, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2024</span>
   </span>
 
     
