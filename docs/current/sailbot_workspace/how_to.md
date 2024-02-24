@@ -163,18 +163,14 @@ tags should be added to the `package.xml` file in the root directory of the ROS 
 - Learn what each tag is used for [here](https://docs.ros.org/en/humble/Tutorials/Intermediate/Rosdep.html#id4){target=_blank}.
 
 - Replace `ROSDEP_KEY` with the rosdep key for the dependency, which can be found online.
+    - Use the key associated with **ubuntu** since sailbot workspace uses Ubuntu, or **debian** which Ubuntu is based on
+    - Do not include the square brackets in `package.xml`
 
-    === ":material-debian: Apt Dependencies"
+    === ":material-ubuntu: Apt Dependencies"
         - Rosdep keys for apt repositories can be found [here](https://github.com/ros/rosdistro/blob/master/rosdep/base.yaml){target=_blank}
-        - Use the key associated with **ubuntu** since sailbot workspace uses Ubuntu,
-        or **debian** since Ubuntu is based on it
-        - Do not include the square brackets in `package.xml`
 
     === ":material-language-python: Python Dependencies"
         - Rosdep keys for python packages can be found [here](https://github.com/ros/rosdistro/blob/master/rosdep/python.yaml){target=_blank}
-        - Use the key associated with **ubuntu** since sailbot workspace uses Ubuntu,
-        or **debian** since Ubuntu is based on it
-        - Do not include the square brackets in `package.xml`
         - Since we use Python 3, look for the packages that start with `python3-` (`python-` is usually for Python 2)
 
 - If there isn't rosdep key for the dependency, you can add your own to `custom-rosdep.yaml`
