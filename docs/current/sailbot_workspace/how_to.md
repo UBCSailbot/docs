@@ -136,36 +136,7 @@ Each application runs in a Docker container. Containers can be managed using Doc
 
 ## Manage software packages
 
-### Add apt or python dependencies to ROS packages
-
-If running your ROS packages requires external dependencies from an apt repository or python package, the following
-should be added to the `package.xml` file in the root directory of the ROS package:
-
-```xml
-<exec_depend>ROSDEP_KEY</exec_depend>
-```
-
-Replace `ROSDEP_KEY` with the rosdep key for the dependency, which can be found online.
-
-=== ":material-debian: Apt Dependencies"
-    - Rosdep keys for apt repositories can be found [here](https://github.com/ros/rosdistro/blob/master/rosdep/base.yaml){target=_blank}
-    - Use the key associated with **debian** since sailbot workspace uses Ubuntu, a Linux distribution based on debian
-    - Do not include the square brackets in `package.xml`
-
-=== ":material-language-python: Python Dependencies"
-    - Rosdep keys for python packages can be found [here](https://github.com/ros/rosdistro/blob/master/rosdep/python.yaml){target=_blank}
-    - Use the key associated with **debian** since sailbot workspace uses Ubuntu, a Linux distribution based on debian
-    - For Python3 dependencies you will most likely have to change the rosdep key from `python-*` to `python3-*`
-    - Do not include the square brackets in `package.xml`
-
-After completing these steps, [run the `setup` task](#run-vs-code-commands-tasks-and-launch-configurations) and the
-desired dependencies should be installed. ROS uses a dependency management utility, rosdep, to handle the installation
-of dependencies. In addition to runtime dependencies, rosdep also handles dependencies for build time, dependencies for
-testing, sharing dependencies between ROS packages, and more.
-See the [ROS documentation on rosdep](https://docs.ros.org/en/humble/Tutorials/Intermediate/Rosdep.html){target=_blank}
-to learn more.
-
-??? bug "Why can't I just install the dependencies myself in the commandline interface with `pip` or `apt-get`?"
+!!! warning "Why can't I just install the dependencies myself in the command line interface with `pip` or `apt`?"
 
     Although this will temporarily work, installing apt and/or Python dependencies directly in sailbot workspace using
     the commandline interface will not persist between container instances. The dependencies will need to be manually
@@ -174,24 +145,53 @@ to learn more.
 
     Of course, one could also install dependencies inside the sailbot workspace Docker images to allow such dependencies
     to persist across container instances. However, putting dependencies inside `package.xml` distinguishes between
-    what dependencies are needed at runtime for ROS packages and what dependencies are needed for infrastructure purposes.
+    what dependencies are needed for ROS packages and what dependencies are needed for infrastructure purposes.
 
-### Temporarily add apt dependencies
+### Add apt or python dependencies to ROS packages
 
-If a task requires you to add apt packages, you can quickly test them in your Dev Container:
+If running your ROS packages requires external dependencies from an apt repository or python package, **one** of the following
+tags should be added to the `package.xml` file in the root directory of the ROS package:
 
-1. Uncomment the section in `Dockerfile` that installs additional packages
-2. Add the desired packages below the line `# Your package list here` with the format:
+```xml
+<depend>ROSDEP_KEY</depend>
+<build_depend>ROSDEP_KEY</build_depend>
+<build_export_depend>ROSDEP_KEY</build_export_depend>
+<exec_depend>ROSDEP_KEY</exec_depend>
+<test_depend>ROSDEP_KEY</test_depend>
+```
 
-    ```sh
-    # Your package list here
-    _pkg1_ \
-    _pkg2_ \
-    ```
+- Learn what each tag is used for [here](https://docs.ros.org/en/humble/Tutorials/Intermediate/Rosdep.html#id4){target=_blank}.
+- Replace `ROSDEP_KEY` with the rosdep key for the dependency, which can be found online.
 
-3. Run the `Dev Containers: Rebuild Container` VS Code command
+    === ":material-debian: Apt Dependencies"
+        - Rosdep keys for apt repositories can be found [here](https://github.com/ros/rosdistro/blob/master/rosdep/base.yaml){target=_blank}
+        - Use the key associated with **ubuntu** since sailbot workspace uses Ubuntu,
+        or **debian** since Ubuntu is based on it
+        - Do not include the square brackets in `package.xml`
 
-Before merging in the PR, you should migrate the apt package installations to a more permanent location in upstream
+    === ":material-language-python: Python Dependencies"
+        - Rosdep keys for python packages can be found [here](https://github.com/ros/rosdistro/blob/master/rosdep/python.yaml){target=_blank}
+        - Use the key associated with **ubuntu** since sailbot workspace uses Ubuntu,
+        or **debian** since Ubuntu is based on it
+        - Do not include the square brackets in `package.xml`
+        - Since we use Python 3, look for the packages that start with `python3-` (`python-` is usually for Python 2)
+
+After completing these steps, [run the `setup` task](#run-vs-code-commands-tasks-and-launch-configurations) and the
+desired dependencies should be installed. ROS uses a dependency management utility, rosdep, to handle the installation
+of dependencies. In addition to runtime dependencies, rosdep also handles dependencies for build time, dependencies for
+testing, sharing dependencies between ROS packages, and more.
+See the [ROS documentation on rosdep](https://docs.ros.org/en/humble/Tutorials/Intermediate/Rosdep.html){target=_blank}
+to learn more.
+
+### Add dependencies to a Docker image
+
+There are a couple cases where you would want to add dependencies to a Docker image instead of ROS package:
+
+1. The dependency is not used to build/run/test a ROS package
+2. There is no apt or pip package for your dependency so you have to build from source
+
+To verify your changes, you can add them to `.devcontainer/Dockerfile` then
+run the `Dev Containers: Rebuild Container` VS Code command. Once verified, migrate the changes to one of the upstream
 [images](./docker_images.md){target=_blank}: `base`, `local-base`, `dev`, or `pre-base`.
 
 ## Enable GitHub Copilot in Sailbot Workspace
